@@ -1,0 +1,122 @@
+\hypertarget{namespacengsai_1_1genome}{}\doxysection{ngsai\+::genome Namespace Reference}
+\label{namespacengsai_1_1genome}\index{ngsai::genome@{ngsai::genome}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classngsai_1_1genome_1_1CpGRegion}{Cp\+GRegion}}
+\begin{DoxyCompactList}\small\item\em The \doxylink{classngsai_1_1genome_1_1CpGRegion}{Cp\+GRegion} class models the coordinates of a CpG on the genome. CpG are palyndromic sequences. Hence, if a CpG is located on a strand, another is located on the other strand (but in reverse orientation). For this reason, the strand information is always UNORIENTED. A CpG is encoded as a two Genomic\+Region containing \mbox{[}start,end) ranges (0-\/based) for each strand CpG. The starts are always the position of the leftmost C on both strands and the end positions the position just after the rightmost G on both strands. This corresponds to the following schema \+: start end $\vert$ $\vert$ 5\textquotesingle{} -\/ N N N C G N N N -\/ 3\textquotesingle{} fw strand 3\textquotesingle{} -\/ N N N G C N N N -\/ 5\textquotesingle{} rv strand $\vert$ $\vert$ start end. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classngsai_1_1genome_1_1GenomeRegion}{Genome\+Region}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespacengsai_1_1genome_af9328d3863d41c71b71e33219e3c0632}{strand}} \{ \mbox{\hyperlink{namespacengsai_1_1genome_af9328d3863d41c71b71e33219e3c0632a67a2b956de0574444b0efbb063db6c76}{FORWARD}} =0
+, \mbox{\hyperlink{namespacengsai_1_1genome_af9328d3863d41c71b71e33219e3c0632a96e31eb6cac4af277deb6841a24c6d31}{REVERSE}} =1
+, \mbox{\hyperlink{namespacengsai_1_1genome_af9328d3863d41c71b71e33219e3c0632a0965425cd6f887b687589a50c9602477}{UNORIENTED}} =2
+ \}
+\begin{DoxyCompactList}\small\item\em Defines a strand on a DNA molecule. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacengsai_1_1genome_af9328d3863d41c71b71e33219e3c0632}{ngsai\+::genome\+::strand}} \mbox{\hyperlink{namespacengsai_1_1genome_a02842959b18d40f2592509a21873b34b}{char\+\_\+to\+\_\+strand}} (char \mbox{\hyperlink{namespacengsai_1_1genome_af9328d3863d41c71b71e33219e3c0632}{strand}})
+\begin{DoxyCompactList}\small\item\em Converts a char encoded strand into a \doxylink{namespacengsai_1_1genome_af9328d3863d41c71b71e33219e3c0632}{ngsai\+::genome\+::strand} value. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{namespacengsai_1_1genome_a12b7e95dc6f7daaa09178fa2568aac2b}{strand\+\_\+to\+\_\+char}} (\mbox{\hyperlink{namespacengsai_1_1genome_af9328d3863d41c71b71e33219e3c0632}{ngsai\+::genome\+::strand}} \mbox{\hyperlink{namespacengsai_1_1genome_af9328d3863d41c71b71e33219e3c0632}{strand}})
+\begin{DoxyCompactList}\small\item\em Converts a \doxylink{namespacengsai_1_1genome_af9328d3863d41c71b71e33219e3c0632}{ngsai\+::genome\+::strand} value into the corresponding char value. \end{DoxyCompactList}\item 
+std\+::ostream \& \mbox{\hyperlink{namespacengsai_1_1genome_ac4b36652b9ca64be7665170095337113}{operator$<$$<$}} (std\+::ostream \&stream, const \mbox{\hyperlink{classngsai_1_1genome_1_1GenomeRegion}{ngsai\+::genome\+::\+Genome\+Region}} \&record)
+\begin{DoxyCompactList}\small\item\em Writes the given region to a stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{namespacengsai_1_1genome_af9328d3863d41c71b71e33219e3c0632}\label{namespacengsai_1_1genome_af9328d3863d41c71b71e33219e3c0632} 
+\index{ngsai::genome@{ngsai::genome}!strand@{strand}}
+\index{strand@{strand}!ngsai::genome@{ngsai::genome}}
+\doxysubsubsection{\texorpdfstring{strand}{strand}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespacengsai_1_1genome_af9328d3863d41c71b71e33219e3c0632}{ngsai\+::genome\+::strand}}}
+
+
+
+Defines a strand on a DNA molecule. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FORWARD@{FORWARD}!ngsai::genome@{ngsai::genome}}\index{ngsai::genome@{ngsai::genome}!FORWARD@{FORWARD}}}\Hypertarget{namespacengsai_1_1genome_af9328d3863d41c71b71e33219e3c0632a67a2b956de0574444b0efbb063db6c76}\label{namespacengsai_1_1genome_af9328d3863d41c71b71e33219e3c0632a67a2b956de0574444b0efbb063db6c76} 
+FORWARD&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{REVERSE@{REVERSE}!ngsai::genome@{ngsai::genome}}\index{ngsai::genome@{ngsai::genome}!REVERSE@{REVERSE}}}\Hypertarget{namespacengsai_1_1genome_af9328d3863d41c71b71e33219e3c0632a96e31eb6cac4af277deb6841a24c6d31}\label{namespacengsai_1_1genome_af9328d3863d41c71b71e33219e3c0632a96e31eb6cac4af277deb6841a24c6d31} 
+REVERSE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UNORIENTED@{UNORIENTED}!ngsai::genome@{ngsai::genome}}\index{ngsai::genome@{ngsai::genome}!UNORIENTED@{UNORIENTED}}}\Hypertarget{namespacengsai_1_1genome_af9328d3863d41c71b71e33219e3c0632a0965425cd6f887b687589a50c9602477}\label{namespacengsai_1_1genome_af9328d3863d41c71b71e33219e3c0632a0965425cd6f887b687589a50c9602477} 
+UNORIENTED&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacengsai_1_1genome_a02842959b18d40f2592509a21873b34b}\label{namespacengsai_1_1genome_a02842959b18d40f2592509a21873b34b} 
+\index{ngsai::genome@{ngsai::genome}!char\_to\_strand@{char\_to\_strand}}
+\index{char\_to\_strand@{char\_to\_strand}!ngsai::genome@{ngsai::genome}}
+\doxysubsubsection{\texorpdfstring{char\_to\_strand()}{char\_to\_strand()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacengsai_1_1genome_af9328d3863d41c71b71e33219e3c0632}{ngsai\+::genome\+::strand}} ngsai\+::genome\+::char\+\_\+to\+\_\+strand (\begin{DoxyParamCaption}\item[{char}]{strand }\end{DoxyParamCaption})}
+
+
+
+Converts a char encoded strand into a \doxylink{namespacengsai_1_1genome_af9328d3863d41c71b71e33219e3c0632}{ngsai\+::genome\+::strand} value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em strand} & the strand encoded as a char, either \textquotesingle{}+\textquotesingle{}, \textquotesingle{}-\/\textquotesingle{} or \textquotesingle{}.\textquotesingle{} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the corresponding \doxylink{namespacengsai_1_1genome_af9328d3863d41c71b71e33219e3c0632}{ngsai\+::genome\+::strand} value. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & if the char code corresponds to nothing. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{namespacengsai_1_1genome_ac4b36652b9ca64be7665170095337113}\label{namespacengsai_1_1genome_ac4b36652b9ca64be7665170095337113} 
+\index{ngsai::genome@{ngsai::genome}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!ngsai::genome@{ngsai::genome}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
+{\footnotesize\ttfamily std\+::ostream \& ngsai\+::genome\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{stream,  }\item[{const \mbox{\hyperlink{classngsai_1_1genome_1_1GenomeRegion}{ngsai\+::genome\+::\+Genome\+Region}} \&}]{record }\end{DoxyParamCaption})}
+
+
+
+Writes the given region to a stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em stream} & the stream to write the record to. \\
+\hline
+{\em record} & the record to write. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a reference to the stream after the writing. 
+\end{DoxyReturn}
+\Hypertarget{namespacengsai_1_1genome_a12b7e95dc6f7daaa09178fa2568aac2b}\label{namespacengsai_1_1genome_a12b7e95dc6f7daaa09178fa2568aac2b} 
+\index{ngsai::genome@{ngsai::genome}!strand\_to\_char@{strand\_to\_char}}
+\index{strand\_to\_char@{strand\_to\_char}!ngsai::genome@{ngsai::genome}}
+\doxysubsubsection{\texorpdfstring{strand\_to\_char()}{strand\_to\_char()}}
+{\footnotesize\ttfamily char ngsai\+::genome\+::strand\+\_\+to\+\_\+char (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacengsai_1_1genome_af9328d3863d41c71b71e33219e3c0632}{ngsai\+::genome\+::strand}}}]{strand }\end{DoxyParamCaption})}
+
+
+
+Converts a \doxylink{namespacengsai_1_1genome_af9328d3863d41c71b71e33219e3c0632}{ngsai\+::genome\+::strand} value into the corresponding char value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em strand} & the strand encoded as \doxylink{namespacengsai_1_1genome_af9328d3863d41c71b71e33219e3c0632}{ngsai\+::genome\+::strand}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the corresponding char strand value. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & if the char code corresponds to nothing. \\
+\hline
+\end{DoxyExceptions}

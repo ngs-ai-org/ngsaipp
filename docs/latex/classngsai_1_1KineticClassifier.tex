@@ -1,0 +1,303 @@
+\hypertarget{classngsai_1_1KineticClassifier}{}\doxysection{ngsai\+::Kinetic\+Classifier Class Reference}
+\label{classngsai_1_1KineticClassifier}\index{ngsai::KineticClassifier@{ngsai::KineticClassifier}}
+
+
+{\ttfamily \#include $<$Kinetic\+Classifier.\+hpp$>$}
+
+
+
+Collaboration diagram for ngsai\+::Kinetic\+Classifier\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=217pt]{classngsai_1_1KineticClassifier__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classngsai_1_1KineticClassifier_ae8386f27eeaef5436d4798185ef0cecf}{Kinetic\+Classifier}} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classngsai_1_1KineticClassifier_a5e4f2955522ebfabc9f3c674e1e20f58}{Kinetic\+Classifier}} (\mbox{\hyperlink{classngsai_1_1KineticModel}{ngsai\+::\+Kinetic\+Model}} $\ast$model\+\_\+meth, \mbox{\hyperlink{classngsai_1_1KineticModel}{ngsai\+::\+Kinetic\+Model}} $\ast$model\+\_\+unmeth)
+\begin{DoxyCompactList}\small\item\em Constructs a classifier using the given kinetic signal models for predicion. It takes ownership over the Kinetic\+Models. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classngsai_1_1KineticClassifier_ad3e5bd0469911703ba8b218a3340b310}{Kinetic\+Classifier}} (const \mbox{\hyperlink{classngsai_1_1KineticClassifier}{ngsai\+::\+Kinetic\+Classifier}} \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classngsai_1_1KineticClassifier_a54e93094a2486513b4eab74c4c8b2571}{Kinetic\+Classifier}} (\mbox{\hyperlink{classngsai_1_1KineticClassifier}{ngsai\+::\+Kinetic\+Classifier}} \&\&other)
+\begin{DoxyCompactList}\small\item\em Move constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classngsai_1_1KineticClassifier_aa7b00d61d4e7a7eaa43a6345d6a3427a}{$\sim$\+Kinetic\+Classifier}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. It will free all \doxylink{classngsai_1_1KineticModel}{Kinetic\+Model} memory! \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classngsai_1_1KineticClassifier}{Kinetic\+Classifier}} \& \mbox{\hyperlink{classngsai_1_1KineticClassifier_a4282266803db2143c868916e614c6055}{operator=}} (const \mbox{\hyperlink{classngsai_1_1KineticClassifier}{Kinetic\+Classifier}} \&other)
+\begin{DoxyCompactList}\small\item\em Assignment operator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classngsai_1_1KineticClassifier}{Kinetic\+Classifier}} \& \mbox{\hyperlink{classngsai_1_1KineticClassifier_ad3110804d9af6dcad148e8a15fe6e065}{operator=}} (\mbox{\hyperlink{classngsai_1_1KineticClassifier}{Kinetic\+Classifier}} \&\&other)
+\begin{DoxyCompactList}\small\item\em Move assignment operator. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classngsai_1_1KineticClassifier_a4ce5d987acbd2c4754a11c982716ee1c}{set\+Models}} (\mbox{\hyperlink{classngsai_1_1KineticModel}{ngsai\+::\+Kinetic\+Model}} $\ast$model\+\_\+meth, \mbox{\hyperlink{classngsai_1_1KineticModel}{ngsai\+::\+Kinetic\+Model}} $\ast$model\+\_\+unmeth)
+\begin{DoxyCompactList}\small\item\em Sets the classifier models. \end{DoxyCompactList}\item 
+std\+::pair$<$ double, double $>$ \mbox{\hyperlink{classngsai_1_1KineticClassifier_a3f29c9122e9afebd64da0603c56bd868}{classify}} (const \mbox{\hyperlink{classngsai_1_1genome_1_1CpGRegion}{ngsai\+::genome\+::\+Cp\+GRegion}} \&cpg, const std\+::list$<$ Pac\+Bio\+::\+BAM\+::\+Bam\+Record $>$ \&ccss, double prob\+\_\+meth, double prob\+\_\+unmeth) const
+\begin{DoxyCompactList}\small\item\em Computes the posterior probabilities p(methylated $\vert$ IPD,PWD) and p(unmethylated $\vert$ IPD,PWD) for the given region, given the CCS read kinetics. The prior class probabilites p(methylated) and p(unmethylated) are normalized to sum up to 1. \end{DoxyCompactList}\item 
+std\+::pair$<$ double, double $>$ \mbox{\hyperlink{classngsai_1_1KineticClassifier_a7c005db7983a06a3e8418e353865fc15}{classify}} (const \mbox{\hyperlink{classngsai_1_1KineticSignal}{ngsai\+::\+Kinetic\+Signal}} \&kinetics, double prob\+\_\+meth, double prob\+\_\+unmeth) const
+\begin{DoxyCompactList}\small\item\em Computes the posterior probabilities p(methylated $\vert$ IPD,PWD) and p(unmethylated $\vert$ IPD,PWD) for the given window signal. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classngsai_1_1KineticClassifier_a6c613b8c9aedb03a1e4b2e75f03a9a91}{check\+Models}} () const
+\begin{DoxyCompactList}\small\item\em Checks that all model size are the same and that the models contain log probability densities, hence whether they can be used to compute likelihood. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classngsai_1_1KineticClassifier_a5b0e930141daa13866398e2e02e75215}{free\+Models}} ()
+\begin{DoxyCompactList}\small\item\em Frees the model memory if the pointer point to something. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+size\+\_\+t \mbox{\hyperlink{classngsai_1_1KineticClassifier_a17c780e76d99053eb5686acc5813e332}{m\+\_\+window\+\_\+size}}
+\begin{DoxyCompactList}\small\item\em The window size in bases. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classngsai_1_1KineticModel}{ngsai\+::\+Kinetic\+Model}} $\ast$ \mbox{\hyperlink{classngsai_1_1KineticClassifier_a111f7a1e70501679d04477c33bd3e073}{m\+\_\+model\+\_\+meth}}
+\begin{DoxyCompactList}\small\item\em The methylated kinetic signal model. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classngsai_1_1KineticModel}{ngsai\+::\+Kinetic\+Model}} $\ast$ \mbox{\hyperlink{classngsai_1_1KineticClassifier_a5790ce6e71280084bd275ffab338bb1a}{m\+\_\+model\+\_\+unmeth}}
+\begin{DoxyCompactList}\small\item\em The unmethylated kinetic signal model. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \doxylink{classngsai_1_1KineticClassifier}{Kinetic\+Classifier} class implements a baysian classifier that determine the methylation state of Cp\+Gs from Pac\+Bio CCS data. The classifier implements a 2 class model (methylated and unmethylated) and assigns a probability of belonging to each class, for each CpG, given the kinetics of the CCS mapping over the CpG region. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classngsai_1_1KineticClassifier_ae8386f27eeaef5436d4798185ef0cecf}\label{classngsai_1_1KineticClassifier_ae8386f27eeaef5436d4798185ef0cecf} 
+\index{ngsai::KineticClassifier@{ngsai::KineticClassifier}!KineticClassifier@{KineticClassifier}}
+\index{KineticClassifier@{KineticClassifier}!ngsai::KineticClassifier@{ngsai::KineticClassifier}}
+\doxysubsubsection{\texorpdfstring{KineticClassifier()}{KineticClassifier()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily ngsai\+::\+Kinetic\+Classifier\+::\+Kinetic\+Classifier (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+\Hypertarget{classngsai_1_1KineticClassifier_a5e4f2955522ebfabc9f3c674e1e20f58}\label{classngsai_1_1KineticClassifier_a5e4f2955522ebfabc9f3c674e1e20f58} 
+\index{ngsai::KineticClassifier@{ngsai::KineticClassifier}!KineticClassifier@{KineticClassifier}}
+\index{KineticClassifier@{KineticClassifier}!ngsai::KineticClassifier@{ngsai::KineticClassifier}}
+\doxysubsubsection{\texorpdfstring{KineticClassifier()}{KineticClassifier()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily ngsai\+::\+Kinetic\+Classifier\+::\+Kinetic\+Classifier (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classngsai_1_1KineticModel}{ngsai\+::\+Kinetic\+Model}} $\ast$}]{model\+\_\+meth,  }\item[{\mbox{\hyperlink{classngsai_1_1KineticModel}{ngsai\+::\+Kinetic\+Model}} $\ast$}]{model\+\_\+unmeth }\end{DoxyParamCaption})}
+
+
+
+Constructs a classifier using the given kinetic signal models for predicion. It takes ownership over the Kinetic\+Models. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em model\+\_\+meth} & the model for the methylated kinetic signal. \\
+\hline
+{\em model\+\_\+unmeth} & the model for the unmethylated kinetic signal. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & if the models don\textquotesingle{}t have an identical size. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classngsai_1_1KineticClassifier_ad3e5bd0469911703ba8b218a3340b310}\label{classngsai_1_1KineticClassifier_ad3e5bd0469911703ba8b218a3340b310} 
+\index{ngsai::KineticClassifier@{ngsai::KineticClassifier}!KineticClassifier@{KineticClassifier}}
+\index{KineticClassifier@{KineticClassifier}!ngsai::KineticClassifier@{ngsai::KineticClassifier}}
+\doxysubsubsection{\texorpdfstring{KineticClassifier()}{KineticClassifier()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily ngsai\+::\+Kinetic\+Classifier\+::\+Kinetic\+Classifier (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classngsai_1_1KineticClassifier}{ngsai\+::\+Kinetic\+Classifier}} \&}]{other }\end{DoxyParamCaption})}
+
+
+
+Copy constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & an instance to copy from. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classngsai_1_1KineticClassifier_a54e93094a2486513b4eab74c4c8b2571}\label{classngsai_1_1KineticClassifier_a54e93094a2486513b4eab74c4c8b2571} 
+\index{ngsai::KineticClassifier@{ngsai::KineticClassifier}!KineticClassifier@{KineticClassifier}}
+\index{KineticClassifier@{KineticClassifier}!ngsai::KineticClassifier@{ngsai::KineticClassifier}}
+\doxysubsubsection{\texorpdfstring{KineticClassifier()}{KineticClassifier()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily ngsai\+::\+Kinetic\+Classifier\+::\+Kinetic\+Classifier (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classngsai_1_1KineticClassifier}{ngsai\+::\+Kinetic\+Classifier}} \&\&}]{other }\end{DoxyParamCaption})}
+
+
+
+Move constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & a rvalue to the object to move. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classngsai_1_1KineticClassifier_aa7b00d61d4e7a7eaa43a6345d6a3427a}\label{classngsai_1_1KineticClassifier_aa7b00d61d4e7a7eaa43a6345d6a3427a} 
+\index{ngsai::KineticClassifier@{ngsai::KineticClassifier}!````~KineticClassifier@{$\sim$KineticClassifier}}
+\index{````~KineticClassifier@{$\sim$KineticClassifier}!ngsai::KineticClassifier@{ngsai::KineticClassifier}}
+\doxysubsubsection{\texorpdfstring{$\sim$KineticClassifier()}{~KineticClassifier()}}
+{\footnotesize\ttfamily ngsai\+::\+Kinetic\+Classifier\+::$\sim$\+Kinetic\+Classifier (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor. It will free all \doxylink{classngsai_1_1KineticModel}{Kinetic\+Model} memory! 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classngsai_1_1KineticClassifier_a6c613b8c9aedb03a1e4b2e75f03a9a91}\label{classngsai_1_1KineticClassifier_a6c613b8c9aedb03a1e4b2e75f03a9a91} 
+\index{ngsai::KineticClassifier@{ngsai::KineticClassifier}!checkModels@{checkModels}}
+\index{checkModels@{checkModels}!ngsai::KineticClassifier@{ngsai::KineticClassifier}}
+\doxysubsubsection{\texorpdfstring{checkModels()}{checkModels()}}
+{\footnotesize\ttfamily void ngsai\+::\+Kinetic\+Classifier\+::check\+Models (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Checks that all model size are the same and that the models contain log probability densities, hence whether they can be used to compute likelihood. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if this is not the case. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classngsai_1_1KineticClassifier_a3f29c9122e9afebd64da0603c56bd868}\label{classngsai_1_1KineticClassifier_a3f29c9122e9afebd64da0603c56bd868} 
+\index{ngsai::KineticClassifier@{ngsai::KineticClassifier}!classify@{classify}}
+\index{classify@{classify}!ngsai::KineticClassifier@{ngsai::KineticClassifier}}
+\doxysubsubsection{\texorpdfstring{classify()}{classify()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::pair$<$ double, double $>$ ngsai\+::\+Kinetic\+Classifier\+::classify (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classngsai_1_1genome_1_1CpGRegion}{ngsai\+::genome\+::\+Cp\+GRegion}} \&}]{cpg,  }\item[{const std\+::list$<$ Pac\+Bio\+::\+BAM\+::\+Bam\+Record $>$ \&}]{ccss,  }\item[{double}]{prob\+\_\+meth,  }\item[{double}]{prob\+\_\+unmeth }\end{DoxyParamCaption}) const}
+
+
+
+Computes the posterior probabilities p(methylated $\vert$ IPD,PWD) and p(unmethylated $\vert$ IPD,PWD) for the given region, given the CCS read kinetics. The prior class probabilites p(methylated) and p(unmethylated) are normalized to sum up to 1. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cpg} & the coordinates of a CpG to classify, in genome coordinates. The CpG on both strand will be considered. The coordinates must be strandless. Start must be correspond to the coordinate of the C on the + strand and end to passed the G coordinate on the + strand. \\
+\hline
+{\em ccss} & a list of CCS reads mapping on the CpG of interest. Their IPD and PWD kinetics will be used to compute the probability that the CpG is methylated or not methylated. CCS not mapping over the CpG or without a perfect alignment will be ignored. \\
+\hline
+{\em prob\+\_\+meth} & the a priori probability of the methylated class. \\
+\hline
+{\em prob\+\_\+unmeth} & the a priori probability of the unmethylated class. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a pair of posterior probability p(methylated $\vert$ IPD,PWD) and p(unmethylated $\vert$ IPD,PWD) respectively. The probabilities sum to 1. 
+\end{DoxyReturn}
+\Hypertarget{classngsai_1_1KineticClassifier_a7c005db7983a06a3e8418e353865fc15}\label{classngsai_1_1KineticClassifier_a7c005db7983a06a3e8418e353865fc15} 
+\index{ngsai::KineticClassifier@{ngsai::KineticClassifier}!classify@{classify}}
+\index{classify@{classify}!ngsai::KineticClassifier@{ngsai::KineticClassifier}}
+\doxysubsubsection{\texorpdfstring{classify()}{classify()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::pair$<$ double, double $>$ ngsai\+::\+Kinetic\+Classifier\+::classify (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classngsai_1_1KineticSignal}{ngsai\+::\+Kinetic\+Signal}} \&}]{kinetics,  }\item[{double}]{prob\+\_\+meth,  }\item[{double}]{prob\+\_\+unmeth }\end{DoxyParamCaption}) const}
+
+
+
+Computes the posterior probabilities p(methylated $\vert$ IPD,PWD) and p(unmethylated $\vert$ IPD,PWD) for the given window signal. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em kinetics} & an instance containing the kinetics (IPD and PWD) and DNA sequences on the forward and reverse strand of the region to classify. \\
+\hline
+{\em prob\+\_\+meth} & the a priori probability of the methylated class. \\
+\hline
+{\em prob\+\_\+unmeth} & the a priori probability of the unmethylated class. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a pair of posterior probability p(methylated $\vert$ IPD,PWD) and p(unmethylated $\vert$ IPD,PWD) respectively. The probabilities sum to 1. 
+\end{DoxyReturn}
+\Hypertarget{classngsai_1_1KineticClassifier_a5b0e930141daa13866398e2e02e75215}\label{classngsai_1_1KineticClassifier_a5b0e930141daa13866398e2e02e75215} 
+\index{ngsai::KineticClassifier@{ngsai::KineticClassifier}!freeModels@{freeModels}}
+\index{freeModels@{freeModels}!ngsai::KineticClassifier@{ngsai::KineticClassifier}}
+\doxysubsubsection{\texorpdfstring{freeModels()}{freeModels()}}
+{\footnotesize\ttfamily void ngsai\+::\+Kinetic\+Classifier\+::free\+Models (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Frees the model memory if the pointer point to something. 
+
+\Hypertarget{classngsai_1_1KineticClassifier_a4282266803db2143c868916e614c6055}\label{classngsai_1_1KineticClassifier_a4282266803db2143c868916e614c6055} 
+\index{ngsai::KineticClassifier@{ngsai::KineticClassifier}!operator=@{operator=}}
+\index{operator=@{operator=}!ngsai::KineticClassifier@{ngsai::KineticClassifier}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classngsai_1_1KineticClassifier}{Kinetic\+Classifier}} \& ngsai\+::\+Kinetic\+Classifier\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classngsai_1_1KineticClassifier}{Kinetic\+Classifier}} \&}]{other }\end{DoxyParamCaption})}
+
+
+
+Assignment operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & an instance to assign from. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the instance. 
+\end{DoxyReturn}
+\Hypertarget{classngsai_1_1KineticClassifier_ad3110804d9af6dcad148e8a15fe6e065}\label{classngsai_1_1KineticClassifier_ad3110804d9af6dcad148e8a15fe6e065} 
+\index{ngsai::KineticClassifier@{ngsai::KineticClassifier}!operator=@{operator=}}
+\index{operator=@{operator=}!ngsai::KineticClassifier@{ngsai::KineticClassifier}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classngsai_1_1KineticClassifier}{Kinetic\+Classifier}} \& ngsai\+::\+Kinetic\+Classifier\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classngsai_1_1KineticClassifier}{Kinetic\+Classifier}} \&\&}]{other }\end{DoxyParamCaption})}
+
+
+
+Move assignment operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & an instance to assign from. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the instance. 
+\end{DoxyReturn}
+\Hypertarget{classngsai_1_1KineticClassifier_a4ce5d987acbd2c4754a11c982716ee1c}\label{classngsai_1_1KineticClassifier_a4ce5d987acbd2c4754a11c982716ee1c} 
+\index{ngsai::KineticClassifier@{ngsai::KineticClassifier}!setModels@{setModels}}
+\index{setModels@{setModels}!ngsai::KineticClassifier@{ngsai::KineticClassifier}}
+\doxysubsubsection{\texorpdfstring{setModels()}{setModels()}}
+{\footnotesize\ttfamily void ngsai\+::\+Kinetic\+Classifier\+::set\+Models (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classngsai_1_1KineticModel}{ngsai\+::\+Kinetic\+Model}} $\ast$}]{model\+\_\+meth,  }\item[{\mbox{\hyperlink{classngsai_1_1KineticModel}{ngsai\+::\+Kinetic\+Model}} $\ast$}]{model\+\_\+unmeth }\end{DoxyParamCaption})}
+
+
+
+Sets the classifier models. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em model\+\_\+meth} & the signal model for the methylated kinetics. \\
+\hline
+{\em model\+\_\+unmeth} & the signal model for the unmethylated kinetics. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & if all models are not initialised or if all models don\textquotesingle{}t have the same size. \\
+\hline
+\end{DoxyExceptions}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classngsai_1_1KineticClassifier_a111f7a1e70501679d04477c33bd3e073}\label{classngsai_1_1KineticClassifier_a111f7a1e70501679d04477c33bd3e073} 
+\index{ngsai::KineticClassifier@{ngsai::KineticClassifier}!m\_model\_meth@{m\_model\_meth}}
+\index{m\_model\_meth@{m\_model\_meth}!ngsai::KineticClassifier@{ngsai::KineticClassifier}}
+\doxysubsubsection{\texorpdfstring{m\_model\_meth}{m\_model\_meth}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classngsai_1_1KineticModel}{ngsai\+::\+Kinetic\+Model}}$\ast$ ngsai\+::\+Kinetic\+Classifier\+::m\+\_\+model\+\_\+meth\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The methylated kinetic signal model. 
+
+\Hypertarget{classngsai_1_1KineticClassifier_a5790ce6e71280084bd275ffab338bb1a}\label{classngsai_1_1KineticClassifier_a5790ce6e71280084bd275ffab338bb1a} 
+\index{ngsai::KineticClassifier@{ngsai::KineticClassifier}!m\_model\_unmeth@{m\_model\_unmeth}}
+\index{m\_model\_unmeth@{m\_model\_unmeth}!ngsai::KineticClassifier@{ngsai::KineticClassifier}}
+\doxysubsubsection{\texorpdfstring{m\_model\_unmeth}{m\_model\_unmeth}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classngsai_1_1KineticModel}{ngsai\+::\+Kinetic\+Model}}$\ast$ ngsai\+::\+Kinetic\+Classifier\+::m\+\_\+model\+\_\+unmeth\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The unmethylated kinetic signal model. 
+
+\Hypertarget{classngsai_1_1KineticClassifier_a17c780e76d99053eb5686acc5813e332}\label{classngsai_1_1KineticClassifier_a17c780e76d99053eb5686acc5813e332} 
+\index{ngsai::KineticClassifier@{ngsai::KineticClassifier}!m\_window\_size@{m\_window\_size}}
+\index{m\_window\_size@{m\_window\_size}!ngsai::KineticClassifier@{ngsai::KineticClassifier}}
+\doxysubsubsection{\texorpdfstring{m\_window\_size}{m\_window\_size}}
+{\footnotesize\ttfamily size\+\_\+t ngsai\+::\+Kinetic\+Classifier\+::m\+\_\+window\+\_\+size\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The window size in bases. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/ngsaipp/epigenetics/\mbox{\hyperlink{KineticClassifier_8hpp}{Kinetic\+Classifier.\+hpp}}\end{DoxyCompactItemize}

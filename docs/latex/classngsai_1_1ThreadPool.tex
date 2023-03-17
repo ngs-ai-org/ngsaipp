@@ -1,0 +1,143 @@
+\hypertarget{classngsai_1_1ThreadPool}{}\doxysection{ngsai\+::Thread\+Pool Class Reference}
+\label{classngsai_1_1ThreadPool}\index{ngsai::ThreadPool@{ngsai::ThreadPool}}
+
+
+The \doxylink{classngsai_1_1ThreadPool}{Thread\+Pool} class implements a simple pool of working threads. At construction, $<$n$>$ threads are spawned and tries to get tasks to execute from a queue. Any access to the queue is synchonized through the use of a mutex. Jobs are added to the queue by calling add\+Job(task) where task is the result of std\+::bind(). The queue can be open -\/ in which case the jobs are effectively added to the queues -\/ or closed -\/ in which case nothing can be push into the queue anymore. Stopping the pool is done through calling \doxylink{classngsai_1_1ThreadPool_a2a8767845dcae378ce14975251bbb458}{join()} which will close the queue.  
+
+
+
+
+{\ttfamily \#include $<$Thread\+Pool.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classngsai_1_1ThreadPool_ab95d71113ff999c0e1b41f5fc5b3fda0}{Thread\+Pool}} (size\+\_\+t n\+\_\+threads=1, bool debug=false)
+\begin{DoxyCompactList}\small\item\em Default constructor. Constructs a thread pool containing the given number of threads, by default 1. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classngsai_1_1ThreadPool_a3d979e7f12b7b0533986462a4d49a095}{Thread\+Pool}} (const \mbox{\hyperlink{classngsai_1_1ThreadPool}{Thread\+Pool}} \&other)=delete
+\item 
+\mbox{\hyperlink{classngsai_1_1ThreadPool_a1a1ce1e8aba717f619afe04ff70e55d3}{$\sim$\+Thread\+Pool}} ()
+\begin{DoxyCompactList}\small\item\em class destructor \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classngsai_1_1ThreadPool_a88cc357aabda3a79b1e165983d9b5841}{get\+NThread}} () const
+\begin{DoxyCompactList}\small\item\em gets the number of threads in the pool. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classngsai_1_1ThreadPool_a8cbe2db0966d4fa9669654b740da41e9}{add\+Job}} (std\+::function$<$ void()$>$ \&\&task)
+\begin{DoxyCompactList}\small\item\em adds a task in the queue for the threads. Once \doxylink{classngsai_1_1ThreadPool_a2a8767845dcae378ce14975251bbb458}{join()} has been called, the job queues are closed and calling this method remains effectless. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classngsai_1_1ThreadPool_a2a8767845dcae378ce14975251bbb458}{join}} ()
+\begin{DoxyCompactList}\small\item\em closes the job queues and join the threads. When this methods returns, all the jobs have been run and each threads has been joined. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::vector$<$ std\+::pair$<$ size\+\_\+t, size\+\_\+t $>$ $>$ \mbox{\hyperlink{classngsai_1_1ThreadPool_a8e32a6330a815c9ca738f17779c4c36e}{split\+\_\+range}} (size\+\_\+t from, size\+\_\+t to, size\+\_\+t n)
+\begin{DoxyCompactList}\small\item\em Split a range \mbox{[}from,to) into n equal non-\/overlapping intervals \mbox{[}from,b), \mbox{[}b,c), .... \mbox{[}d,to) where \mbox{[}d,to) is the n-\/th slice. This function is usefull to compute the boundary indices in between which worker threads should work on a common data structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \doxylink{classngsai_1_1ThreadPool}{Thread\+Pool} class implements a simple pool of working threads. At construction, $<$n$>$ threads are spawned and tries to get tasks to execute from a queue. Any access to the queue is synchonized through the use of a mutex. Jobs are added to the queue by calling add\+Job(task) where task is the result of std\+::bind(). The queue can be open -\/ in which case the jobs are effectively added to the queues -\/ or closed -\/ in which case nothing can be push into the queue anymore. Stopping the pool is done through calling \doxylink{classngsai_1_1ThreadPool_a2a8767845dcae378ce14975251bbb458}{join()} which will close the queue. 
+
+
+\begin{DoxyItemize}
+\item and eventually let the threads empty it -\/ and join all the threads. Any access to the queue is synchonized through the use of a mutex. 
+\end{DoxyItemize}
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classngsai_1_1ThreadPool_ab95d71113ff999c0e1b41f5fc5b3fda0}\label{classngsai_1_1ThreadPool_ab95d71113ff999c0e1b41f5fc5b3fda0} 
+\index{ngsai::ThreadPool@{ngsai::ThreadPool}!ThreadPool@{ThreadPool}}
+\index{ThreadPool@{ThreadPool}!ngsai::ThreadPool@{ngsai::ThreadPool}}
+\doxysubsubsection{\texorpdfstring{ThreadPool()}{ThreadPool()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily ngsai\+::\+Thread\+Pool\+::\+Thread\+Pool (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{n\+\_\+threads = {\ttfamily 1},  }\item[{bool}]{debug = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+Default constructor. Constructs a thread pool containing the given number of threads, by default 1. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n\+\_\+threads} & the number of threads, by default 1. \\
+\hline
+{\em debug} & enables debugging verbosity. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classngsai_1_1ThreadPool_a3d979e7f12b7b0533986462a4d49a095}\label{classngsai_1_1ThreadPool_a3d979e7f12b7b0533986462a4d49a095} 
+\index{ngsai::ThreadPool@{ngsai::ThreadPool}!ThreadPool@{ThreadPool}}
+\index{ThreadPool@{ThreadPool}!ngsai::ThreadPool@{ngsai::ThreadPool}}
+\doxysubsubsection{\texorpdfstring{ThreadPool()}{ThreadPool()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily ngsai\+::\+Thread\+Pool\+::\+Thread\+Pool (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classngsai_1_1ThreadPool}{Thread\+Pool}} \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\Hypertarget{classngsai_1_1ThreadPool_a1a1ce1e8aba717f619afe04ff70e55d3}\label{classngsai_1_1ThreadPool_a1a1ce1e8aba717f619afe04ff70e55d3} 
+\index{ngsai::ThreadPool@{ngsai::ThreadPool}!````~ThreadPool@{$\sim$ThreadPool}}
+\index{````~ThreadPool@{$\sim$ThreadPool}!ngsai::ThreadPool@{ngsai::ThreadPool}}
+\doxysubsubsection{\texorpdfstring{$\sim$ThreadPool()}{~ThreadPool()}}
+{\footnotesize\ttfamily ngsai\+::\+Thread\+Pool\+::$\sim$\+Thread\+Pool (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+class destructor 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classngsai_1_1ThreadPool_a8cbe2db0966d4fa9669654b740da41e9}\label{classngsai_1_1ThreadPool_a8cbe2db0966d4fa9669654b740da41e9} 
+\index{ngsai::ThreadPool@{ngsai::ThreadPool}!addJob@{addJob}}
+\index{addJob@{addJob}!ngsai::ThreadPool@{ngsai::ThreadPool}}
+\doxysubsubsection{\texorpdfstring{addJob()}{addJob()}}
+{\footnotesize\ttfamily void ngsai\+::\+Thread\+Pool\+::add\+Job (\begin{DoxyParamCaption}\item[{std\+::function$<$ void()$>$ \&\&}]{task }\end{DoxyParamCaption})}
+
+
+
+adds a task in the queue for the threads. Once \doxylink{classngsai_1_1ThreadPool_a2a8767845dcae378ce14975251bbb458}{join()} has been called, the job queues are closed and calling this method remains effectless. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em task} & a function bound to its arguments using std\+::bind() WARNING \+: I\textquotesingle{}dont know whether this is portable \+:-\// \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classngsai_1_1ThreadPool_a88cc357aabda3a79b1e165983d9b5841}\label{classngsai_1_1ThreadPool_a88cc357aabda3a79b1e165983d9b5841} 
+\index{ngsai::ThreadPool@{ngsai::ThreadPool}!getNThread@{getNThread}}
+\index{getNThread@{getNThread}!ngsai::ThreadPool@{ngsai::ThreadPool}}
+\doxysubsubsection{\texorpdfstring{getNThread()}{getNThread()}}
+{\footnotesize\ttfamily size\+\_\+t ngsai\+::\+Thread\+Pool\+::get\+NThread (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+gets the number of threads in the pool. 
+
+\begin{DoxyReturn}{Returns}
+the number of threads. 
+\end{DoxyReturn}
+\Hypertarget{classngsai_1_1ThreadPool_a2a8767845dcae378ce14975251bbb458}\label{classngsai_1_1ThreadPool_a2a8767845dcae378ce14975251bbb458} 
+\index{ngsai::ThreadPool@{ngsai::ThreadPool}!join@{join}}
+\index{join@{join}!ngsai::ThreadPool@{ngsai::ThreadPool}}
+\doxysubsubsection{\texorpdfstring{join()}{join()}}
+{\footnotesize\ttfamily void ngsai\+::\+Thread\+Pool\+::join (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+closes the job queues and join the threads. When this methods returns, all the jobs have been run and each threads has been joined. 
+
+\Hypertarget{classngsai_1_1ThreadPool_a8e32a6330a815c9ca738f17779c4c36e}\label{classngsai_1_1ThreadPool_a8e32a6330a815c9ca738f17779c4c36e} 
+\index{ngsai::ThreadPool@{ngsai::ThreadPool}!split\_range@{split\_range}}
+\index{split\_range@{split\_range}!ngsai::ThreadPool@{ngsai::ThreadPool}}
+\doxysubsubsection{\texorpdfstring{split\_range()}{split\_range()}}
+{\footnotesize\ttfamily static std\+::vector$<$ std\+::pair$<$ size\+\_\+t, size\+\_\+t $>$ $>$ ngsai\+::\+Thread\+Pool\+::split\+\_\+range (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{from,  }\item[{size\+\_\+t}]{to,  }\item[{size\+\_\+t}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Split a range \mbox{[}from,to) into n equal non-\/overlapping intervals \mbox{[}from,b), \mbox{[}b,c), .... \mbox{[}d,to) where \mbox{[}d,to) is the n-\/th slice. This function is usefull to compute the boundary indices in between which worker threads should work on a common data structure. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em from} & the lower range limit (comprised within the range). \\
+\hline
+{\em to} & the upper range limit (non included in the range). \\
+\hline
+{\em n} & the number of slices to split the range into. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a vector containing pairs \mbox{[}from,to) for each interval. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/ngsaipp/parallel/\mbox{\hyperlink{ThreadPool_8hpp}{Thread\+Pool.\+hpp}}\end{DoxyCompactItemize}

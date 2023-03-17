@@ -1,0 +1,29 @@
+\hypertarget{DiPositionKineticModel_8hpp}{}\doxysection{include/ngsaipp/epigenetics/\+Di\+Position\+Kinetic\+Model.hpp File Reference}
+\label{DiPositionKineticModel_8hpp}\index{include/ngsaipp/epigenetics/DiPositionKineticModel.hpp@{include/ngsaipp/epigenetics/DiPositionKineticModel.hpp}}
+{\ttfamily \#include $<$ngsaipp/epigenetics/\+Pair\+Wise\+Kinetic\+Model.\+hpp$>$}\newline
+Include dependency graph for Di\+Position\+Kinetic\+Model.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{DiPositionKineticModel_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=269pt]{DiPositionKineticModel_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classngsai_1_1DiPositionKineticModel}{ngsai\+::\+Di\+Position\+Kinetic\+Model}}
+\begin{DoxyCompactList}\small\item\em The \doxylink{classngsai_1_1DiPositionKineticModel}{Di\+Position\+Kinetic\+Model} class is made to model the raw IPD and PWD signal from Pac\+Bio CCS. This model models a window of IPD/\+PWD signal of L consecutive bp. L is named the model size. This model is a special case of the \doxylink{classngsai_1_1PairWiseKineticModel}{Pair\+Wise\+Kinetic\+Model}. The \doxylink{classngsai_1_1PairWiseKineticModel}{Pair\+Wise\+Kinetic\+Model} accounted for all N = ((L$\ast$L) -\/ L) / 2 pair-\/wise position interaction whereas this one only considers L-\/1 interactions between any two directly neighbouring positions in the window. Except for this, everything is the same as in \doxylink{classngsai_1_1PairWiseKineticModel}{Pair\+Wise\+Kinetic\+Model}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacengsai}{ngsai}}
+\begin{DoxyCompactList}\small\item\em This file contains values that are useful for formatting terminal output. \end{DoxyCompactList}\end{DoxyCompactItemize}

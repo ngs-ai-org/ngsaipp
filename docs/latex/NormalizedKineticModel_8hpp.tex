@@ -1,0 +1,34 @@
+\hypertarget{NormalizedKineticModel_8hpp}{}\doxysection{include/ngsaipp/epigenetics/\+Normalized\+Kinetic\+Model.hpp File Reference}
+\label{NormalizedKineticModel_8hpp}\index{include/ngsaipp/epigenetics/NormalizedKineticModel.hpp@{include/ngsaipp/epigenetics/NormalizedKineticModel.hpp}}
+{\ttfamily \#include $<$ngsaipp/epigenetics/\+Raw\+Kinetic\+Model.\+hpp$>$}\newline
+{\ttfamily \#include $<$ngsaipp/epigenetics/\+Kmer\+Map.\+hpp$>$}\newline
+{\ttfamily \#include $<$ngsaipp/epigenetics/\+Kinetic\+Signal.\+hpp$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+Include dependency graph for Normalized\+Kinetic\+Model.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{NormalizedKineticModel_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=269pt]{NormalizedKineticModel_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classngsai_1_1NormalizedKineticModel}{ngsai\+::\+Normalized\+Kinetic\+Model}}
+\begin{DoxyCompactList}\small\item\em The \doxylink{classngsai_1_1NormalizedKineticModel}{Normalized\+Kinetic\+Model} class is made to model the IPD and PWD signal from Pac\+Bio CCS. This model models a window of IPD/\+PWD signal of L consecutive bp. L is named the model size. Instead of modelling the raw kinetic signal like the \doxylink{classngsai_1_1RawKineticModel}{Raw\+Kinetic\+Model} class, this class models kinetic ratios (normalized). Each stretch of kinetic values (IPD or PWD) x1,x2,...,xL is normalized by the expected kinetic signal given the DNA sequence s1,s2,...,sL associated to the kinetic values. In the end, as for the \doxylink{classngsai_1_1RawKineticModel}{Raw\+Kinetic\+Model} class, the signal models contains 2$\ast$L different distributions of signal. The distributions at each position are empiric and are made of 2$\ast$L histograms h\+\_\+ipd(1), h\+\_\+pwd(1), h\+\_\+ipd(2), h\+\_\+pwd(2) ..., h\+\_\+ipd(\+L), h\+\_\+pwd(\+L). The model can be trained (feed with data) in order to fill the underlying histograms and estimate the signal distributions at each position in the window. If the model is feed with a vector of IPD values X x1, x2, ..., xL and a vector of PWD values Y y1, y2, ..., yL corresponding to a DNA sequence S s1, s2, ..., sL, each value xi and yi will be normalized into n(xi) n(yi) using a normalizing function accounting for the sequence context S. Then each histogram h\+\_\+ipd(i) and h\+\_\+pwd(i) will be added a count corresponding to the value n(xi) an n(yi) respectively. h\+\_\+ipd(1) will be added a count corresponding to n(x1), h\+\_\+ipd(2) will be added a count corresponding to n(x2), ..., h\+\_\+ipd(\+L) will be added a count corresponding to n(x\+L). The same will apply for the PWD histograms with normalized Y values. Once the histograms have been filled, the model can be normalized in order to transform the 2$\ast$L histograms into 2$\ast$L probability densities. At this moment, the model can compute the likelihood of observing a a strech of signal of length L with IPDs X x1, x2, ..., xL and PWDs Y ~\newline
+ y1, y2, ..., yL corresponding to a sequence S s1, s2, ..., sL. The likelihood corresponds to \+: p(n(x1) $\vert$ h\+\_\+ipd(1)) $\ast$ p(n(y1) $\vert$ h\+\_\+pwd(1)) $\ast$... $\ast$ p(n(x\+L) $\vert$ h\+\_\+ipd(\+L)) $\ast$ p(n(x\+L) $\vert$ h\+\_\+pwd(\+L)) where p(n(xi) $\vert$ h(i)) means the probability of observing the normalized value n(x) at the i-\/th position of the window, according to the density modeled in the histogram h(i). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacengsai}{ngsai}}
+\begin{DoxyCompactList}\small\item\em This file contains values that are useful for formatting terminal output. \end{DoxyCompactList}\end{DoxyCompactItemize}

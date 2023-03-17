@@ -1,0 +1,90 @@
+\hypertarget{GenomeRegion_8hpp_source}{}\doxysection{Genome\+Region.\+hpp}
+\label{GenomeRegion_8hpp_source}\index{include/ngsaipp/genome/GenomeRegion.hpp@{include/ngsaipp/genome/GenomeRegion.hpp}}
+\mbox{\hyperlink{GenomeRegion_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ NGSAI\_GENOME\_GENOMICREGION\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ NGSAI\_GENOME\_GENOMICREGION\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{genome_2constants_8hpp}{ngsaipp/genome/constants.hpp}}>}\ \ \ \ \textcolor{comment}{//\ ngsai::genome::strand}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{utility_2constants_8hpp}{ngsaipp/utility/constants.hpp}}>}\ \ \ \textcolor{comment}{//\ ngsai::bool\_ext}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacengsai}{ngsai}}}
+\DoxyCodeLine{00010\ \{\ \ \ }
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{namespace\ }genome}
+\DoxyCodeLine{00012\ \ \ \ \ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classngsai_1_1genome_1_1GenomeRegion}{GenomeRegion}}}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1genome_1_1GenomeRegion_ae780b9ebe16ef3283df616331744d717}{GenomeRegion}}()\ ;}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1genome_1_1GenomeRegion_a21440ae6b3367db44c23abc36fab77f3}{GenomeRegion}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classngsai_1_1genome_1_1GenomeRegion}{ngsai::genome::GenomeRegion}}\&\ other)\ ;}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1genome_1_1GenomeRegion_ae181e8c72d093200d1f83a9c34de14c0}{GenomeRegion}}(\mbox{\hyperlink{classngsai_1_1genome_1_1GenomeRegion}{ngsai::genome::GenomeRegion}}\&\&\ other)\ ;}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1genome_1_1GenomeRegion_a6fa140a9cd29295a1aa6fc78b023bd56}{GenomeRegion}}(\textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{classngsai_1_1genome_1_1GenomeRegion_a1f09cc737a84ba32bdd1ce1e49949317}{chrom}},}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classngsai_1_1genome_1_1GenomeRegion_a44a6e9b1e0ad8117b4084f85ef00604e}{start}},}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classngsai_1_1genome_1_1GenomeRegion_a3f4b9ba309aaf8727b59911db0407306}{end}},}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacengsai_1_1genome_af9328d3863d41c71b71e33219e3c0632}{ngsai::genome::strand}}\ \mbox{\hyperlink{namespacengsai_1_1genome_af9328d3863d41c71b71e33219e3c0632}{strand}})\ ;}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1genome_1_1GenomeRegion_a71d177c65b764a190d020b5b358eea40}{\string~GenomeRegion}}()\ ;}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1genome_1_1GenomeRegion}{GenomeRegion}}\&}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1genome_1_1GenomeRegion_ad1b2ca6aa1f0c6bca4d3d584c2805ee6}{operator\ =\ }}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classngsai_1_1genome_1_1GenomeRegion}{GenomeRegion}}\&\ other)\ ;}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1genome_1_1GenomeRegion}{GenomeRegion}}\&}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1genome_1_1GenomeRegion_ad1b2ca6aa1f0c6bca4d3d584c2805ee6}{operator\ =\ }}(\mbox{\hyperlink{classngsai_1_1genome_1_1GenomeRegion}{GenomeRegion}}\&\&\ other)\ ;}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1genome_1_1GenomeRegion_ac4547fc713e5ccbaf61c0f31439a1114}{operator\ ==\ }}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classngsai_1_1genome_1_1GenomeRegion}{GenomeRegion}}\&\ other)\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1genome_1_1GenomeRegion_a572cb02350ada33d7921611739c99593}{operator\ !=\ }}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classngsai_1_1genome_1_1GenomeRegion}{GenomeRegion}}\&\ other)\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1genome_1_1GenomeRegion_aa75a50176ba5def532488173025dbb42}{operator\ |\ }}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classngsai_1_1genome_1_1GenomeRegion}{GenomeRegion}}\&\ other)\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacengsai_a2367cd49ed6131b42b0726ce77529a67}{ngsai::bool\_ext}}}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1genome_1_1GenomeRegion_adf9ebd3d8df7c9a3ba536a53977f5aed}{operator\ <\ }}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classngsai_1_1genome_1_1GenomeRegion}{GenomeRegion}}\&\ other)\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacengsai_a2367cd49ed6131b42b0726ce77529a67}{ngsai::bool\_ext}}}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1genome_1_1GenomeRegion_a0d42607d7aab52c5feb3c66ceffe0e0f}{operator\ >\ }}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classngsai_1_1genome_1_1GenomeRegion}{GenomeRegion}}\&\ other)\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{size\_t}}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1genome_1_1GenomeRegion_a462b01d81407a1079eea004de798aed5}{size}}()\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1genome_1_1GenomeRegion_a94a10f61cd0c4d37cde520467f064f78}{overlap\_len}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classngsai_1_1genome_1_1GenomeRegion}{GenomeRegion}}\&\ other)\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ std::string}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1genome_1_1GenomeRegion_a1d3febd8f9ea26b8895ee200c9fa46a6}{toString}}()\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ sanity\_check()\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00165\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\ \(\backslash\)brief\ the\ chromosome\ name.}}
+\DoxyCodeLine{00166\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{classngsai_1_1genome_1_1GenomeRegion_a1f09cc737a84ba32bdd1ce1e49949317}{chrom}}\ ;}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classngsai_1_1genome_1_1GenomeRegion_a44a6e9b1e0ad8117b4084f85ef00604e}{start}}\ ;}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classngsai_1_1genome_1_1GenomeRegion_a3f4b9ba309aaf8727b59911db0407306}{end}}\ ;}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacengsai_1_1genome_af9328d3863d41c71b71e33219e3c0632}{ngsai::genome::strand}}\ \mbox{\hyperlink{classngsai_1_1genome_1_1GenomeRegion_a65253604664c35772962756aee74defd}{strand}}\ ;}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \}\ ;}
+\DoxyCodeLine{00185\ }
+\DoxyCodeLine{00186\ }
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ std::ostream\&\ \mbox{\hyperlink{namespacengsai_1_1genome_ac4b36652b9ca64be7665170095337113}{operator\ <<\ }}(std::ostream\&\ stream,}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classngsai_1_1genome_1_1GenomeRegion}{ngsai::genome::GenomeRegion}}\&\ record)\ ;}
+\DoxyCodeLine{00195\ \ \ \ \ \}\ \textcolor{comment}{//\ namespace\ genome}}
+\DoxyCodeLine{00196\ }
+\DoxyCodeLine{00197\ \}\ \textcolor{comment}{//\ namespace\ ngsai}}
+\DoxyCodeLine{00198\ }
+\DoxyCodeLine{00199\ }
+\DoxyCodeLine{00200\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ NGSAI\_GENOME\_GENOMICREGION\_HPP}}
+
+\end{DoxyCode}

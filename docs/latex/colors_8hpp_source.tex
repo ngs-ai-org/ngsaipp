@@ -1,0 +1,61 @@
+\hypertarget{colors_8hpp_source}{}\doxysection{colors.\+hpp}
+\label{colors_8hpp_source}\index{include/ngsaipp/io/colors.hpp@{include/ngsaipp/io/colors.hpp}}
+\mbox{\hyperlink{colors_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ NGSAI\_IO\_COLORS\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ NGSAI\_IO\_COLORS\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacengsai}{ngsai}}}
+\DoxyCodeLine{00012\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ std::string\ \mbox{\hyperlink{namespacengsai_a0e620c7114f1dfd1fed11f80679a3bd5}{CEND}}\ \ \ \ \ \ =\ \textcolor{stringliteral}{"{}\(\backslash\)33[0m"{}}\ ;\ \ \textcolor{comment}{//\ \ end\ formatting}}
+\DoxyCodeLine{00014\ \ \ \ \ std::string\ \mbox{\hyperlink{namespacengsai_aaf508c488d8faa707ffb113dd5417f45}{CBOLD}}\ \ \ \ \ =\ \textcolor{stringliteral}{"{}\(\backslash\)33[1m"{}}\ ;\ \ \textcolor{comment}{//\ \ start\ bold}}
+\DoxyCodeLine{00015\ \ \ \ \ std::string\ \mbox{\hyperlink{namespacengsai_a93000e1590d237479ca68d52275b8f00}{CITALIC}}\ \ \ =\ \textcolor{stringliteral}{"{}\(\backslash\)33[3m"{}}\ ;\ \ \textcolor{comment}{//\ \ start\ italic}}
+\DoxyCodeLine{00016\ \ \ \ \ std::string\ \mbox{\hyperlink{namespacengsai_accffe48aa21e767df16d7d04c57513e4}{CURL}}\ \ \ \ \ \ =\ \textcolor{stringliteral}{"{}\(\backslash\)33[4m"{}}\ ;\ \ \textcolor{comment}{//\ \ start\ URL}}
+\DoxyCodeLine{00017\ \ \ \ \ std::string\ \mbox{\hyperlink{namespacengsai_a353b592da02899964123e6f441105ee7}{CBLINK}}\ \ \ \ =\ \textcolor{stringliteral}{"{}\(\backslash\)33[5m"{}}\ ;\ \ \textcolor{comment}{//\ \ start\ blink}}
+\DoxyCodeLine{00018\ \ \ \ \ std::string\ \mbox{\hyperlink{namespacengsai_a67d6ab6699c80ef005d0bccf4aae0bac}{CBLINK2}}\ \ \ =\ \textcolor{stringliteral}{"{}\(\backslash\)33[6m"{}}\ ;\ \ \textcolor{comment}{//\ \ start\ blink2}}
+\DoxyCodeLine{00019\ \ \ \ \ std::string\ \mbox{\hyperlink{namespacengsai_afa2d9b77583da1d03bd827f33c2c0597}{CSELECTED}}\ =\ \textcolor{stringliteral}{"{}\(\backslash\)33[7m"{}}\ ;\ \ \textcolor{comment}{//\ \ start\ selected}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ std::string\ \mbox{\hyperlink{namespacengsai_a98c98f1d7f542e5196f9e48b463dd21d}{CBLACK}}\ \ \ \ =\ \textcolor{stringliteral}{"{}\(\backslash\)33[30m"{}}\ ;\ \ \ \textcolor{comment}{//\ \ start\ black\ color}}
+\DoxyCodeLine{00022\ \ \ \ \ std::string\ \mbox{\hyperlink{namespacengsai_a193e8d7511582417e7f99828ddac9d73}{CRED}}\ \ \ \ \ \ =\ \textcolor{stringliteral}{"{}\(\backslash\)33[31m"{}}\ ;\ \ \ \textcolor{comment}{//\ \ start\ red\ color}}
+\DoxyCodeLine{00023\ \ \ \ \ std::string\ \mbox{\hyperlink{namespacengsai_a5e16821b33c7b74208c095a576bd8ad3}{CGREEN}}\ \ \ \ =\ \textcolor{stringliteral}{"{}\(\backslash\)33[32m"{}}\ ;\ \ \ \textcolor{comment}{//\ \ start\ green\ color}}
+\DoxyCodeLine{00024\ \ \ \ \ std::string\ \mbox{\hyperlink{namespacengsai_ad1f00ea7467734b48c32ff7d6c2e1994}{CYELLOW}}\ \ \ =\ \textcolor{stringliteral}{"{}\(\backslash\)33[33m"{}}\ ;\ \ \ \textcolor{comment}{//\ \ start\ yellow\ color}}
+\DoxyCodeLine{00025\ \ \ \ \ std::string\ \mbox{\hyperlink{namespacengsai_a57585ec3143257e6bf91d9a74f85f919}{CBLUE}}\ \ \ \ \ =\ \textcolor{stringliteral}{"{}\(\backslash\)33[34m"{}}\ ;\ \ \ \textcolor{comment}{//\ \ start\ blue\ color}}
+\DoxyCodeLine{00026\ \ \ \ \ std::string\ \mbox{\hyperlink{namespacengsai_ae8e540a0afc131cc17da0809e30741a9}{CVIOLET}}\ \ \ =\ \textcolor{stringliteral}{"{}\(\backslash\)33[35m"{}}\ ;\ \ \ \textcolor{comment}{//\ \ start\ violet\ color}}
+\DoxyCodeLine{00027\ \ \ \ \ std::string\ \mbox{\hyperlink{namespacengsai_a7603a6956b2db1c483f221b6f9036f72}{CBEIGE}}\ \ \ \ =\ \textcolor{stringliteral}{"{}\(\backslash\)33[36m"{}}\ ;\ \ \ \textcolor{comment}{//\ \ start\ beige\ color}}
+\DoxyCodeLine{00028\ \ \ \ \ std::string\ \mbox{\hyperlink{namespacengsai_aae6616239d8e504201721ba2f5d16dac}{CWHITE}}\ \ \ \ =\ \textcolor{stringliteral}{"{}\(\backslash\)33[37m"{}}\ ;\ \ \ \textcolor{comment}{//\ \ start\ white\ color}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ std::string\ \mbox{\hyperlink{namespacengsai_a91cce422ee5235f0d2131d3e0359554d}{CBLACKBG}}\ \ =\ \textcolor{stringliteral}{"{}\(\backslash\)33[40m"{}}\ ;\ \ \textcolor{comment}{//\ start\ black\ background}}
+\DoxyCodeLine{00031\ \ \ \ \ std::string\ \mbox{\hyperlink{namespacengsai_aabd3e5dcf412c24c98e8dc21f1c4dfd4}{CREDBG}}\ \ \ \ =\ \textcolor{stringliteral}{"{}\(\backslash\)33[41m"{}}\ ;\ \ \textcolor{comment}{//\ start\ red\ background}}
+\DoxyCodeLine{00032\ \ \ \ \ std::string\ \mbox{\hyperlink{namespacengsai_a488937a7ea9a648694249faba6e47973}{CGREENBG}}\ \ =\ \textcolor{stringliteral}{"{}\(\backslash\)33[42m"{}}\ ;\ \ \textcolor{comment}{//\ start\ green\ background}}
+\DoxyCodeLine{00033\ \ \ \ \ std::string\ \mbox{\hyperlink{namespacengsai_a685afefc081332084e1a6f273e11fc9d}{CYELLOWBG}}\ =\ \textcolor{stringliteral}{"{}\(\backslash\)33[43m"{}}\ ;\ \ \textcolor{comment}{//\ start\ yellow\ background}}
+\DoxyCodeLine{00034\ \ \ \ \ std::string\ \mbox{\hyperlink{namespacengsai_a19c7f2d0c8de956afe519233f7b19ffc}{CBLUEBG}}\ \ \ =\ \textcolor{stringliteral}{"{}\(\backslash\)33[44m"{}}\ ;\ \ \textcolor{comment}{//\ start\ blue\ background}}
+\DoxyCodeLine{00035\ \ \ \ \ std::string\ \mbox{\hyperlink{namespacengsai_a48bd82c3c6fc87d493bf4af34229d407}{CVIOLETBG}}\ =\ \textcolor{stringliteral}{"{}\(\backslash\)33[45m"{}}\ ;\ \ \textcolor{comment}{//\ start\ violet\ background}}
+\DoxyCodeLine{00036\ \ \ \ \ std::string\ \mbox{\hyperlink{namespacengsai_afc88932462d2395829912da588eb645f}{CBEIGEBG}}\ \ =\ \textcolor{stringliteral}{"{}\(\backslash\)33[46m"{}}\ ;\ \ \textcolor{comment}{//\ start\ beige\ background}}
+\DoxyCodeLine{00037\ \ \ \ \ std::string\ \mbox{\hyperlink{namespacengsai_a7b3ed88e736851042b37336aa1f2882d}{CWHITEBG}}\ \ =\ \textcolor{stringliteral}{"{}\(\backslash\)33[47m"{}}\ ;\ \ \textcolor{comment}{//\ start\ white\ background}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ std::string\ \mbox{\hyperlink{namespacengsai_a536a72ef48677b75c8f3338ef76f3943}{CGREY}}\ \ \ \ \ =\ \textcolor{stringliteral}{"{}\(\backslash\)33[90m"{}}\ ;\ \ \ \textcolor{comment}{//\ \ start\ grey\ color}}
+\DoxyCodeLine{00040\ \ \ \ \ std::string\ \mbox{\hyperlink{namespacengsai_a5fb055ad1d5f9a34a86bc19fb3cf7f16}{CRED2}}\ \ \ \ \ =\ \textcolor{stringliteral}{"{}\(\backslash\)33[91m"{}}\ ;\ \ \ \textcolor{comment}{//\ \ start\ red\ color}}
+\DoxyCodeLine{00041\ \ \ \ \ std::string\ \mbox{\hyperlink{namespacengsai_aa9b348aa1c52545134581468f5c55453}{CGREEN2}}\ \ \ =\ \textcolor{stringliteral}{"{}\(\backslash\)33[92m"{}}\ ;\ \ \ \textcolor{comment}{//\ \ start\ green\ color}}
+\DoxyCodeLine{00042\ \ \ \ \ std::string\ \mbox{\hyperlink{namespacengsai_af66bf09702cf1b81d8bf2f95487f3270}{CYELLOW2}}\ \ =\ \textcolor{stringliteral}{"{}\(\backslash\)33[93m"{}}\ ;\ \ \ \textcolor{comment}{//\ \ start\ yellow\ color}}
+\DoxyCodeLine{00043\ \ \ \ \ std::string\ \mbox{\hyperlink{namespacengsai_a3757ad7d51e06230eacefb85dfcfdc48}{CBLUE2}}\ \ \ \ =\ \textcolor{stringliteral}{"{}\(\backslash\)33[94m"{}}\ ;\ \ \ \textcolor{comment}{//\ \ start\ blue\ color}}
+\DoxyCodeLine{00044\ \ \ \ \ std::string\ \mbox{\hyperlink{namespacengsai_a0a811764f322b39c941da90743b82cf6}{CVIOLET2}}\ \ =\ \textcolor{stringliteral}{"{}\(\backslash\)33[95m"{}}\ ;\ \ \ \textcolor{comment}{//\ \ start\ violet\ color}}
+\DoxyCodeLine{00045\ \ \ \ \ std::string\ \mbox{\hyperlink{namespacengsai_a7e1227a26103735dbcfa743a7cdbcd62}{CBEIGE2}}\ \ \ =\ \textcolor{stringliteral}{"{}\(\backslash\)33[96m"{}}\ ;\ \ \ \textcolor{comment}{//\ \ start\ beige\ color}}
+\DoxyCodeLine{00046\ \ \ \ \ std::string\ \mbox{\hyperlink{namespacengsai_a1ffcccd2c4dc78323af7535995baa9d9}{CWHITE2}}\ \ \ =\ \textcolor{stringliteral}{"{}\(\backslash\)33[97m"{}}\ ;\ \ \ \textcolor{comment}{//\ \ start\ white\ color}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ std::string\ \mbox{\hyperlink{namespacengsai_a7dad75e44f5a74c0e563d71aaab0220c}{CGREYBG}}\ \ \ \ =\ \textcolor{stringliteral}{"{}\(\backslash\)33[100m"{}}\ ;\ \ \textcolor{comment}{//\ \ start\ beige\ background}}
+\DoxyCodeLine{00049\ \ \ \ \ std::string\ \mbox{\hyperlink{namespacengsai_a3af5d676084ffe2332eede66a0aa1433}{CREDBG2}}\ \ \ \ =\ \textcolor{stringliteral}{"{}\(\backslash\)33[101m"{}}\ ;\ \ \textcolor{comment}{//\ \ start\ red\ background}}
+\DoxyCodeLine{00050\ \ \ \ \ std::string\ \mbox{\hyperlink{namespacengsai_a2ded334b5fd89b062c6564c31123541b}{CGREENBG2}}\ \ =\ \textcolor{stringliteral}{"{}\(\backslash\)33[102m"{}}\ ;\ \ \textcolor{comment}{//\ \ start\ green\ background}}
+\DoxyCodeLine{00051\ \ \ \ \ std::string\ \mbox{\hyperlink{namespacengsai_abc28aee581d3a16d682108f55b679c24}{CYELLOWBG2}}\ =\ \textcolor{stringliteral}{"{}\(\backslash\)33[103m"{}}\ ;\ \ \textcolor{comment}{//\ \ start\ yellow\ background}}
+\DoxyCodeLine{00052\ \ \ \ \ std::string\ \mbox{\hyperlink{namespacengsai_aed9e9a21b7474fbc5196e5c20ef2dcb7}{CBLUEBG2}}\ \ \ =\ \textcolor{stringliteral}{"{}\(\backslash\)33[104m"{}}\ ;\ \ \textcolor{comment}{//\ \ start\ blue\ background}}
+\DoxyCodeLine{00053\ \ \ \ \ std::string\ \mbox{\hyperlink{namespacengsai_a810d1f1a1cc432e01a10967c38bfefc7}{CVIOLETBG2}}\ =\ \textcolor{stringliteral}{"{}\(\backslash\)33[105m"{}}\ ;\ \ \textcolor{comment}{//\ \ start\ violet\ background}}
+\DoxyCodeLine{00054\ \ \ \ \ std::string\ \mbox{\hyperlink{namespacengsai_a69cc3313b0c45c915d75311df9875eb6}{CBEIGEBG2}}\ \ =\ \textcolor{stringliteral}{"{}\(\backslash\)33[106m"{}}\ ;\ \ \textcolor{comment}{//\ \ start\ beige\ background}}
+\DoxyCodeLine{00055\ \ \ \ \ std::string\ \mbox{\hyperlink{namespacengsai_a353b572fed734f2da103923fb8806e4e}{CWHITEBG2}}\ \ =\ \textcolor{stringliteral}{"{}\(\backslash\)33[107m"{}}\ ;\ \ \textcolor{comment}{//\ \ start\ white\ background}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \}\ \textcolor{comment}{//\ namespace\ ngsai}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ NGSAI\_IO\_COLORS\_HPP}}
+
+\end{DoxyCode}

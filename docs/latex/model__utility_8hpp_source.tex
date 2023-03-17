@@ -1,0 +1,54 @@
+\hypertarget{model__utility_8hpp_source}{}\doxysection{model\+\_\+utility.\+hpp}
+\label{model__utility_8hpp_source}\index{include/ngsaipp/epigenetics/model\_utility.hpp@{include/ngsaipp/epigenetics/model\_utility.hpp}}
+\mbox{\hyperlink{model__utility_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ NGSAI\_MODEL\_UTILITY\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ NGSAI\_MODEL\_UTILITY\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <utility>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{KineticModel_8hpp}{ngsaipp/epigenetics/KineticModel.hpp}}>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{KmerMap_8hpp}{ngsaipp/epigenetics/KmerMap.hpp}}>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{BedRecord_8hpp}{ngsaipp/io/BedRecord.hpp}}>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacengsai}{ngsai}}}
+\DoxyCodeLine{00015\ \{}
+\DoxyCodeLine{00032\ \ \ \ \ std::pair<std::vector<double>,\ std::vector<double>>}
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{namespacengsai_ac607047bf3e626ec725c799038d3ead8}{normalize\_kinetics}}(\textcolor{keyword}{const}\ std::string\&\ seq,}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<double>\&\ ipd,}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<double>\&\ pwd,}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classngsai_1_1KmerMap}{ngsai::KmerMap}}\&\ model)\ ;}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00054\ \ \ \ \ std::pair<std::vector<double>,\ std::vector<double>>}
+\DoxyCodeLine{00055\ \ \ \ \ \mbox{\hyperlink{namespacengsai_ac607047bf3e626ec725c799038d3ead8}{normalize\_kinetics}}(\textcolor{keyword}{const}\ std::string\&\ seq,}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<uint16\_t>\&\ ipd,}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<uint16\_t>\&\ pwd,}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classngsai_1_1KmerMap}{ngsai::KmerMap}}\&\ model)\ ;}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{00082\ \ \ \ \ \mbox{\hyperlink{namespacengsai_af6ef8c0eeefbc574946219066efae383}{train\_KineticModel}}(\mbox{\hyperlink{classngsai_1_1KineticModel}{ngsai::KineticModel}}*\ model,}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<ngsai::BedRecord>\&\ regions,}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ regions\_from,}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ regions\_to,}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::string>\&\ paths\_bam)\ ;}
+\DoxyCodeLine{00087\ \ \ \ \ }
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{00105\ \ \ \ \ \mbox{\hyperlink{namespacengsai_af6ef8c0eeefbc574946219066efae383}{train\_KineticModel}}(\mbox{\hyperlink{classngsai_1_1KineticModel}{ngsai::KineticModel}}*\ model,}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<ngsai::BedRecord>\&\ regions,}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::string>\&\ paths\_bam)\ ;}
+\DoxyCodeLine{00108\ \ \ \ \ }
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{00127\ \ \ \ \ \mbox{\hyperlink{namespacengsai_af6ef8c0eeefbc574946219066efae383}{train\_KineticModel}}(\mbox{\hyperlink{classngsai_1_1KineticModel}{ngsai::KineticModel}}*\ model,}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ path\_bed,}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::string>\&\ paths\_bam)\ ;}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ \}\ \ \textcolor{comment}{//\ namespace\ ngsai}}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00133\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ NGSAI\_MODEL\_UTILITY\_HPP}}
+
+\end{DoxyCode}

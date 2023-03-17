@@ -1,0 +1,174 @@
+\hypertarget{classngsai_1_1BedReader}{}\doxysection{ngsai\+::Bed\+Reader Class Reference}
+\label{classngsai_1_1BedReader}\index{ngsai::BedReader@{ngsai::BedReader}}
+
+
+A class to perform sequencial reading from a BED file using the \doxylink{classngsai_1_1BedReader_a8b5cfe6bdb68efacd467698896f850d4}{get\+Next()} method. Currently BED 6 format is handled.  
+
+
+
+
+{\ttfamily \#include $<$Bed\+Reader.\+hpp$>$}
+
+
+
+Collaboration diagram for ngsai\+::Bed\+Reader\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=302pt]{classngsai_1_1BedReader__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classngsai_1_1BedReader_a579b23d09a420bcd37758e8a84f683c7}{Bed\+Reader}} ()=delete
+\item 
+\mbox{\hyperlink{classngsai_1_1BedReader_a74c2c30b9d59e1bcacb9b6e791579259}{Bed\+Reader}} (const std\+::string \&path)
+\begin{DoxyCompactList}\small\item\em Constructs an object to read from the given file. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classngsai_1_1BedReader_aba8f0c8b7150fca37a08ef759e30f6e7}{$\sim$\+Bed\+Reader}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. Closes the file stream if necessary. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classngsai_1_1BedReader_a8b5cfe6bdb68efacd467698896f850d4}{get\+Next}} (\mbox{\hyperlink{classngsai_1_1BedRecord}{Bed\+Record}} \&record)
+\begin{DoxyCompactList}\small\item\em Reads the next record in the file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classngsai_1_1BedReader_a6dbd0dbb7b6cf67b79c07e15a7274dbf}{close}} ()
+\begin{DoxyCompactList}\small\item\em Closes the file stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classngsai_1_1BedReader_a26b4e527635fb126e65c4eb8df8c8ebd}{open}} ()
+\begin{DoxyCompactList}\small\item\em Opens the stream to the file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classngsai_1_1BedReader_a96da67ec6799171efb51910c4de19f42}{m\+\_\+path}}
+\begin{DoxyCompactList}\small\item\em The path to the file to read. \end{DoxyCompactList}\item 
+std\+::ifstream \mbox{\hyperlink{classngsai_1_1BedReader_a0f77e5022770e90b44cb1fa26247660a}{m\+\_\+f\+\_\+bed}}
+\begin{DoxyCompactList}\small\item\em The stream to the file to read. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classngsai_1_1BedReader_ad107df4b261e812e34632cdc45aa229a}{m\+\_\+is\+\_\+open}}
+\begin{DoxyCompactList}\small\item\em whether the stream to the file is open. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class to perform sequencial reading from a BED file using the \doxylink{classngsai_1_1BedReader_a8b5cfe6bdb68efacd467698896f850d4}{get\+Next()} method. Currently BED 6 format is handled. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classngsai_1_1BedReader_a579b23d09a420bcd37758e8a84f683c7}\label{classngsai_1_1BedReader_a579b23d09a420bcd37758e8a84f683c7} 
+\index{ngsai::BedReader@{ngsai::BedReader}!BedReader@{BedReader}}
+\index{BedReader@{BedReader}!ngsai::BedReader@{ngsai::BedReader}}
+\doxysubsubsection{\texorpdfstring{BedReader()}{BedReader()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily ngsai\+::\+Bed\+Reader\+::\+Bed\+Reader (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\Hypertarget{classngsai_1_1BedReader_a74c2c30b9d59e1bcacb9b6e791579259}\label{classngsai_1_1BedReader_a74c2c30b9d59e1bcacb9b6e791579259} 
+\index{ngsai::BedReader@{ngsai::BedReader}!BedReader@{BedReader}}
+\index{BedReader@{BedReader}!ngsai::BedReader@{ngsai::BedReader}}
+\doxysubsubsection{\texorpdfstring{BedReader()}{BedReader()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily ngsai\+::\+Bed\+Reader\+::\+Bed\+Reader (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path }\end{DoxyParamCaption})}
+
+
+
+Constructs an object to read from the given file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & the path to the file to read. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classngsai_1_1BedReader_aba8f0c8b7150fca37a08ef759e30f6e7}\label{classngsai_1_1BedReader_aba8f0c8b7150fca37a08ef759e30f6e7} 
+\index{ngsai::BedReader@{ngsai::BedReader}!````~BedReader@{$\sim$BedReader}}
+\index{````~BedReader@{$\sim$BedReader}!ngsai::BedReader@{ngsai::BedReader}}
+\doxysubsubsection{\texorpdfstring{$\sim$BedReader()}{~BedReader()}}
+{\footnotesize\ttfamily ngsai\+::\+Bed\+Reader\+::$\sim$\+Bed\+Reader (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor. Closes the file stream if necessary. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classngsai_1_1BedReader_a6dbd0dbb7b6cf67b79c07e15a7274dbf}\label{classngsai_1_1BedReader_a6dbd0dbb7b6cf67b79c07e15a7274dbf} 
+\index{ngsai::BedReader@{ngsai::BedReader}!close@{close}}
+\index{close@{close}!ngsai::BedReader@{ngsai::BedReader}}
+\doxysubsubsection{\texorpdfstring{close()}{close()}}
+{\footnotesize\ttfamily void ngsai\+::\+Bed\+Reader\+::close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Closes the file stream. 
+
+\Hypertarget{classngsai_1_1BedReader_a8b5cfe6bdb68efacd467698896f850d4}\label{classngsai_1_1BedReader_a8b5cfe6bdb68efacd467698896f850d4} 
+\index{ngsai::BedReader@{ngsai::BedReader}!getNext@{getNext}}
+\index{getNext@{getNext}!ngsai::BedReader@{ngsai::BedReader}}
+\doxysubsubsection{\texorpdfstring{getNext()}{getNext()}}
+{\footnotesize\ttfamily bool ngsai\+::\+Bed\+Reader\+::get\+Next (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classngsai_1_1BedRecord}{Bed\+Record}} \&}]{record }\end{DoxyParamCaption})}
+
+
+
+Reads the next record in the file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em record} & a reference to an object in which the read data will be stored. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+whether a record could be read. False indicates EOF. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if a format error is detected. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classngsai_1_1BedReader_a26b4e527635fb126e65c4eb8df8c8ebd}\label{classngsai_1_1BedReader_a26b4e527635fb126e65c4eb8df8c8ebd} 
+\index{ngsai::BedReader@{ngsai::BedReader}!open@{open}}
+\index{open@{open}!ngsai::BedReader@{ngsai::BedReader}}
+\doxysubsubsection{\texorpdfstring{open()}{open()}}
+{\footnotesize\ttfamily void ngsai\+::\+Bed\+Reader\+::open (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Opens the stream to the file. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if the file could not be open. \\
+\hline
+\end{DoxyExceptions}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classngsai_1_1BedReader_a0f77e5022770e90b44cb1fa26247660a}\label{classngsai_1_1BedReader_a0f77e5022770e90b44cb1fa26247660a} 
+\index{ngsai::BedReader@{ngsai::BedReader}!m\_f\_bed@{m\_f\_bed}}
+\index{m\_f\_bed@{m\_f\_bed}!ngsai::BedReader@{ngsai::BedReader}}
+\doxysubsubsection{\texorpdfstring{m\_f\_bed}{m\_f\_bed}}
+{\footnotesize\ttfamily std\+::ifstream ngsai\+::\+Bed\+Reader\+::m\+\_\+f\+\_\+bed\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The stream to the file to read. 
+
+\Hypertarget{classngsai_1_1BedReader_ad107df4b261e812e34632cdc45aa229a}\label{classngsai_1_1BedReader_ad107df4b261e812e34632cdc45aa229a} 
+\index{ngsai::BedReader@{ngsai::BedReader}!m\_is\_open@{m\_is\_open}}
+\index{m\_is\_open@{m\_is\_open}!ngsai::BedReader@{ngsai::BedReader}}
+\doxysubsubsection{\texorpdfstring{m\_is\_open}{m\_is\_open}}
+{\footnotesize\ttfamily bool ngsai\+::\+Bed\+Reader\+::m\+\_\+is\+\_\+open\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+whether the stream to the file is open. 
+
+\Hypertarget{classngsai_1_1BedReader_a96da67ec6799171efb51910c4de19f42}\label{classngsai_1_1BedReader_a96da67ec6799171efb51910c4de19f42} 
+\index{ngsai::BedReader@{ngsai::BedReader}!m\_path@{m\_path}}
+\index{m\_path@{m\_path}!ngsai::BedReader@{ngsai::BedReader}}
+\doxysubsubsection{\texorpdfstring{m\_path}{m\_path}}
+{\footnotesize\ttfamily std\+::string ngsai\+::\+Bed\+Reader\+::m\+\_\+path\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The path to the file to read. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/ngsaipp/io/\mbox{\hyperlink{BedReader_8hpp}{Bed\+Reader.\+hpp}}\end{DoxyCompactItemize}

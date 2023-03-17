@@ -1,0 +1,25 @@
+\hypertarget{CcsKineticExtractor_8hpp}{}\doxysection{include/ngsaipp/epigenetics/\+Ccs\+Kinetic\+Extractor.hpp File Reference}
+\label{CcsKineticExtractor_8hpp}\index{include/ngsaipp/epigenetics/CcsKineticExtractor.hpp@{include/ngsaipp/epigenetics/CcsKineticExtractor.hpp}}
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$list$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$pbbam/\+Bam\+Record.\+h$>$}\newline
+{\ttfamily \#include $<$ngsaipp/genome/\+Genome\+Region.\+hpp$>$}\newline
+Include dependency graph for Ccs\+Kinetic\+Extractor.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{CcsKineticExtractor_8hpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classngsai_1_1CcsKineticExtractor}{ngsai\+::\+Ccs\+Kinetic\+Extractor}}
+\begin{DoxyCompactList}\small\item\em The \doxylink{classngsai_1_1CcsKineticExtractor}{Ccs\+Kinetic\+Extractor} allows to extract inter pulse durations (IPDs) and pulse widths (PWDs) in given region from mapped Pac\+Bio CCSs. The region are always specified in reference coordinates (the reference onto which the CCS is mapped). The window specifies a region, on one of the reference strands, as a semi open interval \mbox{[}from, to). Then, if the CCS maps over this reference region, the CCS sequence, IPDs and PWDs values corresponding to the window are extracted. The sequence, IPDs and PWDs are always returned in 5\textquotesingle{} to 3\textquotesingle{} order with respect to the window strand (that is on the reference). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacengsai}{ngsai}}
+\begin{DoxyCompactList}\small\item\em This file contains values that are useful for formatting terminal output. \end{DoxyCompactList}\end{DoxyCompactItemize}

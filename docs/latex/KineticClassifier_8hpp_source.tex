@@ -1,0 +1,76 @@
+\hypertarget{KineticClassifier_8hpp_source}{}\doxysection{Kinetic\+Classifier.\+hpp}
+\label{KineticClassifier_8hpp_source}\index{include/ngsaipp/epigenetics/KineticClassifier.hpp@{include/ngsaipp/epigenetics/KineticClassifier.hpp}}
+\mbox{\hyperlink{KineticClassifier_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ NGSAI\_KINETICCLASSIFIER\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ NGSAI\_KINETICCLASSIFIER\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <list>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <boost/histogram.hpp>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <pbbam/BamRecord.h>}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{KineticModel_8hpp}{ngsaipp/epigenetics/KineticModel.hpp}}>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{KineticSignal_8hpp}{ngsaipp/epigenetics/KineticSignal.hpp}}>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{CpGRegion_8hpp}{ngsaipp/genome/CpGRegion.hpp}}>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacengsai}{ngsai}}}
+\DoxyCodeLine{00017\ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classngsai_1_1KineticClassifier}{KineticClassifier}}}
+\DoxyCodeLine{00026\ \ \ \ \ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1KineticClassifier_ae8386f27eeaef5436d4798185ef0cecf}{KineticClassifier}}()\ ;}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1KineticClassifier_a5e4f2955522ebfabc9f3c674e1e20f58}{KineticClassifier}}(\mbox{\hyperlink{classngsai_1_1KineticModel}{ngsai::KineticModel}}*\ model\_meth,}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1KineticModel}{ngsai::KineticModel}}*\ model\_unmeth)\ ;}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1KineticClassifier_ad3e5bd0469911703ba8b218a3340b310}{KineticClassifier}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classngsai_1_1KineticClassifier}{ngsai::KineticClassifier}}\&\ other)\ ;}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1KineticClassifier_a54e93094a2486513b4eab74c4c8b2571}{KineticClassifier}}(\mbox{\hyperlink{classngsai_1_1KineticClassifier}{ngsai::KineticClassifier}}\&\&\ other)\ ;}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1KineticClassifier_aa7b00d61d4e7a7eaa43a6345d6a3427a}{\string~KineticClassifier}}()\ ;}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1KineticClassifier}{KineticClassifier}}\&}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1KineticClassifier_a4282266803db2143c868916e614c6055}{operator\ =\ }}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classngsai_1_1KineticClassifier}{KineticClassifier}}\&\ other)\ ;}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1KineticClassifier}{KineticClassifier}}\&}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1KineticClassifier_a4282266803db2143c868916e614c6055}{operator\ =\ }}(\mbox{\hyperlink{classngsai_1_1KineticClassifier}{KineticClassifier}}\&\&\ other)\ ;}
+\DoxyCodeLine{00078\ \ \ \ \ }
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1KineticClassifier_a4ce5d987acbd2c4754a11c982716ee1c}{setModels}}(\mbox{\hyperlink{classngsai_1_1KineticModel}{ngsai::KineticModel}}*\ model\_meth,}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1KineticModel}{ngsai::KineticModel}}*\ model\_unmeth)\ ;}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ std::pair<double,\ double>}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1KineticClassifier_a3f29c9122e9afebd64da0603c56bd868}{classify}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classngsai_1_1genome_1_1CpGRegion}{ngsai::genome::CpGRegion}}\&\ cpg,}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::list<PacBio::BAM::BamRecord>\&\ ccss,}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ prob\_meth,}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ prob\_unmeth)\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ std::pair<double,\ double>}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1KineticClassifier_a7c005db7983a06a3e8418e353865fc15}{classify}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classngsai_1_1KineticSignal}{ngsai::KineticSignal}}\&\ kinetics,}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ prob\_meth,}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ prob\_unmeth)\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1KineticClassifier_a6c613b8c9aedb03a1e4b2e75f03a9a91}{checkModels}}()\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ }
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1KineticClassifier_a5b0e930141daa13866398e2e02e75215}{freeModels}}()\ ;}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classngsai_1_1KineticClassifier_a17c780e76d99053eb5686acc5813e332}{m\_window\_size}}\ ;}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1KineticModel}{ngsai::KineticModel}}*\ \mbox{\hyperlink{classngsai_1_1KineticClassifier_a111f7a1e70501679d04477c33bd3e073}{m\_model\_meth}}\ ;}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1KineticModel}{ngsai::KineticModel}}*\ \mbox{\hyperlink{classngsai_1_1KineticClassifier_a5790ce6e71280084bd275ffab338bb1a}{m\_model\_unmeth}}\ ;}
+\DoxyCodeLine{00171\ \ \ \ \ \}\ ;}
+\DoxyCodeLine{00172\ }
+\DoxyCodeLine{00173\ \}\ \textcolor{comment}{//\ namespace\ ngsai}}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00175\ }
+\DoxyCodeLine{00176\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ NGSAI\_KINETICCLASSIFIER\_HPP}}
+
+\end{DoxyCode}

@@ -1,0 +1,266 @@
+\hypertarget{classngsai_1_1CcsKineticExtractor}{}\doxysection{ngsai\+::Ccs\+Kinetic\+Extractor Class Reference}
+\label{classngsai_1_1CcsKineticExtractor}\index{ngsai::CcsKineticExtractor@{ngsai::CcsKineticExtractor}}
+
+
+The \doxylink{classngsai_1_1CcsKineticExtractor}{Ccs\+Kinetic\+Extractor} allows to extract inter pulse durations (IPDs) and pulse widths (PWDs) in given region from mapped Pac\+Bio CCSs. The region are always specified in reference coordinates (the reference onto which the CCS is mapped). The window specifies a region, on one of the reference strands, as a semi open interval \mbox{[}from, to). Then, if the CCS maps over this reference region, the CCS sequence, IPDs and PWDs values corresponding to the window are extracted. The sequence, IPDs and PWDs are always returned in 5\textquotesingle{} to 3\textquotesingle{} order with respect to the window strand (that is on the reference).  
+
+
+
+
+{\ttfamily \#include $<$Ccs\+Kinetic\+Extractor.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classngsai_1_1CcsKineticExtractor_a2bab2511a450c6840ed7647c8f1135be}{Ccs\+Kinetic\+Extractor}} ()
+\begin{DoxyCompactList}\small\item\em Constructs an object to extract kinetic values (IPDs or PWD) within windows from Pac\+Bio mapped CCSs. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classngsai_1_1CcsKineticExtractor_a8fb8ffc9d80d2ce75dd9c9022d3e5e11}{Ccs\+Kinetic\+Extractor}} (const \mbox{\hyperlink{classngsai_1_1CcsKineticExtractor}{ngsai\+::\+Ccs\+Kinetic\+Extractor}} \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classngsai_1_1CcsKineticExtractor_adfc66f95e7d8a8cf3aa89bcc273ec4f3}{Ccs\+Kinetic\+Extractor}} (\mbox{\hyperlink{classngsai_1_1CcsKineticExtractor}{ngsai\+::\+Ccs\+Kinetic\+Extractor}} \&\&other)
+\begin{DoxyCompactList}\small\item\em Move constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classngsai_1_1CcsKineticExtractor_a7595bb187195343b9e872a2318a08b12}{$\sim$\+Ccs\+Kinetic\+Extractor}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classngsai_1_1CcsKineticExtractor}{ngsai\+::\+Ccs\+Kinetic\+Extractor}} \& \mbox{\hyperlink{classngsai_1_1CcsKineticExtractor_ad7babb0da64ebb995b4c4db9679e68ba}{operator=}} (const \mbox{\hyperlink{classngsai_1_1CcsKineticExtractor}{ngsai\+::\+Ccs\+Kinetic\+Extractor}} \&other)
+\begin{DoxyCompactList}\small\item\em Assignment operator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classngsai_1_1CcsKineticExtractor}{ngsai\+::\+Ccs\+Kinetic\+Extractor}} \& \mbox{\hyperlink{classngsai_1_1CcsKineticExtractor_a1515d68a23ca432e719e5ac709ae5db7}{operator=}} (\mbox{\hyperlink{classngsai_1_1CcsKineticExtractor}{ngsai\+::\+Ccs\+Kinetic\+Extractor}} \&\&other)
+\begin{DoxyCompactList}\small\item\em Move assignment operator. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classngsai_1_1CcsKineticExtractor_a837d1851e5193d62f63e4a98013dc67e}{extract}} (const Pac\+Bio\+::\+BAM\+::\+Bam\+Record \&ccs, const \mbox{\hyperlink{classngsai_1_1genome_1_1GenomeRegion}{ngsai\+::genome\+::\+Genome\+Region}} \&window)
+\begin{DoxyCompactList}\small\item\em Extracts the kinetic data from the given mapped CCS over the window of interest. If the CCS is not mapped, does not contain kinetics, does not span entirely the window or if the alignment over the window is not perfect (only matches allowed), nothing is extracted. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classngsai_1_1CcsKineticExtractor_a46fdf11ac5fa1ae8b721de8b2fd52c25}{get\+Sequence}} () const
+\begin{DoxyCompactList}\small\item\em Returns the sequence in 5\textquotesingle{} to 3\textquotesingle{} order. This is only meaningful after a successful \doxylink{classngsai_1_1CcsKineticExtractor_a837d1851e5193d62f63e4a98013dc67e}{extract()} call. \end{DoxyCompactList}\item 
+std\+::vector$<$ uint16\+\_\+t $>$ \mbox{\hyperlink{classngsai_1_1CcsKineticExtractor_a6b8d2d066c239594147ec037df475028}{get\+IPD}} () const
+\begin{DoxyCompactList}\small\item\em Returns the decoded extracted IPD values in 5\textquotesingle{} to 3\textquotesingle{} order. This is only meaningful after a successful \doxylink{classngsai_1_1CcsKineticExtractor_a837d1851e5193d62f63e4a98013dc67e}{extract()} call. \end{DoxyCompactList}\item 
+std\+::vector$<$ uint16\+\_\+t $>$ \mbox{\hyperlink{classngsai_1_1CcsKineticExtractor_a579c72f8519dbbeeb1896957dcacf0e9}{get\+PWD}} () const
+\begin{DoxyCompactList}\small\item\em Returns the decoded extracted PWD values in 5\textquotesingle{} to 3\textquotesingle{} order. This is only meaningful after a successful \doxylink{classngsai_1_1CcsKineticExtractor_a837d1851e5193d62f63e4a98013dc67e}{extract()} call. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classngsai_1_1CcsKineticExtractor_a65150f4ea94266cdfcebc5da40134b50}{find\+Window}} (const Pac\+Bio\+::\+BAM\+::\+Bam\+Record \&ccs, const \mbox{\hyperlink{classngsai_1_1genome_1_1GenomeRegion}{ngsai\+::genome\+::\+Genome\+Region}} \&window)
+\begin{DoxyCompactList}\small\item\em Parses the cigar of the CCS to find the given region. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classngsai_1_1CcsKineticExtractor_a60f5a5d6e0a69001e4994f7908f8b3fb}{find\+Alignment\+Start}} ()
+\begin{DoxyCompactList}\small\item\em Parses the CIGAR of the CCS and positions the CCS pointer on the position corresponding to the 1st position aligned on the reference (skips initial soft clips). \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classngsai_1_1CcsKineticExtractor_ac32932d8094063da5e6166ef25373131}{find\+Window\+Start}} ()
+\begin{DoxyCompactList}\small\item\em Parses the CIGAR of the CCS and positions the CCS pointer on the position of the CCS that is aligned with the 1st position of the reference window (it can be a match or a missmatch). \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classngsai_1_1CcsKineticExtractor_a0f7dac5a7ce83e7190c4d60cdb9d847a}{find\+Window\+End}} ()
+\begin{DoxyCompactList}\small\item\em Parses the CIGAR of the CCS until finding the position of the CCS that is aligned to the last position in the reference window and position the CCS pointer on the position right after. All positions in the alignment must be matches, any indel or missmatch is forbidden. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \doxylink{classngsai_1_1CcsKineticExtractor}{Ccs\+Kinetic\+Extractor} allows to extract inter pulse durations (IPDs) and pulse widths (PWDs) in given region from mapped Pac\+Bio CCSs. The region are always specified in reference coordinates (the reference onto which the CCS is mapped). The window specifies a region, on one of the reference strands, as a semi open interval \mbox{[}from, to). Then, if the CCS maps over this reference region, the CCS sequence, IPDs and PWDs values corresponding to the window are extracted. The sequence, IPDs and PWDs are always returned in 5\textquotesingle{} to 3\textquotesingle{} order with respect to the window strand (that is on the reference). 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classngsai_1_1CcsKineticExtractor_a2bab2511a450c6840ed7647c8f1135be}\label{classngsai_1_1CcsKineticExtractor_a2bab2511a450c6840ed7647c8f1135be} 
+\index{ngsai::CcsKineticExtractor@{ngsai::CcsKineticExtractor}!CcsKineticExtractor@{CcsKineticExtractor}}
+\index{CcsKineticExtractor@{CcsKineticExtractor}!ngsai::CcsKineticExtractor@{ngsai::CcsKineticExtractor}}
+\doxysubsubsection{\texorpdfstring{CcsKineticExtractor()}{CcsKineticExtractor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily ngsai\+::\+Ccs\+Kinetic\+Extractor\+::\+Ccs\+Kinetic\+Extractor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructs an object to extract kinetic values (IPDs or PWD) within windows from Pac\+Bio mapped CCSs. 
+
+\Hypertarget{classngsai_1_1CcsKineticExtractor_a8fb8ffc9d80d2ce75dd9c9022d3e5e11}\label{classngsai_1_1CcsKineticExtractor_a8fb8ffc9d80d2ce75dd9c9022d3e5e11} 
+\index{ngsai::CcsKineticExtractor@{ngsai::CcsKineticExtractor}!CcsKineticExtractor@{CcsKineticExtractor}}
+\index{CcsKineticExtractor@{CcsKineticExtractor}!ngsai::CcsKineticExtractor@{ngsai::CcsKineticExtractor}}
+\doxysubsubsection{\texorpdfstring{CcsKineticExtractor()}{CcsKineticExtractor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily ngsai\+::\+Ccs\+Kinetic\+Extractor\+::\+Ccs\+Kinetic\+Extractor (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classngsai_1_1CcsKineticExtractor}{ngsai\+::\+Ccs\+Kinetic\+Extractor}} \&}]{other }\end{DoxyParamCaption})}
+
+
+
+Copy constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window\+\_\+size} & a reference to the object to copy. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classngsai_1_1CcsKineticExtractor_adfc66f95e7d8a8cf3aa89bcc273ec4f3}\label{classngsai_1_1CcsKineticExtractor_adfc66f95e7d8a8cf3aa89bcc273ec4f3} 
+\index{ngsai::CcsKineticExtractor@{ngsai::CcsKineticExtractor}!CcsKineticExtractor@{CcsKineticExtractor}}
+\index{CcsKineticExtractor@{CcsKineticExtractor}!ngsai::CcsKineticExtractor@{ngsai::CcsKineticExtractor}}
+\doxysubsubsection{\texorpdfstring{CcsKineticExtractor()}{CcsKineticExtractor()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily ngsai\+::\+Ccs\+Kinetic\+Extractor\+::\+Ccs\+Kinetic\+Extractor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classngsai_1_1CcsKineticExtractor}{ngsai\+::\+Ccs\+Kinetic\+Extractor}} \&\&}]{other }\end{DoxyParamCaption})}
+
+
+
+Move constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window\+\_\+size} & a rvalue to the object to move. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classngsai_1_1CcsKineticExtractor_a7595bb187195343b9e872a2318a08b12}\label{classngsai_1_1CcsKineticExtractor_a7595bb187195343b9e872a2318a08b12} 
+\index{ngsai::CcsKineticExtractor@{ngsai::CcsKineticExtractor}!````~CcsKineticExtractor@{$\sim$CcsKineticExtractor}}
+\index{````~CcsKineticExtractor@{$\sim$CcsKineticExtractor}!ngsai::CcsKineticExtractor@{ngsai::CcsKineticExtractor}}
+\doxysubsubsection{\texorpdfstring{$\sim$CcsKineticExtractor()}{~CcsKineticExtractor()}}
+{\footnotesize\ttfamily ngsai\+::\+Ccs\+Kinetic\+Extractor\+::$\sim$\+Ccs\+Kinetic\+Extractor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classngsai_1_1CcsKineticExtractor_a837d1851e5193d62f63e4a98013dc67e}\label{classngsai_1_1CcsKineticExtractor_a837d1851e5193d62f63e4a98013dc67e} 
+\index{ngsai::CcsKineticExtractor@{ngsai::CcsKineticExtractor}!extract@{extract}}
+\index{extract@{extract}!ngsai::CcsKineticExtractor@{ngsai::CcsKineticExtractor}}
+\doxysubsubsection{\texorpdfstring{extract()}{extract()}}
+{\footnotesize\ttfamily bool ngsai\+::\+Ccs\+Kinetic\+Extractor\+::extract (\begin{DoxyParamCaption}\item[{const Pac\+Bio\+::\+BAM\+::\+Bam\+Record \&}]{ccs,  }\item[{const \mbox{\hyperlink{classngsai_1_1genome_1_1GenomeRegion}{ngsai\+::genome\+::\+Genome\+Region}} \&}]{window }\end{DoxyParamCaption})}
+
+
+
+Extracts the kinetic data from the given mapped CCS over the window of interest. If the CCS is not mapped, does not contain kinetics, does not span entirely the window or if the alignment over the window is not perfect (only matches allowed), nothing is extracted. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ccs} & A mapped CCS to extract the kinetic data from. \\
+\hline
+{\em window} & The coordinates \mbox{[}from,to) of the window of interest, expressed in reference forward coordinates. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+whether something could be extracted or not. 
+\end{DoxyReturn}
+\Hypertarget{classngsai_1_1CcsKineticExtractor_a60f5a5d6e0a69001e4994f7908f8b3fb}\label{classngsai_1_1CcsKineticExtractor_a60f5a5d6e0a69001e4994f7908f8b3fb} 
+\index{ngsai::CcsKineticExtractor@{ngsai::CcsKineticExtractor}!findAlignmentStart@{findAlignmentStart}}
+\index{findAlignmentStart@{findAlignmentStart}!ngsai::CcsKineticExtractor@{ngsai::CcsKineticExtractor}}
+\doxysubsubsection{\texorpdfstring{findAlignmentStart()}{findAlignmentStart()}}
+{\footnotesize\ttfamily bool ngsai\+::\+Ccs\+Kinetic\+Extractor\+::find\+Alignment\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Parses the CIGAR of the CCS and positions the CCS pointer on the position corresponding to the 1st position aligned on the reference (skips initial soft clips). 
+
+\begin{DoxyReturn}{Returns}
+whether the 1st position aligned on the reference could be found. 
+\end{DoxyReturn}
+\Hypertarget{classngsai_1_1CcsKineticExtractor_a65150f4ea94266cdfcebc5da40134b50}\label{classngsai_1_1CcsKineticExtractor_a65150f4ea94266cdfcebc5da40134b50} 
+\index{ngsai::CcsKineticExtractor@{ngsai::CcsKineticExtractor}!findWindow@{findWindow}}
+\index{findWindow@{findWindow}!ngsai::CcsKineticExtractor@{ngsai::CcsKineticExtractor}}
+\doxysubsubsection{\texorpdfstring{findWindow()}{findWindow()}}
+{\footnotesize\ttfamily bool ngsai\+::\+Ccs\+Kinetic\+Extractor\+::find\+Window (\begin{DoxyParamCaption}\item[{const Pac\+Bio\+::\+BAM\+::\+Bam\+Record \&}]{ccs,  }\item[{const \mbox{\hyperlink{classngsai_1_1genome_1_1GenomeRegion}{ngsai\+::genome\+::\+Genome\+Region}} \&}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Parses the cigar of the CCS to find the given region. 
+
+
+\begin{DoxyItemize}
+\item in reference coordinates -\/ in the read. The range \mbox{[}from,to) corresponding to the region -\/ in read coordinates -\/ is stored in m\+\_\+region\+\_\+start\+\_\+ref and m\+\_\+region\+\_\+end\+\_\+ref. A match with the given region will only be reported if the alignment of the read over the region is perfect (only matches allowed). 
+\begin{DoxyParams}{Parameters}
+{\em ccs} & the CCS of interest. \\
+\hline
+{\em window} & the window of interest. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+whether the window coordinates could be found in the CCS. 
+\end{DoxyReturn}
+
+\end{DoxyItemize}\Hypertarget{classngsai_1_1CcsKineticExtractor_a0f7dac5a7ce83e7190c4d60cdb9d847a}\label{classngsai_1_1CcsKineticExtractor_a0f7dac5a7ce83e7190c4d60cdb9d847a} 
+\index{ngsai::CcsKineticExtractor@{ngsai::CcsKineticExtractor}!findWindowEnd@{findWindowEnd}}
+\index{findWindowEnd@{findWindowEnd}!ngsai::CcsKineticExtractor@{ngsai::CcsKineticExtractor}}
+\doxysubsubsection{\texorpdfstring{findWindowEnd()}{findWindowEnd()}}
+{\footnotesize\ttfamily bool ngsai\+::\+Ccs\+Kinetic\+Extractor\+::find\+Window\+End (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Parses the CIGAR of the CCS until finding the position of the CCS that is aligned to the last position in the reference window and position the CCS pointer on the position right after. All positions in the alignment must be matches, any indel or missmatch is forbidden. 
+
+\begin{DoxyReturn}{Returns}
+Whether a perfect match along the entire reference window could be found. 
+\end{DoxyReturn}
+\Hypertarget{classngsai_1_1CcsKineticExtractor_ac32932d8094063da5e6166ef25373131}\label{classngsai_1_1CcsKineticExtractor_ac32932d8094063da5e6166ef25373131} 
+\index{ngsai::CcsKineticExtractor@{ngsai::CcsKineticExtractor}!findWindowStart@{findWindowStart}}
+\index{findWindowStart@{findWindowStart}!ngsai::CcsKineticExtractor@{ngsai::CcsKineticExtractor}}
+\doxysubsubsection{\texorpdfstring{findWindowStart()}{findWindowStart()}}
+{\footnotesize\ttfamily bool ngsai\+::\+Ccs\+Kinetic\+Extractor\+::find\+Window\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Parses the CIGAR of the CCS and positions the CCS pointer on the position of the CCS that is aligned with the 1st position of the reference window (it can be a match or a missmatch). 
+
+\begin{DoxyReturn}{Returns}
+Whether a position in the CCS aligned with the 1st position in the window could be found. 
+\end{DoxyReturn}
+\Hypertarget{classngsai_1_1CcsKineticExtractor_a6b8d2d066c239594147ec037df475028}\label{classngsai_1_1CcsKineticExtractor_a6b8d2d066c239594147ec037df475028} 
+\index{ngsai::CcsKineticExtractor@{ngsai::CcsKineticExtractor}!getIPD@{getIPD}}
+\index{getIPD@{getIPD}!ngsai::CcsKineticExtractor@{ngsai::CcsKineticExtractor}}
+\doxysubsubsection{\texorpdfstring{getIPD()}{getIPD()}}
+{\footnotesize\ttfamily std\+::vector$<$ uint16\+\_\+t $>$ ngsai\+::\+Ccs\+Kinetic\+Extractor\+::get\+IPD (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the decoded extracted IPD values in 5\textquotesingle{} to 3\textquotesingle{} order. This is only meaningful after a successful \doxylink{classngsai_1_1CcsKineticExtractor_a837d1851e5193d62f63e4a98013dc67e}{extract()} call. 
+
+\begin{DoxyReturn}{Returns}
+A vector of IPD values corresponding to the window in which the extraction was performed. The data IPDs are always returned in 5\textquotesingle{} to 3\textquotesingle{} with respect to the region it was taken from. For instance, if the region was on the + strand of the reference (reference forward), the 0th element of the IPDs represents the 5\textquotesingle{}most value for the + strand. Similarily, if the region was on the -\/ strand of the reference (reference reverse), the 0th element of the IPDs represents the 5\textquotesingle{}most value for the -\/ strand. 
+\end{DoxyReturn}
+\Hypertarget{classngsai_1_1CcsKineticExtractor_a579c72f8519dbbeeb1896957dcacf0e9}\label{classngsai_1_1CcsKineticExtractor_a579c72f8519dbbeeb1896957dcacf0e9} 
+\index{ngsai::CcsKineticExtractor@{ngsai::CcsKineticExtractor}!getPWD@{getPWD}}
+\index{getPWD@{getPWD}!ngsai::CcsKineticExtractor@{ngsai::CcsKineticExtractor}}
+\doxysubsubsection{\texorpdfstring{getPWD()}{getPWD()}}
+{\footnotesize\ttfamily std\+::vector$<$ uint16\+\_\+t $>$ ngsai\+::\+Ccs\+Kinetic\+Extractor\+::get\+PWD (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the decoded extracted PWD values in 5\textquotesingle{} to 3\textquotesingle{} order. This is only meaningful after a successful \doxylink{classngsai_1_1CcsKineticExtractor_a837d1851e5193d62f63e4a98013dc67e}{extract()} call. 
+
+\begin{DoxyReturn}{Returns}
+A vector of PWD values corresponding to the window in which the extraction was performed. The data PWDs are always returned in 5\textquotesingle{} to 3\textquotesingle{} with respect to the region it was taken from. For instance, if the region was on the + strand of the reference (reference forward), the 0th element of the PWDs represents the 5\textquotesingle{}most value for the + strand. Similarily, if the region was on the -\/ strand of the reference (reference reverse), the 0th element of the PWDs represents the 5\textquotesingle{}most value for the -\/ strand. 
+\end{DoxyReturn}
+\Hypertarget{classngsai_1_1CcsKineticExtractor_a46fdf11ac5fa1ae8b721de8b2fd52c25}\label{classngsai_1_1CcsKineticExtractor_a46fdf11ac5fa1ae8b721de8b2fd52c25} 
+\index{ngsai::CcsKineticExtractor@{ngsai::CcsKineticExtractor}!getSequence@{getSequence}}
+\index{getSequence@{getSequence}!ngsai::CcsKineticExtractor@{ngsai::CcsKineticExtractor}}
+\doxysubsubsection{\texorpdfstring{getSequence()}{getSequence()}}
+{\footnotesize\ttfamily std\+::string ngsai\+::\+Ccs\+Kinetic\+Extractor\+::get\+Sequence (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the sequence in 5\textquotesingle{} to 3\textquotesingle{} order. This is only meaningful after a successful \doxylink{classngsai_1_1CcsKineticExtractor_a837d1851e5193d62f63e4a98013dc67e}{extract()} call. 
+
+\begin{DoxyReturn}{Returns}
+The DNA sequence corresponding to the window in which the extraction was performed. The sequence is always returned in 5\textquotesingle{} to 3\textquotesingle{} with respect to the region it was taken from. For instance, if the region was on the + strand of the reference (reference forward), the 0th base of the sequence represents the 5\textquotesingle{}most base for the + strand. Similarily, if the region was on the -\/ strand of the reference (reference reverse), the 0th base of the sequence represents the 5\textquotesingle{}most base for the -\/ strand. 
+\end{DoxyReturn}
+\Hypertarget{classngsai_1_1CcsKineticExtractor_ad7babb0da64ebb995b4c4db9679e68ba}\label{classngsai_1_1CcsKineticExtractor_ad7babb0da64ebb995b4c4db9679e68ba} 
+\index{ngsai::CcsKineticExtractor@{ngsai::CcsKineticExtractor}!operator=@{operator=}}
+\index{operator=@{operator=}!ngsai::CcsKineticExtractor@{ngsai::CcsKineticExtractor}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classngsai_1_1CcsKineticExtractor}{ngsai\+::\+Ccs\+Kinetic\+Extractor}} \& ngsai\+::\+Ccs\+Kinetic\+Extractor\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classngsai_1_1CcsKineticExtractor}{ngsai\+::\+Ccs\+Kinetic\+Extractor}} \&}]{other }\end{DoxyParamCaption})}
+
+
+
+Assignment operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & A reference to the object to assign the value from. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the current object. 
+\end{DoxyReturn}
+\Hypertarget{classngsai_1_1CcsKineticExtractor_a1515d68a23ca432e719e5ac709ae5db7}\label{classngsai_1_1CcsKineticExtractor_a1515d68a23ca432e719e5ac709ae5db7} 
+\index{ngsai::CcsKineticExtractor@{ngsai::CcsKineticExtractor}!operator=@{operator=}}
+\index{operator=@{operator=}!ngsai::CcsKineticExtractor@{ngsai::CcsKineticExtractor}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classngsai_1_1CcsKineticExtractor}{ngsai\+::\+Ccs\+Kinetic\+Extractor}} \& ngsai\+::\+Ccs\+Kinetic\+Extractor\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classngsai_1_1CcsKineticExtractor}{ngsai\+::\+Ccs\+Kinetic\+Extractor}} \&\&}]{other }\end{DoxyParamCaption})}
+
+
+
+Move assignment operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & A rvalue to the object to move the value from. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the current object. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/ngsaipp/epigenetics/\mbox{\hyperlink{CcsKineticExtractor_8hpp}{Ccs\+Kinetic\+Extractor.\+hpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,219 @@
+\hypertarget{classngsai_1_1dna_1_1SequenceEnumerator}{}\doxysection{ngsai\+::dna\+::Sequence\+Enumerator Class Reference}
+\label{classngsai_1_1dna_1_1SequenceEnumerator}\index{ngsai::dna::SequenceEnumerator@{ngsai::dna::SequenceEnumerator}}
+
+
+{\ttfamily \#include $<$Sequence\+Enumerator.\+hpp$>$}
+
+
+
+Collaboration diagram for ngsai\+::dna\+::Sequence\+Enumerator\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=241pt]{classngsai_1_1dna_1_1SequenceEnumerator__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classngsai_1_1dna_1_1SequenceEnumerator_a7283c9f1fa397ed0563aad8103eea947}{Sequence\+Enumerator}} ()
+\begin{DoxyCompactList}\small\item\em Constructs an empty object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classngsai_1_1dna_1_1SequenceEnumerator_a77c13b604a935d188a6561b9303c9e5f}{Sequence\+Enumerator}} (size\+\_\+t \mbox{\hyperlink{classngsai_1_1dna_1_1SequenceEnumerator_a6e8d030aebf2d086a3a8a18702f05cc5}{kmer\+\_\+size}})
+\begin{DoxyCompactList}\small\item\em Constructs an object to enumerate all sequences of the given length. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classngsai_1_1dna_1_1SequenceEnumerator_ac489077c92da7fd263c57926132619bd}{Sequence\+Enumerator}} (const \mbox{\hyperlink{classngsai_1_1dna_1_1SequenceEnumerator}{ngsai\+::dna\+::\+Sequence\+Enumerator}} \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classngsai_1_1dna_1_1SequenceEnumerator_a953e1fc112e5965aff0e0d6e95d7fa3a}{Sequence\+Enumerator}} (const \mbox{\hyperlink{classngsai_1_1dna_1_1SequenceEnumerator}{ngsai\+::dna\+::\+Sequence\+Enumerator}} \&\&other)
+\begin{DoxyCompactList}\small\item\em Assignment constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classngsai_1_1dna_1_1SequenceEnumerator_a4d343c26a37705c74583b2062da3b843}{$\sim$\+Sequence\+Enumerator}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classngsai_1_1dna_1_1SequenceEnumerator}{ngsai\+::dna\+::\+Sequence\+Enumerator}} \& \mbox{\hyperlink{classngsai_1_1dna_1_1SequenceEnumerator_a9cf0a9d1b0b1e67cfe2f98833d7d8078}{operator=}} (const \mbox{\hyperlink{classngsai_1_1dna_1_1SequenceEnumerator}{ngsai\+::dna\+::\+Sequence\+Enumerator}} \&other)
+\begin{DoxyCompactList}\small\item\em Assignment operator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classngsai_1_1dna_1_1SequenceEnumerator}{ngsai\+::dna\+::\+Sequence\+Enumerator}} \& \mbox{\hyperlink{classngsai_1_1dna_1_1SequenceEnumerator_a950194eb3852a64538b720829bd90e4b}{operator=}} (const \mbox{\hyperlink{classngsai_1_1dna_1_1SequenceEnumerator}{ngsai\+::dna\+::\+Sequence\+Enumerator}} \&\&other)
+\begin{DoxyCompactList}\small\item\em Move assignment operator. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classngsai_1_1dna_1_1SequenceEnumerator_afcb7e68f8c27aabe7a8f2365d039c206}{set\+Size}} (size\+\_\+t \mbox{\hyperlink{classngsai_1_1dna_1_1SequenceEnumerator_a6e8d030aebf2d086a3a8a18702f05cc5}{kmer\+\_\+size}})
+\begin{DoxyCompactList}\small\item\em Sets the kmer size and reset the enumerator. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classngsai_1_1dna_1_1SequenceEnumerator_ace0c816c1b684b3bb31aff1872cdd8f5}{get\+Next}} (std\+::string \&\mbox{\hyperlink{classngsai_1_1dna_1_1SequenceEnumerator_a9f8d291ee4d662a7ad46ac58da73b5d5}{kmer}})
+\begin{DoxyCompactList}\small\item\em Gets the next kmer sequence. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classngsai_1_1dna_1_1SequenceEnumerator_a8d500ef409bf31ab01c7187a1155711c}{reset}} ()
+\begin{DoxyCompactList}\small\item\em Resets the enumerator. The next enumerated kmer will be the first in lexicographic order. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+size\+\_\+t \mbox{\hyperlink{classngsai_1_1dna_1_1SequenceEnumerator_a6e8d030aebf2d086a3a8a18702f05cc5}{kmer\+\_\+size}}
+\item 
+std\+::string \mbox{\hyperlink{classngsai_1_1dna_1_1SequenceEnumerator_a9f8d291ee4d662a7ad46ac58da73b5d5}{kmer}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class allows to generate all DNA sequences of a given length (kmer), in lexicographic order. The DNA base lexicographic order is defined in \doxylink{namespacengsai_1_1dna_ada1b7328bde664b8aa78a889c9371297}{ngsai\+::dna\+::base\+\_\+code} and in \doxylink{namespacengsai_1_1dna_a34d8261487b1304f0650d83af40c6682}{ngsai\+::dna\+::code\+\_\+base} in \doxylink{dna__utility_8hpp}{dna/dna\+\_\+utility.\+hpp}. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classngsai_1_1dna_1_1SequenceEnumerator_a7283c9f1fa397ed0563aad8103eea947}\label{classngsai_1_1dna_1_1SequenceEnumerator_a7283c9f1fa397ed0563aad8103eea947} 
+\index{ngsai::dna::SequenceEnumerator@{ngsai::dna::SequenceEnumerator}!SequenceEnumerator@{SequenceEnumerator}}
+\index{SequenceEnumerator@{SequenceEnumerator}!ngsai::dna::SequenceEnumerator@{ngsai::dna::SequenceEnumerator}}
+\doxysubsubsection{\texorpdfstring{SequenceEnumerator()}{SequenceEnumerator()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily ngsai\+::dna\+::\+Sequence\+Enumerator\+::\+Sequence\+Enumerator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructs an empty object. 
+
+\Hypertarget{classngsai_1_1dna_1_1SequenceEnumerator_a77c13b604a935d188a6561b9303c9e5f}\label{classngsai_1_1dna_1_1SequenceEnumerator_a77c13b604a935d188a6561b9303c9e5f} 
+\index{ngsai::dna::SequenceEnumerator@{ngsai::dna::SequenceEnumerator}!SequenceEnumerator@{SequenceEnumerator}}
+\index{SequenceEnumerator@{SequenceEnumerator}!ngsai::dna::SequenceEnumerator@{ngsai::dna::SequenceEnumerator}}
+\doxysubsubsection{\texorpdfstring{SequenceEnumerator()}{SequenceEnumerator()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily ngsai\+::dna\+::\+Sequence\+Enumerator\+::\+Sequence\+Enumerator (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{kmer\+\_\+size }\end{DoxyParamCaption})}
+
+
+
+Constructs an object to enumerate all sequences of the given length. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em kmer\+\_\+size} & the size of the sequences. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classngsai_1_1dna_1_1SequenceEnumerator_ac489077c92da7fd263c57926132619bd}\label{classngsai_1_1dna_1_1SequenceEnumerator_ac489077c92da7fd263c57926132619bd} 
+\index{ngsai::dna::SequenceEnumerator@{ngsai::dna::SequenceEnumerator}!SequenceEnumerator@{SequenceEnumerator}}
+\index{SequenceEnumerator@{SequenceEnumerator}!ngsai::dna::SequenceEnumerator@{ngsai::dna::SequenceEnumerator}}
+\doxysubsubsection{\texorpdfstring{SequenceEnumerator()}{SequenceEnumerator()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily ngsai\+::dna\+::\+Sequence\+Enumerator\+::\+Sequence\+Enumerator (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classngsai_1_1dna_1_1SequenceEnumerator}{ngsai\+::dna\+::\+Sequence\+Enumerator}} \&}]{other }\end{DoxyParamCaption})}
+
+
+
+Copy constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & the object to copy from. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classngsai_1_1dna_1_1SequenceEnumerator_a953e1fc112e5965aff0e0d6e95d7fa3a}\label{classngsai_1_1dna_1_1SequenceEnumerator_a953e1fc112e5965aff0e0d6e95d7fa3a} 
+\index{ngsai::dna::SequenceEnumerator@{ngsai::dna::SequenceEnumerator}!SequenceEnumerator@{SequenceEnumerator}}
+\index{SequenceEnumerator@{SequenceEnumerator}!ngsai::dna::SequenceEnumerator@{ngsai::dna::SequenceEnumerator}}
+\doxysubsubsection{\texorpdfstring{SequenceEnumerator()}{SequenceEnumerator()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily ngsai\+::dna\+::\+Sequence\+Enumerator\+::\+Sequence\+Enumerator (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classngsai_1_1dna_1_1SequenceEnumerator}{ngsai\+::dna\+::\+Sequence\+Enumerator}} \&\&}]{other }\end{DoxyParamCaption})}
+
+
+
+Assignment constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & the object to copy from. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classngsai_1_1dna_1_1SequenceEnumerator_a4d343c26a37705c74583b2062da3b843}\label{classngsai_1_1dna_1_1SequenceEnumerator_a4d343c26a37705c74583b2062da3b843} 
+\index{ngsai::dna::SequenceEnumerator@{ngsai::dna::SequenceEnumerator}!````~SequenceEnumerator@{$\sim$SequenceEnumerator}}
+\index{````~SequenceEnumerator@{$\sim$SequenceEnumerator}!ngsai::dna::SequenceEnumerator@{ngsai::dna::SequenceEnumerator}}
+\doxysubsubsection{\texorpdfstring{$\sim$SequenceEnumerator()}{~SequenceEnumerator()}}
+{\footnotesize\ttfamily ngsai\+::dna\+::\+Sequence\+Enumerator\+::$\sim$\+Sequence\+Enumerator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classngsai_1_1dna_1_1SequenceEnumerator_ace0c816c1b684b3bb31aff1872cdd8f5}\label{classngsai_1_1dna_1_1SequenceEnumerator_ace0c816c1b684b3bb31aff1872cdd8f5} 
+\index{ngsai::dna::SequenceEnumerator@{ngsai::dna::SequenceEnumerator}!getNext@{getNext}}
+\index{getNext@{getNext}!ngsai::dna::SequenceEnumerator@{ngsai::dna::SequenceEnumerator}}
+\doxysubsubsection{\texorpdfstring{getNext()}{getNext()}}
+{\footnotesize\ttfamily bool ngsai\+::dna\+::\+Sequence\+Enumerator\+::get\+Next (\begin{DoxyParamCaption}\item[{std\+::string \&}]{kmer }\end{DoxyParamCaption})}
+
+
+
+Gets the next kmer sequence. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em kmer} & a reference into which the kmer sequence will be copied. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if a new kmer sequence was enumerated, false if the enumeration is done. 
+\end{DoxyReturn}
+\Hypertarget{classngsai_1_1dna_1_1SequenceEnumerator_a950194eb3852a64538b720829bd90e4b}\label{classngsai_1_1dna_1_1SequenceEnumerator_a950194eb3852a64538b720829bd90e4b} 
+\index{ngsai::dna::SequenceEnumerator@{ngsai::dna::SequenceEnumerator}!operator=@{operator=}}
+\index{operator=@{operator=}!ngsai::dna::SequenceEnumerator@{ngsai::dna::SequenceEnumerator}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classngsai_1_1dna_1_1SequenceEnumerator}{ngsai\+::dna\+::\+Sequence\+Enumerator}} \& ngsai\+::dna\+::\+Sequence\+Enumerator\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classngsai_1_1dna_1_1SequenceEnumerator}{ngsai\+::dna\+::\+Sequence\+Enumerator}} \&\&}]{other }\end{DoxyParamCaption})}
+
+
+
+Move assignment operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & the object to copy from. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a reference to the current instance. 
+\end{DoxyReturn}
+\Hypertarget{classngsai_1_1dna_1_1SequenceEnumerator_a9cf0a9d1b0b1e67cfe2f98833d7d8078}\label{classngsai_1_1dna_1_1SequenceEnumerator_a9cf0a9d1b0b1e67cfe2f98833d7d8078} 
+\index{ngsai::dna::SequenceEnumerator@{ngsai::dna::SequenceEnumerator}!operator=@{operator=}}
+\index{operator=@{operator=}!ngsai::dna::SequenceEnumerator@{ngsai::dna::SequenceEnumerator}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classngsai_1_1dna_1_1SequenceEnumerator}{ngsai\+::dna\+::\+Sequence\+Enumerator}} \& ngsai\+::dna\+::\+Sequence\+Enumerator\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classngsai_1_1dna_1_1SequenceEnumerator}{ngsai\+::dna\+::\+Sequence\+Enumerator}} \&}]{other }\end{DoxyParamCaption})}
+
+
+
+Assignment operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & the object to copy from. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a reference to the current instance. 
+\end{DoxyReturn}
+\Hypertarget{classngsai_1_1dna_1_1SequenceEnumerator_a8d500ef409bf31ab01c7187a1155711c}\label{classngsai_1_1dna_1_1SequenceEnumerator_a8d500ef409bf31ab01c7187a1155711c} 
+\index{ngsai::dna::SequenceEnumerator@{ngsai::dna::SequenceEnumerator}!reset@{reset}}
+\index{reset@{reset}!ngsai::dna::SequenceEnumerator@{ngsai::dna::SequenceEnumerator}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily void ngsai\+::dna\+::\+Sequence\+Enumerator\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Resets the enumerator. The next enumerated kmer will be the first in lexicographic order. 
+
+\Hypertarget{classngsai_1_1dna_1_1SequenceEnumerator_afcb7e68f8c27aabe7a8f2365d039c206}\label{classngsai_1_1dna_1_1SequenceEnumerator_afcb7e68f8c27aabe7a8f2365d039c206} 
+\index{ngsai::dna::SequenceEnumerator@{ngsai::dna::SequenceEnumerator}!setSize@{setSize}}
+\index{setSize@{setSize}!ngsai::dna::SequenceEnumerator@{ngsai::dna::SequenceEnumerator}}
+\doxysubsubsection{\texorpdfstring{setSize()}{setSize()}}
+{\footnotesize\ttfamily void ngsai\+::dna\+::\+Sequence\+Enumerator\+::set\+Size (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{kmer\+\_\+size }\end{DoxyParamCaption})}
+
+
+
+Sets the kmer size and reset the enumerator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em kmer\+\_\+size} & the new kmer size. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classngsai_1_1dna_1_1SequenceEnumerator_a9f8d291ee4d662a7ad46ac58da73b5d5}\label{classngsai_1_1dna_1_1SequenceEnumerator_a9f8d291ee4d662a7ad46ac58da73b5d5} 
+\index{ngsai::dna::SequenceEnumerator@{ngsai::dna::SequenceEnumerator}!kmer@{kmer}}
+\index{kmer@{kmer}!ngsai::dna::SequenceEnumerator@{ngsai::dna::SequenceEnumerator}}
+\doxysubsubsection{\texorpdfstring{kmer}{kmer}}
+{\footnotesize\ttfamily std\+::string ngsai\+::dna\+::\+Sequence\+Enumerator\+::kmer\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classngsai_1_1dna_1_1SequenceEnumerator_a6e8d030aebf2d086a3a8a18702f05cc5}\label{classngsai_1_1dna_1_1SequenceEnumerator_a6e8d030aebf2d086a3a8a18702f05cc5} 
+\index{ngsai::dna::SequenceEnumerator@{ngsai::dna::SequenceEnumerator}!kmer\_size@{kmer\_size}}
+\index{kmer\_size@{kmer\_size}!ngsai::dna::SequenceEnumerator@{ngsai::dna::SequenceEnumerator}}
+\doxysubsubsection{\texorpdfstring{kmer\_size}{kmer\_size}}
+{\footnotesize\ttfamily size\+\_\+t ngsai\+::dna\+::\+Sequence\+Enumerator\+::kmer\+\_\+size\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/ngsaipp/dna/\mbox{\hyperlink{SequenceEnumerator_8hpp}{Sequence\+Enumerator.\+hpp}}\end{DoxyCompactItemize}

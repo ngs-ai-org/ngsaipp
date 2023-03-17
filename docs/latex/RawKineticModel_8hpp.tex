@@ -1,0 +1,58 @@
+\hypertarget{RawKineticModel_8hpp}{}\doxysection{include/ngsaipp/epigenetics/\+Raw\+Kinetic\+Model.hpp File Reference}
+\label{RawKineticModel_8hpp}\index{include/ngsaipp/epigenetics/RawKineticModel.hpp@{include/ngsaipp/epigenetics/RawKineticModel.hpp}}
+{\ttfamily \#include $<$ngsaipp/epigenetics/\+Kinetic\+Model.\+hpp$>$}\newline
+{\ttfamily \#include $<$ngsaipp/epigenetics/\+Kmer\+Map.\+hpp$>$}\newline
+{\ttfamily \#include $<$ngsaipp/epigenetics/\+Kinetic\+Signal.\+hpp$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$boost/histogram.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/histogram/serialization.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/serialization/vector.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/serialization/string.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/serialization/utility.\+hpp$>$}\newline
+Include dependency graph for Raw\+Kinetic\+Model.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{RawKineticModel_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=297pt]{RawKineticModel_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classngsai_1_1RawKineticModel}{ngsai\+::\+Raw\+Kinetic\+Model}}
+\begin{DoxyCompactList}\small\item\em The \doxylink{classngsai_1_1RawKineticModel}{Raw\+Kinetic\+Model} class is made to model the raw IPD and PWD signal from Pac\+Bio CCS. This model models a window of IPD/\+PWD signal of L consecutive bp. L is named the model size. The signal in the Lbp window is modelled using 2$\ast$L different distributions of signal -\/ L for IPD and L for PWD signal. The distributions at each position are empiric. Overall the window signal is modelled by 2$\ast$L histograms h\+\_\+ipd(1), h\+\_\+ipd(2), ..., h\+\_\+ipd(\+L) and h\+\_\+pwd(1), h\+\_\+pwd(2), ..., h\+\_\+pwd(\+L). The model can be trained (feed with data) in order to fill the underlying histograms and estimate the signal distributions at each position in the window. At this moment, the histograms are count histograms. If the model is feed with a vector of IPD values X x1, x2, ..., xL and a vector of PWD values Y y1, y2, ..., yL then each histogram h\+\_\+ipd(i) and h\+\_\+pwd(i) will be added a count corresponding to the value xi an yi respectively. h\+\_\+ipd(1) will be added a count corresponding to x1, h\+\_\+ipd(2) will be added a count corresponding to x2, ..., h\+\_\+ipd(\+L) will be added a count corresponding to xL. The same will apply for the PWD histograms with Y values. Once the histograms have been filled, the model can be normalized in order to transform the 2$\ast$L histograms into 2$\ast$L probability densities. At this moment, the model can compute the likelihood of observing a a strech of signal of length L with IPDs X x1, x2, ..., xL and PWDs Y ~\newline
+ y1, y2, ..., yL. The likelihood corresponds to \+: p(x1 $\vert$ h\+\_\+ipd(1)) $\ast$ p(y1 $\vert$ h\+\_\+pwd(1)) $\ast$... $\ast$ p(xL $\vert$ h\+\_\+ipd(\+L)) $\ast$ p(xL $\vert$ h\+\_\+pwd(\+L)) where p(xi $\vert$ h(i)) means the probability of observing the value x at the i-\/th position of the window, according to the density modeled in the histogram h(i). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacengsai}{ngsai}}
+\begin{DoxyCompactList}\small\item\em This file contains values that are useful for formatting terminal output. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef bh\+::histogram$<$ std\+::tuple$<$ boost\+::histogram\+::axis\+::regular$<$ double, boost\+::use\+\_\+default, boost\+::use\+\_\+default, boost\+::use\+\_\+default $>$ $>$, boost\+::histogram\+::unlimited\+\_\+storage$<$ std\+::allocator$<$ char $>$ $>$ $>$ \mbox{\hyperlink{RawKineticModel_8hpp_af86bcd5936bb2c22fb87c4f3b21bcd5e}{hist\+\_\+1d\+\_\+double}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \mbox{\hyperlink{namespacengsai_af66d639ede3ea1dcf107e9cf867dc8d2}{ngsai\+::operator$<$$<$}} (std\+::ostream \&stream, const \mbox{\hyperlink{classngsai_1_1RawKineticModel}{ngsai\+::\+Raw\+Kinetic\+Model}} \&model)
+\begin{DoxyCompactList}\small\item\em Writes the given \doxylink{classngsai_1_1RawKineticModel}{Raw\+Kinetic\+Model} to the output stream. Does nothing if the model is not initialized. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{RawKineticModel_8hpp_af86bcd5936bb2c22fb87c4f3b21bcd5e}\label{RawKineticModel_8hpp_af86bcd5936bb2c22fb87c4f3b21bcd5e} 
+\index{RawKineticModel.hpp@{RawKineticModel.hpp}!hist\_1d\_double@{hist\_1d\_double}}
+\index{hist\_1d\_double@{hist\_1d\_double}!RawKineticModel.hpp@{RawKineticModel.hpp}}
+\doxysubsubsection{\texorpdfstring{hist\_1d\_double}{hist\_1d\_double}}
+{\footnotesize\ttfamily typedef bh\+::histogram$<$ std\+::tuple$<$ boost\+::histogram\+::axis\+::regular$<$ double, boost\+::use\+\_\+default, boost\+::use\+\_\+default, boost\+::use\+\_\+default$>$ $>$, boost\+::histogram\+::unlimited\+\_\+storage$<$ std\+::allocator$<$char$>$ $>$ $>$ \mbox{\hyperlink{RawKineticModel_8hpp_af86bcd5936bb2c22fb87c4f3b21bcd5e}{hist\+\_\+1d\+\_\+double}}}
+

@@ -1,0 +1,31 @@
+\hypertarget{utility_8hpp_source}{}\doxysection{utility.\+hpp}
+\label{utility_8hpp_source}\index{include/ngsaipp/io/utility.hpp@{include/ngsaipp/io/utility.hpp}}
+\mbox{\hyperlink{utility_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ NGSAI\_IO\_UTILITY\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ NGSAI\_IO\_UTILITY\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <pbcopper/data/CigarOperation.h>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00016\ std::ostream\&}
+\DoxyCodeLine{00017\ \mbox{\hyperlink{utility_8hpp_a05929f905fe6ed69e29a03949e74cc6a}{operator\ <<\ }}(std::ostream\&\ stream,\ \textcolor{keyword}{const}\ std::vector<T>\&\ v)}
+\DoxyCodeLine{00018\ \{\ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ x\ :\ v)}
+\DoxyCodeLine{00019\ \ \ \ \ \{\ \ \ stream\ <<\ x\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ ;\ \}}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordflow}{return}\ stream\ ;}
+\DoxyCodeLine{00021\ \}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T1,\ \textcolor{keyword}{class}\ T2>}
+\DoxyCodeLine{00031\ std::ostream\&}
+\DoxyCodeLine{00032\ \mbox{\hyperlink{utility_8hpp_a05929f905fe6ed69e29a03949e74cc6a}{operator\ <<\ }}(std::ostream\&\ stream,\ \textcolor{keyword}{const}\ std::pair<T1,T2>\&\ p)}
+\DoxyCodeLine{00033\ \{\ \ \ stream\ <<\ p.first\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ p.second\ ;}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordflow}{return}\ stream\ ;}
+\DoxyCodeLine{00035\ \}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ NGSAI\_IO\_UTILITY\_HPP}}
+
+\end{DoxyCode}

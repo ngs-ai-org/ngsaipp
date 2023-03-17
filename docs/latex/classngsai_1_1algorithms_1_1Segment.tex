@@ -1,0 +1,233 @@
+\hypertarget{classngsai_1_1algorithms_1_1Segment}{}\doxysection{ngsai\+::algorithms\+::Segment Class Reference}
+\label{classngsai_1_1algorithms_1_1Segment}\index{ngsai::algorithms::Segment@{ngsai::algorithms::Segment}}
+
+
+{\ttfamily \#include $<$segmentation.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classngsai_1_1algorithms_1_1Segment_adc818cc9fd5bebcad77556e91f5f5dd4}{Segment}} ()
+\begin{DoxyCompactList}\small\item\em Constructs and empty instance. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classngsai_1_1algorithms_1_1Segment_ae50f8f144aaef10c028e8887a54eee6c}{Segment}} (size\+\_\+t \mbox{\hyperlink{classngsai_1_1algorithms_1_1Segment_a7382894999aa166d2cbca7764233d3c3}{start}}, size\+\_\+t \mbox{\hyperlink{classngsai_1_1algorithms_1_1Segment_a3c669d0230900d02397527ffcf62ac94}{end}}, double \mbox{\hyperlink{classngsai_1_1algorithms_1_1Segment_a8dda433c05def7defa350e4455e981fe}{l\+\_\+score}}, double \mbox{\hyperlink{classngsai_1_1algorithms_1_1Segment_a40e2a58b369f0fb61577b13909c8afc1}{r\+\_\+score}})
+\begin{DoxyCompactList}\small\item\em Value constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classngsai_1_1algorithms_1_1Segment_a7c2856f588dd283586126c6f37c62b52}{Segment}} (const \mbox{\hyperlink{classngsai_1_1algorithms_1_1Segment}{Segment}} \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classngsai_1_1algorithms_1_1Segment_ad8c8dcd011085a75b58681a6d8271e98}{$\sim$\+Segment}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classngsai_1_1algorithms_1_1Segment}{Segment}} \& \mbox{\hyperlink{classngsai_1_1algorithms_1_1Segment_a2672fcd82be16a06ce389b4c5399ca1f}{operator=}} (const \mbox{\hyperlink{classngsai_1_1algorithms_1_1Segment}{Segment}} \&other)
+\begin{DoxyCompactList}\small\item\em Assignment operator. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classngsai_1_1algorithms_1_1Segment_a590ea4a8b3fc6c28450adc81125f45a0}{operator==}} (const \mbox{\hyperlink{classngsai_1_1algorithms_1_1Segment}{Segment}} \&other)
+\begin{DoxyCompactList}\small\item\em Equality operator. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classngsai_1_1algorithms_1_1Segment_a863da6cd04d4c79ce7b853e53f94d7cb}{operator!=}} (const \mbox{\hyperlink{classngsai_1_1algorithms_1_1Segment}{Segment}} \&other)
+\begin{DoxyCompactList}\small\item\em Inequality operator. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classngsai_1_1algorithms_1_1Segment_a33bf1063283bf179cf7f82164ee1af97}{extend}} (const \mbox{\hyperlink{classngsai_1_1algorithms_1_1Segment}{Segment}} \&other)
+\begin{DoxyCompactList}\small\item\em Given an other instance modelling a sub-\/sequence located {\itshape after} the current instance sub-\/sequence, this sub-\/sequence is modified to include up to the last element in the other sub-\/sequence. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classngsai_1_1algorithms_1_1Segment_a4f45a14936f76a615e3304abd7dc04ba}{to\+String}} () const
+\begin{DoxyCompactList}\small\item\em Creates a string representation of the current instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+size\+\_\+t \mbox{\hyperlink{classngsai_1_1algorithms_1_1Segment_a7382894999aa166d2cbca7764233d3c3}{start}}
+\begin{DoxyCompactList}\small\item\em the index of the 1st element of the super-\/sequence contained in this sub-\/sequence. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classngsai_1_1algorithms_1_1Segment_a3c669d0230900d02397527ffcf62ac94}{end}}
+\begin{DoxyCompactList}\small\item\em the index of the past-\/last element of the super-\/sequence contained in this sub-\/sequence. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classngsai_1_1algorithms_1_1Segment_a8dda433c05def7defa350e4455e981fe}{l\+\_\+score}}
+\begin{DoxyCompactList}\small\item\em the cumulative sum of all scores up to {\itshape but not including} the leftmost score of this sub-\/sequence (also called L-\/score). \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classngsai_1_1algorithms_1_1Segment_a40e2a58b369f0fb61577b13909c8afc1}{r\+\_\+score}}
+\begin{DoxyCompactList}\small\item\em the cumulative sum of all scores up to and {\itshape including} the rightmost score of this sub-\/sequence (also called R-\/score). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The segment class is a data structure for the \doxylink{namespacengsai_1_1algorithms_a43c09d920ce5d1dcbbead35080eb8bc9}{find\+\_\+max\+\_\+scoring\+\_\+segments()} function implementing Ruzzo and Tompa 1999\textquotesingle{}s algorithm. The segment class allows to model a score sub-\/sequence inside a score super-\/sequence, together with the data required by Ruzzo and Tompa\textquotesingle{}s algorithm. A sub-\/sequence encompasses the elements contained in the range \mbox{[}from,to) of the super-\/sequence. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classngsai_1_1algorithms_1_1Segment_adc818cc9fd5bebcad77556e91f5f5dd4}\label{classngsai_1_1algorithms_1_1Segment_adc818cc9fd5bebcad77556e91f5f5dd4} 
+\index{ngsai::algorithms::Segment@{ngsai::algorithms::Segment}!Segment@{Segment}}
+\index{Segment@{Segment}!ngsai::algorithms::Segment@{ngsai::algorithms::Segment}}
+\doxysubsubsection{\texorpdfstring{Segment()}{Segment()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily ngsai\+::algorithms\+::\+Segment\+::\+Segment (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructs and empty instance. 
+
+\Hypertarget{classngsai_1_1algorithms_1_1Segment_ae50f8f144aaef10c028e8887a54eee6c}\label{classngsai_1_1algorithms_1_1Segment_ae50f8f144aaef10c028e8887a54eee6c} 
+\index{ngsai::algorithms::Segment@{ngsai::algorithms::Segment}!Segment@{Segment}}
+\index{Segment@{Segment}!ngsai::algorithms::Segment@{ngsai::algorithms::Segment}}
+\doxysubsubsection{\texorpdfstring{Segment()}{Segment()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily ngsai\+::algorithms\+::\+Segment\+::\+Segment (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{start,  }\item[{size\+\_\+t}]{end,  }\item[{double}]{l\+\_\+score,  }\item[{double}]{r\+\_\+score }\end{DoxyParamCaption})}
+
+
+
+Value constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start} & the index of the 1st element of the super-\/sequence that is part of the sub-\/sequence. \\
+\hline
+{\em end} & the index of the past-\/last element of the super-\/sequence that is part of the sub-\/sequence. \\
+\hline
+{\em l\+\_\+score} & the L-\/score of this sub-\/sequence. \\
+\hline
+{\em r\+\_\+score} & the R-\/score of this sub-\/sequence. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classngsai_1_1algorithms_1_1Segment_a7c2856f588dd283586126c6f37c62b52}\label{classngsai_1_1algorithms_1_1Segment_a7c2856f588dd283586126c6f37c62b52} 
+\index{ngsai::algorithms::Segment@{ngsai::algorithms::Segment}!Segment@{Segment}}
+\index{Segment@{Segment}!ngsai::algorithms::Segment@{ngsai::algorithms::Segment}}
+\doxysubsubsection{\texorpdfstring{Segment()}{Segment()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily ngsai\+::algorithms\+::\+Segment\+::\+Segment (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classngsai_1_1algorithms_1_1Segment}{Segment}} \&}]{other }\end{DoxyParamCaption})}
+
+
+
+Copy constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & an instance to copy from. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classngsai_1_1algorithms_1_1Segment_ad8c8dcd011085a75b58681a6d8271e98}\label{classngsai_1_1algorithms_1_1Segment_ad8c8dcd011085a75b58681a6d8271e98} 
+\index{ngsai::algorithms::Segment@{ngsai::algorithms::Segment}!````~Segment@{$\sim$Segment}}
+\index{````~Segment@{$\sim$Segment}!ngsai::algorithms::Segment@{ngsai::algorithms::Segment}}
+\doxysubsubsection{\texorpdfstring{$\sim$Segment()}{~Segment()}}
+{\footnotesize\ttfamily ngsai\+::algorithms\+::\+Segment\+::$\sim$\+Segment (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classngsai_1_1algorithms_1_1Segment_a33bf1063283bf179cf7f82164ee1af97}\label{classngsai_1_1algorithms_1_1Segment_a33bf1063283bf179cf7f82164ee1af97} 
+\index{ngsai::algorithms::Segment@{ngsai::algorithms::Segment}!extend@{extend}}
+\index{extend@{extend}!ngsai::algorithms::Segment@{ngsai::algorithms::Segment}}
+\doxysubsubsection{\texorpdfstring{extend()}{extend()}}
+{\footnotesize\ttfamily void ngsai\+::algorithms\+::\+Segment\+::extend (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classngsai_1_1algorithms_1_1Segment}{Segment}} \&}]{other }\end{DoxyParamCaption})}
+
+
+
+Given an other instance modelling a sub-\/sequence located {\itshape after} the current instance sub-\/sequence, this sub-\/sequence is modified to include up to the last element in the other sub-\/sequence. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & an other instance modellign a sub-\/sequence located {\itshape after} the current instance sub-\/sequence. If this is not the case, the behavior of this method has no sense. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classngsai_1_1algorithms_1_1Segment_a863da6cd04d4c79ce7b853e53f94d7cb}\label{classngsai_1_1algorithms_1_1Segment_a863da6cd04d4c79ce7b853e53f94d7cb} 
+\index{ngsai::algorithms::Segment@{ngsai::algorithms::Segment}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!ngsai::algorithms::Segment@{ngsai::algorithms::Segment}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool ngsai\+::algorithms\+::\+Segment\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classngsai_1_1algorithms_1_1Segment}{Segment}} \&}]{other }\end{DoxyParamCaption})}
+
+
+
+Inequality operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & an instance to compare the current instance with. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+whether both instances have at least one different field value. 
+\end{DoxyReturn}
+\Hypertarget{classngsai_1_1algorithms_1_1Segment_a2672fcd82be16a06ce389b4c5399ca1f}\label{classngsai_1_1algorithms_1_1Segment_a2672fcd82be16a06ce389b4c5399ca1f} 
+\index{ngsai::algorithms::Segment@{ngsai::algorithms::Segment}!operator=@{operator=}}
+\index{operator=@{operator=}!ngsai::algorithms::Segment@{ngsai::algorithms::Segment}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classngsai_1_1algorithms_1_1Segment}{Segment}} \& ngsai\+::algorithms\+::\+Segment\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classngsai_1_1algorithms_1_1Segment}{Segment}} \&}]{other }\end{DoxyParamCaption})}
+
+
+
+Assignment operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & an instance to assign from. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a reference to the current instance. 
+\end{DoxyReturn}
+\Hypertarget{classngsai_1_1algorithms_1_1Segment_a590ea4a8b3fc6c28450adc81125f45a0}\label{classngsai_1_1algorithms_1_1Segment_a590ea4a8b3fc6c28450adc81125f45a0} 
+\index{ngsai::algorithms::Segment@{ngsai::algorithms::Segment}!operator==@{operator==}}
+\index{operator==@{operator==}!ngsai::algorithms::Segment@{ngsai::algorithms::Segment}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool ngsai\+::algorithms\+::\+Segment\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classngsai_1_1algorithms_1_1Segment}{Segment}} \&}]{other }\end{DoxyParamCaption})}
+
+
+
+Equality operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & an instance to compare the current instance with. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+whether both instances have equal field values. 
+\end{DoxyReturn}
+\Hypertarget{classngsai_1_1algorithms_1_1Segment_a4f45a14936f76a615e3304abd7dc04ba}\label{classngsai_1_1algorithms_1_1Segment_a4f45a14936f76a615e3304abd7dc04ba} 
+\index{ngsai::algorithms::Segment@{ngsai::algorithms::Segment}!toString@{toString}}
+\index{toString@{toString}!ngsai::algorithms::Segment@{ngsai::algorithms::Segment}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}}
+{\footnotesize\ttfamily std\+::string ngsai\+::algorithms\+::\+Segment\+::to\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Creates a string representation of the current instance. 
+
+\begin{DoxyReturn}{Returns}
+the string representation of the current instance. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classngsai_1_1algorithms_1_1Segment_a3c669d0230900d02397527ffcf62ac94}\label{classngsai_1_1algorithms_1_1Segment_a3c669d0230900d02397527ffcf62ac94} 
+\index{ngsai::algorithms::Segment@{ngsai::algorithms::Segment}!end@{end}}
+\index{end@{end}!ngsai::algorithms::Segment@{ngsai::algorithms::Segment}}
+\doxysubsubsection{\texorpdfstring{end}{end}}
+{\footnotesize\ttfamily size\+\_\+t ngsai\+::algorithms\+::\+Segment\+::end}
+
+
+
+the index of the past-\/last element of the super-\/sequence contained in this sub-\/sequence. 
+
+\Hypertarget{classngsai_1_1algorithms_1_1Segment_a8dda433c05def7defa350e4455e981fe}\label{classngsai_1_1algorithms_1_1Segment_a8dda433c05def7defa350e4455e981fe} 
+\index{ngsai::algorithms::Segment@{ngsai::algorithms::Segment}!l\_score@{l\_score}}
+\index{l\_score@{l\_score}!ngsai::algorithms::Segment@{ngsai::algorithms::Segment}}
+\doxysubsubsection{\texorpdfstring{l\_score}{l\_score}}
+{\footnotesize\ttfamily double ngsai\+::algorithms\+::\+Segment\+::l\+\_\+score}
+
+
+
+the cumulative sum of all scores up to {\itshape but not including} the leftmost score of this sub-\/sequence (also called L-\/score). 
+
+\Hypertarget{classngsai_1_1algorithms_1_1Segment_a40e2a58b369f0fb61577b13909c8afc1}\label{classngsai_1_1algorithms_1_1Segment_a40e2a58b369f0fb61577b13909c8afc1} 
+\index{ngsai::algorithms::Segment@{ngsai::algorithms::Segment}!r\_score@{r\_score}}
+\index{r\_score@{r\_score}!ngsai::algorithms::Segment@{ngsai::algorithms::Segment}}
+\doxysubsubsection{\texorpdfstring{r\_score}{r\_score}}
+{\footnotesize\ttfamily double ngsai\+::algorithms\+::\+Segment\+::r\+\_\+score}
+
+
+
+the cumulative sum of all scores up to and {\itshape including} the rightmost score of this sub-\/sequence (also called R-\/score). 
+
+\Hypertarget{classngsai_1_1algorithms_1_1Segment_a7382894999aa166d2cbca7764233d3c3}\label{classngsai_1_1algorithms_1_1Segment_a7382894999aa166d2cbca7764233d3c3} 
+\index{ngsai::algorithms::Segment@{ngsai::algorithms::Segment}!start@{start}}
+\index{start@{start}!ngsai::algorithms::Segment@{ngsai::algorithms::Segment}}
+\doxysubsubsection{\texorpdfstring{start}{start}}
+{\footnotesize\ttfamily size\+\_\+t ngsai\+::algorithms\+::\+Segment\+::start}
+
+
+
+the index of the 1st element of the super-\/sequence contained in this sub-\/sequence. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/ngsaipp/algorithms/\mbox{\hyperlink{segmentation_8hpp}{segmentation.\+hpp}}\end{DoxyCompactItemize}

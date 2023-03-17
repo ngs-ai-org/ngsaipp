@@ -1,0 +1,10 @@
+<map id="ngsai::DiPositionNormalizedKineticModel" name="ngsai::DiPositionNormalizedKineticModel">
+<area shape="rect" id="node1" title="The DiPositionNormalizedKineticModel class is made to model the normalized IPD and PWD signal from Pa..." alt="" coords="885,119,1072,159"/>
+<area shape="rect" id="node2" href="$classngsai_1_1PairWiseNormalizedKineticModel.html" title="The NormalizedKineticModel class is made to model the IPD and PWD signal from PacBio CCS...." alt="" coords="656,119,836,159"/>
+<area shape="rect" id="node3" href="$classngsai_1_1PairWiseKineticModel.html" title="The PairWiseKineticModel class is made to model the raw IPD and PWD signal from PacBio CCS...." alt="" coords="325,95,515,120"/>
+<area shape="rect" id="node4" href="$classngsai_1_1KineticModel.html" title="The KineticModel class is an abstract class providing an interface to derive for classes that impleme..." alt="" coords="17,5,153,31"/>
+<area shape="rect" id="node5" title=" " alt="" coords="13,55,156,95"/>
+<area shape="rect" id="node6" title=" " alt="" coords="5,119,164,159"/>
+<area shape="rect" id="node7" href="$classngsai_1_1KmerMap.html" title="The KmerMap is a template class allowing to create a map storing per kmer kinetic information...." alt="" coords="361,151,479,176"/>
+<area shape="rect" id="node8" title=" " alt="" coords="21,183,148,223"/>
+</map>

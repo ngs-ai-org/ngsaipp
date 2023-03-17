@@ -1,0 +1,81 @@
+\hypertarget{segmentation_8hpp_source}{}\doxysection{segmentation.\+hpp}
+\label{segmentation_8hpp_source}\index{include/ngsaipp/algorithms/segmentation.hpp@{include/ngsaipp/algorithms/segmentation.hpp}}
+\mbox{\hyperlink{segmentation_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ NGSAI\_ALGORITHMS\_SEGMENTATION\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ NGSAI\_ALGORITHMS\_SEGMENTATION\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <list>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacengsai}{ngsai}}}
+\DoxyCodeLine{00011\ \{}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{namespace\ }algorithms}
+\DoxyCodeLine{00013\ \ \ \ \ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classngsai_1_1algorithms_1_1Segment}{Segment}}}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \{\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1algorithms_1_1Segment_adc818cc9fd5bebcad77556e91f5f5dd4}{Segment}}()\ ;}
+\DoxyCodeLine{00029\ \ }
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1algorithms_1_1Segment_ae50f8f144aaef10c028e8887a54eee6c}{Segment}}(\textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classngsai_1_1algorithms_1_1Segment_a7382894999aa166d2cbca7764233d3c3}{start}},}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classngsai_1_1algorithms_1_1Segment_a3c669d0230900d02397527ffcf62ac94}{end}},}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classngsai_1_1algorithms_1_1Segment_a8dda433c05def7defa350e4455e981fe}{l\_score}},}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classngsai_1_1algorithms_1_1Segment_a40e2a58b369f0fb61577b13909c8afc1}{r\_score}})\ ;}
+\DoxyCodeLine{00043\ \ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1algorithms_1_1Segment_a7c2856f588dd283586126c6f37c62b52}{Segment}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classngsai_1_1algorithms_1_1Segment}{Segment}}\&\ other)\ ;}
+\DoxyCodeLine{00049\ \ }
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1algorithms_1_1Segment_ad8c8dcd011085a75b58681a6d8271e98}{\string~Segment}}()\ ;}
+\DoxyCodeLine{00054\ \ }
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1algorithms_1_1Segment}{Segment}}\&}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1algorithms_1_1Segment_a2672fcd82be16a06ce389b4c5399ca1f}{operator\ =\ }}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classngsai_1_1algorithms_1_1Segment}{Segment}}\&\ other)\ ;}
+\DoxyCodeLine{00062\ \ }
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1algorithms_1_1Segment_a590ea4a8b3fc6c28450adc81125f45a0}{operator\ ==\ }}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classngsai_1_1algorithms_1_1Segment}{Segment}}\&\ other)\ ;}
+\DoxyCodeLine{00071\ \ }
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ }
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1algorithms_1_1Segment_a863da6cd04d4c79ce7b853e53f94d7cb}{operator\ !=\ }}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classngsai_1_1algorithms_1_1Segment}{Segment}}\&\ other)\ ;}
+\DoxyCodeLine{00081\ \ }
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1algorithms_1_1Segment_a33bf1063283bf179cf7f82164ee1af97}{extend}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classngsai_1_1algorithms_1_1Segment}{Segment}}\&\ other)\ ;}
+\DoxyCodeLine{00093\ \ }
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1algorithms_1_1Segment_a4f45a14936f76a615e3304abd7dc04ba}{toString}}()\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00101\ \ }
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classngsai_1_1algorithms_1_1Segment_a7382894999aa166d2cbca7764233d3c3}{start}}\ ;}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classngsai_1_1algorithms_1_1Segment_a3c669d0230900d02397527ffcf62ac94}{end}}\ ;}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classngsai_1_1algorithms_1_1Segment_a8dda433c05def7defa350e4455e981fe}{l\_score}}\ ;}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classngsai_1_1algorithms_1_1Segment_a40e2a58b369f0fb61577b13909c8afc1}{r\_score}}\ ;}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \}\ ;\ \ \textcolor{comment}{//\ class\ Segment}}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ std::ostream\&\ \mbox{\hyperlink{namespacengsai_1_1algorithms_a8e2ad174417cc113a54d3031f5b0d47c}{operator\ <<\ }}(}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::ostream\&\ stream,}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classngsai_1_1algorithms_1_1Segment}{ngsai::algorithms::Segment}}\&\ s)\ ;}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ std::list<Segment>::iterator}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacengsai_1_1algorithms_a0cf42022444de326da0cb39bca9c2a41}{find\_lscore}}(std::list<Segment>\&\ segments,\ \mbox{\hyperlink{classngsai_1_1algorithms_1_1Segment}{Segment}}\&\ segment)\ ;}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacengsai_1_1algorithms_a0b7762cbe196abac84d9d1dfee7f0bc2}{update\_list}}(std::list<Segment>\&\ segments,\ \mbox{\hyperlink{classngsai_1_1algorithms_1_1Segment}{Segment}}\&\ segment)\ ;}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ std::list<std::pair<size\_t,size\_t>>\ }
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacengsai_1_1algorithms_a43c09d920ce5d1dcbbead35080eb8bc9}{find\_max\_scoring\_segments}}(\textcolor{keyword}{const}\ std::vector<double>\&\ scores)\ ;}
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ std::list<std::pair<size\_t,size\_t>>\ }
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacengsai_1_1algorithms_a3223f34f7cd62fb101f8aa710345d680}{find\_min\_length\_cover}}(\textcolor{keyword}{const}\ std::vector<double>\&\ scores,}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ alpha,}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ min\_length\_low,}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ min\_length\_high)\ ;}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00204\ \ \ \ \ \}\ \textcolor{comment}{//\ namespace\ algorithms}}
+\DoxyCodeLine{00205\ \ \ \ \ }
+\DoxyCodeLine{00206\ \}\ \textcolor{comment}{//\ namespace\ ngsai}}
+\DoxyCodeLine{00207\ }
+\DoxyCodeLine{00208\ }
+\DoxyCodeLine{00209\ }
+\DoxyCodeLine{00210\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ NGSAI\_ALGORITHMS\_SEGMENTATION\_HPP}}
+
+\end{DoxyCode}

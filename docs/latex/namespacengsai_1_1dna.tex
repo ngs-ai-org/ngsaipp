@@ -1,0 +1,259 @@
+\hypertarget{namespacengsai_1_1dna}{}\doxysection{ngsai\+::dna Namespace Reference}
+\label{namespacengsai_1_1dna}\index{ngsai::dna@{ngsai::dna}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classngsai_1_1dna_1_1SequenceEnumerator}{Sequence\+Enumerator}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+const std\+::unordered\+\_\+map$<$ char, char $>$ \mbox{\hyperlink{namespacengsai_1_1dna_a1587df10a244c8a82309c0fbe0c0178d}{base\+\_\+pairing}} (\{\{ \textquotesingle{}A\textquotesingle{}, \textquotesingle{}T\textquotesingle{}\}, \{ \textquotesingle{}C\textquotesingle{}, \textquotesingle{}G\textquotesingle{}\}, \{ \textquotesingle{}G\textquotesingle{}, \textquotesingle{}C\textquotesingle{}\}, \{ \textquotesingle{}T\textquotesingle{}, \textquotesingle{}A\textquotesingle{}\}, \{ \textquotesingle{}N\textquotesingle{}, \textquotesingle{}N\textquotesingle{}\}\})
+\begin{DoxyCompactList}\small\item\em A map containing the reverse complement of each DNA base. \end{DoxyCompactList}\item 
+const std\+::unordered\+\_\+map$<$ char, int $>$ \mbox{\hyperlink{namespacengsai_1_1dna_ada1b7328bde664b8aa78a889c9371297}{base\+\_\+code}} (\{\{ \textquotesingle{}A\textquotesingle{}, 0\}, \{ \textquotesingle{}C\textquotesingle{}, 1\}, \{ \textquotesingle{}G\textquotesingle{}, 2\}, \{ \textquotesingle{}T\textquotesingle{}, 3\}\})
+\begin{DoxyCompactList}\small\item\em A map containing an int code corresponding to each DNA base. \end{DoxyCompactList}\item 
+const std\+::unordered\+\_\+map$<$ int, char $>$ \mbox{\hyperlink{namespacengsai_1_1dna_a34d8261487b1304f0650d83af40c6682}{code\+\_\+base}} (\{\{0, \textquotesingle{}A\textquotesingle{}\}, \{1, \textquotesingle{}C\textquotesingle{}\}, \{2, \textquotesingle{}G\textquotesingle{}\}, \{3, \textquotesingle{}T\textquotesingle{}\}\})
+\begin{DoxyCompactList}\small\item\em A map containing the DNA base corresponding to each int code. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{namespacengsai_1_1dna_a3540de6a16773c5f73469c0cdd348b17}{get\+\_\+reverse\+\_\+complement}} (const std\+::string \&seq)
+\begin{DoxyCompactList}\small\item\em Compute the reverse complement of a DNA sequence. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{namespacengsai_1_1dna_a0e8ae069839db303cbe98519b82628e6}{colored\+\_\+dna\+\_\+seq}} (const std\+::string \&seq)
+\begin{DoxyCompactList}\small\item\em Creates a new string containing a formatted DNA sequence that appears colored when printed on a terminal. Only DNA characters (A, C, G, T, N) are colored. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{namespacengsai_1_1dna_a874212e5dc60ea9a5cef5eb90ce59d2c}{hash\+\_\+kmer}} (const std\+::string \&sequence)
+\begin{DoxyCompactList}\small\item\em Computes a hash for the given sequence. The hash represents the index at which the sequence would be located if all possible sequences of the same length were sorted. This function is designed for fixed length squences. The hashes of sequences of different lengths should not be compared. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{namespacengsai_1_1dna_acc505e91b9257703455215130e5f2df9}{hash\+\_\+kmer}} (const std\+::string \&sequence, size\+\_\+t start, size\+\_\+t length)
+\begin{DoxyCompactList}\small\item\em Computes a hash for the sub-\/sequence starting at the given position in the sequence and of the given length. The hash represents the index at which the sub-\/sequence would be located if all possible sequences of the same length were sorted. This function is designed for fixed length sequences. The hashes of sequences of different lengths should not be compared. \end{DoxyCompactList}\item 
+std\+::vector$<$ size\+\_\+t $>$ \mbox{\hyperlink{namespacengsai_1_1dna_a599a31577c9216f1e8e3338bae26da07}{hash\+\_\+kmer}} (const std\+::string \&sequence, size\+\_\+t kmer\+\_\+size)
+\begin{DoxyCompactList}\small\item\em Computes the hash each kmer (at every offset) in the sequence using a Rabin-\/\+Karp rolling hash implementation. The hash represents the index at which the kmers would be located if all possible kmers with this length were sorted. This function is designed for fixed length kmers. The hashes of kmers of different lengths should not be compared. \end{DoxyCompactList}\item 
+std\+::vector$<$ size\+\_\+t $>$ \mbox{\hyperlink{namespacengsai_1_1dna_ace82f34150416da314e1dbbc1f9aa540}{hash\+\_\+kmer}} (const std\+::string \&sequence, std\+::vector$<$ std\+::string $>$ \&kmer\+\_\+sequences, size\+\_\+t kmer\+\_\+size)
+\begin{DoxyCompactList}\small\item\em Computes the hash each kmer (at every offset) in the sequence using a Rabin-\/\+Karp rolling hash implementation. The kmer hashes are returned and the kmer sequences are stored in the given vector. The hash represents the index at which the kmers would be located if all possible kmers with this length were sorted. This function is designed for fixed length kmers. The hashes of kmers of different lengths should not be compared. \end{DoxyCompactList}\item 
+std\+::vector$<$ size\+\_\+t $>$ \mbox{\hyperlink{namespacengsai_1_1dna_ae0d044987fc2942a4c3cfa20e44a07ca}{hash\+\_\+kmer}} (const std\+::string \&sequence, const std\+::vector$<$ uint32\+\_\+t $>$ \&ipds, const std\+::vector$<$ uint32\+\_\+t $>$ \&pwds, std\+::vector$<$ std\+::string $>$ \&kmer\+\_\+sequences, std\+::vector$<$ std\+::vector$<$ uint32\+\_\+t $>$ $>$ \&kmer\+\_\+ipds, std\+::vector$<$ std\+::vector$<$ uint32\+\_\+t $>$ $>$ \&kmer\+\_\+pwds, size\+\_\+t kmer\+\_\+size)
+\begin{DoxyCompactList}\small\item\em Does the same as the previous function but also stored the IPDs/\+PWDs corresponding to each kmer in the corresponding vectors. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const size\+\_\+t \mbox{\hyperlink{namespacengsai_1_1dna_a40371e0fb437e53989372541555323c7}{dna\+\_\+alphabet\+\_\+size}} = base\+\_\+code.\+size()
+\begin{DoxyCompactList}\small\item\em The size of the DNA character set. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacengsai_1_1dna_ada1b7328bde664b8aa78a889c9371297}\label{namespacengsai_1_1dna_ada1b7328bde664b8aa78a889c9371297} 
+\index{ngsai::dna@{ngsai::dna}!base\_code@{base\_code}}
+\index{base\_code@{base\_code}!ngsai::dna@{ngsai::dna}}
+\doxysubsubsection{\texorpdfstring{base\_code()}{base\_code()}}
+{\footnotesize\ttfamily const std\+::unordered\+\_\+map$<$ char, int $>$ ngsai\+::dna\+::base\+\_\+code (\begin{DoxyParamCaption}\item[{\{\{ \textquotesingle{}A\textquotesingle{}, 0\}, \{ \textquotesingle{}C\textquotesingle{}, 1\}, \{ \textquotesingle{}G\textquotesingle{}, 2\}, \{ \textquotesingle{}T\textquotesingle{}, 3\}\}}]{ }\end{DoxyParamCaption})}
+
+
+
+A map containing an int code corresponding to each DNA base. 
+
+\Hypertarget{namespacengsai_1_1dna_a1587df10a244c8a82309c0fbe0c0178d}\label{namespacengsai_1_1dna_a1587df10a244c8a82309c0fbe0c0178d} 
+\index{ngsai::dna@{ngsai::dna}!base\_pairing@{base\_pairing}}
+\index{base\_pairing@{base\_pairing}!ngsai::dna@{ngsai::dna}}
+\doxysubsubsection{\texorpdfstring{base\_pairing()}{base\_pairing()}}
+{\footnotesize\ttfamily const std\+::unordered\+\_\+map$<$ char, char $>$ ngsai\+::dna\+::base\+\_\+pairing (\begin{DoxyParamCaption}\item[{\{\{ \textquotesingle{}A\textquotesingle{}, \textquotesingle{}T\textquotesingle{}\}, \{ \textquotesingle{}C\textquotesingle{}, \textquotesingle{}G\textquotesingle{}\}, \{ \textquotesingle{}G\textquotesingle{}, \textquotesingle{}C\textquotesingle{}\}, \{ \textquotesingle{}T\textquotesingle{}, \textquotesingle{}A\textquotesingle{}\}, \{ \textquotesingle{}N\textquotesingle{}, \textquotesingle{}N\textquotesingle{}\}\}}]{ }\end{DoxyParamCaption})}
+
+
+
+A map containing the reverse complement of each DNA base. 
+
+\Hypertarget{namespacengsai_1_1dna_a34d8261487b1304f0650d83af40c6682}\label{namespacengsai_1_1dna_a34d8261487b1304f0650d83af40c6682} 
+\index{ngsai::dna@{ngsai::dna}!code\_base@{code\_base}}
+\index{code\_base@{code\_base}!ngsai::dna@{ngsai::dna}}
+\doxysubsubsection{\texorpdfstring{code\_base()}{code\_base()}}
+{\footnotesize\ttfamily const std\+::unordered\+\_\+map$<$ int, char $>$ ngsai\+::dna\+::code\+\_\+base (\begin{DoxyParamCaption}\item[{\{\{0, \textquotesingle{}A\textquotesingle{}\}, \{1, \textquotesingle{}C\textquotesingle{}\}, \{2, \textquotesingle{}G\textquotesingle{}\}, \{3, \textquotesingle{}T\textquotesingle{}\}\}}]{ }\end{DoxyParamCaption})}
+
+
+
+A map containing the DNA base corresponding to each int code. 
+
+\Hypertarget{namespacengsai_1_1dna_a0e8ae069839db303cbe98519b82628e6}\label{namespacengsai_1_1dna_a0e8ae069839db303cbe98519b82628e6} 
+\index{ngsai::dna@{ngsai::dna}!colored\_dna\_seq@{colored\_dna\_seq}}
+\index{colored\_dna\_seq@{colored\_dna\_seq}!ngsai::dna@{ngsai::dna}}
+\doxysubsubsection{\texorpdfstring{colored\_dna\_seq()}{colored\_dna\_seq()}}
+{\footnotesize\ttfamily std\+::string ngsai\+::dna\+::colored\+\_\+dna\+\_\+seq (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{seq }\end{DoxyParamCaption})}
+
+
+
+Creates a new string containing a formatted DNA sequence that appears colored when printed on a terminal. Only DNA characters (A, C, G, T, N) are colored. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em seq} & the DNA sequence of interest. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a new string containing the original DNA sequence plus some formatting characters. 
+\end{DoxyReturn}
+\Hypertarget{namespacengsai_1_1dna_a3540de6a16773c5f73469c0cdd348b17}\label{namespacengsai_1_1dna_a3540de6a16773c5f73469c0cdd348b17} 
+\index{ngsai::dna@{ngsai::dna}!get\_reverse\_complement@{get\_reverse\_complement}}
+\index{get\_reverse\_complement@{get\_reverse\_complement}!ngsai::dna@{ngsai::dna}}
+\doxysubsubsection{\texorpdfstring{get\_reverse\_complement()}{get\_reverse\_complement()}}
+{\footnotesize\ttfamily std\+::string ngsai\+::dna\+::get\+\_\+reverse\+\_\+complement (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{seq }\end{DoxyParamCaption})}
+
+
+
+Compute the reverse complement of a DNA sequence. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em seq} & A DNA sequence of interest. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & if the sequence contains a non-\/\+DNA character. \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+the reverse complement of the given DNA sequence. 
+\end{DoxyReturn}
+\Hypertarget{namespacengsai_1_1dna_a874212e5dc60ea9a5cef5eb90ce59d2c}\label{namespacengsai_1_1dna_a874212e5dc60ea9a5cef5eb90ce59d2c} 
+\index{ngsai::dna@{ngsai::dna}!hash\_kmer@{hash\_kmer}}
+\index{hash\_kmer@{hash\_kmer}!ngsai::dna@{ngsai::dna}}
+\doxysubsubsection{\texorpdfstring{hash\_kmer()}{hash\_kmer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily size\+\_\+t ngsai\+::dna\+::hash\+\_\+kmer (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{sequence }\end{DoxyParamCaption})}
+
+
+
+Computes a hash for the given sequence. The hash represents the index at which the sequence would be located if all possible sequences of the same length were sorted. This function is designed for fixed length squences. The hashes of sequences of different lengths should not be compared. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sequence} & the kmer to compute the hash from. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & if the sequence contains an invalid DNA character. \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+the kmer hash. 
+\end{DoxyReturn}
+\Hypertarget{namespacengsai_1_1dna_ae0d044987fc2942a4c3cfa20e44a07ca}\label{namespacengsai_1_1dna_ae0d044987fc2942a4c3cfa20e44a07ca} 
+\index{ngsai::dna@{ngsai::dna}!hash\_kmer@{hash\_kmer}}
+\index{hash\_kmer@{hash\_kmer}!ngsai::dna@{ngsai::dna}}
+\doxysubsubsection{\texorpdfstring{hash\_kmer()}{hash\_kmer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily std\+::vector$<$ size\+\_\+t $>$ ngsai\+::dna\+::hash\+\_\+kmer (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{sequence,  }\item[{const std\+::vector$<$ uint32\+\_\+t $>$ \&}]{ipds,  }\item[{const std\+::vector$<$ uint32\+\_\+t $>$ \&}]{pwds,  }\item[{std\+::vector$<$ std\+::string $>$ \&}]{kmer\+\_\+sequences,  }\item[{std\+::vector$<$ std\+::vector$<$ uint32\+\_\+t $>$ $>$ \&}]{kmer\+\_\+ipds,  }\item[{std\+::vector$<$ std\+::vector$<$ uint32\+\_\+t $>$ $>$ \&}]{kmer\+\_\+pwds,  }\item[{size\+\_\+t}]{kmer\+\_\+size }\end{DoxyParamCaption})}
+
+
+
+Does the same as the previous function but also stored the IPDs/\+PWDs corresponding to each kmer in the corresponding vectors. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sequence} & the sequence of interest. \\
+\hline
+{\em ipds} & the IPD values corresponding to each sequence position. \\
+\hline
+{\em pwds} & the PWD values corresponding to each sequence position. \\
+\hline
+{\em kmer\+\_\+size} & the size of the kmer to hash from the sequence. \\
+\hline
+{\em kmer\+\_\+sequences} & a vector in which each kmer sequence will be stored. The sequence order will match the hash order. \\
+\hline
+{\em kmer\+\_\+ipds} & a vector in which each kmer IPD values will be stored. The IPD order will match the hash order. \\
+\hline
+{\em kmer\+\_\+pwds} & a vector in which each kmer PWD values will be stored. The PWD order will match the hash order. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & if the sequence is too short to contain the given kmer, if it contains an invalid DNA character or if the sequence, IPDs and PWDs length do not match. \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+a vector containing the hashes of each kmer, starting at each offset. The i-\/th hash corresponds to the kmer starting at position i in the sequence. 
+\end{DoxyReturn}
+\Hypertarget{namespacengsai_1_1dna_a599a31577c9216f1e8e3338bae26da07}\label{namespacengsai_1_1dna_a599a31577c9216f1e8e3338bae26da07} 
+\index{ngsai::dna@{ngsai::dna}!hash\_kmer@{hash\_kmer}}
+\index{hash\_kmer@{hash\_kmer}!ngsai::dna@{ngsai::dna}}
+\doxysubsubsection{\texorpdfstring{hash\_kmer()}{hash\_kmer()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily std\+::vector$<$ size\+\_\+t $>$ ngsai\+::dna\+::hash\+\_\+kmer (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{sequence,  }\item[{size\+\_\+t}]{kmer\+\_\+size }\end{DoxyParamCaption})}
+
+
+
+Computes the hash each kmer (at every offset) in the sequence using a Rabin-\/\+Karp rolling hash implementation. The hash represents the index at which the kmers would be located if all possible kmers with this length were sorted. This function is designed for fixed length kmers. The hashes of kmers of different lengths should not be compared. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sequence} & the sequence of interest. \\
+\hline
+{\em kmer\+\_\+size} & the size of the kmer to hash from the sequence. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & if the sequence is too short to contain the given kmer or if it contains an invalid DNA character. \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+a vector containing the hashes of each kmer, starting at each offset. The i-\/th hash corresponds to the kmer starting at position i in the sequence. 
+\end{DoxyReturn}
+\Hypertarget{namespacengsai_1_1dna_acc505e91b9257703455215130e5f2df9}\label{namespacengsai_1_1dna_acc505e91b9257703455215130e5f2df9} 
+\index{ngsai::dna@{ngsai::dna}!hash\_kmer@{hash\_kmer}}
+\index{hash\_kmer@{hash\_kmer}!ngsai::dna@{ngsai::dna}}
+\doxysubsubsection{\texorpdfstring{hash\_kmer()}{hash\_kmer()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily size\+\_\+t ngsai\+::dna\+::hash\+\_\+kmer (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{sequence,  }\item[{size\+\_\+t}]{start,  }\item[{size\+\_\+t}]{length }\end{DoxyParamCaption})}
+
+
+
+Computes a hash for the sub-\/sequence starting at the given position in the sequence and of the given length. The hash represents the index at which the sub-\/sequence would be located if all possible sequences of the same length were sorted. This function is designed for fixed length sequences. The hashes of sequences of different lengths should not be compared. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sequence} & the sequencee containing the sub-\/sequence of interest. \\
+\hline
+{\em start} & the 0 based position at which the sub-\/sequence starts in the sequence. \\
+\hline
+{\em length} & the length of the sub-\/sequence. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & if the sequence is too short to contain the given kmer or if it contains an invalid DNA character. \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+the kmer hash. 
+\end{DoxyReturn}
+\Hypertarget{namespacengsai_1_1dna_ace82f34150416da314e1dbbc1f9aa540}\label{namespacengsai_1_1dna_ace82f34150416da314e1dbbc1f9aa540} 
+\index{ngsai::dna@{ngsai::dna}!hash\_kmer@{hash\_kmer}}
+\index{hash\_kmer@{hash\_kmer}!ngsai::dna@{ngsai::dna}}
+\doxysubsubsection{\texorpdfstring{hash\_kmer()}{hash\_kmer()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily std\+::vector$<$ size\+\_\+t $>$ ngsai\+::dna\+::hash\+\_\+kmer (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{sequence,  }\item[{std\+::vector$<$ std\+::string $>$ \&}]{kmer\+\_\+sequences,  }\item[{size\+\_\+t}]{kmer\+\_\+size }\end{DoxyParamCaption})}
+
+
+
+Computes the hash each kmer (at every offset) in the sequence using a Rabin-\/\+Karp rolling hash implementation. The kmer hashes are returned and the kmer sequences are stored in the given vector. The hash represents the index at which the kmers would be located if all possible kmers with this length were sorted. This function is designed for fixed length kmers. The hashes of kmers of different lengths should not be compared. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sequence} & the sequence of interest. \\
+\hline
+{\em kmer\+\_\+size} & the size of the kmer to hash from the sequence. \\
+\hline
+{\em kmer\+\_\+sequences} & a vector in which each kmer sequence will be stored. The sequence order will match the hash order. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & if the sequence is too short to contain the given kmer or if it contains an invalid DNA character. \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+a vector containing the hashes of each kmer, starting at each offset. The i-\/th hash corresponds to the kmer starting at position i in the sequence. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespacengsai_1_1dna_a40371e0fb437e53989372541555323c7}\label{namespacengsai_1_1dna_a40371e0fb437e53989372541555323c7} 
+\index{ngsai::dna@{ngsai::dna}!dna\_alphabet\_size@{dna\_alphabet\_size}}
+\index{dna\_alphabet\_size@{dna\_alphabet\_size}!ngsai::dna@{ngsai::dna}}
+\doxysubsubsection{\texorpdfstring{dna\_alphabet\_size}{dna\_alphabet\_size}}
+{\footnotesize\ttfamily const size\+\_\+t ngsai\+::dna\+::dna\+\_\+alphabet\+\_\+size = base\+\_\+code.\+size()}
+
+
+
+The size of the DNA character set. 
+

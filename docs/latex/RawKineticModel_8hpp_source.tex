@@ -1,0 +1,199 @@
+\hypertarget{RawKineticModel_8hpp_source}{}\doxysection{Raw\+Kinetic\+Model.\+hpp}
+\label{RawKineticModel_8hpp_source}\index{include/ngsaipp/epigenetics/RawKineticModel.hpp@{include/ngsaipp/epigenetics/RawKineticModel.hpp}}
+\mbox{\hyperlink{RawKineticModel_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ NGSAI\_RAWKINETICMODEL\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ NGSAI\_RAWKINETICMODEL\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ forward\ declarations}}
+\DoxyCodeLine{00006\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacengsai}{ngsai}}}
+\DoxyCodeLine{00007\ \{}
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keyword}{class\ }NormalizedKineticModel\ ;}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keyword}{class\ }DiPositionKineticModel\ ;}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{class\ }DiPositionNormalizedKineticModel\ ;}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{class\ }PairWiseKineticModel\ ;}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{class\ }PairWiseNormalizedKineticModel\ ;}
+\DoxyCodeLine{00013\ \}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{KineticModel_8hpp}{ngsaipp/epigenetics/KineticModel.hpp}}>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{KmerMap_8hpp}{ngsaipp/epigenetics/KmerMap.hpp}}>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{KineticSignal_8hpp}{ngsaipp/epigenetics/KineticSignal.hpp}}>}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <boost/histogram.hpp>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <boost/histogram/serialization.hpp>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <boost/serialization/vector.hpp>}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <boost/serialization/string.hpp>}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <boost/serialization/utility.hpp>}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{namespace\ }bh\ =\ boost::histogram\ ;}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{comment}{/*\ a\ typedef\ for\ the\ 1D\ boost\ histograms\ to\ modelize\ 1D\ densities\ */}}
+\DoxyCodeLine{00032\ \textcolor{keyword}{typedef}\ bh::histogram<}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ std::tuple<}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ boost::histogram::axis::regular<}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ double,\ }
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ boost::use\_default,\ }
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ boost::use\_default,\ }
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ boost::use\_default>}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ >,}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ boost::histogram::unlimited\_storage<}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::allocator<char>}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ >}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ >\ \mbox{\hyperlink{RawKineticModel_8hpp_af86bcd5936bb2c22fb87c4f3b21bcd5e}{hist\_1d\_double}}\ ;}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacengsai}{ngsai}}}
+\DoxyCodeLine{00047\ \{\ \ \ }
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classngsai_1_1RawKineticModel}{RawKineticModel}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classngsai_1_1KineticModel}{ngsai::KineticModel}}}
+\DoxyCodeLine{00080\ \ \ \ \ \{\ \ }
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1RawKineticModel_aa7f1538ce76516abb4f0f5da7290b7eb}{RawKineticModel}}()\ ;}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1RawKineticModel_a8185648bb85943dec49df9409696fe51}{RawKineticModel}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classngsai_1_1RawKineticModel}{ngsai::RawKineticModel}}\&\ other)\ ;}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1RawKineticModel_a5f251615db954ea4bd84dcdb2de5843f}{RawKineticModel}}(\mbox{\hyperlink{classngsai_1_1RawKineticModel}{ngsai::RawKineticModel}}\&\&\ other)\ ;}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1RawKineticModel_a9c10a22a76e8d22bec9d0350900f10cc}{\string~RawKineticModel}}()\ \textcolor{keyword}{override}\ ;}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1RawKineticModel}{ngsai::RawKineticModel}}\&}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1RawKineticModel_ab359e22be401b32a5917f3e9eee7b761}{operator\ =\ }}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classngsai_1_1RawKineticModel}{ngsai::RawKineticModel}}\&\ other)\ ;}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1RawKineticModel}{ngsai::RawKineticModel}}\&}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1RawKineticModel_ab359e22be401b32a5917f3e9eee7b761}{operator\ =\ }}(\mbox{\hyperlink{classngsai_1_1RawKineticModel}{ngsai::RawKineticModel}}\&\&\ other)\ ;}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ }
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1RawKineticModel_aebc74cbf930b5cb3027f09090dc1be65}{operator\ ==\ }}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classngsai_1_1RawKineticModel}{ngsai::RawKineticModel}}\&\ other)\ \textcolor{keyword}{const}\ ;\ \ \ }
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ }
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1RawKineticModel_a27c087bb5e6d64b3e8b16d2e63ff54d2}{operator\ !=\ }}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classngsai_1_1RawKineticModel}{ngsai::RawKineticModel}}\&\ other)\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1RawKineticModel_a163038ce8a85da8e3bff760bbb098d32}{setParameters}}(\textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classngsai_1_1KineticModel_a5e3e2aeb7c59045aae917d2fd3c28311}{size}},}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ xmin,}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ xmax,}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ n\_bins,}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ pseudo\_counts)\ \textcolor{keyword}{override}\ ;}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<std::pair<double,double>>}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1RawKineticModel_a0a7b3d94e839cdc1b5207eb46927da20}{getBinBoundaries}}()\ \textcolor{keyword}{const\ override}\ ;}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1RawKineticModel_a9f1d637844080fe221a7984d0a1760eb}{add}}(\textcolor{keywordtype}{double}\ ipd,\ \textcolor{keywordtype}{double}\ pwd,\ \textcolor{keywordtype}{size\_t}\ position)\ ;}
+\DoxyCodeLine{00186\ }
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1RawKineticModel_a5c4e5b1ce914035601fe44550fb78cbf}{add}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classngsai_1_1KineticSignal}{ngsai::KineticSignal}}\&\ kinetics)\ \textcolor{keyword}{override}\ ;}
+\DoxyCodeLine{00207\ }
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1RawKineticModel_a5fa0c9acdb0bf548d882569abace0bb1}{add}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classngsai_1_1KineticModel}{ngsai::KineticModel}}\&\ model)\ \textcolor{keyword}{override}\ ;}
+\DoxyCodeLine{00220\ }
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1RawKineticModel}{ngsai::RawKineticModel}}*}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1RawKineticModel_a139313c5de4ac85856dbcdf194562f32}{copy}}()\ \textcolor{keyword}{const\ override}\ ;}
+\DoxyCodeLine{00229\ }
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1RawKineticModel_af017fe724c6e62b3bc5c5c79275367f4}{density}}()\ \textcolor{keyword}{override}\ ;}
+\DoxyCodeLine{00238\ }
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}}
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ }
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1RawKineticModel_a898f7b7bb60568049754c24964573b8c}{log}}()\ \textcolor{keyword}{override}\ ;}
+\DoxyCodeLine{00248\ }
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}}
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ }
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1RawKineticModel_aadc420b7a66664a02202e811d6822d87}{exp}}()\ \textcolor{keyword}{override}\ ;}
+\DoxyCodeLine{00258\ }
+\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}}
+\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}}
+\DoxyCodeLine{00280\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1RawKineticModel_a1278100f3d31feb22c2b5030f3b9991a}{logLikelihood}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classngsai_1_1KineticSignal}{ngsai::KineticSignal}}\&\ kinetics)\ \textcolor{keyword}{const\ override}\ ;}
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00286\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}}
+\DoxyCodeLine{00287\ \ \ \ \ \ \ \ \ \ \ \ \ std::string}
+\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1RawKineticModel_af6f76dde8c631a57323dc312d77795d7}{toString}}()\ \textcolor{keyword}{const\ override}\ ;}
+\DoxyCodeLine{00289\ }
+\DoxyCodeLine{00296\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}}
+\DoxyCodeLine{00297\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{00298\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1RawKineticModel_a5df1275c21c19e63ca044960e91266a4}{save}}(\textcolor{keyword}{const}\ std::string\&\ path)\ \textcolor{keyword}{const\ override}\ ;}
+\DoxyCodeLine{00299\ }
+\DoxyCodeLine{00306\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}}
+\DoxyCodeLine{00307\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{00308\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1RawKineticModel_a6e9cd9899cd21703c3b5c8db0913a7c6}{load}}(\textcolor{keyword}{const}\ std::string\&\ path)\ \textcolor{keyword}{override}\ ;}
+\DoxyCodeLine{00309\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00310\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ double\ dispatch\ of\ add(const\ KineticModel\&)}}
+\DoxyCodeLine{00311\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00321\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}}
+\DoxyCodeLine{00322\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{00323\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1RawKineticModel_a5cad04868d6bfba05e038e65dce83910}{addTo}}(}
+\DoxyCodeLine{00324\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1RawKineticModel}{ngsai::RawKineticModel}}\&\ model)\ \textcolor{keyword}{const\ override}\ ;}
+\DoxyCodeLine{00325\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00335\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}}
+\DoxyCodeLine{00336\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{00337\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1RawKineticModel_afb43a62769d96c432dd0c229e7226595}{addTo}}(}
+\DoxyCodeLine{00338\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1NormalizedKineticModel}{ngsai::NormalizedKineticModel}}\&\ model)\ \textcolor{keyword}{const\ override}\ ;}
+\DoxyCodeLine{00339\ }
+\DoxyCodeLine{00349\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}}
+\DoxyCodeLine{00350\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{00351\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1RawKineticModel_a2379cd11b058d912bab64219a818d1c5}{addTo}}(}
+\DoxyCodeLine{00352\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1PairWiseKineticModel}{ngsai::PairWiseKineticModel}}\&\ model)\ \textcolor{keyword}{const\ override}\ ;}
+\DoxyCodeLine{00353\ }
+\DoxyCodeLine{00363\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}}
+\DoxyCodeLine{00364\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{00365\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1RawKineticModel_a56c68b862526df0f0fb4ea11603c3d1c}{addTo}}(}
+\DoxyCodeLine{00366\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1PairWiseNormalizedKineticModel}{ngsai::PairWiseNormalizedKineticModel}}\&\ model)\ \textcolor{keyword}{const\ override}\ ;}
+\DoxyCodeLine{00367\ }
+\DoxyCodeLine{00377\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}}
+\DoxyCodeLine{00378\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{00379\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1RawKineticModel_afd7d1a89c5e8d4052c6edd18a32a2081}{addTo}}(}
+\DoxyCodeLine{00380\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1DiPositionKineticModel}{ngsai::DiPositionKineticModel}}\&\ model)\ \textcolor{keyword}{const\ override}\ ;}
+\DoxyCodeLine{00381\ }
+\DoxyCodeLine{00391\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}}
+\DoxyCodeLine{00392\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{00393\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1RawKineticModel_af49b338faecf56eb96fb75c52fe300ae}{addTo}}(}
+\DoxyCodeLine{00394\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1DiPositionNormalizedKineticModel}{ngsai::DiPositionNormalizedKineticModel}}\&\ model)\ \textcolor{keyword}{const\ override}\ ;}
+\DoxyCodeLine{00395\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00396\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00397\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{friend}\ std::ostream\&\ }
+\DoxyCodeLine{00398\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1RawKineticModel_a15449c56a9d490abe32bf8337635810a}{operator\ <<\ }}(std::ostream\&\ stream,}
+\DoxyCodeLine{00399\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classngsai_1_1RawKineticModel}{ngsai::RawKineticModel}}\&\ model)\ ;\ }
+\DoxyCodeLine{00400\ }
+\DoxyCodeLine{00401\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ for\ serialization}}
+\DoxyCodeLine{00402\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00403\ }
+\DoxyCodeLine{00404\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classngsai_1_1RawKineticModel_ac98d07dd8f7b70e16ccb9a01abf56b9c}{boost::serialization::access}};}
+\DoxyCodeLine{00405\ }
+\DoxyCodeLine{00412\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ Archive>}
+\DoxyCodeLine{00413\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{00414\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1RawKineticModel_a5b09e50c3d650787e371e387b0304343}{serialize}}(Archive\ \&\ archive,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ version)}
+\DoxyCodeLine{00415\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \ \ \textcolor{keywordflow}{if}(version\ <\ 1)}
+\DoxyCodeLine{00416\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ ;\ \}}
+\DoxyCodeLine{00417\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00418\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//https://theboostcpplibraries.com/boost.serialization-\/class-\/hierarchies}}
+\DoxyCodeLine{00419\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ archive\ \&\ boost::serialization::base\_object<ngsai::KineticModel>(*\textcolor{keyword}{this})\ ;\ }
+\DoxyCodeLine{00420\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ archive\ \&\ \mbox{\hyperlink{classngsai_1_1RawKineticModel_a5969628b79fdc0ba6db4a65b88ccc001}{m\_histograms\_ipd}}\ ;}
+\DoxyCodeLine{00421\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ archive\ \&\ \mbox{\hyperlink{classngsai_1_1RawKineticModel_a3319f60b04073d29e2af451fc58b99e2}{m\_histograms\_pwd}}\ ;}
+\DoxyCodeLine{00422\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00423\ }
+\DoxyCodeLine{00424\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00428\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<hist\_1d\_double>\ \mbox{\hyperlink{classngsai_1_1RawKineticModel_a5969628b79fdc0ba6db4a65b88ccc001}{m\_histograms\_ipd}}\ ;}
+\DoxyCodeLine{00429\ }
+\DoxyCodeLine{00433\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<hist\_1d\_double>\ \mbox{\hyperlink{classngsai_1_1RawKineticModel_a3319f60b04073d29e2af451fc58b99e2}{m\_histograms\_pwd}}\ ;}
+\DoxyCodeLine{00434\ \ \ \ \ \}\ ;}
+\DoxyCodeLine{00435\ }
+\DoxyCodeLine{00436\ \ \ \ }
+\DoxyCodeLine{00444\ \ \ \ \ std::ostream\&\ }
+\DoxyCodeLine{00445\ \ \ \ \ \mbox{\hyperlink{namespacengsai_af66d639ede3ea1dcf107e9cf867dc8d2}{operator\ <<\ }}(std::ostream\&\ stream,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classngsai_1_1RawKineticModel}{ngsai::RawKineticModel}}\&\ model)\ ;}
+\DoxyCodeLine{00446\ \}}
+\DoxyCodeLine{00447\ }
+\DoxyCodeLine{00448\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ NGSAI\_RAWKINETICMODEL\_HPP}}
+
+\end{DoxyCode}

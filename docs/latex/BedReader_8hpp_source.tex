@@ -1,0 +1,43 @@
+\hypertarget{BedReader_8hpp_source}{}\doxysection{Bed\+Reader.\+hpp}
+\label{BedReader_8hpp_source}\index{include/ngsaipp/io/BedReader.hpp@{include/ngsaipp/io/BedReader.hpp}}
+\mbox{\hyperlink{BedReader_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ NGSAI\_IO\_BEDREADER\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ NGSAI\_IO\_BEDREADER\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{BedRecord_8hpp}{ngsaipp/io/BedRecord.hpp}}>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacengsai}{ngsai}}}
+\DoxyCodeLine{00011\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classngsai_1_1BedReader}{BedReader}}}
+\DoxyCodeLine{00018\ \ \ \ \ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1BedReader_a579b23d09a420bcd37758e8a84f683c7}{BedReader}}()\ =\ delete\ ;}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1BedReader_a74c2c30b9d59e1bcacb9b6e791579259}{BedReader}}(\textcolor{keyword}{const}\ std::string\&\ path)\ ;}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1BedReader_aba8f0c8b7150fca37a08ef759e30f6e7}{\string~BedReader}}()\ ;}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classngsai_1_1BedReader_a8b5cfe6bdb68efacd467698896f850d4}{getNext}}(\mbox{\hyperlink{classngsai_1_1BedRecord}{BedRecord}}\&\ record)\ ;}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classngsai_1_1BedReader_a6dbd0dbb7b6cf67b79c07e15a7274dbf}{close}}()\ ;}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classngsai_1_1BedReader_a26b4e527635fb126e65c4eb8df8c8ebd}{open}}()\ ;}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{classngsai_1_1BedReader_a96da67ec6799171efb51910c4de19f42}{m\_path}}\ ;}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ std::ifstream\ \mbox{\hyperlink{classngsai_1_1BedReader_a0f77e5022770e90b44cb1fa26247660a}{m\_f\_bed}}\ ;}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classngsai_1_1BedReader_ad107df4b261e812e34632cdc45aa229a}{m\_is\_open}}\ ;}
+\DoxyCodeLine{00068\ \ \ \ \ \}\ ;}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \}\ \textcolor{comment}{//\ namespace\ ngsai}}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ NGSAI\_IO\_BEDREADER\_HPP}}
+
+\end{DoxyCode}

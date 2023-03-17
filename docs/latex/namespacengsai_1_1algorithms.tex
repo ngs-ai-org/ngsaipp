@@ -1,0 +1,122 @@
+\hypertarget{namespacengsai_1_1algorithms}{}\doxysection{ngsai\+::algorithms Namespace Reference}
+\label{namespacengsai_1_1algorithms}\index{ngsai::algorithms@{ngsai::algorithms}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classngsai_1_1algorithms_1_1Segment}{Segment}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \mbox{\hyperlink{namespacengsai_1_1algorithms_a8e2ad174417cc113a54d3031f5b0d47c}{operator$<$$<$}} (std\+::ostream \&stream, const \mbox{\hyperlink{classngsai_1_1algorithms_1_1Segment}{ngsai\+::algorithms\+::\+Segment}} \&s)
+\begin{DoxyCompactList}\small\item\em Sends a \doxylink{classngsai_1_1algorithms_1_1Segment}{Segment}\textquotesingle{}s reprensentation to stream. \end{DoxyCompactList}\item 
+std\+::list$<$ \mbox{\hyperlink{classngsai_1_1algorithms_1_1Segment}{Segment}} $>$\+::iterator \mbox{\hyperlink{namespacengsai_1_1algorithms_a0cf42022444de326da0cb39bca9c2a41}{find\+\_\+lscore}} (std\+::list$<$ \mbox{\hyperlink{classngsai_1_1algorithms_1_1Segment}{Segment}} $>$ \&segments, \mbox{\hyperlink{classngsai_1_1algorithms_1_1Segment}{Segment}} \&segment)
+\begin{DoxyCompactList}\small\item\em Routine of \doxylink{namespacengsai_1_1algorithms_a43c09d920ce5d1dcbbead35080eb8bc9}{find\+\_\+max\+\_\+scoring\+\_\+segments()}. Searches the segment list from right to left for the first segment having a L-\/score smaller than the candidate L-\/score. This corresponds to algorithm step 1. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespacengsai_1_1algorithms_a0b7762cbe196abac84d9d1dfee7f0bc2}{update\+\_\+list}} (std\+::list$<$ \mbox{\hyperlink{classngsai_1_1algorithms_1_1Segment}{Segment}} $>$ \&segments, \mbox{\hyperlink{classngsai_1_1algorithms_1_1Segment}{Segment}} \&segment)
+\begin{DoxyCompactList}\small\item\em Routine of \doxylink{namespacengsai_1_1algorithms_a43c09d920ce5d1dcbbead35080eb8bc9}{find\+\_\+max\+\_\+scoring\+\_\+segments()}. Process a candidate maximum scoring segment candidate and appends it into the list of already known segments or merge it with a or more already existing ones. This corresponds to steps 1 to 4 in the algorithm desription. \end{DoxyCompactList}\item 
+std\+::list$<$ std\+::pair$<$ size\+\_\+t, size\+\_\+t $>$ $>$ \mbox{\hyperlink{namespacengsai_1_1algorithms_a43c09d920ce5d1dcbbead35080eb8bc9}{find\+\_\+max\+\_\+scoring\+\_\+segments}} (const std\+::vector$<$ double $>$ \&scores)
+\begin{DoxyCompactList}\small\item\em Implementation Ruzzo and Tompa 1999\textquotesingle{}s algorithm (A Linear Time ALgorithm for Finding all Maximal Scoring Subsequences). Finds all maximum positive scoring segments within the given sequence of scores. \end{DoxyCompactList}\item 
+std\+::list$<$ std\+::pair$<$ size\+\_\+t, size\+\_\+t $>$ $>$ \mbox{\hyperlink{namespacengsai_1_1algorithms_a3223f34f7cd62fb101f8aa710345d680}{find\+\_\+min\+\_\+length\+\_\+cover}} (const std\+::vector$<$ double $>$ \&scores, double alpha, size\+\_\+t min\+\_\+length\+\_\+low, size\+\_\+t min\+\_\+length\+\_\+high)
+\begin{DoxyCompactList}\small\item\em Implementation of Csũros 2004\textquotesingle{}s Min\+Length-\/\+Cover\textquotesingle{}s algorithm (Maximum Scoring \doxylink{classngsai_1_1algorithms_1_1Segment}{Segment} Sets). Finds a set of maximum positive scoring segments within the given sequence of scores given the constrains. This set of segments (k-\/cover) has the optimal score given the constrains. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacengsai_1_1algorithms_a0cf42022444de326da0cb39bca9c2a41}\label{namespacengsai_1_1algorithms_a0cf42022444de326da0cb39bca9c2a41} 
+\index{ngsai::algorithms@{ngsai::algorithms}!find\_lscore@{find\_lscore}}
+\index{find\_lscore@{find\_lscore}!ngsai::algorithms@{ngsai::algorithms}}
+\doxysubsubsection{\texorpdfstring{find\_lscore()}{find\_lscore()}}
+{\footnotesize\ttfamily std\+::list$<$ \mbox{\hyperlink{classngsai_1_1algorithms_1_1Segment}{Segment}} $>$\+::iterator ngsai\+::algorithms\+::find\+\_\+lscore (\begin{DoxyParamCaption}\item[{std\+::list$<$ \mbox{\hyperlink{classngsai_1_1algorithms_1_1Segment}{Segment}} $>$ \&}]{segments,  }\item[{\mbox{\hyperlink{classngsai_1_1algorithms_1_1Segment}{Segment}} \&}]{segment }\end{DoxyParamCaption})}
+
+
+
+Routine of \doxylink{namespacengsai_1_1algorithms_a43c09d920ce5d1dcbbead35080eb8bc9}{find\+\_\+max\+\_\+scoring\+\_\+segments()}. Searches the segment list from right to left for the first segment having a L-\/score smaller than the candidate L-\/score. This corresponds to algorithm step 1. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em segments} & the current list of maximum scoring segments. \\
+\hline
+{\em segment} & a candidate maximum scoring segment. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an iterator to the element in segments with a L-\/score smaller than the candidate segment L-\/score. Returns segments.\+end() if no such element could be found. 
+\end{DoxyReturn}
+\Hypertarget{namespacengsai_1_1algorithms_a43c09d920ce5d1dcbbead35080eb8bc9}\label{namespacengsai_1_1algorithms_a43c09d920ce5d1dcbbead35080eb8bc9} 
+\index{ngsai::algorithms@{ngsai::algorithms}!find\_max\_scoring\_segments@{find\_max\_scoring\_segments}}
+\index{find\_max\_scoring\_segments@{find\_max\_scoring\_segments}!ngsai::algorithms@{ngsai::algorithms}}
+\doxysubsubsection{\texorpdfstring{find\_max\_scoring\_segments()}{find\_max\_scoring\_segments()}}
+{\footnotesize\ttfamily std\+::list$<$ std\+::pair$<$ size\+\_\+t, size\+\_\+t $>$ $>$ ngsai\+::algorithms\+::find\+\_\+max\+\_\+scoring\+\_\+segments (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ double $>$ \&}]{scores }\end{DoxyParamCaption})}
+
+
+
+Implementation Ruzzo and Tompa 1999\textquotesingle{}s algorithm (A Linear Time ALgorithm for Finding all Maximal Scoring Subsequences). Finds all maximum positive scoring segments within the given sequence of scores. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scores} & the sequence of positive and negative scores. Positive scores means good, negative scores means bad. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a list of maximum scoring segments. Each pair in the list indicates a range \mbox{[}from,to) in the score sequence that delimitates a maximum scoring segment. Each range can be retrieved using pair.\+first and pair.\+second respectively. 
+\end{DoxyReturn}
+\Hypertarget{namespacengsai_1_1algorithms_a3223f34f7cd62fb101f8aa710345d680}\label{namespacengsai_1_1algorithms_a3223f34f7cd62fb101f8aa710345d680} 
+\index{ngsai::algorithms@{ngsai::algorithms}!find\_min\_length\_cover@{find\_min\_length\_cover}}
+\index{find\_min\_length\_cover@{find\_min\_length\_cover}!ngsai::algorithms@{ngsai::algorithms}}
+\doxysubsubsection{\texorpdfstring{find\_min\_length\_cover()}{find\_min\_length\_cover()}}
+{\footnotesize\ttfamily std\+::list$<$ std\+::pair$<$ size\+\_\+t, size\+\_\+t $>$ $>$ ngsai\+::algorithms\+::find\+\_\+min\+\_\+length\+\_\+cover (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ double $>$ \&}]{scores,  }\item[{double}]{alpha,  }\item[{size\+\_\+t}]{min\+\_\+length\+\_\+low,  }\item[{size\+\_\+t}]{min\+\_\+length\+\_\+high }\end{DoxyParamCaption})}
+
+
+
+Implementation of Csũros 2004\textquotesingle{}s Min\+Length-\/\+Cover\textquotesingle{}s algorithm (Maximum Scoring \doxylink{classngsai_1_1algorithms_1_1Segment}{Segment} Sets). Finds a set of maximum positive scoring segments within the given sequence of scores given the constrains. This set of segments (k-\/cover) has the optimal score given the constrains. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em the} & sequence of positive and negative scores. Positive scores means good, negative scores means bad. \\
+\hline
+{\em alpha} & the segment set size penaly. The penalized segment set score is ŵ(\+S) = w(\+S) -\/ a$\ast$$\vert$\+S$\vert$ where w(\+S) is the raw segment set score and $\vert$\+S$\vert$ is the number of segments in the set. \\
+\hline
+{\em min\+\_\+length\+\_\+low} & the minimum size of a low scoring segment. \\
+\hline
+{\em min\+\_\+length\+\_\+high} & the minimum size of a high scoring segment. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a list of maximum scoring segments. Each pair in the list indicates a range \mbox{[}from,to) in the score sequence that delimitates a maximum scoring segment. Each range can be retrieved using pair.\+first and pair.\+second respectively. 
+\end{DoxyReturn}
+\Hypertarget{namespacengsai_1_1algorithms_a8e2ad174417cc113a54d3031f5b0d47c}\label{namespacengsai_1_1algorithms_a8e2ad174417cc113a54d3031f5b0d47c} 
+\index{ngsai::algorithms@{ngsai::algorithms}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!ngsai::algorithms@{ngsai::algorithms}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
+{\footnotesize\ttfamily std\+::ostream \& ngsai\+::algorithms\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{stream,  }\item[{const \mbox{\hyperlink{classngsai_1_1algorithms_1_1Segment}{ngsai\+::algorithms\+::\+Segment}} \&}]{s }\end{DoxyParamCaption})}
+
+
+
+Sends a \doxylink{classngsai_1_1algorithms_1_1Segment}{Segment}\textquotesingle{}s reprensentation to stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em stream} & a stream of interest. \\
+\hline
+{\em s} & an instance of \doxylink{classngsai_1_1algorithms_1_1Segment}{Segment} of interest. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{namespacengsai_1_1algorithms_a0b7762cbe196abac84d9d1dfee7f0bc2}\label{namespacengsai_1_1algorithms_a0b7762cbe196abac84d9d1dfee7f0bc2} 
+\index{ngsai::algorithms@{ngsai::algorithms}!update\_list@{update\_list}}
+\index{update\_list@{update\_list}!ngsai::algorithms@{ngsai::algorithms}}
+\doxysubsubsection{\texorpdfstring{update\_list()}{update\_list()}}
+{\footnotesize\ttfamily bool ngsai\+::algorithms\+::update\+\_\+list (\begin{DoxyParamCaption}\item[{std\+::list$<$ \mbox{\hyperlink{classngsai_1_1algorithms_1_1Segment}{Segment}} $>$ \&}]{segments,  }\item[{\mbox{\hyperlink{classngsai_1_1algorithms_1_1Segment}{Segment}} \&}]{segment }\end{DoxyParamCaption})}
+
+
+
+Routine of \doxylink{namespacengsai_1_1algorithms_a43c09d920ce5d1dcbbead35080eb8bc9}{find\+\_\+max\+\_\+scoring\+\_\+segments()}. Process a candidate maximum scoring segment candidate and appends it into the list of already known segments or merge it with a or more already existing ones. This corresponds to steps 1 to 4 in the algorithm desription. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em segments} & the current list of maximum scoring segments. \\
+\hline
+{\em segment} & a candidate maximum scoring segment. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the candidate segment was merged with one or more already existing segments in segments, false if the candidate segment was appended at the end of segments. 
+\end{DoxyReturn}

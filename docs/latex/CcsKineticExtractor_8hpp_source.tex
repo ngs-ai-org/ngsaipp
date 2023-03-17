@@ -1,0 +1,81 @@
+\hypertarget{CcsKineticExtractor_8hpp_source}{}\doxysection{Ccs\+Kinetic\+Extractor.\+hpp}
+\label{CcsKineticExtractor_8hpp_source}\index{include/ngsaipp/epigenetics/CcsKineticExtractor.hpp@{include/ngsaipp/epigenetics/CcsKineticExtractor.hpp}}
+\mbox{\hyperlink{CcsKineticExtractor_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ NGSAI\_CCSKINETICEXTRACTOR\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ NGSAI\_CCSKINETICEXTRACTOR\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <list>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <pbbam/BamRecord.h>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{GenomeRegion_8hpp}{ngsaipp/genome/GenomeRegion.hpp}}>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacengsai}{ngsai}}\ \{}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classngsai_1_1CcsKineticExtractor}{CcsKineticExtractor}}}
+\DoxyCodeLine{00027\ \ \ \ \ \{\ \ \ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1CcsKineticExtractor_a2bab2511a450c6840ed7647c8f1135be}{CcsKineticExtractor}}()\ ;}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1CcsKineticExtractor_a8fb8ffc9d80d2ce75dd9c9022d3e5e11}{CcsKineticExtractor}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classngsai_1_1CcsKineticExtractor}{ngsai::CcsKineticExtractor}}\&\ other)\ ;}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1CcsKineticExtractor_adfc66f95e7d8a8cf3aa89bcc273ec4f3}{CcsKineticExtractor}}(\mbox{\hyperlink{classngsai_1_1CcsKineticExtractor}{ngsai::CcsKineticExtractor}}\&\&\ other)\ ;}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1CcsKineticExtractor_a7595bb187195343b9e872a2318a08b12}{\string~CcsKineticExtractor}}()\ ;}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1CcsKineticExtractor}{ngsai::CcsKineticExtractor}}\&\ }
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1CcsKineticExtractor_ad7babb0da64ebb995b4c4db9679e68ba}{operator\ =\ }}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classngsai_1_1CcsKineticExtractor}{ngsai::CcsKineticExtractor}}\&\ other)\ ;}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1CcsKineticExtractor}{ngsai::CcsKineticExtractor}}\&\ }
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1CcsKineticExtractor_ad7babb0da64ebb995b4c4db9679e68ba}{operator\ =\ }}(\mbox{\hyperlink{classngsai_1_1CcsKineticExtractor}{ngsai::CcsKineticExtractor}}\&\&\ other)\ ;}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ }
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1CcsKineticExtractor_a837d1851e5193d62f63e4a98013dc67e}{extract}}(\textcolor{keyword}{const}\ PacBio::BAM::BamRecord\&\ ccs,}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classngsai_1_1genome_1_1GenomeRegion}{ngsai::genome::GenomeRegion}}\&\ window)\ ;}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ std::string}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1CcsKineticExtractor_a46fdf11ac5fa1ae8b721de8b2fd52c25}{getSequence}}()\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<uint16\_t>\ }
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1CcsKineticExtractor_a6b8d2d066c239594147ec037df475028}{getIPD}}()\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<uint16\_t>\ }
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1CcsKineticExtractor_a579c72f8519dbbeeb1896957dcacf0e9}{getPWD}}()\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classngsai_1_1CcsKineticExtractor_a65150f4ea94266cdfcebc5da40134b50}{findWindow}}(\textcolor{keyword}{const}\ PacBio::BAM::BamRecord\&\ ccs,}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classngsai_1_1genome_1_1GenomeRegion}{ngsai::genome::GenomeRegion}}\&\ window)\ ;}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classngsai_1_1CcsKineticExtractor_a60f5a5d6e0a69001e4994f7908f8b3fb}{findAlignmentStart}}()\ ;}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classngsai_1_1CcsKineticExtractor_ac32932d8094063da5e6166ef25373131}{findWindowStart}}()\ ;}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classngsai_1_1CcsKineticExtractor_a0f7dac5a7ce83e7190c4d60cdb9d847a}{findWindowEnd}}()\ ;}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ m\_window\_seq\ ;}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<uint16\_t>\ \ m\_window\_ipd\ ;}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<uint16\_t>\ \ m\_window\_pwd\ ;}
+\DoxyCodeLine{00201\ }
+\DoxyCodeLine{00202\ }
+\DoxyCodeLine{00203\ }
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \ \ \ \ std::list<PacBio::BAM::CigarOperation>\ m\_cigar\ ;}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ m\_read\_i\ ;}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ m\_ref\_i\ ;}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ m\_region\_start\_ref\ ;}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ m\_region\_end\_ref\ ;}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ m\_region\_start\_ccs\ ;}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ m\_region\_end\_ccs\ ;}
+\DoxyCodeLine{00236\ }
+\DoxyCodeLine{00237\ \ \ \ \ \}\ ;}
+\DoxyCodeLine{00238\ \}}
+\DoxyCodeLine{00239\ }
+\DoxyCodeLine{00240\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ NGSAI\_CCSKINETICEXTRACTOR\_HPP}}
+
+\end{DoxyCode}

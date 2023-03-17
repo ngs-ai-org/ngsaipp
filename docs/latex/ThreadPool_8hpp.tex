@@ -1,0 +1,43 @@
+\hypertarget{ThreadPool_8hpp}{}\doxysection{include/ngsaipp/parallel/\+Thread\+Pool.hpp File Reference}
+\label{ThreadPool_8hpp}\index{include/ngsaipp/parallel/ThreadPool.hpp@{include/ngsaipp/parallel/ThreadPool.hpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$cassert$>$}\newline
+{\ttfamily \#include $<$thread$>$}\newline
+{\ttfamily \#include $<$queue$>$}\newline
+{\ttfamily \#include $<$mutex$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+{\ttfamily \#include $<$functional$>$}\newline
+Include dependency graph for Thread\+Pool.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ThreadPool_8hpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classngsai_1_1ThreadPool}{ngsai\+::\+Thread\+Pool}}
+\begin{DoxyCompactList}\small\item\em The \doxylink{classngsai_1_1ThreadPool}{Thread\+Pool} class implements a simple pool of working threads. At construction, $<$n$>$ threads are spawned and tries to get tasks to execute from a queue. Any access to the queue is synchonized through the use of a mutex. Jobs are added to the queue by calling add\+Job(task) where task is the result of std\+::bind(). The queue can be open -\/ in which case the jobs are effectively added to the queues -\/ or closed -\/ in which case nothing can be push into the queue anymore. Stopping the pool is done through calling \doxylink{classngsai_1_1ThreadPool_a2a8767845dcae378ce14975251bbb458}{join()} which will close the queue. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacengsai}{ngsai}}
+\begin{DoxyCompactList}\small\item\em This file contains values that are useful for formatting terminal output. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef void($\ast$ \mbox{\hyperlink{ThreadPool_8hpp_ae2db491c71be545e7cad5d3641fcb3ae}{function\+\_\+ptr}}) (size\+\_\+t, size\+\_\+t)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{ThreadPool_8hpp_ae2db491c71be545e7cad5d3641fcb3ae}\label{ThreadPool_8hpp_ae2db491c71be545e7cad5d3641fcb3ae} 
+\index{ThreadPool.hpp@{ThreadPool.hpp}!function\_ptr@{function\_ptr}}
+\index{function\_ptr@{function\_ptr}!ThreadPool.hpp@{ThreadPool.hpp}}
+\doxysubsubsection{\texorpdfstring{function\_ptr}{function\_ptr}}
+{\footnotesize\ttfamily typedef void($\ast$ function\+\_\+ptr) (size\+\_\+t, size\+\_\+t)}
+

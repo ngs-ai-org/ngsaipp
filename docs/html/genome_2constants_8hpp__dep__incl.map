@@ -1,0 +1,11 @@
+<map id="include/ngsaipp/genome/constants.hpp" name="include/ngsaipp/genome/constants.hpp">
+<area shape="rect" id="node1" title=" " alt="" coords="297,5,459,45"/>
+<area shape="rect" id="node2" href="$GenomeRegion_8hpp.html" title=" " alt="" coords="238,93,401,133"/>
+<area shape="rect" id="node6" href="$BedRecord_8hpp.html" title=" " alt="" coords="400,181,527,221"/>
+<area shape="rect" id="node3" href="$CcsKineticExtractor_8hpp.html" title=" " alt="" coords="5,181,188,221"/>
+<area shape="rect" id="node4" href="$CpGRegion_8hpp.html" title=" " alt="" coords="213,181,375,221"/>
+<area shape="rect" id="node5" href="$KineticClassifier_8hpp.html" title=" " alt="" coords="76,269,259,309"/>
+<area shape="rect" id="node7" href="$model__utility_8hpp.html" title=" " alt="" coords="283,269,465,309"/>
+<area shape="rect" id="node8" href="$BedReader_8hpp.html" title=" " alt="" coords="489,269,616,309"/>
+<area shape="rect" id="node9" href="$bed__io_8hpp.html" title=" " alt="" coords="540,357,667,397"/>
+</map>

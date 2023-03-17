@@ -1,0 +1,48 @@
+\hypertarget{dna__utility_8hpp_source}{}\doxysection{dna\+\_\+utility.\+hpp}
+\label{dna__utility_8hpp_source}\index{include/ngsaipp/dna/dna\_utility.hpp@{include/ngsaipp/dna/dna\_utility.hpp}}
+\mbox{\hyperlink{dna__utility_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ NGSAI\_DNA\_DNA\_UTILITY\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ NGSAI\_DNA\_DNA\_UTILITY\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{dna_2constants_8hpp}{ngsaipp/dna/constants.hpp}}>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacengsai}{ngsai}}}
+\DoxyCodeLine{00011\ \{\ \ \ }
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{namespace\ }dna\ \{}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{namespacengsai_1_1dna_a3540de6a16773c5f73469c0cdd348b17}{get\_reverse\_complement}}(\textcolor{keyword}{const}\ std::string\&\ seq)\ ;}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{namespacengsai_1_1dna_a0e8ae069839db303cbe98519b82628e6}{colored\_dna\_seq}}(\textcolor{keyword}{const}\ std::string\&\ seq)\ ;}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{namespacengsai_1_1dna_a874212e5dc60ea9a5cef5eb90ce59d2c}{hash\_kmer}}(\textcolor{keyword}{const}\ std::string\&\ sequence)\ ;}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{namespacengsai_1_1dna_a874212e5dc60ea9a5cef5eb90ce59d2c}{hash\_kmer}}(\textcolor{keyword}{const}\ std::string\&\ sequence,}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ start,}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ length)\ ;}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ std::vector<size\_t>\ \mbox{\hyperlink{namespacengsai_1_1dna_a874212e5dc60ea9a5cef5eb90ce59d2c}{hash\_kmer}}(\textcolor{keyword}{const}\ std::string\&\ sequence,}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ kmer\_size)\ ;}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ std::vector<size\_t>\ \mbox{\hyperlink{namespacengsai_1_1dna_a874212e5dc60ea9a5cef5eb90ce59d2c}{hash\_kmer}}(\textcolor{keyword}{const}\ std::string\&\ sequence,}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<std::string>\&\ kmer\_sequences,}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ kmer\_size)\ ;}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ std::vector<size\_t>\ \mbox{\hyperlink{namespacengsai_1_1dna_a874212e5dc60ea9a5cef5eb90ce59d2c}{hash\_kmer}}(\textcolor{keyword}{const}\ std::string\&\ sequence,}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<uint32\_t>\&\ ipds,}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<uint32\_t>\&\ pwds,}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<std::string>\&\ kmer\_sequences,}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<std::vector<uint32\_t>>\&\ kmer\_ipds,}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<std::vector<uint32\_t>>\&\ kmer\_pwds,}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ kmer\_size)\ ;}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ \ \ \ \ \}\ \textcolor{comment}{//\ namespace\ dna}}
+\DoxyCodeLine{00135\ \}\ \ \textcolor{comment}{//\ namespace\ ngsai}}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00137\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ NGSAI\_DNA\_DNA\_UTILITY\_HPP}}
+
+\end{DoxyCode}

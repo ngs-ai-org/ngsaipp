@@ -1,0 +1,4 @@
+<map id="ngsai::genome::CpGRegion" name="ngsai::genome::CpGRegion">
+<area shape="rect" id="node1" title="The CpGRegion class models the coordinates of a CpG on the genome. CpG are palyndromic sequences...." alt="" coords="17,79,199,104"/>
+<area shape="rect" id="node2" href="$classngsai_1_1genome_1_1GenomeRegion.html" title=" " alt="" coords="5,5,211,31"/>
+</map>

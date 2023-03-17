@@ -1,0 +1,24 @@
+\hypertarget{DiPositionNormalizedKineticModel_8hpp}{}\doxysection{include/ngsaipp/epigenetics/\+Di\+Position\+Normalized\+Kinetic\+Model.hpp File Reference}
+\label{DiPositionNormalizedKineticModel_8hpp}\index{include/ngsaipp/epigenetics/DiPositionNormalizedKineticModel.hpp@{include/ngsaipp/epigenetics/DiPositionNormalizedKineticModel.hpp}}
+{\ttfamily \#include $<$ngsaipp/epigenetics/\+Pair\+Wise\+Normalized\+Kinetic\+Model.\+hpp$>$}\newline
+{\ttfamily \#include $<$ngsaipp/epigenetics/\+Kinetic\+Signal.\+hpp$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+Include dependency graph for Di\+Position\+Normalized\+Kinetic\+Model.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{DiPositionNormalizedKineticModel_8hpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classngsai_1_1DiPositionNormalizedKineticModel}{ngsai\+::\+Di\+Position\+Normalized\+Kinetic\+Model}}
+\begin{DoxyCompactList}\small\item\em The \doxylink{classngsai_1_1DiPositionNormalizedKineticModel}{Di\+Position\+Normalized\+Kinetic\+Model} class is made to model the normalized IPD and PWD signal from Pac\+Bio CCS. Instead of modelling the raw kinetic signal like the \doxylink{classngsai_1_1DiPositionKineticModel}{Di\+Position\+Kinetic\+Model} class, this class models kinetic ratios (normalized). Each stretch of kinetic values (IPD or PWD) x1,x2,...,xL is normalized by the expected kinetic signal given the DNA sequence s1,s2,...,sL associated to the kinetic values. This model models a window of IPD/\+PWD signal of L consecutive bp. L is named the model size. This model is a special case of the \doxylink{classngsai_1_1PairWiseNormalizedKineticModel}{Pair\+Wise\+Normalized\+Kinetic\+Model}. The \doxylink{classngsai_1_1PairWiseNormalizedKineticModel}{Pair\+Wise\+Normalized\+Kinetic\+Model} accounted for all N = ((L$\ast$L) -\/ L) / 2 ~\newline
+ pair-\/wise position interaction whereas this one only considers L-\/1 interactions between any two directly neighbouring positions in the window. Except for this, everything is the same as in \doxylink{classngsai_1_1PairWiseNormalizedKineticModel}{Pair\+Wise\+Normalized\+Kinetic\+Model}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacengsai}{ngsai}}
+\begin{DoxyCompactList}\small\item\em This file contains values that are useful for formatting terminal output. \end{DoxyCompactList}\end{DoxyCompactItemize}

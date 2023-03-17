@@ -1,0 +1,12 @@
+./bin
+./data
+./CMakeFiles
+./external
+.vscode/
+Makefile
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+install_manifest.txt
+bin/
+lib/

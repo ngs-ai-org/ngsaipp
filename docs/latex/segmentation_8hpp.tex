@@ -1,0 +1,39 @@
+\hypertarget{segmentation_8hpp}{}\doxysection{include/ngsaipp/algorithms/segmentation.hpp File Reference}
+\label{segmentation_8hpp}\index{include/ngsaipp/algorithms/segmentation.hpp@{include/ngsaipp/algorithms/segmentation.hpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$list$>$}\newline
+Include dependency graph for segmentation.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=304pt]{segmentation_8hpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classngsai_1_1algorithms_1_1Segment}{ngsai\+::algorithms\+::\+Segment}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacengsai}{ngsai}}
+\begin{DoxyCompactList}\small\item\em This file contains values that are useful for formatting terminal output. \end{DoxyCompactList}\item 
+namespace \mbox{\hyperlink{namespacengsai_1_1algorithms}{ngsai\+::algorithms}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \mbox{\hyperlink{namespacengsai_1_1algorithms_a8e2ad174417cc113a54d3031f5b0d47c}{ngsai\+::algorithms\+::operator$<$$<$}} (std\+::ostream \&stream, const \mbox{\hyperlink{classngsai_1_1algorithms_1_1Segment}{ngsai\+::algorithms\+::\+Segment}} \&s)
+\begin{DoxyCompactList}\small\item\em Sends a \doxylink{classngsai_1_1algorithms_1_1Segment}{Segment}\textquotesingle{}s reprensentation to stream. \end{DoxyCompactList}\item 
+std\+::list$<$ \mbox{\hyperlink{classngsai_1_1algorithms_1_1Segment}{Segment}} $>$\+::iterator \mbox{\hyperlink{namespacengsai_1_1algorithms_a0cf42022444de326da0cb39bca9c2a41}{ngsai\+::algorithms\+::find\+\_\+lscore}} (std\+::list$<$ \mbox{\hyperlink{classngsai_1_1algorithms_1_1Segment}{Segment}} $>$ \&segments, \mbox{\hyperlink{classngsai_1_1algorithms_1_1Segment}{Segment}} \&segment)
+\begin{DoxyCompactList}\small\item\em Routine of \doxylink{namespacengsai_1_1algorithms_a43c09d920ce5d1dcbbead35080eb8bc9}{find\+\_\+max\+\_\+scoring\+\_\+segments()}. Searches the segment list from right to left for the first segment having a L-\/score smaller than the candidate L-\/score. This corresponds to algorithm step 1. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespacengsai_1_1algorithms_a0b7762cbe196abac84d9d1dfee7f0bc2}{ngsai\+::algorithms\+::update\+\_\+list}} (std\+::list$<$ \mbox{\hyperlink{classngsai_1_1algorithms_1_1Segment}{Segment}} $>$ \&segments, \mbox{\hyperlink{classngsai_1_1algorithms_1_1Segment}{Segment}} \&segment)
+\begin{DoxyCompactList}\small\item\em Routine of \doxylink{namespacengsai_1_1algorithms_a43c09d920ce5d1dcbbead35080eb8bc9}{find\+\_\+max\+\_\+scoring\+\_\+segments()}. Process a candidate maximum scoring segment candidate and appends it into the list of already known segments or merge it with a or more already existing ones. This corresponds to steps 1 to 4 in the algorithm desription. \end{DoxyCompactList}\item 
+std\+::list$<$ std\+::pair$<$ size\+\_\+t, size\+\_\+t $>$ $>$ \mbox{\hyperlink{namespacengsai_1_1algorithms_a43c09d920ce5d1dcbbead35080eb8bc9}{ngsai\+::algorithms\+::find\+\_\+max\+\_\+scoring\+\_\+segments}} (const std\+::vector$<$ double $>$ \&scores)
+\begin{DoxyCompactList}\small\item\em Implementation Ruzzo and Tompa 1999\textquotesingle{}s algorithm (A Linear Time ALgorithm for Finding all Maximal Scoring Subsequences). Finds all maximum positive scoring segments within the given sequence of scores. \end{DoxyCompactList}\item 
+std\+::list$<$ std\+::pair$<$ size\+\_\+t, size\+\_\+t $>$ $>$ \mbox{\hyperlink{namespacengsai_1_1algorithms_a3223f34f7cd62fb101f8aa710345d680}{ngsai\+::algorithms\+::find\+\_\+min\+\_\+length\+\_\+cover}} (const std\+::vector$<$ double $>$ \&scores, double alpha, size\+\_\+t min\+\_\+length\+\_\+low, size\+\_\+t min\+\_\+length\+\_\+high)
+\begin{DoxyCompactList}\small\item\em Implementation of Csũros 2004\textquotesingle{}s Min\+Length-\/\+Cover\textquotesingle{}s algorithm (Maximum Scoring \doxylink{classngsai_1_1algorithms_1_1Segment}{Segment} Sets). Finds a set of maximum positive scoring segments within the given sequence of scores given the constrains. This set of segments (k-\/cover) has the optimal score given the constrains. \end{DoxyCompactList}\end{DoxyCompactItemize}

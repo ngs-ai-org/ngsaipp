@@ -1,0 +1,887 @@
+\hypertarget{classngsai_1_1RawKineticModel}{}\doxysection{ngsai\+::Raw\+Kinetic\+Model Class Reference}
+\label{classngsai_1_1RawKineticModel}\index{ngsai::RawKineticModel@{ngsai::RawKineticModel}}
+
+
+The \doxylink{classngsai_1_1RawKineticModel}{Raw\+Kinetic\+Model} class is made to model the raw IPD and PWD signal from Pac\+Bio CCS. This model models a window of IPD/\+PWD signal of L consecutive bp. L is named the model size. The signal in the Lbp window is modelled using 2$\ast$L different distributions of signal -\/ L for IPD and L for PWD signal. The distributions at each position are empiric. Overall the window signal is modelled by 2$\ast$L histograms h\+\_\+ipd(1), h\+\_\+ipd(2), ..., h\+\_\+ipd(\+L) and h\+\_\+pwd(1), h\+\_\+pwd(2), ..., h\+\_\+pwd(\+L). The model can be trained (feed with data) in order to fill the underlying histograms and estimate the signal distributions at each position in the window. At this moment, the histograms are count histograms. If the model is feed with a vector of IPD values X x1, x2, ..., xL and a vector of PWD values Y y1, y2, ..., yL then each histogram h\+\_\+ipd(i) and h\+\_\+pwd(i) will be added a count corresponding to the value xi an yi respectively. h\+\_\+ipd(1) will be added a count corresponding to x1, h\+\_\+ipd(2) will be added a count corresponding to x2, ..., h\+\_\+ipd(\+L) will be added a count corresponding to xL. The same will apply for the PWD histograms with Y values. Once the histograms have been filled, the model can be normalized in order to transform the 2$\ast$L histograms into 2$\ast$L probability densities. At this moment, the model can compute the likelihood of observing a a strech of signal of length L with IPDs X x1, x2, ..., xL and PWDs Y ~\newline
+ y1, y2, ..., yL. The likelihood corresponds to \+: p(x1 $\vert$ h\+\_\+ipd(1)) $\ast$ p(y1 $\vert$ h\+\_\+pwd(1)) $\ast$... $\ast$ p(xL $\vert$ h\+\_\+ipd(\+L)) $\ast$ p(xL $\vert$ h\+\_\+pwd(\+L)) where p(xi $\vert$ h(i)) means the probability of observing the value x at the i-\/th position of the window, according to the density modeled in the histogram h(i).  
+
+
+
+
+{\ttfamily \#include $<$Raw\+Kinetic\+Model.\+hpp$>$}
+
+
+
+Inheritance diagram for ngsai\+::Raw\+Kinetic\+Model\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{classngsai_1_1RawKineticModel__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for ngsai\+::Raw\+Kinetic\+Model\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=311pt]{classngsai_1_1RawKineticModel__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classngsai_1_1RawKineticModel_aa7f1538ce76516abb4f0f5da7290b7eb}{Raw\+Kinetic\+Model}} ()
+\begin{DoxyCompactList}\small\item\em Constructor. Creates an empty model. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classngsai_1_1RawKineticModel_a8185648bb85943dec49df9409696fe51}{Raw\+Kinetic\+Model}} (const \mbox{\hyperlink{classngsai_1_1RawKineticModel}{ngsai\+::\+Raw\+Kinetic\+Model}} \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classngsai_1_1RawKineticModel_a5f251615db954ea4bd84dcdb2de5843f}{Raw\+Kinetic\+Model}} (\mbox{\hyperlink{classngsai_1_1RawKineticModel}{ngsai\+::\+Raw\+Kinetic\+Model}} \&\&other)
+\begin{DoxyCompactList}\small\item\em Move constructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classngsai_1_1RawKineticModel_a9c10a22a76e8d22bec9d0350900f10cc}{$\sim$\+Raw\+Kinetic\+Model}} () override
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classngsai_1_1RawKineticModel}{ngsai\+::\+Raw\+Kinetic\+Model}} \& \mbox{\hyperlink{classngsai_1_1RawKineticModel_ab359e22be401b32a5917f3e9eee7b761}{operator=}} (const \mbox{\hyperlink{classngsai_1_1RawKineticModel}{ngsai\+::\+Raw\+Kinetic\+Model}} \&other)
+\begin{DoxyCompactList}\small\item\em Assignment operator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classngsai_1_1RawKineticModel}{ngsai\+::\+Raw\+Kinetic\+Model}} \& \mbox{\hyperlink{classngsai_1_1RawKineticModel_a233fe540b760bf1be23434d046cb1940}{operator=}} (\mbox{\hyperlink{classngsai_1_1RawKineticModel}{ngsai\+::\+Raw\+Kinetic\+Model}} \&\&other)
+\begin{DoxyCompactList}\small\item\em Move assignment operator. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classngsai_1_1RawKineticModel_aebc74cbf930b5cb3027f09090dc1be65}{operator==}} (const \mbox{\hyperlink{classngsai_1_1RawKineticModel}{ngsai\+::\+Raw\+Kinetic\+Model}} \&other) const
+\begin{DoxyCompactList}\small\item\em Compares the content of the instances. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classngsai_1_1RawKineticModel_a27c087bb5e6d64b3e8b16d2e63ff54d2}{operator!=}} (const \mbox{\hyperlink{classngsai_1_1RawKineticModel}{ngsai\+::\+Raw\+Kinetic\+Model}} \&other) const
+\begin{DoxyCompactList}\small\item\em Compares the content of the instances. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classngsai_1_1RawKineticModel_a163038ce8a85da8e3bff760bbb098d32}{set\+Parameters}} (size\+\_\+t \mbox{\hyperlink{classngsai_1_1KineticModel_a5e3e2aeb7c59045aae917d2fd3c28311}{size}}, double xmin, double xmax, size\+\_\+t n\+\_\+bins, double pseudo\+\_\+counts) override
+\begin{DoxyCompactList}\small\item\em Sets the model parameters and initialize it to accept data. \end{DoxyCompactList}\item 
+virtual std\+::vector$<$ std\+::pair$<$ double, double $>$ $>$ \mbox{\hyperlink{classngsai_1_1RawKineticModel_a0a7b3d94e839cdc1b5207eb46927da20}{get\+Bin\+Boundaries}} () const override
+\item 
+void \mbox{\hyperlink{classngsai_1_1RawKineticModel_a9f1d637844080fe221a7984d0a1760eb}{add}} (double ipd, double pwd, size\+\_\+t position)
+\begin{DoxyCompactList}\small\item\em Inserts the given kinetic values at the given position in the model. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classngsai_1_1RawKineticModel_a5c4e5b1ce914035601fe44550fb78cbf}{add}} (const \mbox{\hyperlink{classngsai_1_1KineticSignal}{ngsai\+::\+Kinetic\+Signal}} \&kinetics) override
+\begin{DoxyCompactList}\small\item\em Inserts the averaged IPD and PWD (fw and rv) values in the model. Each element of the averaged IPD / PWD corresponds to a position in the model. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classngsai_1_1RawKineticModel_a5fa0c9acdb0bf548d882569abace0bb1}{add}} (const \mbox{\hyperlink{classngsai_1_1KineticModel}{ngsai\+::\+Kinetic\+Model}} \&model) override
+\begin{DoxyCompactList}\small\item\em Adds the content of the given model to the current model. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classngsai_1_1RawKineticModel}{ngsai\+::\+Raw\+Kinetic\+Model}} $\ast$ \mbox{\hyperlink{classngsai_1_1RawKineticModel_a139313c5de4ac85856dbcdf194562f32}{copy}} () const override
+\begin{DoxyCompactList}\small\item\em Creates a copy of the current instance and returns a pointer to the copy. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classngsai_1_1RawKineticModel_af017fe724c6e62b3bc5c5c79275367f4}{density}} () override
+\begin{DoxyCompactList}\small\item\em Normalizes the count histograms to density histograms. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classngsai_1_1RawKineticModel_a898f7b7bb60568049754c24964573b8c}{log}} () override
+\begin{DoxyCompactList}\small\item\em Applies a natural log transformation to the histogram content. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classngsai_1_1RawKineticModel_aadc420b7a66664a02202e811d6822d87}{exp}} () override
+\begin{DoxyCompactList}\small\item\em Applies an exponential transformation to the histogram content. \end{DoxyCompactList}\item 
+virtual double \mbox{\hyperlink{classngsai_1_1RawKineticModel_a1278100f3d31feb22c2b5030f3b9991a}{log\+Likelihood}} (const \mbox{\hyperlink{classngsai_1_1KineticSignal}{ngsai\+::\+Kinetic\+Signal}} \&kinetics) const override
+\begin{DoxyCompactList}\small\item\em Computes the natural loglikelihood -\/ of the average kinetics (fw and rv) -\/ given the model, p(ipds,pwds $\vert$ model). This requires that the histograms have been normalized into log density histograms using \doxylink{classngsai_1_1RawKineticModel_af017fe724c6e62b3bc5c5c79275367f4}{density()} and \doxylink{classngsai_1_1RawKineticModel_a898f7b7bb60568049754c24964573b8c}{log()}. \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{classngsai_1_1RawKineticModel_af6f76dde8c631a57323dc312d77795d7}{to\+String}} () const override
+\begin{DoxyCompactList}\small\item\em Produces a string representation of the model. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classngsai_1_1RawKineticModel_a5df1275c21c19e63ca044960e91266a4}{save}} (const std\+::string \&path) const override
+\begin{DoxyCompactList}\small\item\em Saves the instance using the serialization interface in the given file. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classngsai_1_1RawKineticModel_a6e9cd9899cd21703c3b5c8db0913a7c6}{load}} (const std\+::string \&path) override
+\begin{DoxyCompactList}\small\item\em Loads the instance using the serialization interface from the given file. All previous data are lost. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classngsai_1_1RawKineticModel_a5cad04868d6bfba05e038e65dce83910}{add\+To}} (\mbox{\hyperlink{classngsai_1_1RawKineticModel}{ngsai\+::\+Raw\+Kinetic\+Model}} \&model) const override
+\begin{DoxyCompactList}\small\item\em Adds the content of the current model to the given model. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classngsai_1_1RawKineticModel_afb43a62769d96c432dd0c229e7226595}{add\+To}} (\mbox{\hyperlink{classngsai_1_1NormalizedKineticModel}{ngsai\+::\+Normalized\+Kinetic\+Model}} \&model) const override
+\begin{DoxyCompactList}\small\item\em Adds the content of the current model to the given model. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classngsai_1_1RawKineticModel_a2379cd11b058d912bab64219a818d1c5}{add\+To}} (\mbox{\hyperlink{classngsai_1_1PairWiseKineticModel}{ngsai\+::\+Pair\+Wise\+Kinetic\+Model}} \&model) const override
+\begin{DoxyCompactList}\small\item\em Adds the content of the current model to the given model. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classngsai_1_1RawKineticModel_a56c68b862526df0f0fb4ea11603c3d1c}{add\+To}} (\mbox{\hyperlink{classngsai_1_1PairWiseNormalizedKineticModel}{ngsai\+::\+Pair\+Wise\+Normalized\+Kinetic\+Model}} \&model) const override
+\begin{DoxyCompactList}\small\item\em Adds the content of the current model to the given model. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classngsai_1_1RawKineticModel_afd7d1a89c5e8d4052c6edd18a32a2081}{add\+To}} (\mbox{\hyperlink{classngsai_1_1DiPositionKineticModel}{ngsai\+::\+Di\+Position\+Kinetic\+Model}} \&model) const override
+\begin{DoxyCompactList}\small\item\em Adds the content of the current model to the given model. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classngsai_1_1RawKineticModel_af49b338faecf56eb96fb75c52fe300ae}{add\+To}} (\mbox{\hyperlink{classngsai_1_1DiPositionNormalizedKineticModel}{ngsai\+::\+Di\+Position\+Normalized\+Kinetic\+Model}} \&model) const override
+\begin{DoxyCompactList}\small\item\em Adds the content of the current model to the given model. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{classngsai_1_1KineticModel}{ngsai\+::\+Kinetic\+Model}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classngsai_1_1KineticModel_a272c4cc881fba1a4f3db69f8abd77631}{Kinetic\+Model}} ()
+\begin{DoxyCompactList}\small\item\em Constructor. Creates an empty model. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classngsai_1_1KineticModel_a8dc66fbf0c5aa095a6fac74fbce56ed4}{Kinetic\+Model}} (size\+\_\+t \mbox{\hyperlink{classngsai_1_1KineticModel_a5e3e2aeb7c59045aae917d2fd3c28311}{size}}, bool is\+\_\+init, bool is\+\_\+density, bool is\+\_\+log)
+\begin{DoxyCompactList}\small\item\em Constructor with parameters. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classngsai_1_1KineticModel_aa7a123e669deeb941c845068a6505c9e}{Kinetic\+Model}} (const \mbox{\hyperlink{classngsai_1_1KineticModel}{ngsai\+::\+Kinetic\+Model}} \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classngsai_1_1KineticModel_a9e1afd4f287ae2fa5bdf4ba032ca2c55}{Kinetic\+Model}} (\mbox{\hyperlink{classngsai_1_1KineticModel}{ngsai\+::\+Kinetic\+Model}} \&\&other)
+\begin{DoxyCompactList}\small\item\em Move constructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classngsai_1_1KineticModel_a124a636c7fffcadc3eb5874e318ea81f}{$\sim$\+Kinetic\+Model}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classngsai_1_1KineticModel_ad0f271d9ded8cc54bbd460557844e2ef}{operator==}} (const \mbox{\hyperlink{classngsai_1_1KineticModel}{ngsai\+::\+Kinetic\+Model}} \&other) const
+\begin{DoxyCompactList}\small\item\em Compares the content of the instances. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classngsai_1_1KineticModel_aea409e96c4894456ea66f15ffee03916}{operator!=}} (const \mbox{\hyperlink{classngsai_1_1KineticModel}{ngsai\+::\+Kinetic\+Model}} \&other) const
+\begin{DoxyCompactList}\small\item\em Compares the content of the instances. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classngsai_1_1KineticModel_a894b2f974965a397c2ddb330f35faa0a}{set\+Parameters}} (size\+\_\+t \mbox{\hyperlink{classngsai_1_1KineticModel_a5e3e2aeb7c59045aae917d2fd3c28311}{size}}, double xmin, double xmax, size\+\_\+t n\+\_\+bins, double pseudo\+\_\+counts)=0
+\begin{DoxyCompactList}\small\item\em Sets the model parameters and initialize it to accept data. \end{DoxyCompactList}\item 
+virtual std\+::vector$<$ std\+::pair$<$ double, double $>$ $>$ \mbox{\hyperlink{classngsai_1_1KineticModel_a50789fce30ecc494c4fe24bc7e7c46c6}{get\+Bin\+Boundaries}} () const =0
+\item 
+bool \mbox{\hyperlink{classngsai_1_1KineticModel_aca14bbc0a94f8a9b430ed79ad29d4cf5}{is\+Init}} () const
+\begin{DoxyCompactList}\small\item\em Returns if the model has been initialised. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classngsai_1_1KineticModel_adccbe1fa15258a531a97486d80a6e67c}{is\+Density}} () const
+\begin{DoxyCompactList}\small\item\em Returns whether the model has already been normalized to contain signal densities. If not, it contains signal counts. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classngsai_1_1KineticModel_ab4955aaecb9b4dbfb92c73c35fba99ce}{is\+Log}} () const
+\begin{DoxyCompactList}\small\item\em Returns whether the model contains log probability densities. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classngsai_1_1KineticModel_a5e3e2aeb7c59045aae917d2fd3c28311}{size}} () const
+\begin{DoxyCompactList}\small\item\em Returns the model size, that is the length in bp of the signal modeled. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classngsai_1_1KineticModel}{ngsai\+::\+Kinetic\+Model}} $\ast$ \mbox{\hyperlink{classngsai_1_1KineticModel_ae3a6f766cfda59d7e7d10ffae680e754}{copy}} () const =0
+\begin{DoxyCompactList}\small\item\em Creates a copy of the current instance and returns a pointer to the copy. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classngsai_1_1KineticModel_ad3a360cea8d166ea94c0e63fdd7797fd}{density}} ()=0
+\begin{DoxyCompactList}\small\item\em Must implement the normalization model such that it contains densities of probabilities and turn the m\+\_\+is\+\_\+density to true. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classngsai_1_1KineticModel_a5ccdd030de232a298033bee0e268ee17}{log}} ()=0
+\begin{DoxyCompactList}\small\item\em Must apply a natural log transformation to the model content and turn the m\+\_\+is\+\_\+log flag to true. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classngsai_1_1KineticModel_a6104f888c86dadcd537ff7f9abb62f27}{exp}} ()=0
+\begin{DoxyCompactList}\small\item\em Must apply an exponential transformation to the model content and turn the m\+\_\+is\+\_\+log flag to false. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classngsai_1_1KineticModel_aa9af16aab78147a64020f9021af4b23e}{add}} (const \mbox{\hyperlink{classngsai_1_1KineticSignal}{ngsai\+::\+Kinetic\+Signal}} \&kinetic)=0
+\begin{DoxyCompactList}\small\item\em Adds the given kinetic signal in the model. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classngsai_1_1KineticModel_acd41844384e715d3e6a04a485a2c3ce3}{add}} (const \mbox{\hyperlink{classngsai_1_1KineticModel}{ngsai\+::\+Kinetic\+Model}} \&model)=0
+\begin{DoxyCompactList}\small\item\em Should add the content of the given model to the current model. \end{DoxyCompactList}\item 
+virtual double \mbox{\hyperlink{classngsai_1_1KineticModel_ac2adbfc3f82c8ddc4e88078801f6d5c2}{log\+Likelihood}} (const \mbox{\hyperlink{classngsai_1_1KineticSignal}{ngsai\+::\+Kinetic\+Signal}} \&kinetic) const =0
+\begin{DoxyCompactList}\small\item\em Computes the natural loglikelihood of the kinetics given the model, p(ipds,pwds $\vert$ model). This requires that the histograms have been normalized into log density histograms using \doxylink{classngsai_1_1KineticModel_ad3a360cea8d166ea94c0e63fdd7797fd}{density()} and \doxylink{classngsai_1_1KineticModel_a5ccdd030de232a298033bee0e268ee17}{log()}. \end{DoxyCompactList}\item 
+virtual size\+\_\+t \mbox{\hyperlink{classngsai_1_1KineticModel_a16b2915a53ffc9327c0c1b21494acff2}{get\+Kinetic\+Signal\+Required\+Size}} () const
+\begin{DoxyCompactList}\small\item\em Returns the required size of the \doxylink{classngsai_1_1KineticSignal}{Kinetic\+Signal} instances needed to use with \doxylink{classngsai_1_1KineticModel_aa9af16aab78147a64020f9021af4b23e}{add()} or \doxylink{classngsai_1_1KineticModel_ac2adbfc3f82c8ddc4e88078801f6d5c2}{log\+Likelihood()}. The \doxylink{classngsai_1_1KineticSignal}{Kinetic\+Signal} size is equal to the model size. \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{classngsai_1_1KineticModel_afdb3ca555f74b5247a377d2e3516fc58}{to\+String}} () const =0
+\begin{DoxyCompactList}\small\item\em Produces a string representation of the model. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classngsai_1_1KineticModel_a3681075800db4ca96eefe02d43031804}{save}} (const std\+::string \&path) const =0
+\begin{DoxyCompactList}\small\item\em Saves the instance using the serialization interface in the given file. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classngsai_1_1KineticModel_a599d8e3835f693c7146092ef977a0577}{load}} (const std\+::string \&path)=0
+\begin{DoxyCompactList}\small\item\em Loads the instance using the serialization interface from the given file. All previous data are lost. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classngsai_1_1KineticModel_abf6be86bef8239ab2929a4f802e968c8}{add\+To}} (\mbox{\hyperlink{classngsai_1_1RawKineticModel}{ngsai\+::\+Raw\+Kinetic\+Model}} \&model) const =0
+\begin{DoxyCompactList}\small\item\em Should add the content of the current model to the given model. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classngsai_1_1KineticModel_af1af94e3062cfd66f813cad0cdf32abc}{add\+To}} (\mbox{\hyperlink{classngsai_1_1NormalizedKineticModel}{ngsai\+::\+Normalized\+Kinetic\+Model}} \&model) const =0
+\begin{DoxyCompactList}\small\item\em Should add the content of the current model to the given model. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classngsai_1_1KineticModel_a6e89566d58c5bb23eeae5cbd0bbf548a}{add\+To}} (\mbox{\hyperlink{classngsai_1_1PairWiseKineticModel}{ngsai\+::\+Pair\+Wise\+Kinetic\+Model}} \&model) const =0
+\begin{DoxyCompactList}\small\item\em Should add the content of the current model to the given model. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classngsai_1_1KineticModel_a1d52f5071e2b268237ead2c004a4f50d}{add\+To}} (\mbox{\hyperlink{classngsai_1_1PairWiseNormalizedKineticModel}{ngsai\+::\+Pair\+Wise\+Normalized\+Kinetic\+Model}} \&model) const =0
+\begin{DoxyCompactList}\small\item\em Should add the content of the current model to the given model. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classngsai_1_1KineticModel_a1e810daf533f266c3a6f8de65d61c0fc}{add\+To}} (\mbox{\hyperlink{classngsai_1_1DiPositionKineticModel}{ngsai\+::\+Di\+Position\+Kinetic\+Model}} \&model) const =0
+\begin{DoxyCompactList}\small\item\em Should add the content of the current model to the given model. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classngsai_1_1KineticModel_a08b69089f1d7f841ab1ba0644d9a7167}{add\+To}} (\mbox{\hyperlink{classngsai_1_1DiPositionNormalizedKineticModel}{ngsai\+::\+Di\+Position\+Normalized\+Kinetic\+Model}} \&model) const =0
+\begin{DoxyCompactList}\small\item\em Should add the content of the current model to the given model. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class Archive $>$ }\\void \mbox{\hyperlink{classngsai_1_1RawKineticModel_a5b09e50c3d650787e371e387b0304343}{serialize}} (Archive \&archive, const unsigned int version)
+\begin{DoxyCompactList}\small\item\em (De-\/)serializes the object using Boost serialization library. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classngsai_1_1KineticModel}{ngsai\+::\+Kinetic\+Model}}}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class Archive $>$ }\\void \mbox{\hyperlink{classngsai_1_1KineticModel_a5029a08af3cfb4611b869b34b80e4840}{serialize}} (Archive \&archive, const unsigned int version)
+\begin{DoxyCompactList}\small\item\em (De-\/)serializes the object using Boost serialization library. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{RawKineticModel_8hpp_af86bcd5936bb2c22fb87c4f3b21bcd5e}{hist\+\_\+1d\+\_\+double}} $>$ \mbox{\hyperlink{classngsai_1_1RawKineticModel_a5969628b79fdc0ba6db4a65b88ccc001}{m\+\_\+histograms\+\_\+ipd}}
+\begin{DoxyCompactList}\small\item\em the IPD signal histograms at each position of the model. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{RawKineticModel_8hpp_af86bcd5936bb2c22fb87c4f3b21bcd5e}{hist\+\_\+1d\+\_\+double}} $>$ \mbox{\hyperlink{classngsai_1_1RawKineticModel_a3319f60b04073d29e2af451fc58b99e2}{m\+\_\+histograms\+\_\+pwd}}
+\begin{DoxyCompactList}\small\item\em the PWD signal histograms at each position of the model. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes inherited from \mbox{\hyperlink{classngsai_1_1KineticModel}{ngsai\+::\+Kinetic\+Model}}}
+\begin{DoxyCompactItemize}
+\item 
+size\+\_\+t \mbox{\hyperlink{classngsai_1_1KineticModel_afe9b4e3b1c6f32496837842989d0f351}{m\+\_\+size}}
+\begin{DoxyCompactList}\small\item\em the model size in bp. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classngsai_1_1KineticModel_a2aec447d07c5381faf5e4d962e407b6f}{m\+\_\+is\+\_\+init}}
+\begin{DoxyCompactList}\small\item\em whether the model has been initialized (x min/max, number of bins, pseudo counts, etc). \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classngsai_1_1KineticModel_a3b82dd751c18ec7233221e07d39c9a92}{m\+\_\+is\+\_\+density}}
+\begin{DoxyCompactList}\small\item\em true if the histograms contain densities (as opposed to counts). \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classngsai_1_1KineticModel_ad129dc3d5e6c2d536da2f5b51100abdd}{m\+\_\+is\+\_\+log}}
+\begin{DoxyCompactList}\small\item\em true if the histograms contain log-\/transformed values. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classngsai_1_1RawKineticModel_ac98d07dd8f7b70e16ccb9a01abf56b9c}{boost\+::serialization\+::access}}
+\item 
+std\+::ostream \& \mbox{\hyperlink{classngsai_1_1RawKineticModel_a15449c56a9d490abe32bf8337635810a}{operator$<$$<$}} (std\+::ostream \&stream, const \mbox{\hyperlink{classngsai_1_1RawKineticModel}{ngsai\+::\+Raw\+Kinetic\+Model}} \&model)
+\begin{DoxyCompactList}\small\item\em Writes the given \doxylink{classngsai_1_1RawKineticModel}{Raw\+Kinetic\+Model} to the output stream. Does nothing if the model is not initialized. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \doxylink{classngsai_1_1RawKineticModel}{Raw\+Kinetic\+Model} class is made to model the raw IPD and PWD signal from Pac\+Bio CCS. This model models a window of IPD/\+PWD signal of L consecutive bp. L is named the model size. The signal in the Lbp window is modelled using 2$\ast$L different distributions of signal -\/ L for IPD and L for PWD signal. The distributions at each position are empiric. Overall the window signal is modelled by 2$\ast$L histograms h\+\_\+ipd(1), h\+\_\+ipd(2), ..., h\+\_\+ipd(\+L) and h\+\_\+pwd(1), h\+\_\+pwd(2), ..., h\+\_\+pwd(\+L). The model can be trained (feed with data) in order to fill the underlying histograms and estimate the signal distributions at each position in the window. At this moment, the histograms are count histograms. If the model is feed with a vector of IPD values X x1, x2, ..., xL and a vector of PWD values Y y1, y2, ..., yL then each histogram h\+\_\+ipd(i) and h\+\_\+pwd(i) will be added a count corresponding to the value xi an yi respectively. h\+\_\+ipd(1) will be added a count corresponding to x1, h\+\_\+ipd(2) will be added a count corresponding to x2, ..., h\+\_\+ipd(\+L) will be added a count corresponding to xL. The same will apply for the PWD histograms with Y values. Once the histograms have been filled, the model can be normalized in order to transform the 2$\ast$L histograms into 2$\ast$L probability densities. At this moment, the model can compute the likelihood of observing a a strech of signal of length L with IPDs X x1, x2, ..., xL and PWDs Y ~\newline
+ y1, y2, ..., yL. The likelihood corresponds to \+: p(x1 $\vert$ h\+\_\+ipd(1)) $\ast$ p(y1 $\vert$ h\+\_\+pwd(1)) $\ast$... $\ast$ p(xL $\vert$ h\+\_\+ipd(\+L)) $\ast$ p(xL $\vert$ h\+\_\+pwd(\+L)) where p(xi $\vert$ h(i)) means the probability of observing the value x at the i-\/th position of the window, according to the density modeled in the histogram h(i). 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classngsai_1_1RawKineticModel_aa7f1538ce76516abb4f0f5da7290b7eb}\label{classngsai_1_1RawKineticModel_aa7f1538ce76516abb4f0f5da7290b7eb} 
+\index{ngsai::RawKineticModel@{ngsai::RawKineticModel}!RawKineticModel@{RawKineticModel}}
+\index{RawKineticModel@{RawKineticModel}!ngsai::RawKineticModel@{ngsai::RawKineticModel}}
+\doxysubsubsection{\texorpdfstring{RawKineticModel()}{RawKineticModel()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily ngsai\+::\+Raw\+Kinetic\+Model\+::\+Raw\+Kinetic\+Model (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor. Creates an empty model. 
+
+\Hypertarget{classngsai_1_1RawKineticModel_a8185648bb85943dec49df9409696fe51}\label{classngsai_1_1RawKineticModel_a8185648bb85943dec49df9409696fe51} 
+\index{ngsai::RawKineticModel@{ngsai::RawKineticModel}!RawKineticModel@{RawKineticModel}}
+\index{RawKineticModel@{RawKineticModel}!ngsai::RawKineticModel@{ngsai::RawKineticModel}}
+\doxysubsubsection{\texorpdfstring{RawKineticModel()}{RawKineticModel()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily ngsai\+::\+Raw\+Kinetic\+Model\+::\+Raw\+Kinetic\+Model (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classngsai_1_1RawKineticModel}{ngsai\+::\+Raw\+Kinetic\+Model}} \&}]{other }\end{DoxyParamCaption})}
+
+
+
+Copy constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & a reference to the object to copy from. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classngsai_1_1RawKineticModel_a5f251615db954ea4bd84dcdb2de5843f}\label{classngsai_1_1RawKineticModel_a5f251615db954ea4bd84dcdb2de5843f} 
+\index{ngsai::RawKineticModel@{ngsai::RawKineticModel}!RawKineticModel@{RawKineticModel}}
+\index{RawKineticModel@{RawKineticModel}!ngsai::RawKineticModel@{ngsai::RawKineticModel}}
+\doxysubsubsection{\texorpdfstring{RawKineticModel()}{RawKineticModel()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily ngsai\+::\+Raw\+Kinetic\+Model\+::\+Raw\+Kinetic\+Model (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classngsai_1_1RawKineticModel}{ngsai\+::\+Raw\+Kinetic\+Model}} \&\&}]{other }\end{DoxyParamCaption})}
+
+
+
+Move constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & a rvalue to the object to move. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classngsai_1_1RawKineticModel_a9c10a22a76e8d22bec9d0350900f10cc}\label{classngsai_1_1RawKineticModel_a9c10a22a76e8d22bec9d0350900f10cc} 
+\index{ngsai::RawKineticModel@{ngsai::RawKineticModel}!````~RawKineticModel@{$\sim$RawKineticModel}}
+\index{````~RawKineticModel@{$\sim$RawKineticModel}!ngsai::RawKineticModel@{ngsai::RawKineticModel}}
+\doxysubsubsection{\texorpdfstring{$\sim$RawKineticModel()}{~RawKineticModel()}}
+{\footnotesize\ttfamily virtual ngsai\+::\+Raw\+Kinetic\+Model\+::$\sim$\+Raw\+Kinetic\+Model (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Destructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classngsai_1_1RawKineticModel_a5fa0c9acdb0bf548d882569abace0bb1}\label{classngsai_1_1RawKineticModel_a5fa0c9acdb0bf548d882569abace0bb1} 
+\index{ngsai::RawKineticModel@{ngsai::RawKineticModel}!add@{add}}
+\index{add@{add}!ngsai::RawKineticModel@{ngsai::RawKineticModel}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily virtual void ngsai\+::\+Raw\+Kinetic\+Model\+::add (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classngsai_1_1KineticModel}{ngsai\+::\+Kinetic\+Model}} \&}]{model }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Adds the content of the given model to the current model. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em model} & the model of interest. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & if the given model cannot be added. \\
+\hline
+{\em std\+::runtime\+\_\+error} & if another error occurs. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{classngsai_1_1KineticModel_acd41844384e715d3e6a04a485a2c3ce3}{ngsai\+::\+Kinetic\+Model}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classngsai_1_1NormalizedKineticModel_a4317a6df695e93177a07294d43287c0e}{ngsai\+::\+Normalized\+Kinetic\+Model}}.
+
+\Hypertarget{classngsai_1_1RawKineticModel_a5c4e5b1ce914035601fe44550fb78cbf}\label{classngsai_1_1RawKineticModel_a5c4e5b1ce914035601fe44550fb78cbf} 
+\index{ngsai::RawKineticModel@{ngsai::RawKineticModel}!add@{add}}
+\index{add@{add}!ngsai::RawKineticModel@{ngsai::RawKineticModel}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily virtual void ngsai\+::\+Raw\+Kinetic\+Model\+::add (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classngsai_1_1KineticSignal}{ngsai\+::\+Kinetic\+Signal}} \&}]{kinetics }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Inserts the averaged IPD and PWD (fw and rv) values in the model. Each element of the averaged IPD / PWD corresponds to a position in the model. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em kinetics} & an instance containing the kinetics (IPD and PWD) on the forward and reverse strand to the model. The forward and reverse strand kinetics will be average and the average values will be included in the model. The DNA sequences are not necessary. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid} & argument if the size of kinetics does not match the size of the model. \\
+\hline
+{\em std\+::runtime\+\_\+error} & if the model was not initialized using set\+\_\+parameters(). \\
+\hline
+{\em std\+::invalid\+\_\+argument} & if the size of kinetics is not equal to the model size or if the data are incomplete (sequence, IPD or PWD missing). \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{classngsai_1_1KineticModel_aa9af16aab78147a64020f9021af4b23e}{ngsai\+::\+Kinetic\+Model}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classngsai_1_1NormalizedKineticModel_a65e124ab71d83d287a71a3d73a34b420}{ngsai\+::\+Normalized\+Kinetic\+Model}}.
+
+\Hypertarget{classngsai_1_1RawKineticModel_a9f1d637844080fe221a7984d0a1760eb}\label{classngsai_1_1RawKineticModel_a9f1d637844080fe221a7984d0a1760eb} 
+\index{ngsai::RawKineticModel@{ngsai::RawKineticModel}!add@{add}}
+\index{add@{add}!ngsai::RawKineticModel@{ngsai::RawKineticModel}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void ngsai\+::\+Raw\+Kinetic\+Model\+::add (\begin{DoxyParamCaption}\item[{double}]{ipd,  }\item[{double}]{pwd,  }\item[{size\+\_\+t}]{position }\end{DoxyParamCaption})}
+
+
+
+Inserts the given kinetic values at the given position in the model. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ipd} & the IPD value to insert in the model. \\
+\hline
+{\em pwd} & the PWD value to insert in the model. \\
+\hline
+{\em position} & the position at which the given kinetic should be inserted in the model. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & if the position is not compatible with the size of the model. \\
+\hline
+{\em std\+::runtime\+\_\+error} & if the model was not initialized using set\+\_\+parameters(). \\
+\hline
+{\em std\+::out\+\_\+of\+\_\+range} & if the position is out of range. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classngsai_1_1RawKineticModel_afd7d1a89c5e8d4052c6edd18a32a2081}\label{classngsai_1_1RawKineticModel_afd7d1a89c5e8d4052c6edd18a32a2081} 
+\index{ngsai::RawKineticModel@{ngsai::RawKineticModel}!addTo@{addTo}}
+\index{addTo@{addTo}!ngsai::RawKineticModel@{ngsai::RawKineticModel}}
+\doxysubsubsection{\texorpdfstring{addTo()}{addTo()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily virtual void ngsai\+::\+Raw\+Kinetic\+Model\+::add\+To (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classngsai_1_1DiPositionKineticModel}{ngsai\+::\+Di\+Position\+Kinetic\+Model}} \&}]{model }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Adds the content of the current model to the given model. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em model} & the model of interest. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & if the given model cannot be added. \\
+\hline
+{\em std\+::runtime\+\_\+error} & if another error occurs. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{classngsai_1_1KineticModel_a1e810daf533f266c3a6f8de65d61c0fc}{ngsai\+::\+Kinetic\+Model}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classngsai_1_1NormalizedKineticModel_a8a8f0f40ebc70941f47c283ff8f13909}{ngsai\+::\+Normalized\+Kinetic\+Model}}.
+
+\Hypertarget{classngsai_1_1RawKineticModel_af49b338faecf56eb96fb75c52fe300ae}\label{classngsai_1_1RawKineticModel_af49b338faecf56eb96fb75c52fe300ae} 
+\index{ngsai::RawKineticModel@{ngsai::RawKineticModel}!addTo@{addTo}}
+\index{addTo@{addTo}!ngsai::RawKineticModel@{ngsai::RawKineticModel}}
+\doxysubsubsection{\texorpdfstring{addTo()}{addTo()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily virtual void ngsai\+::\+Raw\+Kinetic\+Model\+::add\+To (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classngsai_1_1DiPositionNormalizedKineticModel}{ngsai\+::\+Di\+Position\+Normalized\+Kinetic\+Model}} \&}]{model }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Adds the content of the current model to the given model. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em model} & the model of interest. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & if the given model cannot be added. \\
+\hline
+{\em std\+::runtime\+\_\+error} & if another error occurs. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{classngsai_1_1KineticModel_a08b69089f1d7f841ab1ba0644d9a7167}{ngsai\+::\+Kinetic\+Model}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classngsai_1_1NormalizedKineticModel_a93efaab52abff32abc49d523ec437302}{ngsai\+::\+Normalized\+Kinetic\+Model}}.
+
+\Hypertarget{classngsai_1_1RawKineticModel_afb43a62769d96c432dd0c229e7226595}\label{classngsai_1_1RawKineticModel_afb43a62769d96c432dd0c229e7226595} 
+\index{ngsai::RawKineticModel@{ngsai::RawKineticModel}!addTo@{addTo}}
+\index{addTo@{addTo}!ngsai::RawKineticModel@{ngsai::RawKineticModel}}
+\doxysubsubsection{\texorpdfstring{addTo()}{addTo()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily virtual void ngsai\+::\+Raw\+Kinetic\+Model\+::add\+To (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classngsai_1_1NormalizedKineticModel}{ngsai\+::\+Normalized\+Kinetic\+Model}} \&}]{model }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Adds the content of the current model to the given model. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em model} & the model of interest. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & if the given model cannot be added. \\
+\hline
+{\em std\+::runtime\+\_\+error} & if another error occurs. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{classngsai_1_1KineticModel_af1af94e3062cfd66f813cad0cdf32abc}{ngsai\+::\+Kinetic\+Model}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classngsai_1_1NormalizedKineticModel_a09540545dad0f357b86b5f32d5fd43ad}{ngsai\+::\+Normalized\+Kinetic\+Model}}.
+
+\Hypertarget{classngsai_1_1RawKineticModel_a2379cd11b058d912bab64219a818d1c5}\label{classngsai_1_1RawKineticModel_a2379cd11b058d912bab64219a818d1c5} 
+\index{ngsai::RawKineticModel@{ngsai::RawKineticModel}!addTo@{addTo}}
+\index{addTo@{addTo}!ngsai::RawKineticModel@{ngsai::RawKineticModel}}
+\doxysubsubsection{\texorpdfstring{addTo()}{addTo()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily virtual void ngsai\+::\+Raw\+Kinetic\+Model\+::add\+To (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classngsai_1_1PairWiseKineticModel}{ngsai\+::\+Pair\+Wise\+Kinetic\+Model}} \&}]{model }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Adds the content of the current model to the given model. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em model} & the model of interest. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & if the given model cannot be added. \\
+\hline
+{\em std\+::runtime\+\_\+error} & if another error occurs. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{classngsai_1_1KineticModel_a6e89566d58c5bb23eeae5cbd0bbf548a}{ngsai\+::\+Kinetic\+Model}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classngsai_1_1NormalizedKineticModel_ad2bc7b038cabd6763b12d2485dce4c1e}{ngsai\+::\+Normalized\+Kinetic\+Model}}.
+
+\Hypertarget{classngsai_1_1RawKineticModel_a56c68b862526df0f0fb4ea11603c3d1c}\label{classngsai_1_1RawKineticModel_a56c68b862526df0f0fb4ea11603c3d1c} 
+\index{ngsai::RawKineticModel@{ngsai::RawKineticModel}!addTo@{addTo}}
+\index{addTo@{addTo}!ngsai::RawKineticModel@{ngsai::RawKineticModel}}
+\doxysubsubsection{\texorpdfstring{addTo()}{addTo()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily virtual void ngsai\+::\+Raw\+Kinetic\+Model\+::add\+To (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classngsai_1_1PairWiseNormalizedKineticModel}{ngsai\+::\+Pair\+Wise\+Normalized\+Kinetic\+Model}} \&}]{model }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Adds the content of the current model to the given model. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em model} & the model of interest. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & if the given model cannot be added. \\
+\hline
+{\em std\+::runtime\+\_\+error} & if another error occurs. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{classngsai_1_1KineticModel_a1d52f5071e2b268237ead2c004a4f50d}{ngsai\+::\+Kinetic\+Model}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classngsai_1_1NormalizedKineticModel_ad0ebcf50dbf76cc0d8b3de996d32f219}{ngsai\+::\+Normalized\+Kinetic\+Model}}.
+
+\Hypertarget{classngsai_1_1RawKineticModel_a5cad04868d6bfba05e038e65dce83910}\label{classngsai_1_1RawKineticModel_a5cad04868d6bfba05e038e65dce83910} 
+\index{ngsai::RawKineticModel@{ngsai::RawKineticModel}!addTo@{addTo}}
+\index{addTo@{addTo}!ngsai::RawKineticModel@{ngsai::RawKineticModel}}
+\doxysubsubsection{\texorpdfstring{addTo()}{addTo()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily virtual void ngsai\+::\+Raw\+Kinetic\+Model\+::add\+To (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classngsai_1_1RawKineticModel}{ngsai\+::\+Raw\+Kinetic\+Model}} \&}]{model }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Adds the content of the current model to the given model. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em model} & the model of interest. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & if the given model cannot be added. \\
+\hline
+{\em std\+::runtime\+\_\+error} & if another error occurs. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{classngsai_1_1KineticModel_abf6be86bef8239ab2929a4f802e968c8}{ngsai\+::\+Kinetic\+Model}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classngsai_1_1NormalizedKineticModel_ae0be08907b3e301b7cd43638a418f157}{ngsai\+::\+Normalized\+Kinetic\+Model}}.
+
+\Hypertarget{classngsai_1_1RawKineticModel_a139313c5de4ac85856dbcdf194562f32}\label{classngsai_1_1RawKineticModel_a139313c5de4ac85856dbcdf194562f32} 
+\index{ngsai::RawKineticModel@{ngsai::RawKineticModel}!copy@{copy}}
+\index{copy@{copy}!ngsai::RawKineticModel@{ngsai::RawKineticModel}}
+\doxysubsubsection{\texorpdfstring{copy()}{copy()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classngsai_1_1RawKineticModel}{ngsai\+::\+Raw\+Kinetic\+Model}} $\ast$ ngsai\+::\+Raw\+Kinetic\+Model\+::copy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Creates a copy of the current instance and returns a pointer to the copy. 
+
+\begin{DoxyReturn}{Returns}
+a pointer to the copy. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classngsai_1_1KineticModel_ae3a6f766cfda59d7e7d10ffae680e754}{ngsai\+::\+Kinetic\+Model}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classngsai_1_1NormalizedKineticModel_a5813b6e5e49c5a077a1249b0c447a512}{ngsai\+::\+Normalized\+Kinetic\+Model}}.
+
+\Hypertarget{classngsai_1_1RawKineticModel_af017fe724c6e62b3bc5c5c79275367f4}\label{classngsai_1_1RawKineticModel_af017fe724c6e62b3bc5c5c79275367f4} 
+\index{ngsai::RawKineticModel@{ngsai::RawKineticModel}!density@{density}}
+\index{density@{density}!ngsai::RawKineticModel@{ngsai::RawKineticModel}}
+\doxysubsubsection{\texorpdfstring{density()}{density()}}
+{\footnotesize\ttfamily virtual void ngsai\+::\+Raw\+Kinetic\+Model\+::density (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Normalizes the count histograms to density histograms. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & if the model was not initialized using set\+\_\+parameters(). \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{classngsai_1_1KineticModel_ad3a360cea8d166ea94c0e63fdd7797fd}{ngsai\+::\+Kinetic\+Model}}.
+
+\Hypertarget{classngsai_1_1RawKineticModel_aadc420b7a66664a02202e811d6822d87}\label{classngsai_1_1RawKineticModel_aadc420b7a66664a02202e811d6822d87} 
+\index{ngsai::RawKineticModel@{ngsai::RawKineticModel}!exp@{exp}}
+\index{exp@{exp}!ngsai::RawKineticModel@{ngsai::RawKineticModel}}
+\doxysubsubsection{\texorpdfstring{exp()}{exp()}}
+{\footnotesize\ttfamily virtual void ngsai\+::\+Raw\+Kinetic\+Model\+::exp (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Applies an exponential transformation to the histogram content. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & if the model was not initialized using set\+\_\+parameters(). \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{classngsai_1_1KineticModel_a6104f888c86dadcd537ff7f9abb62f27}{ngsai\+::\+Kinetic\+Model}}.
+
+\Hypertarget{classngsai_1_1RawKineticModel_a0a7b3d94e839cdc1b5207eb46927da20}\label{classngsai_1_1RawKineticModel_a0a7b3d94e839cdc1b5207eb46927da20} 
+\index{ngsai::RawKineticModel@{ngsai::RawKineticModel}!getBinBoundaries@{getBinBoundaries}}
+\index{getBinBoundaries@{getBinBoundaries}!ngsai::RawKineticModel@{ngsai::RawKineticModel}}
+\doxysubsubsection{\texorpdfstring{getBinBoundaries()}{getBinBoundaries()}}
+{\footnotesize\ttfamily virtual std\+::vector$<$ std\+::pair$<$ double, double $>$ $>$ ngsai\+::\+Raw\+Kinetic\+Model\+::get\+Bin\+Boundaries (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns the histogram bin boundaries. All histograms have the same bin boundaries. \begin{DoxyReturn}{Returns}
+the bin boundaries. Each pair represents the interval \mbox{[}start,end) of a bin. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classngsai_1_1KineticModel_a50789fce30ecc494c4fe24bc7e7c46c6}{ngsai\+::\+Kinetic\+Model}}.
+
+\Hypertarget{classngsai_1_1RawKineticModel_a6e9cd9899cd21703c3b5c8db0913a7c6}\label{classngsai_1_1RawKineticModel_a6e9cd9899cd21703c3b5c8db0913a7c6} 
+\index{ngsai::RawKineticModel@{ngsai::RawKineticModel}!load@{load}}
+\index{load@{load}!ngsai::RawKineticModel@{ngsai::RawKineticModel}}
+\doxysubsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily virtual void ngsai\+::\+Raw\+Kinetic\+Model\+::load (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Loads the instance using the serialization interface from the given file. All previous data are lost. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & the path to the file from which the instance will be loaded. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classngsai_1_1KineticModel_a599d8e3835f693c7146092ef977a0577}{ngsai\+::\+Kinetic\+Model}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classngsai_1_1NormalizedKineticModel_a8765f5592ed6fbd5eaee80c09148a805}{ngsai\+::\+Normalized\+Kinetic\+Model}}.
+
+\Hypertarget{classngsai_1_1RawKineticModel_a898f7b7bb60568049754c24964573b8c}\label{classngsai_1_1RawKineticModel_a898f7b7bb60568049754c24964573b8c} 
+\index{ngsai::RawKineticModel@{ngsai::RawKineticModel}!log@{log}}
+\index{log@{log}!ngsai::RawKineticModel@{ngsai::RawKineticModel}}
+\doxysubsubsection{\texorpdfstring{log()}{log()}}
+{\footnotesize\ttfamily virtual void ngsai\+::\+Raw\+Kinetic\+Model\+::log (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Applies a natural log transformation to the histogram content. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & if the model was not initialized using set\+\_\+parameters(). \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{classngsai_1_1KineticModel_a5ccdd030de232a298033bee0e268ee17}{ngsai\+::\+Kinetic\+Model}}.
+
+\Hypertarget{classngsai_1_1RawKineticModel_a1278100f3d31feb22c2b5030f3b9991a}\label{classngsai_1_1RawKineticModel_a1278100f3d31feb22c2b5030f3b9991a} 
+\index{ngsai::RawKineticModel@{ngsai::RawKineticModel}!logLikelihood@{logLikelihood}}
+\index{logLikelihood@{logLikelihood}!ngsai::RawKineticModel@{ngsai::RawKineticModel}}
+\doxysubsubsection{\texorpdfstring{logLikelihood()}{logLikelihood()}}
+{\footnotesize\ttfamily virtual double ngsai\+::\+Raw\+Kinetic\+Model\+::log\+Likelihood (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classngsai_1_1KineticSignal}{ngsai\+::\+Kinetic\+Signal}} \&}]{kinetics }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Computes the natural loglikelihood -\/ of the average kinetics (fw and rv) -\/ given the model, p(ipds,pwds $\vert$ model). This requires that the histograms have been normalized into log density histograms using \doxylink{classngsai_1_1RawKineticModel_af017fe724c6e62b3bc5c5c79275367f4}{density()} and \doxylink{classngsai_1_1RawKineticModel_a898f7b7bb60568049754c24964573b8c}{log()}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em kinetics} & an instance containing the kinetics (IPD and PWD) on the forward and reverse strand to the model. The forward and reverse strand kinetics will be average and the average values will be included in the model. The DNA sequences are not necessary. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the likelihood of observing a strech of DNA with the given average IPDs and PWDs. Returns nan if the data are incomplete (sequence, IPD or PWD missing). 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if the model was not initialized using set\+\_\+parameters() or if the model has not been normalized to contain signal log densities using \doxylink{classngsai_1_1RawKineticModel_af017fe724c6e62b3bc5c5c79275367f4}{density()} and \doxylink{classngsai_1_1RawKineticModel_a898f7b7bb60568049754c24964573b8c}{log()}. \\
+\hline
+{\em std\+::invalid\+\_\+argument} & if the kinetics size does not match the model size. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{classngsai_1_1KineticModel_ac2adbfc3f82c8ddc4e88078801f6d5c2}{ngsai\+::\+Kinetic\+Model}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classngsai_1_1NormalizedKineticModel_a3847c2c192eedc676a9186022ca58162}{ngsai\+::\+Normalized\+Kinetic\+Model}}.
+
+\Hypertarget{classngsai_1_1RawKineticModel_a27c087bb5e6d64b3e8b16d2e63ff54d2}\label{classngsai_1_1RawKineticModel_a27c087bb5e6d64b3e8b16d2e63ff54d2} 
+\index{ngsai::RawKineticModel@{ngsai::RawKineticModel}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!ngsai::RawKineticModel@{ngsai::RawKineticModel}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool ngsai\+::\+Raw\+Kinetic\+Model\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classngsai_1_1RawKineticModel}{ngsai\+::\+Raw\+Kinetic\+Model}} \&}]{other }\end{DoxyParamCaption}) const}
+
+
+
+Compares the content of the instances. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & an other instance to compare the current one with. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+whether both instances are different. 
+\end{DoxyReturn}
+\Hypertarget{classngsai_1_1RawKineticModel_ab359e22be401b32a5917f3e9eee7b761}\label{classngsai_1_1RawKineticModel_ab359e22be401b32a5917f3e9eee7b761} 
+\index{ngsai::RawKineticModel@{ngsai::RawKineticModel}!operator=@{operator=}}
+\index{operator=@{operator=}!ngsai::RawKineticModel@{ngsai::RawKineticModel}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classngsai_1_1RawKineticModel}{ngsai\+::\+Raw\+Kinetic\+Model}} \& ngsai\+::\+Raw\+Kinetic\+Model\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classngsai_1_1RawKineticModel}{ngsai\+::\+Raw\+Kinetic\+Model}} \&}]{other }\end{DoxyParamCaption})}
+
+
+
+Assignment operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & a reference to the object to copy from. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a reference to the current instance. 
+\end{DoxyReturn}
+\Hypertarget{classngsai_1_1RawKineticModel_a233fe540b760bf1be23434d046cb1940}\label{classngsai_1_1RawKineticModel_a233fe540b760bf1be23434d046cb1940} 
+\index{ngsai::RawKineticModel@{ngsai::RawKineticModel}!operator=@{operator=}}
+\index{operator=@{operator=}!ngsai::RawKineticModel@{ngsai::RawKineticModel}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classngsai_1_1RawKineticModel}{ngsai\+::\+Raw\+Kinetic\+Model}} \& ngsai\+::\+Raw\+Kinetic\+Model\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classngsai_1_1RawKineticModel}{ngsai\+::\+Raw\+Kinetic\+Model}} \&\&}]{other }\end{DoxyParamCaption})}
+
+
+
+Move assignment operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & a rvalue to the object to move. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a reference to the current instance. 
+\end{DoxyReturn}
+\Hypertarget{classngsai_1_1RawKineticModel_aebc74cbf930b5cb3027f09090dc1be65}\label{classngsai_1_1RawKineticModel_aebc74cbf930b5cb3027f09090dc1be65} 
+\index{ngsai::RawKineticModel@{ngsai::RawKineticModel}!operator==@{operator==}}
+\index{operator==@{operator==}!ngsai::RawKineticModel@{ngsai::RawKineticModel}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool ngsai\+::\+Raw\+Kinetic\+Model\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classngsai_1_1RawKineticModel}{ngsai\+::\+Raw\+Kinetic\+Model}} \&}]{other }\end{DoxyParamCaption}) const}
+
+
+
+Compares the content of the instances. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & an other instance to compare the current one with. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+whether both instances are equal. 
+\end{DoxyReturn}
+\Hypertarget{classngsai_1_1RawKineticModel_a5df1275c21c19e63ca044960e91266a4}\label{classngsai_1_1RawKineticModel_a5df1275c21c19e63ca044960e91266a4} 
+\index{ngsai::RawKineticModel@{ngsai::RawKineticModel}!save@{save}}
+\index{save@{save}!ngsai::RawKineticModel@{ngsai::RawKineticModel}}
+\doxysubsubsection{\texorpdfstring{save()}{save()}}
+{\footnotesize\ttfamily virtual void ngsai\+::\+Raw\+Kinetic\+Model\+::save (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Saves the instance using the serialization interface in the given file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & the path to the file in which the instance will be saved. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classngsai_1_1KineticModel_a3681075800db4ca96eefe02d43031804}{ngsai\+::\+Kinetic\+Model}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classngsai_1_1NormalizedKineticModel_aec45d2d15b58c3dd1d9a4f04c56a834e}{ngsai\+::\+Normalized\+Kinetic\+Model}}.
+
+\Hypertarget{classngsai_1_1RawKineticModel_a5b09e50c3d650787e371e387b0304343}\label{classngsai_1_1RawKineticModel_a5b09e50c3d650787e371e387b0304343} 
+\index{ngsai::RawKineticModel@{ngsai::RawKineticModel}!serialize@{serialize}}
+\index{serialize@{serialize}!ngsai::RawKineticModel@{ngsai::RawKineticModel}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily template$<$class Archive $>$ \\
+void ngsai\+::\+Raw\+Kinetic\+Model\+::serialize (\begin{DoxyParamCaption}\item[{Archive \&}]{archive,  }\item[{const unsigned int}]{version }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+(De-\/)serializes the object using Boost serialization library. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Archive} & the archive to write/read the object to/from. \\
+\hline
+{\em version} & don\textquotesingle{}t know. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classngsai_1_1RawKineticModel_a163038ce8a85da8e3bff760bbb098d32}\label{classngsai_1_1RawKineticModel_a163038ce8a85da8e3bff760bbb098d32} 
+\index{ngsai::RawKineticModel@{ngsai::RawKineticModel}!setParameters@{setParameters}}
+\index{setParameters@{setParameters}!ngsai::RawKineticModel@{ngsai::RawKineticModel}}
+\doxysubsubsection{\texorpdfstring{setParameters()}{setParameters()}}
+{\footnotesize\ttfamily virtual void ngsai\+::\+Raw\+Kinetic\+Model\+::set\+Parameters (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{size,  }\item[{double}]{xmin,  }\item[{double}]{xmax,  }\item[{size\+\_\+t}]{n\+\_\+bins,  }\item[{double}]{pseudo\+\_\+counts }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Sets the model parameters and initialize it to accept data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em size} & the number of positions (bases) that will be modelled. \\
+\hline
+{\em xmin} & the lower bound of 1st bin in the histograms. \\
+\hline
+{\em xmax} & the upper bound of the last bin in the histograms. \\
+\hline
+{\em nbins} & the number of bins in the histograms. \\
+\hline
+{\em pseudo\+\_\+counts} & a pseudo count that will be added to each bin of the histograms upon initialization. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & if size is not bigger than 0, if x\+\_\+min is not smaller than x\+\_\+max or if n\+\_\+bins is not bigger than 0. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{classngsai_1_1KineticModel_a894b2f974965a397c2ddb330f35faa0a}{ngsai\+::\+Kinetic\+Model}}.
+
+\Hypertarget{classngsai_1_1RawKineticModel_af6f76dde8c631a57323dc312d77795d7}\label{classngsai_1_1RawKineticModel_af6f76dde8c631a57323dc312d77795d7} 
+\index{ngsai::RawKineticModel@{ngsai::RawKineticModel}!toString@{toString}}
+\index{toString@{toString}!ngsai::RawKineticModel@{ngsai::RawKineticModel}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}}
+{\footnotesize\ttfamily virtual std\+::string ngsai\+::\+Raw\+Kinetic\+Model\+::to\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Produces a string representation of the model. 
+
+\begin{DoxyReturn}{Returns}
+the string representation of the model. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classngsai_1_1KineticModel_afdb3ca555f74b5247a377d2e3516fc58}{ngsai\+::\+Kinetic\+Model}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classngsai_1_1NormalizedKineticModel_ae820520e340d97719a2cbc4bf34b5d76}{ngsai\+::\+Normalized\+Kinetic\+Model}}.
+
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{classngsai_1_1RawKineticModel_ac98d07dd8f7b70e16ccb9a01abf56b9c}\label{classngsai_1_1RawKineticModel_ac98d07dd8f7b70e16ccb9a01abf56b9c} 
+\index{ngsai::RawKineticModel@{ngsai::RawKineticModel}!boost::serialization::access@{boost::serialization::access}}
+\index{boost::serialization::access@{boost::serialization::access}!ngsai::RawKineticModel@{ngsai::RawKineticModel}}
+\doxysubsubsection{\texorpdfstring{boost::serialization::access}{boost::serialization::access}}
+{\footnotesize\ttfamily friend class boost\+::serialization\+::access\hspace{0.3cm}{\ttfamily [friend]}}
+
+\Hypertarget{classngsai_1_1RawKineticModel_a15449c56a9d490abe32bf8337635810a}\label{classngsai_1_1RawKineticModel_a15449c56a9d490abe32bf8337635810a} 
+\index{ngsai::RawKineticModel@{ngsai::RawKineticModel}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!ngsai::RawKineticModel@{ngsai::RawKineticModel}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{stream,  }\item[{const \mbox{\hyperlink{classngsai_1_1RawKineticModel}{ngsai\+::\+Raw\+Kinetic\+Model}} \&}]{model }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Writes the given \doxylink{classngsai_1_1RawKineticModel}{Raw\+Kinetic\+Model} to the output stream. Does nothing if the model is not initialized. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em stream} & an output stream to write to. \\
+\hline
+{\em model} & a model of interest. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a reference to the output stream the model was written to. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classngsai_1_1RawKineticModel_a5969628b79fdc0ba6db4a65b88ccc001}\label{classngsai_1_1RawKineticModel_a5969628b79fdc0ba6db4a65b88ccc001} 
+\index{ngsai::RawKineticModel@{ngsai::RawKineticModel}!m\_histograms\_ipd@{m\_histograms\_ipd}}
+\index{m\_histograms\_ipd@{m\_histograms\_ipd}!ngsai::RawKineticModel@{ngsai::RawKineticModel}}
+\doxysubsubsection{\texorpdfstring{m\_histograms\_ipd}{m\_histograms\_ipd}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{RawKineticModel_8hpp_af86bcd5936bb2c22fb87c4f3b21bcd5e}{hist\+\_\+1d\+\_\+double}}$>$ ngsai\+::\+Raw\+Kinetic\+Model\+::m\+\_\+histograms\+\_\+ipd\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+the IPD signal histograms at each position of the model. 
+
+\Hypertarget{classngsai_1_1RawKineticModel_a3319f60b04073d29e2af451fc58b99e2}\label{classngsai_1_1RawKineticModel_a3319f60b04073d29e2af451fc58b99e2} 
+\index{ngsai::RawKineticModel@{ngsai::RawKineticModel}!m\_histograms\_pwd@{m\_histograms\_pwd}}
+\index{m\_histograms\_pwd@{m\_histograms\_pwd}!ngsai::RawKineticModel@{ngsai::RawKineticModel}}
+\doxysubsubsection{\texorpdfstring{m\_histograms\_pwd}{m\_histograms\_pwd}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{RawKineticModel_8hpp_af86bcd5936bb2c22fb87c4f3b21bcd5e}{hist\+\_\+1d\+\_\+double}}$>$ ngsai\+::\+Raw\+Kinetic\+Model\+::m\+\_\+histograms\+\_\+pwd\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+the PWD signal histograms at each position of the model. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/ngsaipp/epigenetics/\mbox{\hyperlink{RawKineticModel_8hpp}{Raw\+Kinetic\+Model.\+hpp}}\end{DoxyCompactItemize}

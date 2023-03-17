@@ -1,0 +1,37 @@
+\hypertarget{dna__utility_8hpp}{}\doxysection{include/ngsaipp/dna/dna\+\_\+utility.hpp File Reference}
+\label{dna__utility_8hpp}\index{include/ngsaipp/dna/dna\_utility.hpp@{include/ngsaipp/dna/dna\_utility.hpp}}
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$ngsaipp/dna/constants.\+hpp$>$}\newline
+Include dependency graph for dna\+\_\+utility.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{dna__utility_8hpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacengsai}{ngsai}}
+\begin{DoxyCompactList}\small\item\em This file contains values that are useful for formatting terminal output. \end{DoxyCompactList}\item 
+namespace \mbox{\hyperlink{namespacengsai_1_1dna}{ngsai\+::dna}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{namespacengsai_1_1dna_a3540de6a16773c5f73469c0cdd348b17}{ngsai\+::dna\+::get\+\_\+reverse\+\_\+complement}} (const std\+::string \&seq)
+\begin{DoxyCompactList}\small\item\em Compute the reverse complement of a DNA sequence. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{namespacengsai_1_1dna_a0e8ae069839db303cbe98519b82628e6}{ngsai\+::dna\+::colored\+\_\+dna\+\_\+seq}} (const std\+::string \&seq)
+\begin{DoxyCompactList}\small\item\em Creates a new string containing a formatted DNA sequence that appears colored when printed on a terminal. Only DNA characters (A, C, G, T, N) are colored. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{namespacengsai_1_1dna_a874212e5dc60ea9a5cef5eb90ce59d2c}{ngsai\+::dna\+::hash\+\_\+kmer}} (const std\+::string \&sequence)
+\begin{DoxyCompactList}\small\item\em Computes a hash for the given sequence. The hash represents the index at which the sequence would be located if all possible sequences of the same length were sorted. This function is designed for fixed length squences. The hashes of sequences of different lengths should not be compared. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{namespacengsai_1_1dna_acc505e91b9257703455215130e5f2df9}{ngsai\+::dna\+::hash\+\_\+kmer}} (const std\+::string \&sequence, size\+\_\+t start, size\+\_\+t length)
+\begin{DoxyCompactList}\small\item\em Computes a hash for the sub-\/sequence starting at the given position in the sequence and of the given length. The hash represents the index at which the sub-\/sequence would be located if all possible sequences of the same length were sorted. This function is designed for fixed length sequences. The hashes of sequences of different lengths should not be compared. \end{DoxyCompactList}\item 
+std\+::vector$<$ size\+\_\+t $>$ \mbox{\hyperlink{namespacengsai_1_1dna_a599a31577c9216f1e8e3338bae26da07}{ngsai\+::dna\+::hash\+\_\+kmer}} (const std\+::string \&sequence, size\+\_\+t kmer\+\_\+size)
+\begin{DoxyCompactList}\small\item\em Computes the hash each kmer (at every offset) in the sequence using a Rabin-\/\+Karp rolling hash implementation. The hash represents the index at which the kmers would be located if all possible kmers with this length were sorted. This function is designed for fixed length kmers. The hashes of kmers of different lengths should not be compared. \end{DoxyCompactList}\item 
+std\+::vector$<$ size\+\_\+t $>$ \mbox{\hyperlink{namespacengsai_1_1dna_ace82f34150416da314e1dbbc1f9aa540}{ngsai\+::dna\+::hash\+\_\+kmer}} (const std\+::string \&sequence, std\+::vector$<$ std\+::string $>$ \&kmer\+\_\+sequences, size\+\_\+t kmer\+\_\+size)
+\begin{DoxyCompactList}\small\item\em Computes the hash each kmer (at every offset) in the sequence using a Rabin-\/\+Karp rolling hash implementation. The kmer hashes are returned and the kmer sequences are stored in the given vector. The hash represents the index at which the kmers would be located if all possible kmers with this length were sorted. This function is designed for fixed length kmers. The hashes of kmers of different lengths should not be compared. \end{DoxyCompactList}\item 
+std\+::vector$<$ size\+\_\+t $>$ \mbox{\hyperlink{namespacengsai_1_1dna_ae0d044987fc2942a4c3cfa20e44a07ca}{ngsai\+::dna\+::hash\+\_\+kmer}} (const std\+::string \&sequence, const std\+::vector$<$ uint32\+\_\+t $>$ \&ipds, const std\+::vector$<$ uint32\+\_\+t $>$ \&pwds, std\+::vector$<$ std\+::string $>$ \&kmer\+\_\+sequences, std\+::vector$<$ std\+::vector$<$ uint32\+\_\+t $>$ $>$ \&kmer\+\_\+ipds, std\+::vector$<$ std\+::vector$<$ uint32\+\_\+t $>$ $>$ \&kmer\+\_\+pwds, size\+\_\+t kmer\+\_\+size)
+\begin{DoxyCompactList}\small\item\em Does the same as the previous function but also stored the IPDs/\+PWDs corresponding to each kmer in the corresponding vectors. \end{DoxyCompactList}\end{DoxyCompactItemize}

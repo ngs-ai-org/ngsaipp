@@ -1,0 +1,142 @@
+\hypertarget{KineticSignal_8hpp_source}{}\doxysection{Kinetic\+Signal.\+hpp}
+\label{KineticSignal_8hpp_source}\index{include/ngsaipp/epigenetics/KineticSignal.hpp@{include/ngsaipp/epigenetics/KineticSignal.hpp}}
+\mbox{\hyperlink{KineticSignal_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ NGSAI\_KINETICSIGNAL\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ NGSAI\_KINETICSIGNAL\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacengsai}{ngsai}}}
+\DoxyCodeLine{00010\ \{\ \ \ }
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classngsai_1_1KineticSignal}{KineticSignal}}}
+\DoxyCodeLine{00023\ \ \ \ \ \{\ \ \ }
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1KineticSignal_a9765dfc85c4f2f6ad332ff25b5740642}{KineticSignal}}()\ ;}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1KineticSignal_a038bf3015ce1acac996517d7d2de126e}{KineticSignal}}(\textcolor{keyword}{const}\ std::string\&\ seq\_fw,}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ seq\_rv,}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<double>\&\ ipd\_fw,}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<double>\&\ ipd\_rv,}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<double>\&\ pwd\_fw,}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<double>\&\ pwd\_rv)\ ;}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1KineticSignal_a63dd2366190ce4f107a752d7cc1333b1}{KineticSignal}}(std::string\&\&\ seq\_fw,}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\&\&\ seq\_rv,}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<double>\&\&\ ipd\_fw,}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<double>\&\&\ ipd\_rv,}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<double>\&\&\ pwd\_fw,}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<double>\&\&\ pwd\_rv)\ ;}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1KineticSignal_a13304aa2eb2f8b61401d72d5242afdf1}{KineticSignal}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classngsai_1_1KineticSignal}{ngsai::KineticSignal}}\&\ other)\ ;}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1KineticSignal_a41b574cf7ce16f3cfa1df81c66dd4acc}{KineticSignal}}(\mbox{\hyperlink{classngsai_1_1KineticSignal}{ngsai::KineticSignal}}\&\&\ other)\ ;}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1KineticSignal_a43f40076deb859dd647b7f9782167a65}{\string~KineticSignal}}()\ ;}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1KineticSignal}{KineticSignal}}\&}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1KineticSignal_aea54dc19401ae5c84afd3b30964b151f}{operator\ =\ }}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classngsai_1_1KineticSignal}{KineticSignal}}\&\ other)\ ;}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1KineticSignal}{KineticSignal}}\&}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1KineticSignal_aea54dc19401ae5c84afd3b30964b151f}{operator\ =\ }}(\mbox{\hyperlink{classngsai_1_1KineticSignal}{KineticSignal}}\&\&\ other)\ ;}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1KineticSignal_a113b46ef12210485bcaa9353cd1b3279}{setSequenceFw}}(\textcolor{keyword}{const}\ std::string\&\ seq)\ ;}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1KineticSignal_a2d78102f7f2838b78456eb0f8191b6f5}{setSequenceFw}}(std::string\&\&\ seq)\ ;}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1KineticSignal_a778ec4579ee74766272f6b2737ec1c2c}{setSequenceRv}}(\textcolor{keyword}{const}\ std::string\&\ seq)\ ;}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1KineticSignal_a0ba6265fbe323a00a0e8c43aeecc6ba1}{setSequenceRv}}(std::string\&\&\ seq)\ ;}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1KineticSignal_a3399260f9dd0c65116a0a48bd02103a4}{setIPDFw}}(\textcolor{keyword}{const}\ std::vector<double>\&\ ipd)\ ;}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1KineticSignal_a7f6cff0d6ee591149d8e410f35a2898f}{setIPDFw}}(std::vector<double>\&\&\ ipd)\ ;}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1KineticSignal_a01e062c648025bd8985b0bc4818b3ec5}{setIPDRv}}(\textcolor{keyword}{const}\ std::vector<double>\&\ ipd)\ ;}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1KineticSignal_ae899f10ac5637d3d50ebafa88e612bbb}{setIPDRv}}(std::vector<double>\&\&\ ipd)\ ;}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1KineticSignal_ac28f8d8349c47db7d1e77341f4756859}{setPWDFw}}(\textcolor{keyword}{const}\ std::vector<double>\&\ pwd)\ ;}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ }
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1KineticSignal_ac614748cc61bb86ef97ae731b18c979c}{setPWDFw}}(std::vector<double>\&\&\ pwd)\ ;}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1KineticSignal_a86d6bb82b72d483c1e6f4c3f91fb7e87}{setPWDRv}}(\textcolor{keyword}{const}\ std::vector<double>\&\ pwd)\ ;}
+\DoxyCodeLine{00171\ }
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1KineticSignal_acbf40d13501fb062907b2212baaba26e}{setPWDRv}}(std::vector<double>\&\&\ pwd)\ ;}
+\DoxyCodeLine{00178\ }
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1KineticSignal_a9a7db8de1bdbf21084d0817294382c12}{getSequenceFw}}()\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00185\ }
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1KineticSignal_a8b520513e858fdd49086b76e67a9579a}{getSequenceRv}}()\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00192\ }
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<double>\&}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1KineticSignal_a416a6247522880d14521e40728312537}{getIPDFw}}()\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00199\ }
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<double>\&}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1KineticSignal_a6085865963d17d139fc704931d51afd7}{getIPDRv}}()\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00206\ }
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<double>\&}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1KineticSignal_a317312426241ab2b514e00d442c43ff6}{getPWDFw}}()\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00213\ }
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<double>\&}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1KineticSignal_a65bef2bc2f8505e9ee9ba4eae103b315}{getPWDRv}}()\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00220\ }
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<double>}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1KineticSignal_a075a4f134cb237d966b7feac6bd06e7e}{getIPDMean}}()\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00231\ }
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<double>}
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1KineticSignal_a00e9aecfac94e6b021097e51cbe1ba2c}{getPWDMean}}()\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00242\ }
+\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}}
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1KineticSignal_a7787fbaeb9942139775792745ae7545b}{isFwComplete}}()\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00250\ }
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1KineticSignal_a914dbf9a289793f123077ce2500df2cd}{isRvComplete}}()\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00258\ }
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}}
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1KineticSignal_a6e097c95ddf2b2ece1b16191e40f406b}{isComplete}}()\ \textcolor{keyword}{const}\ ;\ }
+\DoxyCodeLine{00266\ }
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}}
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1KineticSignal_a3aed8d823307b9a4976ea2bc36181b89}{size}}()\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00274\ }
+\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classngsai_1_1KineticSignal_accbca6f127cf95a109bb30b8443c8065}{m\_size}}\ ;}
+\DoxyCodeLine{00285\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{classngsai_1_1KineticSignal_a8862f31a702b9c42f479d3de5f992d98}{m\_sequence\_fw}}\ ;}
+\DoxyCodeLine{00289\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{classngsai_1_1KineticSignal_a637b8aaca77f67d3996c6e2ecd439537}{m\_sequence\_rv}}\ ;}
+\DoxyCodeLine{00293\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{classngsai_1_1KineticSignal_a9b01c0082ecf3620c8d0ddc3df564f92}{m\_ipd\_fw}}\ ;}
+\DoxyCodeLine{00297\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{classngsai_1_1KineticSignal_a49d6e6c30eb2862aa5ba44cc0fe3106f}{m\_ipd\_rv}}\ ;}
+\DoxyCodeLine{00301\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{classngsai_1_1KineticSignal_acfceba0322c76577af8f6c1fb987f8fa}{m\_pwd\_fw}}\ ;}
+\DoxyCodeLine{00305\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{classngsai_1_1KineticSignal_a6c03f2acc012cf958d73a41531bdfc30}{m\_pwd\_rv}}\ ;}
+\DoxyCodeLine{00309\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classngsai_1_1KineticSignal_a1344cfe72ba90d107640d9b099dee7d2}{m\_seq\_fw\_set}}\ ;}
+\DoxyCodeLine{00313\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classngsai_1_1KineticSignal_a0ac1671c92645a97aa0a0f4bad0e204e}{m\_seq\_rv\_set}}\ ;}
+\DoxyCodeLine{00317\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classngsai_1_1KineticSignal_a06d800d74a8797b27c6d47f7a83205ae}{m\_ipd\_fw\_set}}\ ;}
+\DoxyCodeLine{00321\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classngsai_1_1KineticSignal_a14954eccbe52707b3f43d97813282b7e}{m\_ipd\_rv\_set}}\ ;}
+\DoxyCodeLine{00325\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classngsai_1_1KineticSignal_aa9e886f66df861e34bba0576f075e288}{m\_pwd\_fw\_set}}\ ;}
+\DoxyCodeLine{00329\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classngsai_1_1KineticSignal_aa4ec7e3a21656bb5b057c75e9a5cc8c0}{m\_pwd\_rv\_set}}\ ;}
+\DoxyCodeLine{00330\ }
+\DoxyCodeLine{00331\ \ \ \ \ \}\ ;\ \textcolor{comment}{//\ KineticSignal}}
+\DoxyCodeLine{00332\ }
+\DoxyCodeLine{00333\ }
+\DoxyCodeLine{00334\ \}\ \textcolor{comment}{//\ namespace\ ngsai}}
+\DoxyCodeLine{00335\ }
+\DoxyCodeLine{00336\ }
+\DoxyCodeLine{00337\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ NGSAI\_KINETICSIGNAL\_HPP}}
+
+\end{DoxyCode}

@@ -1,0 +1,128 @@
+\hypertarget{KmerMap_8hpp_source}{}\doxysection{Kmer\+Map.\+hpp}
+\label{KmerMap_8hpp_source}\index{include/ngsaipp/epigenetics/KmerMap.hpp@{include/ngsaipp/epigenetics/KmerMap.hpp}}
+\mbox{\hyperlink{KmerMap_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ NGSAI\_KMERMAP\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ NGSAI\_KMERMAP\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <utility>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <boost/serialization/access.hpp>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <boost/serialization/vector.hpp>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <boost/serialization/string.hpp>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <boost/serialization/utility.hpp>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ \ <\mbox{\hyperlink{KmerData_8hpp}{ngsaipp/epigenetics/KmerData.hpp}}>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacengsai}{ngsai}}}
+\DoxyCodeLine{00014\ \{\ \ \ }
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{comment}{//\ the\ KmerMap\ is\ a\ vector\ is\ these}}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{typedef}\ std::pair<uint32\_t,ngsai::KmerData>\ \mbox{\hyperlink{namespacengsai_ab667af3aa89fb3a9acdbda7a75805a2b}{kmerBucket}}\ ;}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classngsai_1_1KmerMap}{KmerMap}}}
+\DoxyCodeLine{00029\ \ \ \ \ \{\ \ \ }
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{classngsai_1_1KmerMap_a176fb74c5eeb9cbfaeabbc55131c6217}{insert\_mode}}\ \{\mbox{\hyperlink{classngsai_1_1KmerMap_a176fb74c5eeb9cbfaeabbc55131c6217a361b812f6e6c4c441cb5dc11af33e5ff}{REPLACE}}=0,}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1KmerMap_a176fb74c5eeb9cbfaeabbc55131c6217a97cd8ccf6b24d9525d0f50bdf62ca345}{SUM}},}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1KmerMap_a176fb74c5eeb9cbfaeabbc55131c6217a818b511bfe0964fc66cdd280186572c2}{N\_MODES}}\}\ ;}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1KmerMap_a08a307aad4d59b56acf5ada2315b4e53}{KmerMap}}()\ ;}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1KmerMap_a19fd7f042f2da14915283f94be47a0c7}{KmerMap}}(\textcolor{keywordtype}{size\_t}\ kmer\_size)\ ;}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1KmerMap_a5876364a5858e5f67f09db2fb664d87f}{KmerMap}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classngsai_1_1KmerMap}{KmerMap}}\&\ other)\ ;}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1KmerMap_a5fb7649e44821286b78c5920763a3f2a}{KmerMap}}(\mbox{\hyperlink{classngsai_1_1KmerMap}{KmerMap}}\&\&\ other)\ ;}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1KmerMap_a1d4bc440e89058c4e77d5b08557abc71}{\string~KmerMap}}()\ ;}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1KmerMap}{ngsai::KmerMap}}\&\ }
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1KmerMap_a091e484930f149f5e703d9186d26169e}{operator\ =\ }}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classngsai_1_1KmerMap}{ngsai::KmerMap}}\&\ other)\ ;\ }
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ }
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1KmerMap_af9a11f7c2d82ff76b0e3c7582759c62c}{operator\ ==\ }}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classngsai_1_1KmerMap}{ngsai::KmerMap}}\&\ other)\ \textcolor{keyword}{const}\ ;\ \ \ }
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ }
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1KmerMap_ad8ae462ab9ff8a954bce4bb4b57d380c}{operator\ !=\ }}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classngsai_1_1KmerMap}{ngsai::KmerMap}}\&\ other)\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<ngsai::kmerBucket>::iterator}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1KmerMap_ae267a4bca70a24f86707e1932638e13a}{begin}}()\ ;}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<ngsai::kmerBucket>::const\_iterator}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1KmerMap_ad75a8b0d512b4bc882d956fd7fff1a4c}{begin}}()\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<ngsai::kmerBucket>::iterator}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1KmerMap_aa1527e48613c5ea54bcea3118d8bccca}{end}}()\ ;}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<ngsai::kmerBucket>::const\_iterator}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1KmerMap_acc34126d1ae38390d3cba4939dfad743}{end}}()\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ }
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1KmerMap_af72a385fec3a25760fe4f9f61b652779}{size}}()\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1KmerMap_abd0399d2bab282952ce4e568cc34d996}{capacity}}()\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1KmerMap_a28d8165d978bc11e9c61f9a3711eb2f7}{resize}}(\textcolor{keywordtype}{size\_t}\ kmer\_size)\ ;}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<ngsai::kmerBucket>::iterator\ }
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1KmerMap_a9557c4e5d22fbd0205a289aaad8c6667}{find}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classngsai_1_1KmerData}{KmerData}}\&\ kmer)\ ;}
+\DoxyCodeLine{00168\ }
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<ngsai::kmerBucket>::const\_iterator\ }
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1KmerMap_a469474008e371c10495a75f8182ba663}{find}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classngsai_1_1KmerData}{KmerData}}\&\ kmer)\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00178\ }
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<std::vector<ngsai::kmerBucket>::iterator>\ }
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1KmerMap_af5baa35a66989f08fcabc25d9d9763d7}{find}}(\textcolor{keyword}{const}\ std::string\&\ sequence)\ ;}
+\DoxyCodeLine{00192\ }
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<std::vector<ngsai::kmerBucket>::const\_iterator>\ }
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1KmerMap_a61c9c82061a13e067c740e4c38fcb09e}{find}}(\textcolor{keyword}{const}\ std::string\&\ sequence)\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00206\ }
+\DoxyCodeLine{00207\ }
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classngsai_1_1KmerMap_a55be9274af3615a41f177a6bfa2aa765}{insert}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classngsai_1_1KmerData}{ngsai::KmerData}}\&\ kmer,}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1KmerMap_a176fb74c5eeb9cbfaeabbc55131c6217}{insert\_mode}}\ mode=\mbox{\hyperlink{classngsai_1_1KmerMap_a176fb74c5eeb9cbfaeabbc55131c6217a361b812f6e6c4c441cb5dc11af33e5ff}{insert\_mode::REPLACE}})\ ;}
+\DoxyCodeLine{00217\ }
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classngsai_1_1KmerMap_a323a8ef81d3ac3b7a9da3225829fad05}{insert}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classngsai_1_1KmerData}{ngsai::KmerData}}\&\&\ kmer,}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1KmerMap_a176fb74c5eeb9cbfaeabbc55131c6217}{insert\_mode}}\ mode=\mbox{\hyperlink{classngsai_1_1KmerMap_a176fb74c5eeb9cbfaeabbc55131c6217a361b812f6e6c4c441cb5dc11af33e5ff}{insert\_mode::REPLACE}})\ ;}
+\DoxyCodeLine{00227\ }
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classngsai_1_1KmerMap_ad4046d31c90214cce9d34ce63c85c862}{insert}}(\textcolor{keyword}{const}\ std::string\&\ sequence,}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<uint32\_t>\&\ ipd,}
+\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<uint32\_t>\&\ pwd,}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1KmerMap_a176fb74c5eeb9cbfaeabbc55131c6217}{insert\_mode}}\ mode=\mbox{\hyperlink{classngsai_1_1KmerMap_a176fb74c5eeb9cbfaeabbc55131c6217a361b812f6e6c4c441cb5dc11af33e5ff}{insert\_mode::REPLACE}})\ ;}
+\DoxyCodeLine{00246\ }
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacengsai_ab667af3aa89fb3a9acdbda7a75805a2b}{ngsai::kmerBucket}}\&\ \mbox{\hyperlink{classngsai_1_1KmerMap_ae3f741f696940dd6221bac5e860af021}{at}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classngsai_1_1KmerData}{ngsai::KmerData}}\&\ kmer)\ ;}
+\DoxyCodeLine{00256\ }
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespacengsai_ab667af3aa89fb3a9acdbda7a75805a2b}{ngsai::kmerBucket}}\&\ \mbox{\hyperlink{classngsai_1_1KmerMap_ae6bf404a895355787e6964b6db0e8ecd}{at}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classngsai_1_1KmerData}{ngsai::KmerData}}\&\ kmer)\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00266\ }
+\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classngsai_1_1KmerMap_af50e8d5f4e2a2646c42d861f4c72763b}{getKmerSize}}()\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ for\ serialization}}
+\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classngsai_1_1KmerMap_ac98d07dd8f7b70e16ccb9a01abf56b9c}{boost::serialization::access}};}
+\DoxyCodeLine{00276\ }
+\DoxyCodeLine{00283\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ Archive>}
+\DoxyCodeLine{00284\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ serialize(Archive\ \&\ archive,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ version)}
+\DoxyCodeLine{00285\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \ \ \textcolor{keywordflow}{if}(version\ <\ 1)}
+\DoxyCodeLine{00286\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ ;\ \}}
+\DoxyCodeLine{00287\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ archive\ \&\ \mbox{\hyperlink{classngsai_1_1KmerMap_ad2e69e1a3d7ef9b5f89e61256830271e}{m\_kmer\_n}}\ ;}
+\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ archive\ \&\ \mbox{\hyperlink{classngsai_1_1KmerMap_a72d2061d8bb2eaa21c473bb50f5c9839}{m\_kmer\_size}}\ ;}
+\DoxyCodeLine{00289\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ archive\ \&\ \mbox{\hyperlink{classngsai_1_1KmerMap_a95cde2078ce56ea5c3a358d8e955b4f1}{m\_map}}\ ;}
+\DoxyCodeLine{00290\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \ \ \ \ \ \ }
+\DoxyCodeLine{00291\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00292\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00296\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classngsai_1_1KmerMap_ad2e69e1a3d7ef9b5f89e61256830271e}{m\_kmer\_n}}\ ;}
+\DoxyCodeLine{00297\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00301\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classngsai_1_1KmerMap_a72d2061d8bb2eaa21c473bb50f5c9839}{m\_kmer\_size}}\ ;}
+\DoxyCodeLine{00302\ }
+\DoxyCodeLine{00310\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<ngsai::kmerBucket>\ \mbox{\hyperlink{classngsai_1_1KmerMap_a95cde2078ce56ea5c3a358d8e955b4f1}{m\_map}}\ ;}
+\DoxyCodeLine{00311\ \ \ \ \ \}\ ;}
+\DoxyCodeLine{00312\ }
+\DoxyCodeLine{00313\ \}\ \textcolor{comment}{//\ namespace\ ngsai}}
+\DoxyCodeLine{00314\ }
+\DoxyCodeLine{00321\ std::ostream\&\ \mbox{\hyperlink{KmerMap_8hpp_a393edf29129947140568687699f4005f}{operator\ <<\ }}(std::ostream\&\ stream,}
+\DoxyCodeLine{00322\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classngsai_1_1KmerMap}{ngsai::KmerMap}}\&\ m)\ ;}
+\DoxyCodeLine{00323\ }
+\DoxyCodeLine{00324\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ NGSAI\_KMERMAP\_HPP}}
+
+\end{DoxyCode}

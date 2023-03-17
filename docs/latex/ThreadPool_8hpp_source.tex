@@ -1,0 +1,89 @@
+\hypertarget{ThreadPool_8hpp_source}{}\doxysection{Thread\+Pool.\+hpp}
+\label{ThreadPool_8hpp_source}\index{include/ngsaipp/parallel/ThreadPool.hpp@{include/ngsaipp/parallel/ThreadPool.hpp}}
+\mbox{\hyperlink{ThreadPool_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ THREADPOOL\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ THREADPOOL\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <cassert>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <thread>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <queue>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <mutex>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <utility>}\ \ \ \ \ \textcolor{comment}{//\ std::pair}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <functional>}\ \ \textcolor{comment}{//\ std::function}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{typedef}\ void\ (*\mbox{\hyperlink{ThreadPool_8hpp_ae2db491c71be545e7cad5d3641fcb3ae}{function\_ptr}})(size\_t,\ size\_t)\ ;}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacengsai}{ngsai}}}
+\DoxyCodeLine{00019\ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classngsai_1_1ThreadPool}{ThreadPool}}}
+\DoxyCodeLine{00034\ \ \ \ \ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ std::vector<std::pair<size\_t,size\_t>>}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1ThreadPool_a8e32a6330a815c9ca738f17779c4c36e}{split\_range}}(\textcolor{keywordtype}{size\_t}\ from,}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ to,}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ n)\ ;}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1ThreadPool_ab95d71113ff999c0e1b41f5fc5b3fda0}{ThreadPool}}(\textcolor{keywordtype}{size\_t}\ n\_threads=1,\ \textcolor{keywordtype}{bool}\ debug=\textcolor{keyword}{false})\ ;}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1ThreadPool_a3d979e7f12b7b0533986462a4d49a095}{ThreadPool}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classngsai_1_1ThreadPool}{ThreadPool}}\&\ other)\ =\ delete\ ;}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1ThreadPool_a1a1ce1e8aba717f619afe04ff70e55d3}{\string~ThreadPool}}()\ ;}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1ThreadPool_a88cc357aabda3a79b1e165983d9b5841}{getNThread}}()\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1ThreadPool_a8cbe2db0966d4fa9669654b740da41e9}{addJob}}(std::function<\textcolor{keywordtype}{void}()>\&\&\ task)\ ;}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1ThreadPool_a2a8767845dcae378ce14975251bbb458}{join}}()\ ;}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ thread\_routine()\ ;}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ lock\_mutex\_queue()\ ;}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ unlock\_mutex\_queue()\ ;}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ open\_queue()\ ;}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ close\_queue()\ ;}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ isQueueOpen()\ ;}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ isDebugOn()\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ debug\_print(\textcolor{keyword}{const}\ std::string\&\ msg,}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::ostream\&\ out=std::cerr)\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ fields}}
+\DoxyCodeLine{00158\ \textcolor{comment}{}\ \ \ \ \ \ \ \ \ \ \ \ std::vector<std::thread>\ threads\ ;}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ std::queue<std::function<void()>>\ queue\_task\ ;}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \ \ \ \ std::mutex\ queue\_mutex\ ;}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ queue\_open\ ;}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ debug\ ;}
+\DoxyCodeLine{00181\ }
+\DoxyCodeLine{00182\ \ \ \ \ \}\ ;\ \ \textcolor{comment}{//\ ngsai::ThreadPool}}
+\DoxyCodeLine{00183\ \}\ \ \textcolor{comment}{//\ namespace\ ngsai}}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00185\ }
+\DoxyCodeLine{00186\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ THREADPOOL\_HPP}}
+
+\end{DoxyCode}

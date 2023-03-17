@@ -1,0 +1,5 @@
+<map id="ngsai::RawKineticModel" name="ngsai::RawKineticModel">
+<area shape="rect" id="node1" title="The RawKineticModel class is made to model the raw IPD and PWD signal from PacBio CCS...." alt="" coords="72,123,235,148"/>
+<area shape="rect" id="node2" href="$classngsai_1_1KineticModel.html" title="The KineticModel class is an abstract class providing an interface to derive for classes that impleme..." alt="" coords="5,13,141,38"/>
+<area shape="rect" id="node3" title=" " alt="" coords="165,5,304,45"/>
+</map>

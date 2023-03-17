@@ -1,0 +1,52 @@
+\hypertarget{PairWiseKineticModel_8hpp}{}\doxysection{include/ngsaipp/epigenetics/\+Pair\+Wise\+Kinetic\+Model.hpp File Reference}
+\label{PairWiseKineticModel_8hpp}\index{include/ngsaipp/epigenetics/PairWiseKineticModel.hpp@{include/ngsaipp/epigenetics/PairWiseKineticModel.hpp}}
+{\ttfamily \#include $<$ngsaipp/epigenetics/\+Kinetic\+Model.\+hpp$>$}\newline
+{\ttfamily \#include $<$ngsaipp/epigenetics/\+Kinetic\+Signal.\+hpp$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$boost/histogram.\+hpp$>$}\newline
+Include dependency graph for Pair\+Wise\+Kinetic\+Model.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{PairWiseKineticModel_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=294pt]{PairWiseKineticModel_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classngsai_1_1PairWiseKineticModel}{ngsai\+::\+Pair\+Wise\+Kinetic\+Model}}
+\begin{DoxyCompactList}\small\item\em The \doxylink{classngsai_1_1PairWiseKineticModel}{Pair\+Wise\+Kinetic\+Model} class is made to model the raw IPD and PWD signal from Pac\+Bio CCS. This model models a window of IPD/\+PWD signal of L consecutive bp. L is named the model size. This model accounts for pair-\/wise relaitions ships between any two positions in the window. There are exactly N = ((L$\ast$L) -\/ L) / 2 pair-\/wise relations. The signal in the Lbp window is modelled using 2$\ast$N different distributions of signal -\/ N for IPD and N for PWD signal. Each distribution is modelled by a 2D histogram representing the signal at one position p in the window with respect to the signal found at the paired position q in the window where p != q. Overall the window signal is modelled by 2$\ast$N histograms h\+\_\+ipd\+\_\+p\+\_\+q and h\+\_\+pwd\+\_\+p\+\_\+q \+: h\+\_\+ipd\+\_\+1\+\_\+2, h\+\_\+ipd\+\_\+1\+\_\+3, ..., h\+\_\+ipd\+\_\+1\+\_\+L, h\+\_\+ipd\+\_\+2\+\_\+3, ..., h\+\_\+ipd\+\_\+2\+\_\+L, ..., h\+\_\+ipd\+\_\+\+L-\/1\+\_\+L and h\+\_\+pwd\+\_\+1\+\_\+2, h\+\_\+pwd\+\_\+1\+\_\+3, ..., h\+\_\+pwd\+\_\+1\+\_\+L, h\+\_\+pwd\+\_\+2\+\_\+3, ..., h\+\_\+pwd\+\_\+2\+\_\+L, ..., h\+\_\+pwd\+\_\+\+L-\/1\+\_\+L. The model can be trained (feed with data) in order to fill the underlying histograms and estimate the signal distributions at each pair of positions in the window. At this moment, the histograms are count histograms. Once the histograms have been filled, the model can be normalized in order to transform the 2$\ast$N histograms into 2$\ast$N probability densities. At this moment, the model can compute the likelihood of observing a a strech of signal of length L with IPDs X x1, x2, ..., xL and PWDs Y ~\newline
+ y1, y2, ..., yL. The likelihood corresponds to \+: p(x1,x2 $\vert$ h\+\_\+ipd\+\_\+1\+\_\+2) $\ast$ p(x1,x3 $\vert$ h\+\_\+ipd\+\_\+1\+\_\+3) $\ast$... $\ast$ p(x1,xL $\vert$ h\+\_\+ipd\+\_\+1\+\_\+L) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacengsai}{ngsai}}
+\begin{DoxyCompactList}\small\item\em This file contains values that are useful for formatting terminal output. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef bh\+::histogram$<$ std\+::tuple$<$ boost\+::histogram\+::axis\+::regular$<$ double, boost\+::use\+\_\+default, boost\+::use\+\_\+default, boost\+::use\+\_\+default $>$, boost\+::histogram\+::axis\+::regular$<$ double, boost\+::use\+\_\+default, boost\+::use\+\_\+default, boost\+::use\+\_\+default $>$ $>$, boost\+::histogram\+::unlimited\+\_\+storage$<$ std\+::allocator$<$ char $>$ $>$ $>$ \mbox{\hyperlink{PairWiseKineticModel_8hpp_a47a41088956c306e6acdc3d173959fcf}{hist\+\_\+2d\+\_\+double}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \mbox{\hyperlink{namespacengsai_ab9430bba3ccc4233ea811faf138635cf}{ngsai\+::hist2d\+\_\+to\+\_\+matrix}} (const \mbox{\hyperlink{PairWiseKineticModel_8hpp_a47a41088956c306e6acdc3d173959fcf}{hist\+\_\+2d\+\_\+double}} \&h)
+\begin{DoxyCompactList}\small\item\em Stores the content of a 2D histogram into a matrix. The first dimension of the matrix represents the 1st axis and the 2nd dimension the 2nd axis. The histogram bins going to -\/inf and +inf are also put in the matrix (first and last on both dimensions). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{PairWiseKineticModel_8hpp_a47a41088956c306e6acdc3d173959fcf}\label{PairWiseKineticModel_8hpp_a47a41088956c306e6acdc3d173959fcf} 
+\index{PairWiseKineticModel.hpp@{PairWiseKineticModel.hpp}!hist\_2d\_double@{hist\_2d\_double}}
+\index{hist\_2d\_double@{hist\_2d\_double}!PairWiseKineticModel.hpp@{PairWiseKineticModel.hpp}}
+\doxysubsubsection{\texorpdfstring{hist\_2d\_double}{hist\_2d\_double}}
+{\footnotesize\ttfamily typedef bh\+::histogram$<$ std\+::tuple$<$ boost\+::histogram\+::axis\+::regular$<$ double, boost\+::use\+\_\+default, boost\+::use\+\_\+default, boost\+::use\+\_\+default$>$, boost\+::histogram\+::axis\+::regular$<$ double, boost\+::use\+\_\+default, boost\+::use\+\_\+default, boost\+::use\+\_\+default$>$ $>$, boost\+::histogram\+::unlimited\+\_\+storage$<$ std\+::allocator$<$char$>$ $>$ $>$ \mbox{\hyperlink{PairWiseKineticModel_8hpp_a47a41088956c306e6acdc3d173959fcf}{hist\+\_\+2d\+\_\+double}}}
+

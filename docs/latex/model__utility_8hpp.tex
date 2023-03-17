@@ -1,0 +1,34 @@
+\hypertarget{model__utility_8hpp}{}\doxysection{include/ngsaipp/epigenetics/model\+\_\+utility.hpp File Reference}
+\label{model__utility_8hpp}\index{include/ngsaipp/epigenetics/model\_utility.hpp@{include/ngsaipp/epigenetics/model\_utility.hpp}}
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+{\ttfamily \#include $<$ngsaipp/epigenetics/\+Kinetic\+Model.\+hpp$>$}\newline
+{\ttfamily \#include $<$ngsaipp/epigenetics/\+Kmer\+Map.\+hpp$>$}\newline
+{\ttfamily \#include $<$ngsaipp/io/\+Bed\+Record.\+hpp$>$}\newline
+Include dependency graph for model\+\_\+utility.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{model__utility_8hpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacengsai}{ngsai}}
+\begin{DoxyCompactList}\small\item\em This file contains values that are useful for formatting terminal output. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::pair$<$ std\+::vector$<$ double $>$, std\+::vector$<$ double $>$ $>$ \mbox{\hyperlink{namespacengsai_ac607047bf3e626ec725c799038d3ead8}{ngsai\+::normalize\+\_\+kinetics}} (const std\+::string \&seq, const std\+::vector$<$ double $>$ \&ipd, const std\+::vector$<$ double $>$ \&pwd, const \mbox{\hyperlink{classngsai_1_1KmerMap}{ngsai\+::\+Kmer\+Map}} \&model)
+\begin{DoxyCompactList}\small\item\em Normalizes the raw kinetic signal by the mean signal expected from its sequence context. Note that the normalization process can only produce a value for the central values of the vectors. The first K/2 and last K/2 values -\/ where K is the size of the kmer inside the model -\/ will be dropped. \end{DoxyCompactList}\item 
+std\+::pair$<$ std\+::vector$<$ double $>$, std\+::vector$<$ double $>$ $>$ \mbox{\hyperlink{namespacengsai_aeed30e8a4d63c9d38fb4b784522f9bb6}{ngsai\+::normalize\+\_\+kinetics}} (const std\+::string \&seq, const std\+::vector$<$ uint16\+\_\+t $>$ \&ipd, const std\+::vector$<$ uint16\+\_\+t $>$ \&pwd, const \mbox{\hyperlink{classngsai_1_1KmerMap}{ngsai\+::\+Kmer\+Map}} \&model)
+\begin{DoxyCompactList}\small\item\em Normalizes the raw kinetic signal by the mean signal expected from its sequence context. Note that the normalization process can only produce a value for the central values of the vectors. The first K/2 and last K/2 values -\/ where K is the size of the kmer inside the model -\/ will be dropped. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespacengsai_af6ef8c0eeefbc574946219066efae383}{ngsai\+::train\+\_\+\+Kinetic\+Model}} (\mbox{\hyperlink{classngsai_1_1KineticModel}{ngsai\+::\+Kinetic\+Model}} $\ast$model, const std\+::vector$<$ \mbox{\hyperlink{classngsai_1_1BedRecord}{ngsai\+::\+Bed\+Record}} $>$ \&regions, size\+\_\+t regions\+\_\+from, size\+\_\+t regions\+\_\+to, const std\+::vector$<$ std\+::string $>$ \&paths\+\_\+bam)
+\begin{DoxyCompactList}\small\item\em Trains a \doxylink{classngsai_1_1KineticModel}{Kinetic\+Model}, from the CCS overlapping the genomic windows listed as \doxylink{classngsai_1_1BedRecord}{Bed\+Record}. The model is trained on the subset of regions \mbox{[}regions\+\_\+from,region\+\_\+to). For each CpG listed, the mean IPD and PWD values at each position within the window (defined in model) are computed from all CCS aligning at this position. The mean IPD and PWD values are then introduced in the model. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespacengsai_a61804df9e9090bba410569ac78ec2527}{ngsai\+::train\+\_\+\+Kinetic\+Model}} (\mbox{\hyperlink{classngsai_1_1KineticModel}{ngsai\+::\+Kinetic\+Model}} $\ast$model, const std\+::vector$<$ \mbox{\hyperlink{classngsai_1_1BedRecord}{ngsai\+::\+Bed\+Record}} $>$ \&regions, const std\+::vector$<$ std\+::string $>$ \&paths\+\_\+bam)
+\begin{DoxyCompactList}\small\item\em Trains a \doxylink{classngsai_1_1KineticModel}{Kinetic\+Model}, from the CCS overlapping the genomic windows listed as \doxylink{classngsai_1_1BedRecord}{Bed\+Record}. For each CpG listed, the mean IPD and PWD values at each position within the window (defined in model) are computed from all CCS aligning at this position. The mean IPD and PWD values are then introduced in the model. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespacengsai_a36f5f7001d1ed60680906c0de452c6f0}{ngsai\+::train\+\_\+\+Kinetic\+Model}} (\mbox{\hyperlink{classngsai_1_1KineticModel}{ngsai\+::\+Kinetic\+Model}} $\ast$model, const std\+::string \&path\+\_\+bed, const std\+::vector$<$ std\+::string $>$ \&paths\+\_\+bam)
+\begin{DoxyCompactList}\small\item\em Trains a \doxylink{classngsai_1_1KineticModel}{Kinetic\+Model}, from the CCS overlapping the genomic windows listed in the BED file. For each CpG listed, the mean IPD and PWD values at each position within the window (defined in model) are computed from all CCS aligning at this position. The mean IPD and PWD values are then introduced in the model. \end{DoxyCompactList}\end{DoxyCompactItemize}

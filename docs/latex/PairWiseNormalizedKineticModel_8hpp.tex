@@ -1,0 +1,36 @@
+\hypertarget{PairWiseNormalizedKineticModel_8hpp}{}\doxysection{include/ngsaipp/epigenetics/\+Pair\+Wise\+Normalized\+Kinetic\+Model.hpp File Reference}
+\label{PairWiseNormalizedKineticModel_8hpp}\index{include/ngsaipp/epigenetics/PairWiseNormalizedKineticModel.hpp@{include/ngsaipp/epigenetics/PairWiseNormalizedKineticModel.hpp}}
+{\ttfamily \#include $<$ngsaipp/epigenetics/\+Pair\+Wise\+Kinetic\+Model.\+hpp$>$}\newline
+{\ttfamily \#include $<$ngsaipp/epigenetics/\+Kmer\+Map.\+hpp$>$}\newline
+{\ttfamily \#include $<$ngsaipp/epigenetics/\+Kinetic\+Signal.\+hpp$>$}\newline
+{\ttfamily \#include $<$ngsaipp/epigenetics/\+Raw\+Kinetic\+Model.\+hpp$>$}\newline
+{\ttfamily \#include $<$ngsaipp/epigenetics/\+Normalized\+Kinetic\+Model.\+hpp$>$}\newline
+{\ttfamily \#include $<$ngsaipp/epigenetics/\+Di\+Position\+Kinetic\+Model.\+hpp$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+Include dependency graph for Pair\+Wise\+Normalized\+Kinetic\+Model.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{PairWiseNormalizedKineticModel_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=269pt]{PairWiseNormalizedKineticModel_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classngsai_1_1PairWiseNormalizedKineticModel}{ngsai\+::\+Pair\+Wise\+Normalized\+Kinetic\+Model}}
+\begin{DoxyCompactList}\small\item\em The \doxylink{classngsai_1_1NormalizedKineticModel}{Normalized\+Kinetic\+Model} class is made to model the IPD and PWD signal from Pac\+Bio CCS. This model models a window of IPD/\+PWD signal of L consecutive bp. L is named the model size. Instead of modelling the raw kinetic signal like the \doxylink{classngsai_1_1PairWiseKineticModel}{Pair\+Wise\+Kinetic\+Model} class, this class models kinetic ratios (normalized). Each stretch of kinetic values (IPD or PWD) x1,x2,...,xL is normalized by the expected kinetic signal given the DNA sequence s1,s2,...,sL associated to the kinetic values. In the end, as for the \doxylink{classngsai_1_1PairWiseKineticModel}{Pair\+Wise\+Kinetic\+Model} class, the signal models contains 2$\ast$N different distributions of signal modelling all possible N = ((L$\ast$L) -\/ L) / 2 pair-\/wise position relation between any position p and q where p != q \+: h\+\_\+ipd\+\_\+1\+\_\+2, h\+\_\+ipd\+\_\+1\+\_\+3, ..., h\+\_\+ipd\+\_\+1\+\_\+L, h\+\_\+ipd\+\_\+2\+\_\+3, ..., h\+\_\+ipd\+\_\+2\+\_\+L, ..., h\+\_\+ipd\+\_\+\+L-\/1\+\_\+L and h\+\_\+pwd\+\_\+1\+\_\+2, h\+\_\+pwd\+\_\+1\+\_\+3, ..., h\+\_\+pwd\+\_\+1\+\_\+L, h\+\_\+pwd\+\_\+2\+\_\+3, ..., h\+\_\+pwd\+\_\+2\+\_\+L, ..., h\+\_\+pwd\+\_\+\+L-\/1\+\_\+L. The model can be trained (feed with data) in order to fill the underlying histograms and estimate the signal distributions at each position in the window. If the model is feed with a vector of IPD values X x1, x2, ..., xL and a vector of PWD values Y y1, y2, ..., yL corresponding to a DNA sequence S s1, s2, ..., sL, each value xi and yi will be normalized into n(xi) n(yi) using a normalizing function accounting for the sequence context S. Then each histogram h\+\_\+ipd\+\_\+p\+\_\+q and h\+\_\+pwd\+\_\+p\+\_\+q will be added a count corresponding to the pairs of values n(xp), n(xq) an n(yp), n(yq) respectively. Once the histograms have been filled, the model can be normalized in order to transform the 2$\ast$N histograms into 2$\ast$N probability densities. At this moment, the model can compute the likelihood of observing a a strech of signal of length L with IPDs X x1, x2, ..., xL and PWDs Y ~\newline
+ y1, y2, ..., yL corresponding to a sequence S s1, s2, ..., sL. The likelihood corresponds to \+: p(n(x1),n(x2) $\vert$ h\+\_\+ipd\+\_\+1\+\_\+2) $\ast$ p(n(x1),n(x3) $\vert$ h\+\_\+ipd\+\_\+1\+\_\+3) $\ast$... $\ast$ p(n(x1),n(x\+L) $\vert$ h\+\_\+ipd\+\_\+1\+\_\+L) $\ast$ p(n(x2),n(x3) $\vert$ h\+\_\+ipd\+\_\+2\+\_\+3) $\ast$ ... $\ast$ p(n(x2),n(x\+L) $\vert$ h\+\_\+ipd\+\_\+2\+\_\+L) $\ast$ ... $\ast$ p(n(x\+L-\/1),n(x\+L) $\vert$ h\+\_\+ipd\+\_\+\+L-\/1\+\_\+L) $\ast$ p(n(y1),n(y2) $\vert$ h\+\_\+pwd\+\_\+1\+\_\+2) $\ast$ p(n(y1),n(y3) $\vert$ h\+\_\+pwd\+\_\+1\+\_\+3) $\ast$ ... $\ast$ p(n(y1),n(y\+L) $\vert$ h\+\_\+pwd\+\_\+1\+\_\+L) $\ast$ p(n(y2),n(y3) $\vert$ h\+\_\+pwd\+\_\+2\+\_\+3) $\ast$ ... $\ast$ p(n(y2),n(y\+L) $\vert$ h\+\_\+pwd\+\_\+2\+\_\+L) $\ast$ ... $\ast$ p(n(y\+L-\/1),n(y\+L) $\vert$ h\+\_\+pwd\+\_\+\+L-\/1\+\_\+L) where p(n(xp), n(xq) $\vert$ h\+\_\+p\+\_\+q) means the probability of observing the normalized value n(xp) at the position p and n(xq) at position q of the window, according to the density modeled in the histogram h\+\_\+p\+\_\+q. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacengsai}{ngsai}}
+\begin{DoxyCompactList}\small\item\em This file contains values that are useful for formatting terminal output. \end{DoxyCompactList}\end{DoxyCompactItemize}

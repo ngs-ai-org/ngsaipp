@@ -1,0 +1,685 @@
+\hypertarget{namespacengsai}{}\doxysection{ngsai Namespace Reference}
+\label{namespacengsai}\index{ngsai@{ngsai}}
+
+
+This file contains values that are useful for formatting terminal output.  
+
+
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacengsai_1_1algorithms}{algorithms}}
+\item 
+namespace \mbox{\hyperlink{namespacengsai_1_1dna}{dna}}
+\item 
+namespace \mbox{\hyperlink{namespacengsai_1_1genome}{genome}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classngsai_1_1BedReader}{Bed\+Reader}}
+\begin{DoxyCompactList}\small\item\em A class to perform sequencial reading from a BED file using the \doxylink{classngsai_1_1BedReader_a8b5cfe6bdb68efacd467698896f850d4}{get\+Next()} method. Currently BED 6 format is handled. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classngsai_1_1BedRecord}{Bed\+Record}}
+\item 
+class \mbox{\hyperlink{classngsai_1_1CcsKineticExtractor}{Ccs\+Kinetic\+Extractor}}
+\begin{DoxyCompactList}\small\item\em The \doxylink{classngsai_1_1CcsKineticExtractor}{Ccs\+Kinetic\+Extractor} allows to extract inter pulse durations (IPDs) and pulse widths (PWDs) in given region from mapped Pac\+Bio CCSs. The region are always specified in reference coordinates (the reference onto which the CCS is mapped). The window specifies a region, on one of the reference strands, as a semi open interval \mbox{[}from, to). Then, if the CCS maps over this reference region, the CCS sequence, IPDs and PWDs values corresponding to the window are extracted. The sequence, IPDs and PWDs are always returned in 5\textquotesingle{} to 3\textquotesingle{} order with respect to the window strand (that is on the reference). \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classngsai_1_1DiPositionKineticModel}{Di\+Position\+Kinetic\+Model}}
+\begin{DoxyCompactList}\small\item\em The \doxylink{classngsai_1_1DiPositionKineticModel}{Di\+Position\+Kinetic\+Model} class is made to model the raw IPD and PWD signal from Pac\+Bio CCS. This model models a window of IPD/\+PWD signal of L consecutive bp. L is named the model size. This model is a special case of the \doxylink{classngsai_1_1PairWiseKineticModel}{Pair\+Wise\+Kinetic\+Model}. The \doxylink{classngsai_1_1PairWiseKineticModel}{Pair\+Wise\+Kinetic\+Model} accounted for all N = ((L$\ast$L) -\/ L) / 2 pair-\/wise position interaction whereas this one only considers L-\/1 interactions between any two directly neighbouring positions in the window. Except for this, everything is the same as in \doxylink{classngsai_1_1PairWiseKineticModel}{Pair\+Wise\+Kinetic\+Model}. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classngsai_1_1DiPositionNormalizedKineticModel}{Di\+Position\+Normalized\+Kinetic\+Model}}
+\begin{DoxyCompactList}\small\item\em The \doxylink{classngsai_1_1DiPositionNormalizedKineticModel}{Di\+Position\+Normalized\+Kinetic\+Model} class is made to model the normalized IPD and PWD signal from Pac\+Bio CCS. Instead of modelling the raw kinetic signal like the \doxylink{classngsai_1_1DiPositionKineticModel}{Di\+Position\+Kinetic\+Model} class, this class models kinetic ratios (normalized). Each stretch of kinetic values (IPD or PWD) x1,x2,...,xL is normalized by the expected kinetic signal given the DNA sequence s1,s2,...,sL associated to the kinetic values. This model models a window of IPD/\+PWD signal of L consecutive bp. L is named the model size. This model is a special case of the \doxylink{classngsai_1_1PairWiseNormalizedKineticModel}{Pair\+Wise\+Normalized\+Kinetic\+Model}. The \doxylink{classngsai_1_1PairWiseNormalizedKineticModel}{Pair\+Wise\+Normalized\+Kinetic\+Model} accounted for all N = ((L$\ast$L) -\/ L) / 2 ~\newline
+ pair-\/wise position interaction whereas this one only considers L-\/1 interactions between any two directly neighbouring positions in the window. Except for this, everything is the same as in \doxylink{classngsai_1_1PairWiseNormalizedKineticModel}{Pair\+Wise\+Normalized\+Kinetic\+Model}. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classngsai_1_1KineticClassifier}{Kinetic\+Classifier}}
+\item 
+class \mbox{\hyperlink{classngsai_1_1KineticModel}{Kinetic\+Model}}
+\begin{DoxyCompactList}\small\item\em The \doxylink{classngsai_1_1KineticModel}{Kinetic\+Model} class is an abstract class providing an interface to derive for classes that implement a statistical model of the kinetic signal of Pac\+Bio CCSs. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classngsai_1_1KineticSignal}{Kinetic\+Signal}}
+\begin{DoxyCompactList}\small\item\em the \doxylink{classngsai_1_1KineticSignal}{Kinetic\+Signal} class is designed to be a data structure to store the DNA sequence and kinetic -\/ IPD and PWD -\/ information in a given strech of DNA. An instance has a size, that is the length of the DNA strech, in bp, that is modelled. The default contructor allow to create empy -\/ 0bp -\/ streches and to add data later using the setter methods. In this case, the size is set at the 1st use of a setter. Except this 1st insertion -\/ on an empty instance -\/ data inserted must have the same size as the instance. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classngsai_1_1KmerData}{Kmer\+Data}}
+\begin{DoxyCompactList}\small\item\em The \doxylink{classngsai_1_1KmerData}{Kmer\+Data} class is a class allowing to model a kmer together with per sequence position IPD and PWD data. Each of the sequence position corresponds to the same data vector index. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classngsai_1_1KmerMap}{Kmer\+Map}}
+\begin{DoxyCompactList}\small\item\em The \doxylink{classngsai_1_1KmerMap}{Kmer\+Map} is a template class allowing to create a map storing per kmer kinetic information. It is designed to allow O(k) insertion and O(1) query operations using a Rabin-\/\+Karp hashing approach. Each kmer is kinetic information is stored in a pair, together with the number of insertions in the map made for the corresponding kmer. The memory footprint of the map is N$\ast$$\ast$k where N is the number of character in the alphabet -\/ the alphabet is defined in ngsai\+::base\+\_\+code in \doxylink{dna__utility_8hpp}{dna/dna\+\_\+utility.\+hpp}) -\/ and k is the kmer size. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classngsai_1_1NormalizedKineticModel}{Normalized\+Kinetic\+Model}}
+\begin{DoxyCompactList}\small\item\em The \doxylink{classngsai_1_1NormalizedKineticModel}{Normalized\+Kinetic\+Model} class is made to model the IPD and PWD signal from Pac\+Bio CCS. This model models a window of IPD/\+PWD signal of L consecutive bp. L is named the model size. Instead of modelling the raw kinetic signal like the \doxylink{classngsai_1_1RawKineticModel}{Raw\+Kinetic\+Model} class, this class models kinetic ratios (normalized). Each stretch of kinetic values (IPD or PWD) x1,x2,...,xL is normalized by the expected kinetic signal given the DNA sequence s1,s2,...,sL associated to the kinetic values. In the end, as for the \doxylink{classngsai_1_1RawKineticModel}{Raw\+Kinetic\+Model} class, the signal models contains 2$\ast$L different distributions of signal. The distributions at each position are empiric and are made of 2$\ast$L histograms h\+\_\+ipd(1), h\+\_\+pwd(1), h\+\_\+ipd(2), h\+\_\+pwd(2) ..., h\+\_\+ipd(\+L), h\+\_\+pwd(\+L). The model can be trained (feed with data) in order to fill the underlying histograms and estimate the signal distributions at each position in the window. If the model is feed with a vector of IPD values X x1, x2, ..., xL and a vector of PWD values Y y1, y2, ..., yL corresponding to a DNA sequence S s1, s2, ..., sL, each value xi and yi will be normalized into n(xi) n(yi) using a normalizing function accounting for the sequence context S. Then each histogram h\+\_\+ipd(i) and h\+\_\+pwd(i) will be added a count corresponding to the value n(xi) an n(yi) respectively. h\+\_\+ipd(1) will be added a count corresponding to n(x1), h\+\_\+ipd(2) will be added a count corresponding to n(x2), ..., h\+\_\+ipd(\+L) will be added a count corresponding to n(x\+L). The same will apply for the PWD histograms with normalized Y values. Once the histograms have been filled, the model can be normalized in order to transform the 2$\ast$L histograms into 2$\ast$L probability densities. At this moment, the model can compute the likelihood of observing a a strech of signal of length L with IPDs X x1, x2, ..., xL and PWDs Y ~\newline
+ y1, y2, ..., yL corresponding to a sequence S s1, s2, ..., sL. The likelihood corresponds to \+: p(n(x1) $\vert$ h\+\_\+ipd(1)) $\ast$ p(n(y1) $\vert$ h\+\_\+pwd(1)) $\ast$... $\ast$ p(n(x\+L) $\vert$ h\+\_\+ipd(\+L)) $\ast$ p(n(x\+L) $\vert$ h\+\_\+pwd(\+L)) where p(n(xi) $\vert$ h(i)) means the probability of observing the normalized value n(x) at the i-\/th position of the window, according to the density modeled in the histogram h(i). \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classngsai_1_1PairWiseKineticModel}{Pair\+Wise\+Kinetic\+Model}}
+\begin{DoxyCompactList}\small\item\em The \doxylink{classngsai_1_1PairWiseKineticModel}{Pair\+Wise\+Kinetic\+Model} class is made to model the raw IPD and PWD signal from Pac\+Bio CCS. This model models a window of IPD/\+PWD signal of L consecutive bp. L is named the model size. This model accounts for pair-\/wise relaitions ships between any two positions in the window. There are exactly N = ((L$\ast$L) -\/ L) / 2 pair-\/wise relations. The signal in the Lbp window is modelled using 2$\ast$N different distributions of signal -\/ N for IPD and N for PWD signal. Each distribution is modelled by a 2D histogram representing the signal at one position p in the window with respect to the signal found at the paired position q in the window where p != q. Overall the window signal is modelled by 2$\ast$N histograms h\+\_\+ipd\+\_\+p\+\_\+q and h\+\_\+pwd\+\_\+p\+\_\+q \+: h\+\_\+ipd\+\_\+1\+\_\+2, h\+\_\+ipd\+\_\+1\+\_\+3, ..., h\+\_\+ipd\+\_\+1\+\_\+L, h\+\_\+ipd\+\_\+2\+\_\+3, ..., h\+\_\+ipd\+\_\+2\+\_\+L, ..., h\+\_\+ipd\+\_\+\+L-\/1\+\_\+L and h\+\_\+pwd\+\_\+1\+\_\+2, h\+\_\+pwd\+\_\+1\+\_\+3, ..., h\+\_\+pwd\+\_\+1\+\_\+L, h\+\_\+pwd\+\_\+2\+\_\+3, ..., h\+\_\+pwd\+\_\+2\+\_\+L, ..., h\+\_\+pwd\+\_\+\+L-\/1\+\_\+L. The model can be trained (feed with data) in order to fill the underlying histograms and estimate the signal distributions at each pair of positions in the window. At this moment, the histograms are count histograms. Once the histograms have been filled, the model can be normalized in order to transform the 2$\ast$N histograms into 2$\ast$N probability densities. At this moment, the model can compute the likelihood of observing a a strech of signal of length L with IPDs X x1, x2, ..., xL and PWDs Y ~\newline
+ y1, y2, ..., yL. The likelihood corresponds to \+: p(x1,x2 $\vert$ h\+\_\+ipd\+\_\+1\+\_\+2) $\ast$ p(x1,x3 $\vert$ h\+\_\+ipd\+\_\+1\+\_\+3) $\ast$... $\ast$ p(x1,xL $\vert$ h\+\_\+ipd\+\_\+1\+\_\+L) \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classngsai_1_1PairWiseNormalizedKineticModel}{Pair\+Wise\+Normalized\+Kinetic\+Model}}
+\begin{DoxyCompactList}\small\item\em The \doxylink{classngsai_1_1NormalizedKineticModel}{Normalized\+Kinetic\+Model} class is made to model the IPD and PWD signal from Pac\+Bio CCS. This model models a window of IPD/\+PWD signal of L consecutive bp. L is named the model size. Instead of modelling the raw kinetic signal like the \doxylink{classngsai_1_1PairWiseKineticModel}{Pair\+Wise\+Kinetic\+Model} class, this class models kinetic ratios (normalized). Each stretch of kinetic values (IPD or PWD) x1,x2,...,xL is normalized by the expected kinetic signal given the DNA sequence s1,s2,...,sL associated to the kinetic values. In the end, as for the \doxylink{classngsai_1_1PairWiseKineticModel}{Pair\+Wise\+Kinetic\+Model} class, the signal models contains 2$\ast$N different distributions of signal modelling all possible N = ((L$\ast$L) -\/ L) / 2 pair-\/wise position relation between any position p and q where p != q \+: h\+\_\+ipd\+\_\+1\+\_\+2, h\+\_\+ipd\+\_\+1\+\_\+3, ..., h\+\_\+ipd\+\_\+1\+\_\+L, h\+\_\+ipd\+\_\+2\+\_\+3, ..., h\+\_\+ipd\+\_\+2\+\_\+L, ..., h\+\_\+ipd\+\_\+\+L-\/1\+\_\+L and h\+\_\+pwd\+\_\+1\+\_\+2, h\+\_\+pwd\+\_\+1\+\_\+3, ..., h\+\_\+pwd\+\_\+1\+\_\+L, h\+\_\+pwd\+\_\+2\+\_\+3, ..., h\+\_\+pwd\+\_\+2\+\_\+L, ..., h\+\_\+pwd\+\_\+\+L-\/1\+\_\+L. The model can be trained (feed with data) in order to fill the underlying histograms and estimate the signal distributions at each position in the window. If the model is feed with a vector of IPD values X x1, x2, ..., xL and a vector of PWD values Y y1, y2, ..., yL corresponding to a DNA sequence S s1, s2, ..., sL, each value xi and yi will be normalized into n(xi) n(yi) using a normalizing function accounting for the sequence context S. Then each histogram h\+\_\+ipd\+\_\+p\+\_\+q and h\+\_\+pwd\+\_\+p\+\_\+q will be added a count corresponding to the pairs of values n(xp), n(xq) an n(yp), n(yq) respectively. Once the histograms have been filled, the model can be normalized in order to transform the 2$\ast$N histograms into 2$\ast$N probability densities. At this moment, the model can compute the likelihood of observing a a strech of signal of length L with IPDs X x1, x2, ..., xL and PWDs Y ~\newline
+ y1, y2, ..., yL corresponding to a sequence S s1, s2, ..., sL. The likelihood corresponds to \+: p(n(x1),n(x2) $\vert$ h\+\_\+ipd\+\_\+1\+\_\+2) $\ast$ p(n(x1),n(x3) $\vert$ h\+\_\+ipd\+\_\+1\+\_\+3) $\ast$... $\ast$ p(n(x1),n(x\+L) $\vert$ h\+\_\+ipd\+\_\+1\+\_\+L) $\ast$ p(n(x2),n(x3) $\vert$ h\+\_\+ipd\+\_\+2\+\_\+3) $\ast$ ... $\ast$ p(n(x2),n(x\+L) $\vert$ h\+\_\+ipd\+\_\+2\+\_\+L) $\ast$ ... $\ast$ p(n(x\+L-\/1),n(x\+L) $\vert$ h\+\_\+ipd\+\_\+\+L-\/1\+\_\+L) $\ast$ p(n(y1),n(y2) $\vert$ h\+\_\+pwd\+\_\+1\+\_\+2) $\ast$ p(n(y1),n(y3) $\vert$ h\+\_\+pwd\+\_\+1\+\_\+3) $\ast$ ... $\ast$ p(n(y1),n(y\+L) $\vert$ h\+\_\+pwd\+\_\+1\+\_\+L) $\ast$ p(n(y2),n(y3) $\vert$ h\+\_\+pwd\+\_\+2\+\_\+3) $\ast$ ... $\ast$ p(n(y2),n(y\+L) $\vert$ h\+\_\+pwd\+\_\+2\+\_\+L) $\ast$ ... $\ast$ p(n(y\+L-\/1),n(y\+L) $\vert$ h\+\_\+pwd\+\_\+\+L-\/1\+\_\+L) where p(n(xp), n(xq) $\vert$ h\+\_\+p\+\_\+q) means the probability of observing the normalized value n(xp) at the position p and n(xq) at position q of the window, according to the density modeled in the histogram h\+\_\+p\+\_\+q. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classngsai_1_1RawKineticModel}{Raw\+Kinetic\+Model}}
+\begin{DoxyCompactList}\small\item\em The \doxylink{classngsai_1_1RawKineticModel}{Raw\+Kinetic\+Model} class is made to model the raw IPD and PWD signal from Pac\+Bio CCS. This model models a window of IPD/\+PWD signal of L consecutive bp. L is named the model size. The signal in the Lbp window is modelled using 2$\ast$L different distributions of signal -\/ L for IPD and L for PWD signal. The distributions at each position are empiric. Overall the window signal is modelled by 2$\ast$L histograms h\+\_\+ipd(1), h\+\_\+ipd(2), ..., h\+\_\+ipd(\+L) and h\+\_\+pwd(1), h\+\_\+pwd(2), ..., h\+\_\+pwd(\+L). The model can be trained (feed with data) in order to fill the underlying histograms and estimate the signal distributions at each position in the window. At this moment, the histograms are count histograms. If the model is feed with a vector of IPD values X x1, x2, ..., xL and a vector of PWD values Y y1, y2, ..., yL then each histogram h\+\_\+ipd(i) and h\+\_\+pwd(i) will be added a count corresponding to the value xi an yi respectively. h\+\_\+ipd(1) will be added a count corresponding to x1, h\+\_\+ipd(2) will be added a count corresponding to x2, ..., h\+\_\+ipd(\+L) will be added a count corresponding to xL. The same will apply for the PWD histograms with Y values. Once the histograms have been filled, the model can be normalized in order to transform the 2$\ast$L histograms into 2$\ast$L probability densities. At this moment, the model can compute the likelihood of observing a a strech of signal of length L with IPDs X x1, x2, ..., xL and PWDs Y ~\newline
+ y1, y2, ..., yL. The likelihood corresponds to \+: p(x1 $\vert$ h\+\_\+ipd(1)) $\ast$ p(y1 $\vert$ h\+\_\+pwd(1)) $\ast$... $\ast$ p(xL $\vert$ h\+\_\+ipd(\+L)) $\ast$ p(xL $\vert$ h\+\_\+pwd(\+L)) where p(xi $\vert$ h(i)) means the probability of observing the value x at the i-\/th position of the window, according to the density modeled in the histogram h(i). \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classngsai_1_1ThreadPool}{Thread\+Pool}}
+\begin{DoxyCompactList}\small\item\em The \doxylink{classngsai_1_1ThreadPool}{Thread\+Pool} class implements a simple pool of working threads. At construction, $<$n$>$ threads are spawned and tries to get tasks to execute from a queue. Any access to the queue is synchonized through the use of a mutex. Jobs are added to the queue by calling add\+Job(task) where task is the result of std\+::bind(). The queue can be open -\/ in which case the jobs are effectively added to the queues -\/ or closed -\/ in which case nothing can be push into the queue anymore. Stopping the pool is done through calling \doxylink{classngsai_1_1ThreadPool_a2a8767845dcae378ce14975251bbb458}{join()} which will close the queue. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::pair$<$ uint32\+\_\+t, \mbox{\hyperlink{classngsai_1_1KmerData}{ngsai\+::\+Kmer\+Data}} $>$ \mbox{\hyperlink{namespacengsai_ab667af3aa89fb3a9acdbda7a75805a2b}{kmer\+Bucket}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespacengsai_a2367cd49ed6131b42b0726ce77529a67}{bool\+\_\+ext}} \{ \mbox{\hyperlink{namespacengsai_a2367cd49ed6131b42b0726ce77529a67af30668ea62b92f02b33a8a60ffa912f8}{False}} =0
+, \mbox{\hyperlink{namespacengsai_a2367cd49ed6131b42b0726ce77529a67a6bd655099213c295956e6ca59a5c02ab}{True}} =1
+, \mbox{\hyperlink{namespacengsai_a2367cd49ed6131b42b0726ce77529a67af2aa4a5dc4be6b60f12c15a0e7931f69}{Undefined}} =2
+ \}
+\begin{DoxyCompactList}\small\item\em Extends boolean with an undefined value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::pair$<$ std\+::vector$<$ double $>$, std\+::vector$<$ double $>$ $>$ \mbox{\hyperlink{namespacengsai_ac607047bf3e626ec725c799038d3ead8}{normalize\+\_\+kinetics}} (const std\+::string \&seq, const std\+::vector$<$ double $>$ \&ipd, const std\+::vector$<$ double $>$ \&pwd, const \mbox{\hyperlink{classngsai_1_1KmerMap}{ngsai\+::\+Kmer\+Map}} \&model)
+\begin{DoxyCompactList}\small\item\em Normalizes the raw kinetic signal by the mean signal expected from its sequence context. Note that the normalization process can only produce a value for the central values of the vectors. The first K/2 and last K/2 values -\/ where K is the size of the kmer inside the model -\/ will be dropped. \end{DoxyCompactList}\item 
+std\+::pair$<$ std\+::vector$<$ double $>$, std\+::vector$<$ double $>$ $>$ \mbox{\hyperlink{namespacengsai_aeed30e8a4d63c9d38fb4b784522f9bb6}{normalize\+\_\+kinetics}} (const std\+::string \&seq, const std\+::vector$<$ uint16\+\_\+t $>$ \&ipd, const std\+::vector$<$ uint16\+\_\+t $>$ \&pwd, const \mbox{\hyperlink{classngsai_1_1KmerMap}{ngsai\+::\+Kmer\+Map}} \&model)
+\begin{DoxyCompactList}\small\item\em Normalizes the raw kinetic signal by the mean signal expected from its sequence context. Note that the normalization process can only produce a value for the central values of the vectors. The first K/2 and last K/2 values -\/ where K is the size of the kmer inside the model -\/ will be dropped. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespacengsai_af6ef8c0eeefbc574946219066efae383}{train\+\_\+\+Kinetic\+Model}} (\mbox{\hyperlink{classngsai_1_1KineticModel}{ngsai\+::\+Kinetic\+Model}} $\ast$model, const std\+::vector$<$ \mbox{\hyperlink{classngsai_1_1BedRecord}{ngsai\+::\+Bed\+Record}} $>$ \&regions, size\+\_\+t regions\+\_\+from, size\+\_\+t regions\+\_\+to, const std\+::vector$<$ std\+::string $>$ \&paths\+\_\+bam)
+\begin{DoxyCompactList}\small\item\em Trains a \doxylink{classngsai_1_1KineticModel}{Kinetic\+Model}, from the CCS overlapping the genomic windows listed as \doxylink{classngsai_1_1BedRecord}{Bed\+Record}. The model is trained on the subset of regions \mbox{[}regions\+\_\+from,region\+\_\+to). For each CpG listed, the mean IPD and PWD values at each position within the window (defined in model) are computed from all CCS aligning at this position. The mean IPD and PWD values are then introduced in the model. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespacengsai_a61804df9e9090bba410569ac78ec2527}{train\+\_\+\+Kinetic\+Model}} (\mbox{\hyperlink{classngsai_1_1KineticModel}{ngsai\+::\+Kinetic\+Model}} $\ast$model, const std\+::vector$<$ \mbox{\hyperlink{classngsai_1_1BedRecord}{ngsai\+::\+Bed\+Record}} $>$ \&regions, const std\+::vector$<$ std\+::string $>$ \&paths\+\_\+bam)
+\begin{DoxyCompactList}\small\item\em Trains a \doxylink{classngsai_1_1KineticModel}{Kinetic\+Model}, from the CCS overlapping the genomic windows listed as \doxylink{classngsai_1_1BedRecord}{Bed\+Record}. For each CpG listed, the mean IPD and PWD values at each position within the window (defined in model) are computed from all CCS aligning at this position. The mean IPD and PWD values are then introduced in the model. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespacengsai_a36f5f7001d1ed60680906c0de452c6f0}{train\+\_\+\+Kinetic\+Model}} (\mbox{\hyperlink{classngsai_1_1KineticModel}{ngsai\+::\+Kinetic\+Model}} $\ast$model, const std\+::string \&path\+\_\+bed, const std\+::vector$<$ std\+::string $>$ \&paths\+\_\+bam)
+\begin{DoxyCompactList}\small\item\em Trains a \doxylink{classngsai_1_1KineticModel}{Kinetic\+Model}, from the CCS overlapping the genomic windows listed in the BED file. For each CpG listed, the mean IPD and PWD values at each position within the window (defined in model) are computed from all CCS aligning at this position. The mean IPD and PWD values are then introduced in the model. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \mbox{\hyperlink{namespacengsai_ab9430bba3ccc4233ea811faf138635cf}{hist2d\+\_\+to\+\_\+matrix}} (const \mbox{\hyperlink{PairWiseKineticModel_8hpp_a47a41088956c306e6acdc3d173959fcf}{hist\+\_\+2d\+\_\+double}} \&h)
+\begin{DoxyCompactList}\small\item\em Stores the content of a 2D histogram into a matrix. The first dimension of the matrix represents the 1st axis and the 2nd dimension the 2nd axis. The histogram bins going to -\/inf and +inf are also put in the matrix (first and last on both dimensions). \end{DoxyCompactList}\item 
+std\+::ostream \& \mbox{\hyperlink{namespacengsai_af66d639ede3ea1dcf107e9cf867dc8d2}{operator$<$$<$}} (std\+::ostream \&stream, const \mbox{\hyperlink{classngsai_1_1RawKineticModel}{ngsai\+::\+Raw\+Kinetic\+Model}} \&model)
+\begin{DoxyCompactList}\small\item\em Writes the given \doxylink{classngsai_1_1RawKineticModel}{Raw\+Kinetic\+Model} to the output stream. Does nothing if the model is not initialized. \end{DoxyCompactList}\item 
+std\+::ostream \& \mbox{\hyperlink{namespacengsai_a0e31f00b216545c4f838cf3c3abb1917}{operator$<$$<$}} (std\+::ostream \&stream, const \mbox{\hyperlink{classngsai_1_1BedRecord}{ngsai\+::\+Bed\+Record}} \&record)
+\begin{DoxyCompactList}\small\item\em Writes the given record to a stream. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{namespacengsai_a3f022b45f71e8ac2178be7c7b2bfbf10}{split}} (const std\+::string \&s, char separator)
+\begin{DoxyCompactList}\small\item\em Splits the string into substrings according to the given separator. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespacengsai_ae30ba1f2b94c85ffbb8300dd314af3f9}{endswith}} (const std\+::string \&str, const std\+::string \&suffix)
+\begin{DoxyCompactList}\small\item\em Tells whether str ends with the given suffix. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{namespacengsai_a0e620c7114f1dfd1fed11f80679a3bd5}{CEND}} = \char`\"{}\textbackslash{}33\mbox{[}0m\char`\"{}
+\item 
+std\+::string \mbox{\hyperlink{namespacengsai_aaf508c488d8faa707ffb113dd5417f45}{CBOLD}} = \char`\"{}\textbackslash{}33\mbox{[}1m\char`\"{}
+\item 
+std\+::string \mbox{\hyperlink{namespacengsai_a93000e1590d237479ca68d52275b8f00}{CITALIC}} = \char`\"{}\textbackslash{}33\mbox{[}3m\char`\"{}
+\item 
+std\+::string \mbox{\hyperlink{namespacengsai_accffe48aa21e767df16d7d04c57513e4}{CURL}} = \char`\"{}\textbackslash{}33\mbox{[}4m\char`\"{}
+\item 
+std\+::string \mbox{\hyperlink{namespacengsai_a353b592da02899964123e6f441105ee7}{CBLINK}} = \char`\"{}\textbackslash{}33\mbox{[}5m\char`\"{}
+\item 
+std\+::string \mbox{\hyperlink{namespacengsai_a67d6ab6699c80ef005d0bccf4aae0bac}{CBLINK2}} = \char`\"{}\textbackslash{}33\mbox{[}6m\char`\"{}
+\item 
+std\+::string \mbox{\hyperlink{namespacengsai_afa2d9b77583da1d03bd827f33c2c0597}{CSELECTED}} = \char`\"{}\textbackslash{}33\mbox{[}7m\char`\"{}
+\item 
+std\+::string \mbox{\hyperlink{namespacengsai_a98c98f1d7f542e5196f9e48b463dd21d}{CBLACK}} = \char`\"{}\textbackslash{}33\mbox{[}30m\char`\"{}
+\item 
+std\+::string \mbox{\hyperlink{namespacengsai_a193e8d7511582417e7f99828ddac9d73}{CRED}} = \char`\"{}\textbackslash{}33\mbox{[}31m\char`\"{}
+\item 
+std\+::string \mbox{\hyperlink{namespacengsai_a5e16821b33c7b74208c095a576bd8ad3}{CGREEN}} = \char`\"{}\textbackslash{}33\mbox{[}32m\char`\"{}
+\item 
+std\+::string \mbox{\hyperlink{namespacengsai_ad1f00ea7467734b48c32ff7d6c2e1994}{CYELLOW}} = \char`\"{}\textbackslash{}33\mbox{[}33m\char`\"{}
+\item 
+std\+::string \mbox{\hyperlink{namespacengsai_a57585ec3143257e6bf91d9a74f85f919}{CBLUE}} = \char`\"{}\textbackslash{}33\mbox{[}34m\char`\"{}
+\item 
+std\+::string \mbox{\hyperlink{namespacengsai_ae8e540a0afc131cc17da0809e30741a9}{CVIOLET}} = \char`\"{}\textbackslash{}33\mbox{[}35m\char`\"{}
+\item 
+std\+::string \mbox{\hyperlink{namespacengsai_a7603a6956b2db1c483f221b6f9036f72}{CBEIGE}} = \char`\"{}\textbackslash{}33\mbox{[}36m\char`\"{}
+\item 
+std\+::string \mbox{\hyperlink{namespacengsai_aae6616239d8e504201721ba2f5d16dac}{CWHITE}} = \char`\"{}\textbackslash{}33\mbox{[}37m\char`\"{}
+\item 
+std\+::string \mbox{\hyperlink{namespacengsai_a91cce422ee5235f0d2131d3e0359554d}{CBLACKBG}} = \char`\"{}\textbackslash{}33\mbox{[}40m\char`\"{}
+\item 
+std\+::string \mbox{\hyperlink{namespacengsai_aabd3e5dcf412c24c98e8dc21f1c4dfd4}{CREDBG}} = \char`\"{}\textbackslash{}33\mbox{[}41m\char`\"{}
+\item 
+std\+::string \mbox{\hyperlink{namespacengsai_a488937a7ea9a648694249faba6e47973}{CGREENBG}} = \char`\"{}\textbackslash{}33\mbox{[}42m\char`\"{}
+\item 
+std\+::string \mbox{\hyperlink{namespacengsai_a685afefc081332084e1a6f273e11fc9d}{CYELLOWBG}} = \char`\"{}\textbackslash{}33\mbox{[}43m\char`\"{}
+\item 
+std\+::string \mbox{\hyperlink{namespacengsai_a19c7f2d0c8de956afe519233f7b19ffc}{CBLUEBG}} = \char`\"{}\textbackslash{}33\mbox{[}44m\char`\"{}
+\item 
+std\+::string \mbox{\hyperlink{namespacengsai_a48bd82c3c6fc87d493bf4af34229d407}{CVIOLETBG}} = \char`\"{}\textbackslash{}33\mbox{[}45m\char`\"{}
+\item 
+std\+::string \mbox{\hyperlink{namespacengsai_afc88932462d2395829912da588eb645f}{CBEIGEBG}} = \char`\"{}\textbackslash{}33\mbox{[}46m\char`\"{}
+\item 
+std\+::string \mbox{\hyperlink{namespacengsai_a7b3ed88e736851042b37336aa1f2882d}{CWHITEBG}} = \char`\"{}\textbackslash{}33\mbox{[}47m\char`\"{}
+\item 
+std\+::string \mbox{\hyperlink{namespacengsai_a536a72ef48677b75c8f3338ef76f3943}{CGREY}} = \char`\"{}\textbackslash{}33\mbox{[}90m\char`\"{}
+\item 
+std\+::string \mbox{\hyperlink{namespacengsai_a5fb055ad1d5f9a34a86bc19fb3cf7f16}{CRED2}} = \char`\"{}\textbackslash{}33\mbox{[}91m\char`\"{}
+\item 
+std\+::string \mbox{\hyperlink{namespacengsai_aa9b348aa1c52545134581468f5c55453}{CGREEN2}} = \char`\"{}\textbackslash{}33\mbox{[}92m\char`\"{}
+\item 
+std\+::string \mbox{\hyperlink{namespacengsai_af66bf09702cf1b81d8bf2f95487f3270}{CYELLOW2}} = \char`\"{}\textbackslash{}33\mbox{[}93m\char`\"{}
+\item 
+std\+::string \mbox{\hyperlink{namespacengsai_a3757ad7d51e06230eacefb85dfcfdc48}{CBLUE2}} = \char`\"{}\textbackslash{}33\mbox{[}94m\char`\"{}
+\item 
+std\+::string \mbox{\hyperlink{namespacengsai_a0a811764f322b39c941da90743b82cf6}{CVIOLET2}} = \char`\"{}\textbackslash{}33\mbox{[}95m\char`\"{}
+\item 
+std\+::string \mbox{\hyperlink{namespacengsai_a7e1227a26103735dbcfa743a7cdbcd62}{CBEIGE2}} = \char`\"{}\textbackslash{}33\mbox{[}96m\char`\"{}
+\item 
+std\+::string \mbox{\hyperlink{namespacengsai_a1ffcccd2c4dc78323af7535995baa9d9}{CWHITE2}} = \char`\"{}\textbackslash{}33\mbox{[}97m\char`\"{}
+\item 
+std\+::string \mbox{\hyperlink{namespacengsai_a7dad75e44f5a74c0e563d71aaab0220c}{CGREYBG}} = \char`\"{}\textbackslash{}33\mbox{[}100m\char`\"{}
+\item 
+std\+::string \mbox{\hyperlink{namespacengsai_a3af5d676084ffe2332eede66a0aa1433}{CREDBG2}} = \char`\"{}\textbackslash{}33\mbox{[}101m\char`\"{}
+\item 
+std\+::string \mbox{\hyperlink{namespacengsai_a2ded334b5fd89b062c6564c31123541b}{CGREENBG2}} = \char`\"{}\textbackslash{}33\mbox{[}102m\char`\"{}
+\item 
+std\+::string \mbox{\hyperlink{namespacengsai_abc28aee581d3a16d682108f55b679c24}{CYELLOWBG2}} = \char`\"{}\textbackslash{}33\mbox{[}103m\char`\"{}
+\item 
+std\+::string \mbox{\hyperlink{namespacengsai_aed9e9a21b7474fbc5196e5c20ef2dcb7}{CBLUEBG2}} = \char`\"{}\textbackslash{}33\mbox{[}104m\char`\"{}
+\item 
+std\+::string \mbox{\hyperlink{namespacengsai_a810d1f1a1cc432e01a10967c38bfefc7}{CVIOLETBG2}} = \char`\"{}\textbackslash{}33\mbox{[}105m\char`\"{}
+\item 
+std\+::string \mbox{\hyperlink{namespacengsai_a69cc3313b0c45c915d75311df9875eb6}{CBEIGEBG2}} = \char`\"{}\textbackslash{}33\mbox{[}106m\char`\"{}
+\item 
+std\+::string \mbox{\hyperlink{namespacengsai_a353b572fed734f2da103923fb8806e4e}{CWHITEBG2}} = \char`\"{}\textbackslash{}33\mbox{[}107m\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file contains values that are useful for formatting terminal output. 
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{namespacengsai_ab667af3aa89fb3a9acdbda7a75805a2b}\label{namespacengsai_ab667af3aa89fb3a9acdbda7a75805a2b} 
+\index{ngsai@{ngsai}!kmerBucket@{kmerBucket}}
+\index{kmerBucket@{kmerBucket}!ngsai@{ngsai}}
+\doxysubsubsection{\texorpdfstring{kmerBucket}{kmerBucket}}
+{\footnotesize\ttfamily typedef std\+::pair$<$uint32\+\_\+t,\mbox{\hyperlink{classngsai_1_1KmerData}{ngsai\+::\+Kmer\+Data}}$>$ \mbox{\hyperlink{namespacengsai_ab667af3aa89fb3a9acdbda7a75805a2b}{ngsai\+::kmer\+Bucket}}}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{namespacengsai_a2367cd49ed6131b42b0726ce77529a67}\label{namespacengsai_a2367cd49ed6131b42b0726ce77529a67} 
+\index{ngsai@{ngsai}!bool\_ext@{bool\_ext}}
+\index{bool\_ext@{bool\_ext}!ngsai@{ngsai}}
+\doxysubsubsection{\texorpdfstring{bool\_ext}{bool\_ext}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespacengsai_a2367cd49ed6131b42b0726ce77529a67}{ngsai\+::bool\+\_\+ext}}}
+
+
+
+Extends boolean with an undefined value. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{False@{False}!ngsai@{ngsai}}\index{ngsai@{ngsai}!False@{False}}}\Hypertarget{namespacengsai_a2367cd49ed6131b42b0726ce77529a67af30668ea62b92f02b33a8a60ffa912f8}\label{namespacengsai_a2367cd49ed6131b42b0726ce77529a67af30668ea62b92f02b33a8a60ffa912f8} 
+False&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{True@{True}!ngsai@{ngsai}}\index{ngsai@{ngsai}!True@{True}}}\Hypertarget{namespacengsai_a2367cd49ed6131b42b0726ce77529a67a6bd655099213c295956e6ca59a5c02ab}\label{namespacengsai_a2367cd49ed6131b42b0726ce77529a67a6bd655099213c295956e6ca59a5c02ab} 
+True&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Undefined@{Undefined}!ngsai@{ngsai}}\index{ngsai@{ngsai}!Undefined@{Undefined}}}\Hypertarget{namespacengsai_a2367cd49ed6131b42b0726ce77529a67af2aa4a5dc4be6b60f12c15a0e7931f69}\label{namespacengsai_a2367cd49ed6131b42b0726ce77529a67af2aa4a5dc4be6b60f12c15a0e7931f69} 
+Undefined&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacengsai_ae30ba1f2b94c85ffbb8300dd314af3f9}\label{namespacengsai_ae30ba1f2b94c85ffbb8300dd314af3f9} 
+\index{ngsai@{ngsai}!endswith@{endswith}}
+\index{endswith@{endswith}!ngsai@{ngsai}}
+\doxysubsubsection{\texorpdfstring{endswith()}{endswith()}}
+{\footnotesize\ttfamily bool ngsai\+::endswith (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str,  }\item[{const std\+::string \&}]{suffix }\end{DoxyParamCaption})}
+
+
+
+Tells whether str ends with the given suffix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & the string of interest. \\
+\hline
+{\em suffix} & the suffix of interest. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+whether str ends with suffix. 
+\end{DoxyReturn}
+\Hypertarget{namespacengsai_ab9430bba3ccc4233ea811faf138635cf}\label{namespacengsai_ab9430bba3ccc4233ea811faf138635cf} 
+\index{ngsai@{ngsai}!hist2d\_to\_matrix@{hist2d\_to\_matrix}}
+\index{hist2d\_to\_matrix@{hist2d\_to\_matrix}!ngsai@{ngsai}}
+\doxysubsubsection{\texorpdfstring{hist2d\_to\_matrix()}{hist2d\_to\_matrix()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::vector$<$ double $>$ $>$ ngsai\+::hist2d\+\_\+to\+\_\+matrix (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{PairWiseKineticModel_8hpp_a47a41088956c306e6acdc3d173959fcf}{hist\+\_\+2d\+\_\+double}} \&}]{h }\end{DoxyParamCaption})}
+
+
+
+Stores the content of a 2D histogram into a matrix. The first dimension of the matrix represents the 1st axis and the 2nd dimension the 2nd axis. The histogram bins going to -\/inf and +inf are also put in the matrix (first and last on both dimensions). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em h} & the histogram of interest. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a matrix representation of the histogram. 
+\end{DoxyReturn}
+\Hypertarget{namespacengsai_ac607047bf3e626ec725c799038d3ead8}\label{namespacengsai_ac607047bf3e626ec725c799038d3ead8} 
+\index{ngsai@{ngsai}!normalize\_kinetics@{normalize\_kinetics}}
+\index{normalize\_kinetics@{normalize\_kinetics}!ngsai@{ngsai}}
+\doxysubsubsection{\texorpdfstring{normalize\_kinetics()}{normalize\_kinetics()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::pair$<$ std\+::vector$<$ double $>$, std\+::vector$<$ double $>$ $>$ ngsai\+::normalize\+\_\+kinetics (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{seq,  }\item[{const std\+::vector$<$ double $>$ \&}]{ipd,  }\item[{const std\+::vector$<$ double $>$ \&}]{pwd,  }\item[{const \mbox{\hyperlink{classngsai_1_1KmerMap}{ngsai\+::\+Kmer\+Map}} \&}]{model }\end{DoxyParamCaption})}
+
+
+
+Normalizes the raw kinetic signal by the mean signal expected from its sequence context. Note that the normalization process can only produce a value for the central values of the vectors. The first K/2 and last K/2 values -\/ where K is the size of the kmer inside the model -\/ will be dropped. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sequence} & the sequence from which the kinetics were taken, \\
+\hline
+{\em ipd} & the raw IPDs corresponding to each base of the sequence. \\
+\hline
+{\em pwd} & the raw PWDs corresponding to each base of the sequence. \\
+\hline
+{\em model} & a map containing the mean expected signal for each possible kmer. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & if the kinetics and sequence size don\textquotesingle{}t match. \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+a pair containing the normalized IPD (first) and PWD (second) values. 
+\end{DoxyReturn}
+\Hypertarget{namespacengsai_aeed30e8a4d63c9d38fb4b784522f9bb6}\label{namespacengsai_aeed30e8a4d63c9d38fb4b784522f9bb6} 
+\index{ngsai@{ngsai}!normalize\_kinetics@{normalize\_kinetics}}
+\index{normalize\_kinetics@{normalize\_kinetics}!ngsai@{ngsai}}
+\doxysubsubsection{\texorpdfstring{normalize\_kinetics()}{normalize\_kinetics()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::pair$<$ std\+::vector$<$ double $>$, std\+::vector$<$ double $>$ $>$ ngsai\+::normalize\+\_\+kinetics (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{seq,  }\item[{const std\+::vector$<$ uint16\+\_\+t $>$ \&}]{ipd,  }\item[{const std\+::vector$<$ uint16\+\_\+t $>$ \&}]{pwd,  }\item[{const \mbox{\hyperlink{classngsai_1_1KmerMap}{ngsai\+::\+Kmer\+Map}} \&}]{model }\end{DoxyParamCaption})}
+
+
+
+Normalizes the raw kinetic signal by the mean signal expected from its sequence context. Note that the normalization process can only produce a value for the central values of the vectors. The first K/2 and last K/2 values -\/ where K is the size of the kmer inside the model -\/ will be dropped. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sequence} & the sequence from which the kinetics were taken, \\
+\hline
+{\em ipd} & the raw IPDs corresponding to each base of the sequence. \\
+\hline
+{\em pwd} & the raw PWDs corresponding to each base of the sequence. \\
+\hline
+{\em model} & a map containing the mean expected signal for each possible kmer. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & if the kinetics and sequence size don\textquotesingle{}t match. \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+a pair containing the normalized IPD (first) and PWD (second) values. 
+\end{DoxyReturn}
+\Hypertarget{namespacengsai_a0e31f00b216545c4f838cf3c3abb1917}\label{namespacengsai_a0e31f00b216545c4f838cf3c3abb1917} 
+\index{ngsai@{ngsai}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!ngsai@{ngsai}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::ostream \& ngsai\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{stream,  }\item[{const \mbox{\hyperlink{classngsai_1_1BedRecord}{ngsai\+::\+Bed\+Record}} \&}]{record }\end{DoxyParamCaption})}
+
+
+
+Writes the given record to a stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em stream} & the stream to write the record to. \\
+\hline
+{\em record} & the record to write. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a reference to the stream after the writing. 
+\end{DoxyReturn}
+\Hypertarget{namespacengsai_af66d639ede3ea1dcf107e9cf867dc8d2}\label{namespacengsai_af66d639ede3ea1dcf107e9cf867dc8d2} 
+\index{ngsai@{ngsai}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!ngsai@{ngsai}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::ostream \& ngsai\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{stream,  }\item[{const \mbox{\hyperlink{classngsai_1_1RawKineticModel}{ngsai\+::\+Raw\+Kinetic\+Model}} \&}]{model }\end{DoxyParamCaption})}
+
+
+
+Writes the given \doxylink{classngsai_1_1RawKineticModel}{Raw\+Kinetic\+Model} to the output stream. Does nothing if the model is not initialized. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em stream} & an output stream to write to. \\
+\hline
+{\em model} & a model of interest. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a reference to the output stream the model was written to. 
+\end{DoxyReturn}
+\Hypertarget{namespacengsai_a3f022b45f71e8ac2178be7c7b2bfbf10}\label{namespacengsai_a3f022b45f71e8ac2178be7c7b2bfbf10} 
+\index{ngsai@{ngsai}!split@{split}}
+\index{split@{split}!ngsai@{ngsai}}
+\doxysubsubsection{\texorpdfstring{split()}{split()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::string $>$ ngsai\+::split (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{s,  }\item[{char}]{separator }\end{DoxyParamCaption})}
+
+
+
+Splits the string into substrings according to the given separator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & the string to split. \\
+\hline
+{\em separator} & the separator to use. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a vector containing the substrings. 
+\end{DoxyReturn}
+\Hypertarget{namespacengsai_a36f5f7001d1ed60680906c0de452c6f0}\label{namespacengsai_a36f5f7001d1ed60680906c0de452c6f0} 
+\index{ngsai@{ngsai}!train\_KineticModel@{train\_KineticModel}}
+\index{train\_KineticModel@{train\_KineticModel}!ngsai@{ngsai}}
+\doxysubsubsection{\texorpdfstring{train\_KineticModel()}{train\_KineticModel()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void ngsai\+::train\+\_\+\+Kinetic\+Model (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classngsai_1_1KineticModel}{ngsai\+::\+Kinetic\+Model}} $\ast$}]{model,  }\item[{const std\+::string \&}]{path\+\_\+bed,  }\item[{const std\+::vector$<$ std\+::string $>$ \&}]{paths\+\_\+bam }\end{DoxyParamCaption})}
+
+
+
+Trains a \doxylink{classngsai_1_1KineticModel}{Kinetic\+Model}, from the CCS overlapping the genomic windows listed in the BED file. For each CpG listed, the mean IPD and PWD values at each position within the window (defined in model) are computed from all CCS aligning at this position. The mean IPD and PWD values are then introduced in the model. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em model} & a pointer to the kinetic model to train. This model must have been already initialised using set\+Parameters(). \\
+\hline
+{\em path\+\_\+bed} & the path to the bed file containing the CpG coordinates from which the signal must be learnt. \\
+\hline
+{\em paths\+\_\+bam} & the paths to the bam files containing the ~\newline
+ mapped CCS from which the signal must be extracted to learn the models. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & if the model was not yet initialised. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{namespacengsai_a61804df9e9090bba410569ac78ec2527}\label{namespacengsai_a61804df9e9090bba410569ac78ec2527} 
+\index{ngsai@{ngsai}!train\_KineticModel@{train\_KineticModel}}
+\index{train\_KineticModel@{train\_KineticModel}!ngsai@{ngsai}}
+\doxysubsubsection{\texorpdfstring{train\_KineticModel()}{train\_KineticModel()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void ngsai\+::train\+\_\+\+Kinetic\+Model (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classngsai_1_1KineticModel}{ngsai\+::\+Kinetic\+Model}} $\ast$}]{model,  }\item[{const std\+::vector$<$ \mbox{\hyperlink{classngsai_1_1BedRecord}{ngsai\+::\+Bed\+Record}} $>$ \&}]{regions,  }\item[{const std\+::vector$<$ std\+::string $>$ \&}]{paths\+\_\+bam }\end{DoxyParamCaption})}
+
+
+
+Trains a \doxylink{classngsai_1_1KineticModel}{Kinetic\+Model}, from the CCS overlapping the genomic windows listed as \doxylink{classngsai_1_1BedRecord}{Bed\+Record}. For each CpG listed, the mean IPD and PWD values at each position within the window (defined in model) are computed from all CCS aligning at this position. The mean IPD and PWD values are then introduced in the model. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em model} & a pointer to the kinetic model to train. This model must have been already initialised using set\+Parameters(). \\
+\hline
+{\em region} & a list of genomic regions containing the CpG coordinates from which the signal must be learnt. \\
+\hline
+{\em paths\+\_\+bam} & the paths to the bam files containing the ~\newline
+ mapped CCS from which the signal must be extracted to learn the models. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & if the model was not yet initialised. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{namespacengsai_af6ef8c0eeefbc574946219066efae383}\label{namespacengsai_af6ef8c0eeefbc574946219066efae383} 
+\index{ngsai@{ngsai}!train\_KineticModel@{train\_KineticModel}}
+\index{train\_KineticModel@{train\_KineticModel}!ngsai@{ngsai}}
+\doxysubsubsection{\texorpdfstring{train\_KineticModel()}{train\_KineticModel()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void ngsai\+::train\+\_\+\+Kinetic\+Model (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classngsai_1_1KineticModel}{ngsai\+::\+Kinetic\+Model}} $\ast$}]{model,  }\item[{const std\+::vector$<$ \mbox{\hyperlink{classngsai_1_1BedRecord}{ngsai\+::\+Bed\+Record}} $>$ \&}]{regions,  }\item[{size\+\_\+t}]{regions\+\_\+from,  }\item[{size\+\_\+t}]{regions\+\_\+to,  }\item[{const std\+::vector$<$ std\+::string $>$ \&}]{paths\+\_\+bam }\end{DoxyParamCaption})}
+
+
+
+Trains a \doxylink{classngsai_1_1KineticModel}{Kinetic\+Model}, from the CCS overlapping the genomic windows listed as \doxylink{classngsai_1_1BedRecord}{Bed\+Record}. The model is trained on the subset of regions \mbox{[}regions\+\_\+from,region\+\_\+to). For each CpG listed, the mean IPD and PWD values at each position within the window (defined in model) are computed from all CCS aligning at this position. The mean IPD and PWD values are then introduced in the model. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em model} & a pointer to the kinetic model to train. This model must have been already initialised using set\+Parameters(). \\
+\hline
+{\em region} & a list of genomic regions containing the CpG coordinates from which the signal must be learnt. \\
+\hline
+{\em regions\+\_\+from} & the index of the 1st region to use for training in the vector of regions. \\
+\hline
+{\em regions} & the index of the past the last region to use for training in the vector of regions. \\
+\hline
+{\em paths\+\_\+bam} & the paths to the bam files containing the ~\newline
+ mapped CCS from which the signal must be extracted to learn the models. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & if the model was not yet initialised. \\
+\hline
+\end{DoxyExceptions}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespacengsai_a7603a6956b2db1c483f221b6f9036f72}\label{namespacengsai_a7603a6956b2db1c483f221b6f9036f72} 
+\index{ngsai@{ngsai}!CBEIGE@{CBEIGE}}
+\index{CBEIGE@{CBEIGE}!ngsai@{ngsai}}
+\doxysubsubsection{\texorpdfstring{CBEIGE}{CBEIGE}}
+{\footnotesize\ttfamily std\+::string ngsai\+::\+CBEIGE = \char`\"{}\textbackslash{}33\mbox{[}36m\char`\"{}}
+
+\Hypertarget{namespacengsai_a7e1227a26103735dbcfa743a7cdbcd62}\label{namespacengsai_a7e1227a26103735dbcfa743a7cdbcd62} 
+\index{ngsai@{ngsai}!CBEIGE2@{CBEIGE2}}
+\index{CBEIGE2@{CBEIGE2}!ngsai@{ngsai}}
+\doxysubsubsection{\texorpdfstring{CBEIGE2}{CBEIGE2}}
+{\footnotesize\ttfamily std\+::string ngsai\+::\+CBEIGE2 = \char`\"{}\textbackslash{}33\mbox{[}96m\char`\"{}}
+
+\Hypertarget{namespacengsai_afc88932462d2395829912da588eb645f}\label{namespacengsai_afc88932462d2395829912da588eb645f} 
+\index{ngsai@{ngsai}!CBEIGEBG@{CBEIGEBG}}
+\index{CBEIGEBG@{CBEIGEBG}!ngsai@{ngsai}}
+\doxysubsubsection{\texorpdfstring{CBEIGEBG}{CBEIGEBG}}
+{\footnotesize\ttfamily std\+::string ngsai\+::\+CBEIGEBG = \char`\"{}\textbackslash{}33\mbox{[}46m\char`\"{}}
+
+\Hypertarget{namespacengsai_a69cc3313b0c45c915d75311df9875eb6}\label{namespacengsai_a69cc3313b0c45c915d75311df9875eb6} 
+\index{ngsai@{ngsai}!CBEIGEBG2@{CBEIGEBG2}}
+\index{CBEIGEBG2@{CBEIGEBG2}!ngsai@{ngsai}}
+\doxysubsubsection{\texorpdfstring{CBEIGEBG2}{CBEIGEBG2}}
+{\footnotesize\ttfamily std\+::string ngsai\+::\+CBEIGEBG2 = \char`\"{}\textbackslash{}33\mbox{[}106m\char`\"{}}
+
+\Hypertarget{namespacengsai_a98c98f1d7f542e5196f9e48b463dd21d}\label{namespacengsai_a98c98f1d7f542e5196f9e48b463dd21d} 
+\index{ngsai@{ngsai}!CBLACK@{CBLACK}}
+\index{CBLACK@{CBLACK}!ngsai@{ngsai}}
+\doxysubsubsection{\texorpdfstring{CBLACK}{CBLACK}}
+{\footnotesize\ttfamily std\+::string ngsai\+::\+CBLACK = \char`\"{}\textbackslash{}33\mbox{[}30m\char`\"{}}
+
+\Hypertarget{namespacengsai_a91cce422ee5235f0d2131d3e0359554d}\label{namespacengsai_a91cce422ee5235f0d2131d3e0359554d} 
+\index{ngsai@{ngsai}!CBLACKBG@{CBLACKBG}}
+\index{CBLACKBG@{CBLACKBG}!ngsai@{ngsai}}
+\doxysubsubsection{\texorpdfstring{CBLACKBG}{CBLACKBG}}
+{\footnotesize\ttfamily std\+::string ngsai\+::\+CBLACKBG = \char`\"{}\textbackslash{}33\mbox{[}40m\char`\"{}}
+
+\Hypertarget{namespacengsai_a353b592da02899964123e6f441105ee7}\label{namespacengsai_a353b592da02899964123e6f441105ee7} 
+\index{ngsai@{ngsai}!CBLINK@{CBLINK}}
+\index{CBLINK@{CBLINK}!ngsai@{ngsai}}
+\doxysubsubsection{\texorpdfstring{CBLINK}{CBLINK}}
+{\footnotesize\ttfamily std\+::string ngsai\+::\+CBLINK = \char`\"{}\textbackslash{}33\mbox{[}5m\char`\"{}}
+
+\Hypertarget{namespacengsai_a67d6ab6699c80ef005d0bccf4aae0bac}\label{namespacengsai_a67d6ab6699c80ef005d0bccf4aae0bac} 
+\index{ngsai@{ngsai}!CBLINK2@{CBLINK2}}
+\index{CBLINK2@{CBLINK2}!ngsai@{ngsai}}
+\doxysubsubsection{\texorpdfstring{CBLINK2}{CBLINK2}}
+{\footnotesize\ttfamily std\+::string ngsai\+::\+CBLINK2 = \char`\"{}\textbackslash{}33\mbox{[}6m\char`\"{}}
+
+\Hypertarget{namespacengsai_a57585ec3143257e6bf91d9a74f85f919}\label{namespacengsai_a57585ec3143257e6bf91d9a74f85f919} 
+\index{ngsai@{ngsai}!CBLUE@{CBLUE}}
+\index{CBLUE@{CBLUE}!ngsai@{ngsai}}
+\doxysubsubsection{\texorpdfstring{CBLUE}{CBLUE}}
+{\footnotesize\ttfamily std\+::string ngsai\+::\+CBLUE = \char`\"{}\textbackslash{}33\mbox{[}34m\char`\"{}}
+
+\Hypertarget{namespacengsai_a3757ad7d51e06230eacefb85dfcfdc48}\label{namespacengsai_a3757ad7d51e06230eacefb85dfcfdc48} 
+\index{ngsai@{ngsai}!CBLUE2@{CBLUE2}}
+\index{CBLUE2@{CBLUE2}!ngsai@{ngsai}}
+\doxysubsubsection{\texorpdfstring{CBLUE2}{CBLUE2}}
+{\footnotesize\ttfamily std\+::string ngsai\+::\+CBLUE2 = \char`\"{}\textbackslash{}33\mbox{[}94m\char`\"{}}
+
+\Hypertarget{namespacengsai_a19c7f2d0c8de956afe519233f7b19ffc}\label{namespacengsai_a19c7f2d0c8de956afe519233f7b19ffc} 
+\index{ngsai@{ngsai}!CBLUEBG@{CBLUEBG}}
+\index{CBLUEBG@{CBLUEBG}!ngsai@{ngsai}}
+\doxysubsubsection{\texorpdfstring{CBLUEBG}{CBLUEBG}}
+{\footnotesize\ttfamily std\+::string ngsai\+::\+CBLUEBG = \char`\"{}\textbackslash{}33\mbox{[}44m\char`\"{}}
+
+\Hypertarget{namespacengsai_aed9e9a21b7474fbc5196e5c20ef2dcb7}\label{namespacengsai_aed9e9a21b7474fbc5196e5c20ef2dcb7} 
+\index{ngsai@{ngsai}!CBLUEBG2@{CBLUEBG2}}
+\index{CBLUEBG2@{CBLUEBG2}!ngsai@{ngsai}}
+\doxysubsubsection{\texorpdfstring{CBLUEBG2}{CBLUEBG2}}
+{\footnotesize\ttfamily std\+::string ngsai\+::\+CBLUEBG2 = \char`\"{}\textbackslash{}33\mbox{[}104m\char`\"{}}
+
+\Hypertarget{namespacengsai_aaf508c488d8faa707ffb113dd5417f45}\label{namespacengsai_aaf508c488d8faa707ffb113dd5417f45} 
+\index{ngsai@{ngsai}!CBOLD@{CBOLD}}
+\index{CBOLD@{CBOLD}!ngsai@{ngsai}}
+\doxysubsubsection{\texorpdfstring{CBOLD}{CBOLD}}
+{\footnotesize\ttfamily std\+::string ngsai\+::\+CBOLD = \char`\"{}\textbackslash{}33\mbox{[}1m\char`\"{}}
+
+\Hypertarget{namespacengsai_a0e620c7114f1dfd1fed11f80679a3bd5}\label{namespacengsai_a0e620c7114f1dfd1fed11f80679a3bd5} 
+\index{ngsai@{ngsai}!CEND@{CEND}}
+\index{CEND@{CEND}!ngsai@{ngsai}}
+\doxysubsubsection{\texorpdfstring{CEND}{CEND}}
+{\footnotesize\ttfamily std\+::string ngsai\+::\+CEND = \char`\"{}\textbackslash{}33\mbox{[}0m\char`\"{}}
+
+\Hypertarget{namespacengsai_a5e16821b33c7b74208c095a576bd8ad3}\label{namespacengsai_a5e16821b33c7b74208c095a576bd8ad3} 
+\index{ngsai@{ngsai}!CGREEN@{CGREEN}}
+\index{CGREEN@{CGREEN}!ngsai@{ngsai}}
+\doxysubsubsection{\texorpdfstring{CGREEN}{CGREEN}}
+{\footnotesize\ttfamily std\+::string ngsai\+::\+CGREEN = \char`\"{}\textbackslash{}33\mbox{[}32m\char`\"{}}
+
+\Hypertarget{namespacengsai_aa9b348aa1c52545134581468f5c55453}\label{namespacengsai_aa9b348aa1c52545134581468f5c55453} 
+\index{ngsai@{ngsai}!CGREEN2@{CGREEN2}}
+\index{CGREEN2@{CGREEN2}!ngsai@{ngsai}}
+\doxysubsubsection{\texorpdfstring{CGREEN2}{CGREEN2}}
+{\footnotesize\ttfamily std\+::string ngsai\+::\+CGREEN2 = \char`\"{}\textbackslash{}33\mbox{[}92m\char`\"{}}
+
+\Hypertarget{namespacengsai_a488937a7ea9a648694249faba6e47973}\label{namespacengsai_a488937a7ea9a648694249faba6e47973} 
+\index{ngsai@{ngsai}!CGREENBG@{CGREENBG}}
+\index{CGREENBG@{CGREENBG}!ngsai@{ngsai}}
+\doxysubsubsection{\texorpdfstring{CGREENBG}{CGREENBG}}
+{\footnotesize\ttfamily std\+::string ngsai\+::\+CGREENBG = \char`\"{}\textbackslash{}33\mbox{[}42m\char`\"{}}
+
+\Hypertarget{namespacengsai_a2ded334b5fd89b062c6564c31123541b}\label{namespacengsai_a2ded334b5fd89b062c6564c31123541b} 
+\index{ngsai@{ngsai}!CGREENBG2@{CGREENBG2}}
+\index{CGREENBG2@{CGREENBG2}!ngsai@{ngsai}}
+\doxysubsubsection{\texorpdfstring{CGREENBG2}{CGREENBG2}}
+{\footnotesize\ttfamily std\+::string ngsai\+::\+CGREENBG2 = \char`\"{}\textbackslash{}33\mbox{[}102m\char`\"{}}
+
+\Hypertarget{namespacengsai_a536a72ef48677b75c8f3338ef76f3943}\label{namespacengsai_a536a72ef48677b75c8f3338ef76f3943} 
+\index{ngsai@{ngsai}!CGREY@{CGREY}}
+\index{CGREY@{CGREY}!ngsai@{ngsai}}
+\doxysubsubsection{\texorpdfstring{CGREY}{CGREY}}
+{\footnotesize\ttfamily std\+::string ngsai\+::\+CGREY = \char`\"{}\textbackslash{}33\mbox{[}90m\char`\"{}}
+
+\Hypertarget{namespacengsai_a7dad75e44f5a74c0e563d71aaab0220c}\label{namespacengsai_a7dad75e44f5a74c0e563d71aaab0220c} 
+\index{ngsai@{ngsai}!CGREYBG@{CGREYBG}}
+\index{CGREYBG@{CGREYBG}!ngsai@{ngsai}}
+\doxysubsubsection{\texorpdfstring{CGREYBG}{CGREYBG}}
+{\footnotesize\ttfamily std\+::string ngsai\+::\+CGREYBG = \char`\"{}\textbackslash{}33\mbox{[}100m\char`\"{}}
+
+\Hypertarget{namespacengsai_a93000e1590d237479ca68d52275b8f00}\label{namespacengsai_a93000e1590d237479ca68d52275b8f00} 
+\index{ngsai@{ngsai}!CITALIC@{CITALIC}}
+\index{CITALIC@{CITALIC}!ngsai@{ngsai}}
+\doxysubsubsection{\texorpdfstring{CITALIC}{CITALIC}}
+{\footnotesize\ttfamily std\+::string ngsai\+::\+CITALIC = \char`\"{}\textbackslash{}33\mbox{[}3m\char`\"{}}
+
+\Hypertarget{namespacengsai_a193e8d7511582417e7f99828ddac9d73}\label{namespacengsai_a193e8d7511582417e7f99828ddac9d73} 
+\index{ngsai@{ngsai}!CRED@{CRED}}
+\index{CRED@{CRED}!ngsai@{ngsai}}
+\doxysubsubsection{\texorpdfstring{CRED}{CRED}}
+{\footnotesize\ttfamily std\+::string ngsai\+::\+CRED = \char`\"{}\textbackslash{}33\mbox{[}31m\char`\"{}}
+
+\Hypertarget{namespacengsai_a5fb055ad1d5f9a34a86bc19fb3cf7f16}\label{namespacengsai_a5fb055ad1d5f9a34a86bc19fb3cf7f16} 
+\index{ngsai@{ngsai}!CRED2@{CRED2}}
+\index{CRED2@{CRED2}!ngsai@{ngsai}}
+\doxysubsubsection{\texorpdfstring{CRED2}{CRED2}}
+{\footnotesize\ttfamily std\+::string ngsai\+::\+CRED2 = \char`\"{}\textbackslash{}33\mbox{[}91m\char`\"{}}
+
+\Hypertarget{namespacengsai_aabd3e5dcf412c24c98e8dc21f1c4dfd4}\label{namespacengsai_aabd3e5dcf412c24c98e8dc21f1c4dfd4} 
+\index{ngsai@{ngsai}!CREDBG@{CREDBG}}
+\index{CREDBG@{CREDBG}!ngsai@{ngsai}}
+\doxysubsubsection{\texorpdfstring{CREDBG}{CREDBG}}
+{\footnotesize\ttfamily std\+::string ngsai\+::\+CREDBG = \char`\"{}\textbackslash{}33\mbox{[}41m\char`\"{}}
+
+\Hypertarget{namespacengsai_a3af5d676084ffe2332eede66a0aa1433}\label{namespacengsai_a3af5d676084ffe2332eede66a0aa1433} 
+\index{ngsai@{ngsai}!CREDBG2@{CREDBG2}}
+\index{CREDBG2@{CREDBG2}!ngsai@{ngsai}}
+\doxysubsubsection{\texorpdfstring{CREDBG2}{CREDBG2}}
+{\footnotesize\ttfamily std\+::string ngsai\+::\+CREDBG2 = \char`\"{}\textbackslash{}33\mbox{[}101m\char`\"{}}
+
+\Hypertarget{namespacengsai_afa2d9b77583da1d03bd827f33c2c0597}\label{namespacengsai_afa2d9b77583da1d03bd827f33c2c0597} 
+\index{ngsai@{ngsai}!CSELECTED@{CSELECTED}}
+\index{CSELECTED@{CSELECTED}!ngsai@{ngsai}}
+\doxysubsubsection{\texorpdfstring{CSELECTED}{CSELECTED}}
+{\footnotesize\ttfamily std\+::string ngsai\+::\+CSELECTED = \char`\"{}\textbackslash{}33\mbox{[}7m\char`\"{}}
+
+\Hypertarget{namespacengsai_accffe48aa21e767df16d7d04c57513e4}\label{namespacengsai_accffe48aa21e767df16d7d04c57513e4} 
+\index{ngsai@{ngsai}!CURL@{CURL}}
+\index{CURL@{CURL}!ngsai@{ngsai}}
+\doxysubsubsection{\texorpdfstring{CURL}{CURL}}
+{\footnotesize\ttfamily std\+::string ngsai\+::\+CURL = \char`\"{}\textbackslash{}33\mbox{[}4m\char`\"{}}
+
+\Hypertarget{namespacengsai_ae8e540a0afc131cc17da0809e30741a9}\label{namespacengsai_ae8e540a0afc131cc17da0809e30741a9} 
+\index{ngsai@{ngsai}!CVIOLET@{CVIOLET}}
+\index{CVIOLET@{CVIOLET}!ngsai@{ngsai}}
+\doxysubsubsection{\texorpdfstring{CVIOLET}{CVIOLET}}
+{\footnotesize\ttfamily std\+::string ngsai\+::\+CVIOLET = \char`\"{}\textbackslash{}33\mbox{[}35m\char`\"{}}
+
+\Hypertarget{namespacengsai_a0a811764f322b39c941da90743b82cf6}\label{namespacengsai_a0a811764f322b39c941da90743b82cf6} 
+\index{ngsai@{ngsai}!CVIOLET2@{CVIOLET2}}
+\index{CVIOLET2@{CVIOLET2}!ngsai@{ngsai}}
+\doxysubsubsection{\texorpdfstring{CVIOLET2}{CVIOLET2}}
+{\footnotesize\ttfamily std\+::string ngsai\+::\+CVIOLET2 = \char`\"{}\textbackslash{}33\mbox{[}95m\char`\"{}}
+
+\Hypertarget{namespacengsai_a48bd82c3c6fc87d493bf4af34229d407}\label{namespacengsai_a48bd82c3c6fc87d493bf4af34229d407} 
+\index{ngsai@{ngsai}!CVIOLETBG@{CVIOLETBG}}
+\index{CVIOLETBG@{CVIOLETBG}!ngsai@{ngsai}}
+\doxysubsubsection{\texorpdfstring{CVIOLETBG}{CVIOLETBG}}
+{\footnotesize\ttfamily std\+::string ngsai\+::\+CVIOLETBG = \char`\"{}\textbackslash{}33\mbox{[}45m\char`\"{}}
+
+\Hypertarget{namespacengsai_a810d1f1a1cc432e01a10967c38bfefc7}\label{namespacengsai_a810d1f1a1cc432e01a10967c38bfefc7} 
+\index{ngsai@{ngsai}!CVIOLETBG2@{CVIOLETBG2}}
+\index{CVIOLETBG2@{CVIOLETBG2}!ngsai@{ngsai}}
+\doxysubsubsection{\texorpdfstring{CVIOLETBG2}{CVIOLETBG2}}
+{\footnotesize\ttfamily std\+::string ngsai\+::\+CVIOLETBG2 = \char`\"{}\textbackslash{}33\mbox{[}105m\char`\"{}}
+
+\Hypertarget{namespacengsai_aae6616239d8e504201721ba2f5d16dac}\label{namespacengsai_aae6616239d8e504201721ba2f5d16dac} 
+\index{ngsai@{ngsai}!CWHITE@{CWHITE}}
+\index{CWHITE@{CWHITE}!ngsai@{ngsai}}
+\doxysubsubsection{\texorpdfstring{CWHITE}{CWHITE}}
+{\footnotesize\ttfamily std\+::string ngsai\+::\+CWHITE = \char`\"{}\textbackslash{}33\mbox{[}37m\char`\"{}}
+
+\Hypertarget{namespacengsai_a1ffcccd2c4dc78323af7535995baa9d9}\label{namespacengsai_a1ffcccd2c4dc78323af7535995baa9d9} 
+\index{ngsai@{ngsai}!CWHITE2@{CWHITE2}}
+\index{CWHITE2@{CWHITE2}!ngsai@{ngsai}}
+\doxysubsubsection{\texorpdfstring{CWHITE2}{CWHITE2}}
+{\footnotesize\ttfamily std\+::string ngsai\+::\+CWHITE2 = \char`\"{}\textbackslash{}33\mbox{[}97m\char`\"{}}
+
+\Hypertarget{namespacengsai_a7b3ed88e736851042b37336aa1f2882d}\label{namespacengsai_a7b3ed88e736851042b37336aa1f2882d} 
+\index{ngsai@{ngsai}!CWHITEBG@{CWHITEBG}}
+\index{CWHITEBG@{CWHITEBG}!ngsai@{ngsai}}
+\doxysubsubsection{\texorpdfstring{CWHITEBG}{CWHITEBG}}
+{\footnotesize\ttfamily std\+::string ngsai\+::\+CWHITEBG = \char`\"{}\textbackslash{}33\mbox{[}47m\char`\"{}}
+
+\Hypertarget{namespacengsai_a353b572fed734f2da103923fb8806e4e}\label{namespacengsai_a353b572fed734f2da103923fb8806e4e} 
+\index{ngsai@{ngsai}!CWHITEBG2@{CWHITEBG2}}
+\index{CWHITEBG2@{CWHITEBG2}!ngsai@{ngsai}}
+\doxysubsubsection{\texorpdfstring{CWHITEBG2}{CWHITEBG2}}
+{\footnotesize\ttfamily std\+::string ngsai\+::\+CWHITEBG2 = \char`\"{}\textbackslash{}33\mbox{[}107m\char`\"{}}
+
+\Hypertarget{namespacengsai_ad1f00ea7467734b48c32ff7d6c2e1994}\label{namespacengsai_ad1f00ea7467734b48c32ff7d6c2e1994} 
+\index{ngsai@{ngsai}!CYELLOW@{CYELLOW}}
+\index{CYELLOW@{CYELLOW}!ngsai@{ngsai}}
+\doxysubsubsection{\texorpdfstring{CYELLOW}{CYELLOW}}
+{\footnotesize\ttfamily std\+::string ngsai\+::\+CYELLOW = \char`\"{}\textbackslash{}33\mbox{[}33m\char`\"{}}
+
+\Hypertarget{namespacengsai_af66bf09702cf1b81d8bf2f95487f3270}\label{namespacengsai_af66bf09702cf1b81d8bf2f95487f3270} 
+\index{ngsai@{ngsai}!CYELLOW2@{CYELLOW2}}
+\index{CYELLOW2@{CYELLOW2}!ngsai@{ngsai}}
+\doxysubsubsection{\texorpdfstring{CYELLOW2}{CYELLOW2}}
+{\footnotesize\ttfamily std\+::string ngsai\+::\+CYELLOW2 = \char`\"{}\textbackslash{}33\mbox{[}93m\char`\"{}}
+
+\Hypertarget{namespacengsai_a685afefc081332084e1a6f273e11fc9d}\label{namespacengsai_a685afefc081332084e1a6f273e11fc9d} 
+\index{ngsai@{ngsai}!CYELLOWBG@{CYELLOWBG}}
+\index{CYELLOWBG@{CYELLOWBG}!ngsai@{ngsai}}
+\doxysubsubsection{\texorpdfstring{CYELLOWBG}{CYELLOWBG}}
+{\footnotesize\ttfamily std\+::string ngsai\+::\+CYELLOWBG = \char`\"{}\textbackslash{}33\mbox{[}43m\char`\"{}}
+
+\Hypertarget{namespacengsai_abc28aee581d3a16d682108f55b679c24}\label{namespacengsai_abc28aee581d3a16d682108f55b679c24} 
+\index{ngsai@{ngsai}!CYELLOWBG2@{CYELLOWBG2}}
+\index{CYELLOWBG2@{CYELLOWBG2}!ngsai@{ngsai}}
+\doxysubsubsection{\texorpdfstring{CYELLOWBG2}{CYELLOWBG2}}
+{\footnotesize\ttfamily std\+::string ngsai\+::\+CYELLOWBG2 = \char`\"{}\textbackslash{}33\mbox{[}103m\char`\"{}}
+

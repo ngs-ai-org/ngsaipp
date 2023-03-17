@@ -1,0 +1,31 @@
+\hypertarget{CpGRegion_8hpp}{}\doxysection{include/ngsaipp/genome/\+Cp\+GRegion.hpp File Reference}
+\label{CpGRegion_8hpp}\index{include/ngsaipp/genome/CpGRegion.hpp@{include/ngsaipp/genome/CpGRegion.hpp}}
+{\ttfamily \#include $<$ngsaipp/genome/\+Genome\+Region.\+hpp$>$}\newline
+Include dependency graph for Cp\+GRegion.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{CpGRegion_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=217pt]{CpGRegion_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classngsai_1_1genome_1_1CpGRegion}{ngsai\+::genome\+::\+Cp\+GRegion}}
+\begin{DoxyCompactList}\small\item\em The \doxylink{classngsai_1_1genome_1_1CpGRegion}{Cp\+GRegion} class models the coordinates of a CpG on the genome. CpG are palyndromic sequences. Hence, if a CpG is located on a strand, another is located on the other strand (but in reverse orientation). For this reason, the strand information is always UNORIENTED. A CpG is encoded as a two Genomic\+Region containing \mbox{[}start,end) ranges (0-\/based) for each strand CpG. The starts are always the position of the leftmost C on both strands and the end positions the position just after the rightmost G on both strands. This corresponds to the following schema \+: start end $\vert$ $\vert$ 5\textquotesingle{} -\/ N N N C G N N N -\/ 3\textquotesingle{} fw strand 3\textquotesingle{} -\/ N N N G C N N N -\/ 5\textquotesingle{} rv strand $\vert$ $\vert$ start end. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacengsai}{ngsai}}
+\begin{DoxyCompactList}\small\item\em This file contains values that are useful for formatting terminal output. \end{DoxyCompactList}\item 
+namespace \mbox{\hyperlink{namespacengsai_1_1genome}{ngsai\+::genome}}
+\end{DoxyCompactItemize}

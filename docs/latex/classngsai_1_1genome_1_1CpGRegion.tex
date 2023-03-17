@@ -1,0 +1,241 @@
+\hypertarget{classngsai_1_1genome_1_1CpGRegion}{}\doxysection{ngsai\+::genome\+::Cp\+GRegion Class Reference}
+\label{classngsai_1_1genome_1_1CpGRegion}\index{ngsai::genome::CpGRegion@{ngsai::genome::CpGRegion}}
+
+
+The \doxylink{classngsai_1_1genome_1_1CpGRegion}{Cp\+GRegion} class models the coordinates of a CpG on the genome. CpG are palyndromic sequences. Hence, if a CpG is located on a strand, another is located on the other strand (but in reverse orientation). For this reason, the strand information is always UNORIENTED. A CpG is encoded as a two Genomic\+Region containing \mbox{[}start,end) ranges (0-\/based) for each strand CpG. The starts are always the position of the leftmost C on both strands and the end positions the position just after the rightmost G on both strands. This corresponds to the following schema \+: start end $\vert$ $\vert$ 5\textquotesingle{} -\/ N N N C G N N N -\/ 3\textquotesingle{} fw strand 3\textquotesingle{} -\/ N N N G C N N N -\/ 5\textquotesingle{} rv strand $\vert$ $\vert$ start end.  
+
+
+
+
+{\ttfamily \#include $<$Cp\+GRegion.\+hpp$>$}
+
+
+
+Inheritance diagram for ngsai\+::genome\+::Cp\+GRegion\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=234pt]{classngsai_1_1genome_1_1CpGRegion__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for ngsai\+::genome\+::Cp\+GRegion\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=234pt]{classngsai_1_1genome_1_1CpGRegion__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classngsai_1_1genome_1_1CpGRegion_a2b1d4d4fcb157179ccbe89fed6f2b8d3}{Cp\+GRegion}} ()
+\begin{DoxyCompactList}\small\item\em Constructs and empy instance. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classngsai_1_1genome_1_1CpGRegion_a635628ef22df6d94ae02829c1583fb65}{Cp\+GRegion}} (const \mbox{\hyperlink{classngsai_1_1genome_1_1GenomeRegion}{ngsai\+::genome\+::\+Genome\+Region}} \&cpg)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classngsai_1_1genome_1_1CpGRegion_ae67bd4ece2bd14c7ea474e9ec7ac93fa}{Cp\+GRegion}} (\mbox{\hyperlink{classngsai_1_1genome_1_1GenomeRegion}{ngsai\+::genome\+::\+Genome\+Region}} \&\&cpg)
+\begin{DoxyCompactList}\small\item\em Move constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classngsai_1_1genome_1_1CpGRegion_a732cd6430d8b607b7ef1c7ce74b7c2e5}{Cp\+GRegion}} (const std\+::string \&\mbox{\hyperlink{classngsai_1_1genome_1_1GenomeRegion_a1f09cc737a84ba32bdd1ce1e49949317}{chrom}}, size\+\_\+t \mbox{\hyperlink{classngsai_1_1genome_1_1GenomeRegion_a44a6e9b1e0ad8117b4084f85ef00604e}{start}}, size\+\_\+t \mbox{\hyperlink{classngsai_1_1genome_1_1GenomeRegion_a3f4b9ba309aaf8727b59911db0407306}{end}})
+\begin{DoxyCompactList}\small\item\em Constructs a CpG corresponding to the given genomic coordinates. The strand is forced to UNORIENTED. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classngsai_1_1genome_1_1CpGRegion_a0f6ca36c869a8f2b91eca30c9483bce2}{$\sim$\+Cp\+GRegion}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classngsai_1_1genome_1_1GenomeRegion}{ngsai\+::genome\+::\+Genome\+Region}} \mbox{\hyperlink{classngsai_1_1genome_1_1CpGRegion_a5835f8fe4cf381e00410bae947fc3d75}{forward\+Coordinates}} () const
+\begin{DoxyCompactList}\small\item\em Returns the coordinates of the forward strand CpG. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classngsai_1_1genome_1_1GenomeRegion}{ngsai\+::genome\+::\+Genome\+Region}} \mbox{\hyperlink{classngsai_1_1genome_1_1CpGRegion_a8ca8f3b9bcc5f1959282a86715d49abe}{reverse\+Coordinates}} () const
+\begin{DoxyCompactList}\small\item\em Returns the coordinates of the reverse strand CpG. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{classngsai_1_1genome_1_1GenomeRegion}{ngsai\+::genome\+::\+Genome\+Region}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classngsai_1_1genome_1_1GenomeRegion_ae780b9ebe16ef3283df616331744d717}{Genome\+Region}} ()
+\begin{DoxyCompactList}\small\item\em Constructs an empty object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classngsai_1_1genome_1_1GenomeRegion_a21440ae6b3367db44c23abc36fab77f3}{Genome\+Region}} (const \mbox{\hyperlink{classngsai_1_1genome_1_1GenomeRegion}{ngsai\+::genome\+::\+Genome\+Region}} \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classngsai_1_1genome_1_1GenomeRegion_ae181e8c72d093200d1f83a9c34de14c0}{Genome\+Region}} (\mbox{\hyperlink{classngsai_1_1genome_1_1GenomeRegion}{ngsai\+::genome\+::\+Genome\+Region}} \&\&other)
+\begin{DoxyCompactList}\small\item\em Move constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classngsai_1_1genome_1_1GenomeRegion_a6fa140a9cd29295a1aa6fc78b023bd56}{Genome\+Region}} (const std\+::string \&\mbox{\hyperlink{classngsai_1_1genome_1_1GenomeRegion_a1f09cc737a84ba32bdd1ce1e49949317}{chrom}}, size\+\_\+t \mbox{\hyperlink{classngsai_1_1genome_1_1GenomeRegion_a44a6e9b1e0ad8117b4084f85ef00604e}{start}}, size\+\_\+t \mbox{\hyperlink{classngsai_1_1genome_1_1GenomeRegion_a3f4b9ba309aaf8727b59911db0407306}{end}}, \mbox{\hyperlink{namespacengsai_1_1genome_af9328d3863d41c71b71e33219e3c0632}{ngsai\+::genome\+::strand}} \mbox{\hyperlink{namespacengsai_1_1genome_af9328d3863d41c71b71e33219e3c0632}{strand}})
+\begin{DoxyCompactList}\small\item\em Constructs an object with the given values. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classngsai_1_1genome_1_1GenomeRegion_a71d177c65b764a190d020b5b358eea40}{$\sim$\+Genome\+Region}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classngsai_1_1genome_1_1GenomeRegion}{Genome\+Region}} \& \mbox{\hyperlink{classngsai_1_1genome_1_1GenomeRegion_ad1b2ca6aa1f0c6bca4d3d584c2805ee6}{operator=}} (const \mbox{\hyperlink{classngsai_1_1genome_1_1GenomeRegion}{Genome\+Region}} \&other)
+\begin{DoxyCompactList}\small\item\em Assigmnent operator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classngsai_1_1genome_1_1GenomeRegion}{Genome\+Region}} \& \mbox{\hyperlink{classngsai_1_1genome_1_1GenomeRegion_a91f7b81ab0e1d46b65d11154908b7321}{operator=}} (\mbox{\hyperlink{classngsai_1_1genome_1_1GenomeRegion}{Genome\+Region}} \&\&other)
+\begin{DoxyCompactList}\small\item\em Move assigmnent operator. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classngsai_1_1genome_1_1GenomeRegion_ac4547fc713e5ccbaf61c0f31439a1114}{operator==}} (const \mbox{\hyperlink{classngsai_1_1genome_1_1GenomeRegion}{Genome\+Region}} \&other) const
+\begin{DoxyCompactList}\small\item\em Compares if two \doxylink{classngsai_1_1genome_1_1GenomeRegion}{Genome\+Region} have equal values. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classngsai_1_1genome_1_1GenomeRegion_a572cb02350ada33d7921611739c99593}{operator!=}} (const \mbox{\hyperlink{classngsai_1_1genome_1_1GenomeRegion}{Genome\+Region}} \&other) const
+\begin{DoxyCompactList}\small\item\em Compares if two \doxylink{classngsai_1_1BedRecord}{Bed\+Record} have unequal values. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classngsai_1_1genome_1_1GenomeRegion_aa75a50176ba5def532488173025dbb42}{operator$\vert$}} (const \mbox{\hyperlink{classngsai_1_1genome_1_1GenomeRegion}{Genome\+Region}} \&other) const
+\begin{DoxyCompactList}\small\item\em Overlap operator. Returns whether both regions overlap by at least one position. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacengsai_a2367cd49ed6131b42b0726ce77529a67}{ngsai\+::bool\+\_\+ext}} \mbox{\hyperlink{classngsai_1_1genome_1_1GenomeRegion_adf9ebd3d8df7c9a3ba536a53977f5aed}{operator$<$}} (const \mbox{\hyperlink{classngsai_1_1genome_1_1GenomeRegion}{Genome\+Region}} \&other) const
+\begin{DoxyCompactList}\small\item\em Is upstream operator. Checks if the current object islocated stricly upstream (no overlap) of the other region. The chromosome values are also tested. A smaller chromosome value (natural order) is interpreted as upstream. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacengsai_a2367cd49ed6131b42b0726ce77529a67}{ngsai\+::bool\+\_\+ext}} \mbox{\hyperlink{classngsai_1_1genome_1_1GenomeRegion_a0d42607d7aab52c5feb3c66ceffe0e0f}{operator$>$}} (const \mbox{\hyperlink{classngsai_1_1genome_1_1GenomeRegion}{Genome\+Region}} \&other) const
+\begin{DoxyCompactList}\small\item\em Is downstream operator. Checks if the current object is located stricly downstream (no overlap) of the other region. The chromosome values are also tested. A smaller chromosome value (natural order) is interpreted as upstream. \end{DoxyCompactList}\item 
+virtual size\+\_\+t \mbox{\hyperlink{classngsai_1_1genome_1_1GenomeRegion_a462b01d81407a1079eea004de798aed5}{size}} () const
+\begin{DoxyCompactList}\small\item\em Returns the size (length) of the region in bp. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{classngsai_1_1genome_1_1GenomeRegion_a94a10f61cd0c4d37cde520467f064f78}{overlap\+\_\+len}} (const \mbox{\hyperlink{classngsai_1_1genome_1_1GenomeRegion}{Genome\+Region}} \&other) const
+\begin{DoxyCompactList}\small\item\em Returns the length of the overlap between both regions. \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{classngsai_1_1genome_1_1GenomeRegion_a1d3febd8f9ea26b8895ee200c9fa46a6}{to\+String}} () const
+\begin{DoxyCompactList}\small\item\em Creates a string representation of the instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classngsai_1_1genome_1_1CpGRegion_a750aa0f57132acdb10dc76aa1d60ab7f}{sanity\+\_\+check}} () const
+\begin{DoxyCompactList}\small\item\em Checks that it has a length of 2bp and that the strand is UNORIENTED. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+\doxysubsubsection*{Public Attributes inherited from \mbox{\hyperlink{classngsai_1_1genome_1_1GenomeRegion}{ngsai\+::genome\+::\+Genome\+Region}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classngsai_1_1genome_1_1GenomeRegion_a1f09cc737a84ba32bdd1ce1e49949317}{chrom}}
+\item 
+size\+\_\+t \mbox{\hyperlink{classngsai_1_1genome_1_1GenomeRegion_a44a6e9b1e0ad8117b4084f85ef00604e}{start}}
+\begin{DoxyCompactList}\small\item\em The starting position of the feature in the chromosome or scaffold. The first base in a chromosome is numbered 0. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classngsai_1_1genome_1_1GenomeRegion_a3f4b9ba309aaf8727b59911db0407306}{end}}
+\begin{DoxyCompactList}\small\item\em The ending position of the feature in the chromosome or scaffold. The end base is not included, the range is \mbox{[}start, end) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacengsai_1_1genome_af9328d3863d41c71b71e33219e3c0632}{ngsai\+::genome\+::strand}} \mbox{\hyperlink{classngsai_1_1genome_1_1GenomeRegion_a65253604664c35772962756aee74defd}{strand}}
+\begin{DoxyCompactList}\small\item\em The strand on which the bed interval is located. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \doxylink{classngsai_1_1genome_1_1CpGRegion}{Cp\+GRegion} class models the coordinates of a CpG on the genome. CpG are palyndromic sequences. Hence, if a CpG is located on a strand, another is located on the other strand (but in reverse orientation). For this reason, the strand information is always UNORIENTED. A CpG is encoded as a two Genomic\+Region containing \mbox{[}start,end) ranges (0-\/based) for each strand CpG. The starts are always the position of the leftmost C on both strands and the end positions the position just after the rightmost G on both strands. This corresponds to the following schema \+: start end $\vert$ $\vert$ 5\textquotesingle{} -\/ N N N C G N N N -\/ 3\textquotesingle{} fw strand 3\textquotesingle{} -\/ N N N G C N N N -\/ 5\textquotesingle{} rv strand $\vert$ $\vert$ start end. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classngsai_1_1genome_1_1CpGRegion_a2b1d4d4fcb157179ccbe89fed6f2b8d3}\label{classngsai_1_1genome_1_1CpGRegion_a2b1d4d4fcb157179ccbe89fed6f2b8d3} 
+\index{ngsai::genome::CpGRegion@{ngsai::genome::CpGRegion}!CpGRegion@{CpGRegion}}
+\index{CpGRegion@{CpGRegion}!ngsai::genome::CpGRegion@{ngsai::genome::CpGRegion}}
+\doxysubsubsection{\texorpdfstring{CpGRegion()}{CpGRegion()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily ngsai\+::genome\+::\+Cp\+GRegion\+::\+Cp\+GRegion (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructs and empy instance. 
+
+\Hypertarget{classngsai_1_1genome_1_1CpGRegion_a635628ef22df6d94ae02829c1583fb65}\label{classngsai_1_1genome_1_1CpGRegion_a635628ef22df6d94ae02829c1583fb65} 
+\index{ngsai::genome::CpGRegion@{ngsai::genome::CpGRegion}!CpGRegion@{CpGRegion}}
+\index{CpGRegion@{CpGRegion}!ngsai::genome::CpGRegion@{ngsai::genome::CpGRegion}}
+\doxysubsubsection{\texorpdfstring{CpGRegion()}{CpGRegion()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily ngsai\+::genome\+::\+Cp\+GRegion\+::\+Cp\+GRegion (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classngsai_1_1genome_1_1GenomeRegion}{ngsai\+::genome\+::\+Genome\+Region}} \&}]{cpg }\end{DoxyParamCaption})}
+
+
+
+Copy constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cpg} & the region to copy from. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & if something wrong is detected. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classngsai_1_1genome_1_1CpGRegion_ae67bd4ece2bd14c7ea474e9ec7ac93fa}\label{classngsai_1_1genome_1_1CpGRegion_ae67bd4ece2bd14c7ea474e9ec7ac93fa} 
+\index{ngsai::genome::CpGRegion@{ngsai::genome::CpGRegion}!CpGRegion@{CpGRegion}}
+\index{CpGRegion@{CpGRegion}!ngsai::genome::CpGRegion@{ngsai::genome::CpGRegion}}
+\doxysubsubsection{\texorpdfstring{CpGRegion()}{CpGRegion()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily ngsai\+::genome\+::\+Cp\+GRegion\+::\+Cp\+GRegion (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classngsai_1_1genome_1_1GenomeRegion}{ngsai\+::genome\+::\+Genome\+Region}} \&\&}]{cpg }\end{DoxyParamCaption})}
+
+
+
+Move constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cpg} & the region to move from. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & if something wrong is detected. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classngsai_1_1genome_1_1CpGRegion_a732cd6430d8b607b7ef1c7ce74b7c2e5}\label{classngsai_1_1genome_1_1CpGRegion_a732cd6430d8b607b7ef1c7ce74b7c2e5} 
+\index{ngsai::genome::CpGRegion@{ngsai::genome::CpGRegion}!CpGRegion@{CpGRegion}}
+\index{CpGRegion@{CpGRegion}!ngsai::genome::CpGRegion@{ngsai::genome::CpGRegion}}
+\doxysubsubsection{\texorpdfstring{CpGRegion()}{CpGRegion()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily ngsai\+::genome\+::\+Cp\+GRegion\+::\+Cp\+GRegion (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{chrom,  }\item[{size\+\_\+t}]{start,  }\item[{size\+\_\+t}]{end }\end{DoxyParamCaption})}
+
+
+
+Constructs a CpG corresponding to the given genomic coordinates. The strand is forced to UNORIENTED. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em chrom} & the name of the chromosome on which the CpG is located. \\
+\hline
+{\em start} & the 0-\/based coordinate of the leftmost C. \\
+\hline
+{\em end} & the 0-\/based coordinate of the position just after the rightmost G. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & if something wrong is detected. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classngsai_1_1genome_1_1CpGRegion_a0f6ca36c869a8f2b91eca30c9483bce2}\label{classngsai_1_1genome_1_1CpGRegion_a0f6ca36c869a8f2b91eca30c9483bce2} 
+\index{ngsai::genome::CpGRegion@{ngsai::genome::CpGRegion}!````~CpGRegion@{$\sim$CpGRegion}}
+\index{````~CpGRegion@{$\sim$CpGRegion}!ngsai::genome::CpGRegion@{ngsai::genome::CpGRegion}}
+\doxysubsubsection{\texorpdfstring{$\sim$CpGRegion()}{~CpGRegion()}}
+{\footnotesize\ttfamily virtual ngsai\+::genome\+::\+Cp\+GRegion\+::$\sim$\+Cp\+GRegion (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classngsai_1_1genome_1_1CpGRegion_a5835f8fe4cf381e00410bae947fc3d75}\label{classngsai_1_1genome_1_1CpGRegion_a5835f8fe4cf381e00410bae947fc3d75} 
+\index{ngsai::genome::CpGRegion@{ngsai::genome::CpGRegion}!forwardCoordinates@{forwardCoordinates}}
+\index{forwardCoordinates@{forwardCoordinates}!ngsai::genome::CpGRegion@{ngsai::genome::CpGRegion}}
+\doxysubsubsection{\texorpdfstring{forwardCoordinates()}{forwardCoordinates()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classngsai_1_1genome_1_1GenomeRegion}{ngsai\+::genome\+::\+Genome\+Region}} ngsai\+::genome\+::\+Cp\+GRegion\+::forward\+Coordinates (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the coordinates of the forward strand CpG. 
+
+\begin{DoxyReturn}{Returns}
+the forward strand CpG coordinates. 
+\end{DoxyReturn}
+\Hypertarget{classngsai_1_1genome_1_1CpGRegion_a8ca8f3b9bcc5f1959282a86715d49abe}\label{classngsai_1_1genome_1_1CpGRegion_a8ca8f3b9bcc5f1959282a86715d49abe} 
+\index{ngsai::genome::CpGRegion@{ngsai::genome::CpGRegion}!reverseCoordinates@{reverseCoordinates}}
+\index{reverseCoordinates@{reverseCoordinates}!ngsai::genome::CpGRegion@{ngsai::genome::CpGRegion}}
+\doxysubsubsection{\texorpdfstring{reverseCoordinates()}{reverseCoordinates()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classngsai_1_1genome_1_1GenomeRegion}{ngsai\+::genome\+::\+Genome\+Region}} ngsai\+::genome\+::\+Cp\+GRegion\+::reverse\+Coordinates (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the coordinates of the reverse strand CpG. 
+
+\begin{DoxyReturn}{Returns}
+the forward strand CpG coordinates. 
+\end{DoxyReturn}
+\Hypertarget{classngsai_1_1genome_1_1CpGRegion_a750aa0f57132acdb10dc76aa1d60ab7f}\label{classngsai_1_1genome_1_1CpGRegion_a750aa0f57132acdb10dc76aa1d60ab7f} 
+\index{ngsai::genome::CpGRegion@{ngsai::genome::CpGRegion}!sanity\_check@{sanity\_check}}
+\index{sanity\_check@{sanity\_check}!ngsai::genome::CpGRegion@{ngsai::genome::CpGRegion}}
+\doxysubsubsection{\texorpdfstring{sanity\_check()}{sanity\_check()}}
+{\footnotesize\ttfamily void ngsai\+::genome\+::\+Cp\+GRegion\+::sanity\+\_\+check (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Checks that it has a length of 2bp and that the strand is UNORIENTED. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & if something wrong is detected. \\
+\hline
+\end{DoxyExceptions}
+
+
+Reimplemented from \mbox{\hyperlink{classngsai_1_1genome_1_1GenomeRegion}{ngsai\+::genome\+::\+Genome\+Region}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/ngsaipp/genome/\mbox{\hyperlink{CpGRegion_8hpp}{Cp\+GRegion.\+hpp}}\end{DoxyCompactItemize}

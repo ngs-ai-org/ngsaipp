@@ -1,0 +1,5 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classngsai_1_1genome_1_1GenomeRegion.html" title=" " alt="" coords="5,31,211,56"/>
+<area shape="rect" id="node2" href="$classngsai_1_1BedRecord.html" title=" " alt="" coords="287,5,413,31"/>
+<area shape="rect" id="node3" href="$classngsai_1_1genome_1_1CpGRegion.html" title="The CpGRegion class models the coordinates of a CpG on the genome. CpG are palyndromic sequences...." alt="" coords="259,55,441,80"/>
+</map>

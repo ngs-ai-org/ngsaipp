@@ -1,0 +1,736 @@
+\hypertarget{classngsai_1_1KineticSignal}{}\doxysection{ngsai\+::Kinetic\+Signal Class Reference}
+\label{classngsai_1_1KineticSignal}\index{ngsai::KineticSignal@{ngsai::KineticSignal}}
+
+
+the \doxylink{classngsai_1_1KineticSignal}{Kinetic\+Signal} class is designed to be a data structure to store the DNA sequence and kinetic -\/ IPD and PWD -\/ information in a given strech of DNA. An instance has a size, that is the length of the DNA strech, in bp, that is modelled. The default contructor allow to create empy -\/ 0bp -\/ streches and to add data later using the setter methods. In this case, the size is set at the 1st use of a setter. Except this 1st insertion -\/ on an empty instance -\/ data inserted must have the same size as the instance.  
+
+
+
+
+{\ttfamily \#include $<$Kinetic\+Signal.\+hpp$>$}
+
+
+
+Collaboration diagram for ngsai\+::Kinetic\+Signal\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=286pt]{classngsai_1_1KineticSignal__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classngsai_1_1KineticSignal_a9765dfc85c4f2f6ad332ff25b5740642}{Kinetic\+Signal}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. Constructs an empty instance. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classngsai_1_1KineticSignal_a038bf3015ce1acac996517d7d2de126e}{Kinetic\+Signal}} (const std\+::string \&seq\+\_\+fw, const std\+::string \&seq\+\_\+rv, const std\+::vector$<$ double $>$ \&ipd\+\_\+fw, const std\+::vector$<$ double $>$ \&ipd\+\_\+rv, const std\+::vector$<$ double $>$ \&pwd\+\_\+fw, const std\+::vector$<$ double $>$ \&pwd\+\_\+rv)
+\begin{DoxyCompactList}\small\item\em Constructs an instance containing the given information. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classngsai_1_1KineticSignal_a63dd2366190ce4f107a752d7cc1333b1}{Kinetic\+Signal}} (std\+::string \&\&seq\+\_\+fw, std\+::string \&\&seq\+\_\+rv, std\+::vector$<$ double $>$ \&\&ipd\+\_\+fw, std\+::vector$<$ double $>$ \&\&ipd\+\_\+rv, std\+::vector$<$ double $>$ \&\&pwd\+\_\+fw, std\+::vector$<$ double $>$ \&\&pwd\+\_\+rv)
+\begin{DoxyCompactList}\small\item\em Constructs an instance containing the given information. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classngsai_1_1KineticSignal_a13304aa2eb2f8b61401d72d5242afdf1}{Kinetic\+Signal}} (const \mbox{\hyperlink{classngsai_1_1KineticSignal}{ngsai\+::\+Kinetic\+Signal}} \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classngsai_1_1KineticSignal_a41b574cf7ce16f3cfa1df81c66dd4acc}{Kinetic\+Signal}} (\mbox{\hyperlink{classngsai_1_1KineticSignal}{ngsai\+::\+Kinetic\+Signal}} \&\&other)
+\begin{DoxyCompactList}\small\item\em Move constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classngsai_1_1KineticSignal_a43f40076deb859dd647b7f9782167a65}{$\sim$\+Kinetic\+Signal}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classngsai_1_1KineticSignal}{Kinetic\+Signal}} \& \mbox{\hyperlink{classngsai_1_1KineticSignal_aea54dc19401ae5c84afd3b30964b151f}{operator=}} (const \mbox{\hyperlink{classngsai_1_1KineticSignal}{Kinetic\+Signal}} \&other)
+\begin{DoxyCompactList}\small\item\em Assignment operator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classngsai_1_1KineticSignal}{Kinetic\+Signal}} \& \mbox{\hyperlink{classngsai_1_1KineticSignal_ae17064ba54526dc76a8b2578c66f18d2}{operator=}} (\mbox{\hyperlink{classngsai_1_1KineticSignal}{Kinetic\+Signal}} \&\&other)
+\begin{DoxyCompactList}\small\item\em Move assignment operator. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classngsai_1_1KineticSignal_a113b46ef12210485bcaa9353cd1b3279}{set\+Sequence\+Fw}} (const std\+::string \&seq)
+\begin{DoxyCompactList}\small\item\em Sets the forward strand DNA sequence. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classngsai_1_1KineticSignal_a2d78102f7f2838b78456eb0f8191b6f5}{set\+Sequence\+Fw}} (std\+::string \&\&seq)
+\begin{DoxyCompactList}\small\item\em Sets the forward strand DNA sequence. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classngsai_1_1KineticSignal_a778ec4579ee74766272f6b2737ec1c2c}{set\+Sequence\+Rv}} (const std\+::string \&seq)
+\begin{DoxyCompactList}\small\item\em Sets the reverse strand DNA sequence. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classngsai_1_1KineticSignal_a0ba6265fbe323a00a0e8c43aeecc6ba1}{set\+Sequence\+Rv}} (std\+::string \&\&seq)
+\begin{DoxyCompactList}\small\item\em Sets the reverse strand DNA sequence. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classngsai_1_1KineticSignal_a3399260f9dd0c65116a0a48bd02103a4}{set\+IPDFw}} (const std\+::vector$<$ double $>$ \&ipd)
+\begin{DoxyCompactList}\small\item\em Sets the forward strand IPDs. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classngsai_1_1KineticSignal_a7f6cff0d6ee591149d8e410f35a2898f}{set\+IPDFw}} (std\+::vector$<$ double $>$ \&\&ipd)
+\begin{DoxyCompactList}\small\item\em Sets the forward strand IPDs. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classngsai_1_1KineticSignal_a01e062c648025bd8985b0bc4818b3ec5}{set\+IPDRv}} (const std\+::vector$<$ double $>$ \&ipd)
+\begin{DoxyCompactList}\small\item\em Sets the reverse strand IPDs. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classngsai_1_1KineticSignal_ae899f10ac5637d3d50ebafa88e612bbb}{set\+IPDRv}} (std\+::vector$<$ double $>$ \&\&ipd)
+\begin{DoxyCompactList}\small\item\em Sets the reverse strand IPDs. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classngsai_1_1KineticSignal_ac28f8d8349c47db7d1e77341f4756859}{set\+PWDFw}} (const std\+::vector$<$ double $>$ \&pwd)
+\begin{DoxyCompactList}\small\item\em Sets the forward strand IPDs. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classngsai_1_1KineticSignal_ac614748cc61bb86ef97ae731b18c979c}{set\+PWDFw}} (std\+::vector$<$ double $>$ \&\&pwd)
+\begin{DoxyCompactList}\small\item\em Sets the forward strand IPDs. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classngsai_1_1KineticSignal_a86d6bb82b72d483c1e6f4c3f91fb7e87}{set\+PWDRv}} (const std\+::vector$<$ double $>$ \&pwd)
+\begin{DoxyCompactList}\small\item\em Sets the reverse strand IPDs. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classngsai_1_1KineticSignal_acbf40d13501fb062907b2212baaba26e}{set\+PWDRv}} (std\+::vector$<$ double $>$ \&\&pwd)
+\begin{DoxyCompactList}\small\item\em Sets the reverse strand IPDs. \end{DoxyCompactList}\item 
+const std\+::string \& \mbox{\hyperlink{classngsai_1_1KineticSignal_a9a7db8de1bdbf21084d0817294382c12}{get\+Sequence\+Fw}} () const
+\begin{DoxyCompactList}\small\item\em Accesses the forward strand DNA sequence. \end{DoxyCompactList}\item 
+const std\+::string \& \mbox{\hyperlink{classngsai_1_1KineticSignal_a8b520513e858fdd49086b76e67a9579a}{get\+Sequence\+Rv}} () const
+\begin{DoxyCompactList}\small\item\em Accesses the reverse strand DNA sequence. \end{DoxyCompactList}\item 
+const std\+::vector$<$ double $>$ \& \mbox{\hyperlink{classngsai_1_1KineticSignal_a416a6247522880d14521e40728312537}{get\+IPDFw}} () const
+\begin{DoxyCompactList}\small\item\em Accesses the forward strand IDPs. \end{DoxyCompactList}\item 
+const std\+::vector$<$ double $>$ \& \mbox{\hyperlink{classngsai_1_1KineticSignal_a6085865963d17d139fc704931d51afd7}{get\+IPDRv}} () const
+\begin{DoxyCompactList}\small\item\em Accesses the reverse strand IDPs. \end{DoxyCompactList}\item 
+const std\+::vector$<$ double $>$ \& \mbox{\hyperlink{classngsai_1_1KineticSignal_a317312426241ab2b514e00d442c43ff6}{get\+PWDFw}} () const
+\begin{DoxyCompactList}\small\item\em Accesses the forward strand PWDs. \end{DoxyCompactList}\item 
+const std\+::vector$<$ double $>$ \& \mbox{\hyperlink{classngsai_1_1KineticSignal_a65bef2bc2f8505e9ee9ba4eae103b315}{get\+PWDRv}} () const
+\begin{DoxyCompactList}\small\item\em Accesses the reverse strand PWDs. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classngsai_1_1KineticSignal_a075a4f134cb237d966b7feac6bd06e7e}{get\+IPDMean}} () const
+\begin{DoxyCompactList}\small\item\em Computes the mean IPD values across both strands. If IPDs are set for only one strand, the average are equal to this strand values. If no IPD are set on any strands, an empty vector is returned. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classngsai_1_1KineticSignal_a00e9aecfac94e6b021097e51cbe1ba2c}{get\+PWDMean}} () const
+\begin{DoxyCompactList}\small\item\em Computes the mean PWD values across both strands. If PWDs are set for only one strand, the average are equal to this strand values. If no PWD are set on any strands, an empty vector is returned. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classngsai_1_1KineticSignal_a7787fbaeb9942139775792745ae7545b}{is\+Fw\+Complete}} () const
+\begin{DoxyCompactList}\small\item\em Indicates if the forward strand has the sequence, IPD and PWD values set. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classngsai_1_1KineticSignal_a914dbf9a289793f123077ce2500df2cd}{is\+Rv\+Complete}} () const
+\begin{DoxyCompactList}\small\item\em Indicates if the reverse strand has the sequence, IPD and PWD values set. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classngsai_1_1KineticSignal_a6e097c95ddf2b2ece1b16191e40f406b}{is\+Complete}} () const
+\begin{DoxyCompactList}\small\item\em Indicates if the both strands have the sequence, IPD and PWD values set. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classngsai_1_1KineticSignal_a3aed8d823307b9a4976ea2bc36181b89}{size}} () const
+\begin{DoxyCompactList}\small\item\em Returns the size of the sequence and signal stored on a single strand, in bp. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+size\+\_\+t \mbox{\hyperlink{classngsai_1_1KineticSignal_accbca6f127cf95a109bb30b8443c8065}{m\+\_\+size}}
+\begin{DoxyCompactList}\small\item\em The size of the sequence and signal stored on a single strand. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classngsai_1_1KineticSignal_a8862f31a702b9c42f479d3de5f992d98}{m\+\_\+sequence\+\_\+fw}}
+\begin{DoxyCompactList}\small\item\em The forward strand DNA sequence. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classngsai_1_1KineticSignal_a637b8aaca77f67d3996c6e2ecd439537}{m\+\_\+sequence\+\_\+rv}}
+\begin{DoxyCompactList}\small\item\em The reverse strand DNA sequence. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classngsai_1_1KineticSignal_a9b01c0082ecf3620c8d0ddc3df564f92}{m\+\_\+ipd\+\_\+fw}}
+\begin{DoxyCompactList}\small\item\em The forward strand IPD signal. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classngsai_1_1KineticSignal_a49d6e6c30eb2862aa5ba44cc0fe3106f}{m\+\_\+ipd\+\_\+rv}}
+\begin{DoxyCompactList}\small\item\em The reverse strand IPD signal. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classngsai_1_1KineticSignal_acfceba0322c76577af8f6c1fb987f8fa}{m\+\_\+pwd\+\_\+fw}}
+\begin{DoxyCompactList}\small\item\em The forward strand PWD signal. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classngsai_1_1KineticSignal_a6c03f2acc012cf958d73a41531bdfc30}{m\+\_\+pwd\+\_\+rv}}
+\begin{DoxyCompactList}\small\item\em The reverse strand PWD signal. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classngsai_1_1KineticSignal_a1344cfe72ba90d107640d9b099dee7d2}{m\+\_\+seq\+\_\+fw\+\_\+set}}
+\begin{DoxyCompactList}\small\item\em Whether a value was set for m\+\_\+seq\+\_\+fw. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classngsai_1_1KineticSignal_a0ac1671c92645a97aa0a0f4bad0e204e}{m\+\_\+seq\+\_\+rv\+\_\+set}}
+\begin{DoxyCompactList}\small\item\em Whether a value was set for m\+\_\+seq\+\_\+rv. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classngsai_1_1KineticSignal_a06d800d74a8797b27c6d47f7a83205ae}{m\+\_\+ipd\+\_\+fw\+\_\+set}}
+\begin{DoxyCompactList}\small\item\em Whether a value was set for m\+\_\+ipd\+\_\+fw. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classngsai_1_1KineticSignal_a14954eccbe52707b3f43d97813282b7e}{m\+\_\+ipd\+\_\+rv\+\_\+set}}
+\begin{DoxyCompactList}\small\item\em Whether a value was set for m\+\_\+ipd\+\_\+rv. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classngsai_1_1KineticSignal_aa9e886f66df861e34bba0576f075e288}{m\+\_\+pwd\+\_\+fw\+\_\+set}}
+\begin{DoxyCompactList}\small\item\em Whether a value was set for m\+\_\+pwd\+\_\+fw. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classngsai_1_1KineticSignal_aa4ec7e3a21656bb5b057c75e9a5cc8c0}{m\+\_\+pwd\+\_\+rv\+\_\+set}}
+\begin{DoxyCompactList}\small\item\em Whether a value was set for m\+\_\+pwd\+\_\+rv. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+the \doxylink{classngsai_1_1KineticSignal}{Kinetic\+Signal} class is designed to be a data structure to store the DNA sequence and kinetic -\/ IPD and PWD -\/ information in a given strech of DNA. An instance has a size, that is the length of the DNA strech, in bp, that is modelled. The default contructor allow to create empy -\/ 0bp -\/ streches and to add data later using the setter methods. In this case, the size is set at the 1st use of a setter. Except this 1st insertion -\/ on an empty instance -\/ data inserted must have the same size as the instance. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classngsai_1_1KineticSignal_a9765dfc85c4f2f6ad332ff25b5740642}\label{classngsai_1_1KineticSignal_a9765dfc85c4f2f6ad332ff25b5740642} 
+\index{ngsai::KineticSignal@{ngsai::KineticSignal}!KineticSignal@{KineticSignal}}
+\index{KineticSignal@{KineticSignal}!ngsai::KineticSignal@{ngsai::KineticSignal}}
+\doxysubsubsection{\texorpdfstring{KineticSignal()}{KineticSignal()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily ngsai\+::\+Kinetic\+Signal\+::\+Kinetic\+Signal (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor. Constructs an empty instance. 
+
+\Hypertarget{classngsai_1_1KineticSignal_a038bf3015ce1acac996517d7d2de126e}\label{classngsai_1_1KineticSignal_a038bf3015ce1acac996517d7d2de126e} 
+\index{ngsai::KineticSignal@{ngsai::KineticSignal}!KineticSignal@{KineticSignal}}
+\index{KineticSignal@{KineticSignal}!ngsai::KineticSignal@{ngsai::KineticSignal}}
+\doxysubsubsection{\texorpdfstring{KineticSignal()}{KineticSignal()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily ngsai\+::\+Kinetic\+Signal\+::\+Kinetic\+Signal (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{seq\+\_\+fw,  }\item[{const std\+::string \&}]{seq\+\_\+rv,  }\item[{const std\+::vector$<$ double $>$ \&}]{ipd\+\_\+fw,  }\item[{const std\+::vector$<$ double $>$ \&}]{ipd\+\_\+rv,  }\item[{const std\+::vector$<$ double $>$ \&}]{pwd\+\_\+fw,  }\item[{const std\+::vector$<$ double $>$ \&}]{pwd\+\_\+rv }\end{DoxyParamCaption})}
+
+
+
+Constructs an instance containing the given information. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em seq\+\_\+fw} & the forward strand DNA sequence in 5\textquotesingle{} to 3\textquotesingle{} order. \\
+\hline
+{\em seq\+\_\+rv} & the reverse strand DNA sequence in 5\textquotesingle{} to 3\textquotesingle{} order. \\
+\hline
+{\em ipd\+\_\+fw} & the forward strand IPD signal in 5\textquotesingle{} to 3\textquotesingle{} order. \\
+\hline
+{\em ipd\+\_\+rv} & the reverse strand IPD signal in 5\textquotesingle{} to 3\textquotesingle{} order. \\
+\hline
+{\em pwd\+\_\+fw} & the forward strand PWD signal in 5\textquotesingle{} to 3\textquotesingle{} order. \\
+\hline
+{\em pwd\+\_\+rv} & the reverse strand PWD signal in 5\textquotesingle{} to 3\textquotesingle{} order. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classngsai_1_1KineticSignal_a63dd2366190ce4f107a752d7cc1333b1}\label{classngsai_1_1KineticSignal_a63dd2366190ce4f107a752d7cc1333b1} 
+\index{ngsai::KineticSignal@{ngsai::KineticSignal}!KineticSignal@{KineticSignal}}
+\index{KineticSignal@{KineticSignal}!ngsai::KineticSignal@{ngsai::KineticSignal}}
+\doxysubsubsection{\texorpdfstring{KineticSignal()}{KineticSignal()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily ngsai\+::\+Kinetic\+Signal\+::\+Kinetic\+Signal (\begin{DoxyParamCaption}\item[{std\+::string \&\&}]{seq\+\_\+fw,  }\item[{std\+::string \&\&}]{seq\+\_\+rv,  }\item[{std\+::vector$<$ double $>$ \&\&}]{ipd\+\_\+fw,  }\item[{std\+::vector$<$ double $>$ \&\&}]{ipd\+\_\+rv,  }\item[{std\+::vector$<$ double $>$ \&\&}]{pwd\+\_\+fw,  }\item[{std\+::vector$<$ double $>$ \&\&}]{pwd\+\_\+rv }\end{DoxyParamCaption})}
+
+
+
+Constructs an instance containing the given information. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em seq\+\_\+fw} & the forward strand DNA sequence in 5\textquotesingle{} to 3\textquotesingle{} order. \\
+\hline
+{\em seq\+\_\+rv} & the reverse strand DNA sequence in 5\textquotesingle{} to 3\textquotesingle{} order. \\
+\hline
+{\em ipd\+\_\+fw} & the forward strand IPD signal in 5\textquotesingle{} to 3\textquotesingle{} order. \\
+\hline
+{\em ipd\+\_\+rv} & the reverse strand IPD signal in 5\textquotesingle{} to 3\textquotesingle{} order. \\
+\hline
+{\em pwd\+\_\+fw} & the forward strand PWD signal in 5\textquotesingle{} to 3\textquotesingle{} order. \\
+\hline
+{\em pwd\+\_\+rv} & the reverse strand PWD signal in 5\textquotesingle{} to 3\textquotesingle{} order. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classngsai_1_1KineticSignal_a13304aa2eb2f8b61401d72d5242afdf1}\label{classngsai_1_1KineticSignal_a13304aa2eb2f8b61401d72d5242afdf1} 
+\index{ngsai::KineticSignal@{ngsai::KineticSignal}!KineticSignal@{KineticSignal}}
+\index{KineticSignal@{KineticSignal}!ngsai::KineticSignal@{ngsai::KineticSignal}}
+\doxysubsubsection{\texorpdfstring{KineticSignal()}{KineticSignal()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily ngsai\+::\+Kinetic\+Signal\+::\+Kinetic\+Signal (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classngsai_1_1KineticSignal}{ngsai\+::\+Kinetic\+Signal}} \&}]{other }\end{DoxyParamCaption})}
+
+
+
+Copy constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & the instance to copy from. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classngsai_1_1KineticSignal_a41b574cf7ce16f3cfa1df81c66dd4acc}\label{classngsai_1_1KineticSignal_a41b574cf7ce16f3cfa1df81c66dd4acc} 
+\index{ngsai::KineticSignal@{ngsai::KineticSignal}!KineticSignal@{KineticSignal}}
+\index{KineticSignal@{KineticSignal}!ngsai::KineticSignal@{ngsai::KineticSignal}}
+\doxysubsubsection{\texorpdfstring{KineticSignal()}{KineticSignal()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily ngsai\+::\+Kinetic\+Signal\+::\+Kinetic\+Signal (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classngsai_1_1KineticSignal}{ngsai\+::\+Kinetic\+Signal}} \&\&}]{other }\end{DoxyParamCaption})}
+
+
+
+Move constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & the instance to move from. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classngsai_1_1KineticSignal_a43f40076deb859dd647b7f9782167a65}\label{classngsai_1_1KineticSignal_a43f40076deb859dd647b7f9782167a65} 
+\index{ngsai::KineticSignal@{ngsai::KineticSignal}!````~KineticSignal@{$\sim$KineticSignal}}
+\index{````~KineticSignal@{$\sim$KineticSignal}!ngsai::KineticSignal@{ngsai::KineticSignal}}
+\doxysubsubsection{\texorpdfstring{$\sim$KineticSignal()}{~KineticSignal()}}
+{\footnotesize\ttfamily ngsai\+::\+Kinetic\+Signal\+::$\sim$\+Kinetic\+Signal (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classngsai_1_1KineticSignal_a416a6247522880d14521e40728312537}\label{classngsai_1_1KineticSignal_a416a6247522880d14521e40728312537} 
+\index{ngsai::KineticSignal@{ngsai::KineticSignal}!getIPDFw@{getIPDFw}}
+\index{getIPDFw@{getIPDFw}!ngsai::KineticSignal@{ngsai::KineticSignal}}
+\doxysubsubsection{\texorpdfstring{getIPDFw()}{getIPDFw()}}
+{\footnotesize\ttfamily const std\+::vector$<$ double $>$ \& ngsai\+::\+Kinetic\+Signal\+::get\+IPDFw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Accesses the forward strand IDPs. 
+
+\begin{DoxyReturn}{Returns}
+the forward strand IPDs in 5\textquotesingle{} to 3\textquotesingle{} order. 
+\end{DoxyReturn}
+\Hypertarget{classngsai_1_1KineticSignal_a075a4f134cb237d966b7feac6bd06e7e}\label{classngsai_1_1KineticSignal_a075a4f134cb237d966b7feac6bd06e7e} 
+\index{ngsai::KineticSignal@{ngsai::KineticSignal}!getIPDMean@{getIPDMean}}
+\index{getIPDMean@{getIPDMean}!ngsai::KineticSignal@{ngsai::KineticSignal}}
+\doxysubsubsection{\texorpdfstring{getIPDMean()}{getIPDMean()}}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ ngsai\+::\+Kinetic\+Signal\+::get\+IPDMean (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Computes the mean IPD values across both strands. If IPDs are set for only one strand, the average are equal to this strand values. If no IPD are set on any strands, an empty vector is returned. 
+
+\begin{DoxyReturn}{Returns}
+the mean IPD values in 5\textquotesingle{} to 3\textquotesingle{} order. The vector is empty if no IPD have been set on any strand. 
+\end{DoxyReturn}
+\Hypertarget{classngsai_1_1KineticSignal_a6085865963d17d139fc704931d51afd7}\label{classngsai_1_1KineticSignal_a6085865963d17d139fc704931d51afd7} 
+\index{ngsai::KineticSignal@{ngsai::KineticSignal}!getIPDRv@{getIPDRv}}
+\index{getIPDRv@{getIPDRv}!ngsai::KineticSignal@{ngsai::KineticSignal}}
+\doxysubsubsection{\texorpdfstring{getIPDRv()}{getIPDRv()}}
+{\footnotesize\ttfamily const std\+::vector$<$ double $>$ \& ngsai\+::\+Kinetic\+Signal\+::get\+IPDRv (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Accesses the reverse strand IDPs. 
+
+\begin{DoxyReturn}{Returns}
+the reverse strand IPDs in 5\textquotesingle{} to 3\textquotesingle{} order. 
+\end{DoxyReturn}
+\Hypertarget{classngsai_1_1KineticSignal_a317312426241ab2b514e00d442c43ff6}\label{classngsai_1_1KineticSignal_a317312426241ab2b514e00d442c43ff6} 
+\index{ngsai::KineticSignal@{ngsai::KineticSignal}!getPWDFw@{getPWDFw}}
+\index{getPWDFw@{getPWDFw}!ngsai::KineticSignal@{ngsai::KineticSignal}}
+\doxysubsubsection{\texorpdfstring{getPWDFw()}{getPWDFw()}}
+{\footnotesize\ttfamily const std\+::vector$<$ double $>$ \& ngsai\+::\+Kinetic\+Signal\+::get\+PWDFw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Accesses the forward strand PWDs. 
+
+\begin{DoxyReturn}{Returns}
+the forward strand PWDs in 5\textquotesingle{} to 3\textquotesingle{} order. 
+\end{DoxyReturn}
+\Hypertarget{classngsai_1_1KineticSignal_a00e9aecfac94e6b021097e51cbe1ba2c}\label{classngsai_1_1KineticSignal_a00e9aecfac94e6b021097e51cbe1ba2c} 
+\index{ngsai::KineticSignal@{ngsai::KineticSignal}!getPWDMean@{getPWDMean}}
+\index{getPWDMean@{getPWDMean}!ngsai::KineticSignal@{ngsai::KineticSignal}}
+\doxysubsubsection{\texorpdfstring{getPWDMean()}{getPWDMean()}}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ ngsai\+::\+Kinetic\+Signal\+::get\+PWDMean (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Computes the mean PWD values across both strands. If PWDs are set for only one strand, the average are equal to this strand values. If no PWD are set on any strands, an empty vector is returned. 
+
+\begin{DoxyReturn}{Returns}
+the mean PWD values in 5\textquotesingle{} to 3\textquotesingle{} order. The vector is empty if no IPD have been set on any strand. 
+\end{DoxyReturn}
+\Hypertarget{classngsai_1_1KineticSignal_a65bef2bc2f8505e9ee9ba4eae103b315}\label{classngsai_1_1KineticSignal_a65bef2bc2f8505e9ee9ba4eae103b315} 
+\index{ngsai::KineticSignal@{ngsai::KineticSignal}!getPWDRv@{getPWDRv}}
+\index{getPWDRv@{getPWDRv}!ngsai::KineticSignal@{ngsai::KineticSignal}}
+\doxysubsubsection{\texorpdfstring{getPWDRv()}{getPWDRv()}}
+{\footnotesize\ttfamily const std\+::vector$<$ double $>$ \& ngsai\+::\+Kinetic\+Signal\+::get\+PWDRv (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Accesses the reverse strand PWDs. 
+
+\begin{DoxyReturn}{Returns}
+the reverse strand PWDs in 5\textquotesingle{} to 3\textquotesingle{} order. 
+\end{DoxyReturn}
+\Hypertarget{classngsai_1_1KineticSignal_a9a7db8de1bdbf21084d0817294382c12}\label{classngsai_1_1KineticSignal_a9a7db8de1bdbf21084d0817294382c12} 
+\index{ngsai::KineticSignal@{ngsai::KineticSignal}!getSequenceFw@{getSequenceFw}}
+\index{getSequenceFw@{getSequenceFw}!ngsai::KineticSignal@{ngsai::KineticSignal}}
+\doxysubsubsection{\texorpdfstring{getSequenceFw()}{getSequenceFw()}}
+{\footnotesize\ttfamily const std\+::string \& ngsai\+::\+Kinetic\+Signal\+::get\+Sequence\+Fw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Accesses the forward strand DNA sequence. 
+
+\begin{DoxyReturn}{Returns}
+the forward strand DNA sequence in 5\textquotesingle{} to 3\textquotesingle{} order. 
+\end{DoxyReturn}
+\Hypertarget{classngsai_1_1KineticSignal_a8b520513e858fdd49086b76e67a9579a}\label{classngsai_1_1KineticSignal_a8b520513e858fdd49086b76e67a9579a} 
+\index{ngsai::KineticSignal@{ngsai::KineticSignal}!getSequenceRv@{getSequenceRv}}
+\index{getSequenceRv@{getSequenceRv}!ngsai::KineticSignal@{ngsai::KineticSignal}}
+\doxysubsubsection{\texorpdfstring{getSequenceRv()}{getSequenceRv()}}
+{\footnotesize\ttfamily const std\+::string \& ngsai\+::\+Kinetic\+Signal\+::get\+Sequence\+Rv (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Accesses the reverse strand DNA sequence. 
+
+\begin{DoxyReturn}{Returns}
+the reverse strand DNA sequence in 5\textquotesingle{} to 3\textquotesingle{} order. 
+\end{DoxyReturn}
+\Hypertarget{classngsai_1_1KineticSignal_a6e097c95ddf2b2ece1b16191e40f406b}\label{classngsai_1_1KineticSignal_a6e097c95ddf2b2ece1b16191e40f406b} 
+\index{ngsai::KineticSignal@{ngsai::KineticSignal}!isComplete@{isComplete}}
+\index{isComplete@{isComplete}!ngsai::KineticSignal@{ngsai::KineticSignal}}
+\doxysubsubsection{\texorpdfstring{isComplete()}{isComplete()}}
+{\footnotesize\ttfamily bool ngsai\+::\+Kinetic\+Signal\+::is\+Complete (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Indicates if the both strands have the sequence, IPD and PWD values set. 
+
+\begin{DoxyReturn}{Returns}
+Whether both strands have all data set. 
+\end{DoxyReturn}
+\Hypertarget{classngsai_1_1KineticSignal_a7787fbaeb9942139775792745ae7545b}\label{classngsai_1_1KineticSignal_a7787fbaeb9942139775792745ae7545b} 
+\index{ngsai::KineticSignal@{ngsai::KineticSignal}!isFwComplete@{isFwComplete}}
+\index{isFwComplete@{isFwComplete}!ngsai::KineticSignal@{ngsai::KineticSignal}}
+\doxysubsubsection{\texorpdfstring{isFwComplete()}{isFwComplete()}}
+{\footnotesize\ttfamily bool ngsai\+::\+Kinetic\+Signal\+::is\+Fw\+Complete (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Indicates if the forward strand has the sequence, IPD and PWD values set. 
+
+\begin{DoxyReturn}{Returns}
+Whether the forward strand has all data set. 
+\end{DoxyReturn}
+\Hypertarget{classngsai_1_1KineticSignal_a914dbf9a289793f123077ce2500df2cd}\label{classngsai_1_1KineticSignal_a914dbf9a289793f123077ce2500df2cd} 
+\index{ngsai::KineticSignal@{ngsai::KineticSignal}!isRvComplete@{isRvComplete}}
+\index{isRvComplete@{isRvComplete}!ngsai::KineticSignal@{ngsai::KineticSignal}}
+\doxysubsubsection{\texorpdfstring{isRvComplete()}{isRvComplete()}}
+{\footnotesize\ttfamily bool ngsai\+::\+Kinetic\+Signal\+::is\+Rv\+Complete (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Indicates if the reverse strand has the sequence, IPD and PWD values set. 
+
+\begin{DoxyReturn}{Returns}
+Whether the reverse strand has all data set. 
+\end{DoxyReturn}
+\Hypertarget{classngsai_1_1KineticSignal_aea54dc19401ae5c84afd3b30964b151f}\label{classngsai_1_1KineticSignal_aea54dc19401ae5c84afd3b30964b151f} 
+\index{ngsai::KineticSignal@{ngsai::KineticSignal}!operator=@{operator=}}
+\index{operator=@{operator=}!ngsai::KineticSignal@{ngsai::KineticSignal}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classngsai_1_1KineticSignal}{Kinetic\+Signal}} \& ngsai\+::\+Kinetic\+Signal\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classngsai_1_1KineticSignal}{Kinetic\+Signal}} \&}]{other }\end{DoxyParamCaption})}
+
+
+
+Assignment operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & a reference to the object to copy from. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a reference to the current instance. 
+\end{DoxyReturn}
+\Hypertarget{classngsai_1_1KineticSignal_ae17064ba54526dc76a8b2578c66f18d2}\label{classngsai_1_1KineticSignal_ae17064ba54526dc76a8b2578c66f18d2} 
+\index{ngsai::KineticSignal@{ngsai::KineticSignal}!operator=@{operator=}}
+\index{operator=@{operator=}!ngsai::KineticSignal@{ngsai::KineticSignal}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classngsai_1_1KineticSignal}{Kinetic\+Signal}} \& ngsai\+::\+Kinetic\+Signal\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classngsai_1_1KineticSignal}{Kinetic\+Signal}} \&\&}]{other }\end{DoxyParamCaption})}
+
+
+
+Move assignment operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & a rvalue to copy from. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a reference to the current instance. 
+\end{DoxyReturn}
+\Hypertarget{classngsai_1_1KineticSignal_a3399260f9dd0c65116a0a48bd02103a4}\label{classngsai_1_1KineticSignal_a3399260f9dd0c65116a0a48bd02103a4} 
+\index{ngsai::KineticSignal@{ngsai::KineticSignal}!setIPDFw@{setIPDFw}}
+\index{setIPDFw@{setIPDFw}!ngsai::KineticSignal@{ngsai::KineticSignal}}
+\doxysubsubsection{\texorpdfstring{setIPDFw()}{setIPDFw()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ngsai\+::\+Kinetic\+Signal\+::set\+IPDFw (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ double $>$ \&}]{ipd }\end{DoxyParamCaption})}
+
+
+
+Sets the forward strand IPDs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em seq} & the new IPDs in 5\textquotesingle{} to 3\textquotesingle{} order. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classngsai_1_1KineticSignal_a7f6cff0d6ee591149d8e410f35a2898f}\label{classngsai_1_1KineticSignal_a7f6cff0d6ee591149d8e410f35a2898f} 
+\index{ngsai::KineticSignal@{ngsai::KineticSignal}!setIPDFw@{setIPDFw}}
+\index{setIPDFw@{setIPDFw}!ngsai::KineticSignal@{ngsai::KineticSignal}}
+\doxysubsubsection{\texorpdfstring{setIPDFw()}{setIPDFw()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void ngsai\+::\+Kinetic\+Signal\+::set\+IPDFw (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$ \&\&}]{ipd }\end{DoxyParamCaption})}
+
+
+
+Sets the forward strand IPDs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em seq} & the new IPDs in 5\textquotesingle{} to 3\textquotesingle{} order. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classngsai_1_1KineticSignal_a01e062c648025bd8985b0bc4818b3ec5}\label{classngsai_1_1KineticSignal_a01e062c648025bd8985b0bc4818b3ec5} 
+\index{ngsai::KineticSignal@{ngsai::KineticSignal}!setIPDRv@{setIPDRv}}
+\index{setIPDRv@{setIPDRv}!ngsai::KineticSignal@{ngsai::KineticSignal}}
+\doxysubsubsection{\texorpdfstring{setIPDRv()}{setIPDRv()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ngsai\+::\+Kinetic\+Signal\+::set\+IPDRv (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ double $>$ \&}]{ipd }\end{DoxyParamCaption})}
+
+
+
+Sets the reverse strand IPDs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em seq} & the new IPDs in 5\textquotesingle{} to 3\textquotesingle{} order. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classngsai_1_1KineticSignal_ae899f10ac5637d3d50ebafa88e612bbb}\label{classngsai_1_1KineticSignal_ae899f10ac5637d3d50ebafa88e612bbb} 
+\index{ngsai::KineticSignal@{ngsai::KineticSignal}!setIPDRv@{setIPDRv}}
+\index{setIPDRv@{setIPDRv}!ngsai::KineticSignal@{ngsai::KineticSignal}}
+\doxysubsubsection{\texorpdfstring{setIPDRv()}{setIPDRv()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void ngsai\+::\+Kinetic\+Signal\+::set\+IPDRv (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$ \&\&}]{ipd }\end{DoxyParamCaption})}
+
+
+
+Sets the reverse strand IPDs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em seq} & the new IPDs in 5\textquotesingle{} to 3\textquotesingle{} order. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classngsai_1_1KineticSignal_ac28f8d8349c47db7d1e77341f4756859}\label{classngsai_1_1KineticSignal_ac28f8d8349c47db7d1e77341f4756859} 
+\index{ngsai::KineticSignal@{ngsai::KineticSignal}!setPWDFw@{setPWDFw}}
+\index{setPWDFw@{setPWDFw}!ngsai::KineticSignal@{ngsai::KineticSignal}}
+\doxysubsubsection{\texorpdfstring{setPWDFw()}{setPWDFw()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ngsai\+::\+Kinetic\+Signal\+::set\+PWDFw (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ double $>$ \&}]{pwd }\end{DoxyParamCaption})}
+
+
+
+Sets the forward strand IPDs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em seq} & the new IPDs in 5\textquotesingle{} to 3\textquotesingle{} order. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classngsai_1_1KineticSignal_ac614748cc61bb86ef97ae731b18c979c}\label{classngsai_1_1KineticSignal_ac614748cc61bb86ef97ae731b18c979c} 
+\index{ngsai::KineticSignal@{ngsai::KineticSignal}!setPWDFw@{setPWDFw}}
+\index{setPWDFw@{setPWDFw}!ngsai::KineticSignal@{ngsai::KineticSignal}}
+\doxysubsubsection{\texorpdfstring{setPWDFw()}{setPWDFw()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void ngsai\+::\+Kinetic\+Signal\+::set\+PWDFw (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$ \&\&}]{pwd }\end{DoxyParamCaption})}
+
+
+
+Sets the forward strand IPDs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em seq} & the new IPDs in 5\textquotesingle{} to 3\textquotesingle{} order. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classngsai_1_1KineticSignal_a86d6bb82b72d483c1e6f4c3f91fb7e87}\label{classngsai_1_1KineticSignal_a86d6bb82b72d483c1e6f4c3f91fb7e87} 
+\index{ngsai::KineticSignal@{ngsai::KineticSignal}!setPWDRv@{setPWDRv}}
+\index{setPWDRv@{setPWDRv}!ngsai::KineticSignal@{ngsai::KineticSignal}}
+\doxysubsubsection{\texorpdfstring{setPWDRv()}{setPWDRv()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ngsai\+::\+Kinetic\+Signal\+::set\+PWDRv (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ double $>$ \&}]{pwd }\end{DoxyParamCaption})}
+
+
+
+Sets the reverse strand IPDs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em seq} & the new IPDs in 5\textquotesingle{} to 3\textquotesingle{} order. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classngsai_1_1KineticSignal_acbf40d13501fb062907b2212baaba26e}\label{classngsai_1_1KineticSignal_acbf40d13501fb062907b2212baaba26e} 
+\index{ngsai::KineticSignal@{ngsai::KineticSignal}!setPWDRv@{setPWDRv}}
+\index{setPWDRv@{setPWDRv}!ngsai::KineticSignal@{ngsai::KineticSignal}}
+\doxysubsubsection{\texorpdfstring{setPWDRv()}{setPWDRv()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void ngsai\+::\+Kinetic\+Signal\+::set\+PWDRv (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$ \&\&}]{pwd }\end{DoxyParamCaption})}
+
+
+
+Sets the reverse strand IPDs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em seq} & the new IPDs in 5\textquotesingle{} to 3\textquotesingle{} order. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classngsai_1_1KineticSignal_a113b46ef12210485bcaa9353cd1b3279}\label{classngsai_1_1KineticSignal_a113b46ef12210485bcaa9353cd1b3279} 
+\index{ngsai::KineticSignal@{ngsai::KineticSignal}!setSequenceFw@{setSequenceFw}}
+\index{setSequenceFw@{setSequenceFw}!ngsai::KineticSignal@{ngsai::KineticSignal}}
+\doxysubsubsection{\texorpdfstring{setSequenceFw()}{setSequenceFw()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ngsai\+::\+Kinetic\+Signal\+::set\+Sequence\+Fw (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{seq }\end{DoxyParamCaption})}
+
+
+
+Sets the forward strand DNA sequence. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em seq} & the new sequence in 5\textquotesingle{} to 3\textquotesingle{} order. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classngsai_1_1KineticSignal_a2d78102f7f2838b78456eb0f8191b6f5}\label{classngsai_1_1KineticSignal_a2d78102f7f2838b78456eb0f8191b6f5} 
+\index{ngsai::KineticSignal@{ngsai::KineticSignal}!setSequenceFw@{setSequenceFw}}
+\index{setSequenceFw@{setSequenceFw}!ngsai::KineticSignal@{ngsai::KineticSignal}}
+\doxysubsubsection{\texorpdfstring{setSequenceFw()}{setSequenceFw()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void ngsai\+::\+Kinetic\+Signal\+::set\+Sequence\+Fw (\begin{DoxyParamCaption}\item[{std\+::string \&\&}]{seq }\end{DoxyParamCaption})}
+
+
+
+Sets the forward strand DNA sequence. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em seq} & the new sequence in 5\textquotesingle{} to 3\textquotesingle{} order. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classngsai_1_1KineticSignal_a778ec4579ee74766272f6b2737ec1c2c}\label{classngsai_1_1KineticSignal_a778ec4579ee74766272f6b2737ec1c2c} 
+\index{ngsai::KineticSignal@{ngsai::KineticSignal}!setSequenceRv@{setSequenceRv}}
+\index{setSequenceRv@{setSequenceRv}!ngsai::KineticSignal@{ngsai::KineticSignal}}
+\doxysubsubsection{\texorpdfstring{setSequenceRv()}{setSequenceRv()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ngsai\+::\+Kinetic\+Signal\+::set\+Sequence\+Rv (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{seq }\end{DoxyParamCaption})}
+
+
+
+Sets the reverse strand DNA sequence. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em seq} & the new sequence in 5\textquotesingle{} to 3\textquotesingle{} order. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classngsai_1_1KineticSignal_a0ba6265fbe323a00a0e8c43aeecc6ba1}\label{classngsai_1_1KineticSignal_a0ba6265fbe323a00a0e8c43aeecc6ba1} 
+\index{ngsai::KineticSignal@{ngsai::KineticSignal}!setSequenceRv@{setSequenceRv}}
+\index{setSequenceRv@{setSequenceRv}!ngsai::KineticSignal@{ngsai::KineticSignal}}
+\doxysubsubsection{\texorpdfstring{setSequenceRv()}{setSequenceRv()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void ngsai\+::\+Kinetic\+Signal\+::set\+Sequence\+Rv (\begin{DoxyParamCaption}\item[{std\+::string \&\&}]{seq }\end{DoxyParamCaption})}
+
+
+
+Sets the reverse strand DNA sequence. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em seq} & the new sequence in 5\textquotesingle{} to 3\textquotesingle{} order. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classngsai_1_1KineticSignal_a3aed8d823307b9a4976ea2bc36181b89}\label{classngsai_1_1KineticSignal_a3aed8d823307b9a4976ea2bc36181b89} 
+\index{ngsai::KineticSignal@{ngsai::KineticSignal}!size@{size}}
+\index{size@{size}!ngsai::KineticSignal@{ngsai::KineticSignal}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily size\+\_\+t ngsai\+::\+Kinetic\+Signal\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the size of the sequence and signal stored on a single strand, in bp. 
+
+\begin{DoxyReturn}{Returns}
+the size of the sequence and signal stored. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classngsai_1_1KineticSignal_a9b01c0082ecf3620c8d0ddc3df564f92}\label{classngsai_1_1KineticSignal_a9b01c0082ecf3620c8d0ddc3df564f92} 
+\index{ngsai::KineticSignal@{ngsai::KineticSignal}!m\_ipd\_fw@{m\_ipd\_fw}}
+\index{m\_ipd\_fw@{m\_ipd\_fw}!ngsai::KineticSignal@{ngsai::KineticSignal}}
+\doxysubsubsection{\texorpdfstring{m\_ipd\_fw}{m\_ipd\_fw}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ ngsai\+::\+Kinetic\+Signal\+::m\+\_\+ipd\+\_\+fw\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The forward strand IPD signal. 
+
+\Hypertarget{classngsai_1_1KineticSignal_a06d800d74a8797b27c6d47f7a83205ae}\label{classngsai_1_1KineticSignal_a06d800d74a8797b27c6d47f7a83205ae} 
+\index{ngsai::KineticSignal@{ngsai::KineticSignal}!m\_ipd\_fw\_set@{m\_ipd\_fw\_set}}
+\index{m\_ipd\_fw\_set@{m\_ipd\_fw\_set}!ngsai::KineticSignal@{ngsai::KineticSignal}}
+\doxysubsubsection{\texorpdfstring{m\_ipd\_fw\_set}{m\_ipd\_fw\_set}}
+{\footnotesize\ttfamily bool ngsai\+::\+Kinetic\+Signal\+::m\+\_\+ipd\+\_\+fw\+\_\+set\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Whether a value was set for m\+\_\+ipd\+\_\+fw. 
+
+\Hypertarget{classngsai_1_1KineticSignal_a49d6e6c30eb2862aa5ba44cc0fe3106f}\label{classngsai_1_1KineticSignal_a49d6e6c30eb2862aa5ba44cc0fe3106f} 
+\index{ngsai::KineticSignal@{ngsai::KineticSignal}!m\_ipd\_rv@{m\_ipd\_rv}}
+\index{m\_ipd\_rv@{m\_ipd\_rv}!ngsai::KineticSignal@{ngsai::KineticSignal}}
+\doxysubsubsection{\texorpdfstring{m\_ipd\_rv}{m\_ipd\_rv}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ ngsai\+::\+Kinetic\+Signal\+::m\+\_\+ipd\+\_\+rv\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The reverse strand IPD signal. 
+
+\Hypertarget{classngsai_1_1KineticSignal_a14954eccbe52707b3f43d97813282b7e}\label{classngsai_1_1KineticSignal_a14954eccbe52707b3f43d97813282b7e} 
+\index{ngsai::KineticSignal@{ngsai::KineticSignal}!m\_ipd\_rv\_set@{m\_ipd\_rv\_set}}
+\index{m\_ipd\_rv\_set@{m\_ipd\_rv\_set}!ngsai::KineticSignal@{ngsai::KineticSignal}}
+\doxysubsubsection{\texorpdfstring{m\_ipd\_rv\_set}{m\_ipd\_rv\_set}}
+{\footnotesize\ttfamily bool ngsai\+::\+Kinetic\+Signal\+::m\+\_\+ipd\+\_\+rv\+\_\+set\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Whether a value was set for m\+\_\+ipd\+\_\+rv. 
+
+\Hypertarget{classngsai_1_1KineticSignal_acfceba0322c76577af8f6c1fb987f8fa}\label{classngsai_1_1KineticSignal_acfceba0322c76577af8f6c1fb987f8fa} 
+\index{ngsai::KineticSignal@{ngsai::KineticSignal}!m\_pwd\_fw@{m\_pwd\_fw}}
+\index{m\_pwd\_fw@{m\_pwd\_fw}!ngsai::KineticSignal@{ngsai::KineticSignal}}
+\doxysubsubsection{\texorpdfstring{m\_pwd\_fw}{m\_pwd\_fw}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ ngsai\+::\+Kinetic\+Signal\+::m\+\_\+pwd\+\_\+fw\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The forward strand PWD signal. 
+
+\Hypertarget{classngsai_1_1KineticSignal_aa9e886f66df861e34bba0576f075e288}\label{classngsai_1_1KineticSignal_aa9e886f66df861e34bba0576f075e288} 
+\index{ngsai::KineticSignal@{ngsai::KineticSignal}!m\_pwd\_fw\_set@{m\_pwd\_fw\_set}}
+\index{m\_pwd\_fw\_set@{m\_pwd\_fw\_set}!ngsai::KineticSignal@{ngsai::KineticSignal}}
+\doxysubsubsection{\texorpdfstring{m\_pwd\_fw\_set}{m\_pwd\_fw\_set}}
+{\footnotesize\ttfamily bool ngsai\+::\+Kinetic\+Signal\+::m\+\_\+pwd\+\_\+fw\+\_\+set\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Whether a value was set for m\+\_\+pwd\+\_\+fw. 
+
+\Hypertarget{classngsai_1_1KineticSignal_a6c03f2acc012cf958d73a41531bdfc30}\label{classngsai_1_1KineticSignal_a6c03f2acc012cf958d73a41531bdfc30} 
+\index{ngsai::KineticSignal@{ngsai::KineticSignal}!m\_pwd\_rv@{m\_pwd\_rv}}
+\index{m\_pwd\_rv@{m\_pwd\_rv}!ngsai::KineticSignal@{ngsai::KineticSignal}}
+\doxysubsubsection{\texorpdfstring{m\_pwd\_rv}{m\_pwd\_rv}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ ngsai\+::\+Kinetic\+Signal\+::m\+\_\+pwd\+\_\+rv\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The reverse strand PWD signal. 
+
+\Hypertarget{classngsai_1_1KineticSignal_aa4ec7e3a21656bb5b057c75e9a5cc8c0}\label{classngsai_1_1KineticSignal_aa4ec7e3a21656bb5b057c75e9a5cc8c0} 
+\index{ngsai::KineticSignal@{ngsai::KineticSignal}!m\_pwd\_rv\_set@{m\_pwd\_rv\_set}}
+\index{m\_pwd\_rv\_set@{m\_pwd\_rv\_set}!ngsai::KineticSignal@{ngsai::KineticSignal}}
+\doxysubsubsection{\texorpdfstring{m\_pwd\_rv\_set}{m\_pwd\_rv\_set}}
+{\footnotesize\ttfamily bool ngsai\+::\+Kinetic\+Signal\+::m\+\_\+pwd\+\_\+rv\+\_\+set\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Whether a value was set for m\+\_\+pwd\+\_\+rv. 
+
+\Hypertarget{classngsai_1_1KineticSignal_a1344cfe72ba90d107640d9b099dee7d2}\label{classngsai_1_1KineticSignal_a1344cfe72ba90d107640d9b099dee7d2} 
+\index{ngsai::KineticSignal@{ngsai::KineticSignal}!m\_seq\_fw\_set@{m\_seq\_fw\_set}}
+\index{m\_seq\_fw\_set@{m\_seq\_fw\_set}!ngsai::KineticSignal@{ngsai::KineticSignal}}
+\doxysubsubsection{\texorpdfstring{m\_seq\_fw\_set}{m\_seq\_fw\_set}}
+{\footnotesize\ttfamily bool ngsai\+::\+Kinetic\+Signal\+::m\+\_\+seq\+\_\+fw\+\_\+set\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Whether a value was set for m\+\_\+seq\+\_\+fw. 
+
+\Hypertarget{classngsai_1_1KineticSignal_a0ac1671c92645a97aa0a0f4bad0e204e}\label{classngsai_1_1KineticSignal_a0ac1671c92645a97aa0a0f4bad0e204e} 
+\index{ngsai::KineticSignal@{ngsai::KineticSignal}!m\_seq\_rv\_set@{m\_seq\_rv\_set}}
+\index{m\_seq\_rv\_set@{m\_seq\_rv\_set}!ngsai::KineticSignal@{ngsai::KineticSignal}}
+\doxysubsubsection{\texorpdfstring{m\_seq\_rv\_set}{m\_seq\_rv\_set}}
+{\footnotesize\ttfamily bool ngsai\+::\+Kinetic\+Signal\+::m\+\_\+seq\+\_\+rv\+\_\+set\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Whether a value was set for m\+\_\+seq\+\_\+rv. 
+
+\Hypertarget{classngsai_1_1KineticSignal_a8862f31a702b9c42f479d3de5f992d98}\label{classngsai_1_1KineticSignal_a8862f31a702b9c42f479d3de5f992d98} 
+\index{ngsai::KineticSignal@{ngsai::KineticSignal}!m\_sequence\_fw@{m\_sequence\_fw}}
+\index{m\_sequence\_fw@{m\_sequence\_fw}!ngsai::KineticSignal@{ngsai::KineticSignal}}
+\doxysubsubsection{\texorpdfstring{m\_sequence\_fw}{m\_sequence\_fw}}
+{\footnotesize\ttfamily std\+::string ngsai\+::\+Kinetic\+Signal\+::m\+\_\+sequence\+\_\+fw\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The forward strand DNA sequence. 
+
+\Hypertarget{classngsai_1_1KineticSignal_a637b8aaca77f67d3996c6e2ecd439537}\label{classngsai_1_1KineticSignal_a637b8aaca77f67d3996c6e2ecd439537} 
+\index{ngsai::KineticSignal@{ngsai::KineticSignal}!m\_sequence\_rv@{m\_sequence\_rv}}
+\index{m\_sequence\_rv@{m\_sequence\_rv}!ngsai::KineticSignal@{ngsai::KineticSignal}}
+\doxysubsubsection{\texorpdfstring{m\_sequence\_rv}{m\_sequence\_rv}}
+{\footnotesize\ttfamily std\+::string ngsai\+::\+Kinetic\+Signal\+::m\+\_\+sequence\+\_\+rv\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The reverse strand DNA sequence. 
+
+\Hypertarget{classngsai_1_1KineticSignal_accbca6f127cf95a109bb30b8443c8065}\label{classngsai_1_1KineticSignal_accbca6f127cf95a109bb30b8443c8065} 
+\index{ngsai::KineticSignal@{ngsai::KineticSignal}!m\_size@{m\_size}}
+\index{m\_size@{m\_size}!ngsai::KineticSignal@{ngsai::KineticSignal}}
+\doxysubsubsection{\texorpdfstring{m\_size}{m\_size}}
+{\footnotesize\ttfamily size\+\_\+t ngsai\+::\+Kinetic\+Signal\+::m\+\_\+size\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The size of the sequence and signal stored on a single strand. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/ngsaipp/epigenetics/\mbox{\hyperlink{KineticSignal_8hpp}{Kinetic\+Signal.\+hpp}}\end{DoxyCompactItemize}

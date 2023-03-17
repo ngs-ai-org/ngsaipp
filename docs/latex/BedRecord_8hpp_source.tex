@@ -1,0 +1,56 @@
+\hypertarget{BedRecord_8hpp_source}{}\doxysection{Bed\+Record.\+hpp}
+\label{BedRecord_8hpp_source}\index{include/ngsaipp/io/BedRecord.hpp@{include/ngsaipp/io/BedRecord.hpp}}
+\mbox{\hyperlink{BedRecord_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ NGSAI\_IO\_BEDRECORD\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ NGSAI\_IO\_BEDRECORD\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{GenomeRegion_8hpp}{ngsaipp/genome/GenomeRegion.hpp}}>}\ \ \textcolor{comment}{//\ ngsai::genome::GenomeRegion}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{genome_2constants_8hpp}{ngsaipp/genome/constants.hpp}}>}\ \ \ \ \ \textcolor{comment}{//\ ngsai::genome::strand}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacengsai}{ngsai}}}
+\DoxyCodeLine{00009\ \{\ \ \ }
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classngsai_1_1BedRecord}{BedRecord}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classngsai_1_1genome_1_1GenomeRegion}{ngsai::genome::GenomeRegion}}}
+\DoxyCodeLine{00015\ \ \ \ \ \{}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1BedRecord_a1f76fd2709736b6812a310778955e9e5}{BedRecord}}()\ ;}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1BedRecord_a9921d5c52812f6ebdba0e5bec5e010c5}{BedRecord}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classngsai_1_1BedRecord}{BedRecord}}\&\ other)\ ;}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1BedRecord_a90abd8ed6f0d1afd065cd4b56b6a1a60}{BedRecord}}(\mbox{\hyperlink{classngsai_1_1BedRecord}{BedRecord}}\&\&\ other)\ ;}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1BedRecord_a774c71fb7b16468122ab96babefa136b}{BedRecord}}(\textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{classngsai_1_1genome_1_1GenomeRegion_a1f09cc737a84ba32bdd1ce1e49949317}{chrom}},}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classngsai_1_1genome_1_1GenomeRegion_a44a6e9b1e0ad8117b4084f85ef00604e}{start}},}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classngsai_1_1genome_1_1GenomeRegion_a3f4b9ba309aaf8727b59911db0407306}{end}},}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{classngsai_1_1BedRecord_afe5dc891fff6209525461692b85779c1}{name}},}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classngsai_1_1BedRecord_a012d9f5ec8dd1c2fce0f0ce0366bfa8f}{score}},}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacengsai_1_1genome_af9328d3863d41c71b71e33219e3c0632}{ngsai::genome::strand}}\ \mbox{\hyperlink{classngsai_1_1genome_1_1GenomeRegion_a65253604664c35772962756aee74defd}{strand}})\ ;}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1BedRecord_a8d4f403642f72c30c82a3de4415bd757}{\string~BedRecord}}()\ ;}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1BedRecord}{BedRecord}}\&\ \mbox{\hyperlink{classngsai_1_1BedRecord_aa15becaed4d73fd4d17fa369a240339b}{operator\ =\ }}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classngsai_1_1BedRecord}{BedRecord}}\&\ other)\ ;}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classngsai_1_1BedRecord}{BedRecord}}\&\ \mbox{\hyperlink{classngsai_1_1BedRecord_aa15becaed4d73fd4d17fa369a240339b}{operator\ =\ }}(\mbox{\hyperlink{classngsai_1_1BedRecord}{BedRecord}}\&\&\ other)\ ;}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classngsai_1_1BedRecord_a9e62b189725cfbc939c807602233640f}{operator\ ==\ }}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classngsai_1_1BedRecord}{BedRecord}}\&\ other)\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classngsai_1_1BedRecord_a1742ed1509bef8b63fbbf48621e59987}{operator\ !=\ }}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classngsai_1_1BedRecord}{BedRecord}}\&\ other)\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{classngsai_1_1BedRecord_a4cd8154fbd9fbffee6a33a02044e52f9}{toString}}()\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{classngsai_1_1BedRecord_afe5dc891fff6209525461692b85779c1}{name}}\ ;}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classngsai_1_1BedRecord_a012d9f5ec8dd1c2fce0f0ce0366bfa8f}{score}}\ ;}
+\DoxyCodeLine{00099\ \ \ \ \ \}\ ;}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00108\ \ \ \ \ std::ostream\&\ \mbox{\hyperlink{namespacengsai_af66d639ede3ea1dcf107e9cf867dc8d2}{operator\ <<\ }}(std::ostream\&\ stream,}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classngsai_1_1BedRecord}{ngsai::BedRecord}}\&\ record)\ ;}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \}\ \textcolor{comment}{//\ namespace\ ngsai}}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ NGSAI\_IO\_BEDRECORD\_HPP}}
+
+\end{DoxyCode}

@@ -1,0 +1,62 @@
+\hypertarget{KmerData_8hpp}{}\doxysection{include/ngsaipp/epigenetics/\+Kmer\+Data.hpp File Reference}
+\label{KmerData_8hpp}\index{include/ngsaipp/epigenetics/KmerData.hpp@{include/ngsaipp/epigenetics/KmerData.hpp}}
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$stdexcept$>$}\newline
+{\ttfamily \#include $<$boost/serialization/access.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/serialization/vector.\+hpp$>$}\newline
+{\ttfamily \#include $<$ngsaipp/io/utility.\+hpp$>$}\newline
+Include dependency graph for Kmer\+Data.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{KmerData_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{KmerData_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classngsai_1_1KmerData}{ngsai\+::\+Kmer\+Data}}
+\begin{DoxyCompactList}\small\item\em The \doxylink{classngsai_1_1KmerData}{Kmer\+Data} class is a class allowing to model a kmer together with per sequence position IPD and PWD data. Each of the sequence position corresponds to the same data vector index. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacengsai}{ngsai}}
+\begin{DoxyCompactList}\small\item\em This file contains values that are useful for formatting terminal output. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \mbox{\hyperlink{KmerData_8hpp_a0b98a2c54f89112bfe4eacddf85ac27f}{operator$<$$<$}} (std\+::ostream \&stream, const \mbox{\hyperlink{classngsai_1_1KmerData}{ngsai\+::\+Kmer\+Data}} \&kmer)
+\begin{DoxyCompactList}\small\item\em Writes the Kmer\+Data object to the given stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{KmerData_8hpp_a0b98a2c54f89112bfe4eacddf85ac27f}\label{KmerData_8hpp_a0b98a2c54f89112bfe4eacddf85ac27f} 
+\index{KmerData.hpp@{KmerData.hpp}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!KmerData.hpp@{KmerData.hpp}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
+{\footnotesize\ttfamily std\+::ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{stream,  }\item[{const \mbox{\hyperlink{classngsai_1_1KmerData}{ngsai\+::\+Kmer\+Data}} \&}]{kmer }\end{DoxyParamCaption})}
+
+
+
+Writes the Kmer\+Data object to the given stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em stream} & the stream of interest. \\
+\hline
+{\em kmer} & the Kmer\+Data object of interest. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a reference to the stream. 
+\end{DoxyReturn}

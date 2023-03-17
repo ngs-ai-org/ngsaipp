@@ -1,0 +1,312 @@
+\hypertarget{classngsai_1_1KmerData}{}\doxysection{ngsai\+::Kmer\+Data Class Reference}
+\label{classngsai_1_1KmerData}\index{ngsai::KmerData@{ngsai::KmerData}}
+
+
+The \doxylink{classngsai_1_1KmerData}{Kmer\+Data} class is a class allowing to model a kmer together with per sequence position IPD and PWD data. Each of the sequence position corresponds to the same data vector index.  
+
+
+
+
+{\ttfamily \#include $<$Kmer\+Data.\+hpp$>$}
+
+
+
+Collaboration diagram for ngsai\+::Kmer\+Data\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=292pt]{classngsai_1_1KmerData__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classngsai_1_1KmerData_aff0b179b2502b555615215d3b0732543}{Kmer\+Data}} ()
+\begin{DoxyCompactList}\small\item\em Constructs an empty object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classngsai_1_1KmerData_a6f8d5f1e88e5acc5ef8c94578635db97}{Kmer\+Data}} (const \mbox{\hyperlink{classngsai_1_1KmerData}{Kmer\+Data}} \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classngsai_1_1KmerData_a54ec96d7417c1ffb51f42ff7fb296fa3}{Kmer\+Data}} (\mbox{\hyperlink{classngsai_1_1KmerData}{Kmer\+Data}} \&\&other)
+\begin{DoxyCompactList}\small\item\em Move constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classngsai_1_1KmerData_abf157d1c74f034ab58d4e4146cb32a0b}{Kmer\+Data}} (const std\+::string \&seq)
+\begin{DoxyCompactList}\small\item\em Constructs an object with the given sequence but 0 value IPD and PWD data. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classngsai_1_1KmerData_a2e8c3cf68a45e29ab183073057344bb5}{Kmer\+Data}} (const std\+::string \&seq, const std\+::vector$<$ uint32\+\_\+t $>$ \&\mbox{\hyperlink{classngsai_1_1KmerData_a8c44d8261bf17a5482159fbfec6ffbca}{ipd}}, const std\+::vector$<$ uint32\+\_\+t $>$ \&\mbox{\hyperlink{classngsai_1_1KmerData_a6731eb5976b7c30e1a1b25c85281ffc9}{pwd}})
+\begin{DoxyCompactList}\small\item\em Constructs an object with the given sequence, IPDs, ~\newline
+ PWDs and number of occurences. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classngsai_1_1KmerData_aa73d847d626875e99a9c1a592e950352}{$\sim$\+Kmer\+Data}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classngsai_1_1KmerData}{ngsai\+::\+Kmer\+Data}} \& \mbox{\hyperlink{classngsai_1_1KmerData_ab61007fffd392ea0b48ee715991abc16}{operator=}} (const \mbox{\hyperlink{classngsai_1_1KmerData}{ngsai\+::\+Kmer\+Data}} \&other)
+\begin{DoxyCompactList}\small\item\em Assignment operator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classngsai_1_1KmerData}{ngsai\+::\+Kmer\+Data}} \& \mbox{\hyperlink{classngsai_1_1KmerData_afc38d7c295756407d475d64cf01b4166}{operator=}} (const \mbox{\hyperlink{classngsai_1_1KmerData}{ngsai\+::\+Kmer\+Data}} \&\&other)
+\begin{DoxyCompactList}\small\item\em Assignment move operator. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classngsai_1_1KmerData_a3f87669b3dacd5f923dc70d240ae9837}{operator==}} (const \mbox{\hyperlink{classngsai_1_1KmerData}{ngsai\+::\+Kmer\+Data}} \&other) const
+\begin{DoxyCompactList}\small\item\em Equality operator. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classngsai_1_1KmerData_a4f9455486d7bafd5fcc156c4f861e7c1}{operator!=}} (const \mbox{\hyperlink{classngsai_1_1KmerData}{ngsai\+::\+Kmer\+Data}} \&other) const
+\begin{DoxyCompactList}\small\item\em Unequality operator. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classngsai_1_1KmerData_a72674c7d5649705f1abb5431d5be39c6}{size}} () const
+\begin{DoxyCompactList}\small\item\em Returns the size of the kmer sequence. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classngsai_1_1KmerData_af19f72ecdcb5f5f02a152996c5d18203}{sequence}}
+\begin{DoxyCompactList}\small\item\em the sequence. \end{DoxyCompactList}\item 
+std\+::vector$<$ uint32\+\_\+t $>$ \mbox{\hyperlink{classngsai_1_1KmerData_a8c44d8261bf17a5482159fbfec6ffbca}{ipd}}
+\begin{DoxyCompactList}\small\item\em the vector of IPD values \end{DoxyCompactList}\item 
+std\+::vector$<$ uint32\+\_\+t $>$ \mbox{\hyperlink{classngsai_1_1KmerData_a6731eb5976b7c30e1a1b25c85281ffc9}{pwd}}
+\begin{DoxyCompactList}\small\item\em the vector of PWD values \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classngsai_1_1KmerData_ac98d07dd8f7b70e16ccb9a01abf56b9c}{boost\+::serialization\+::access}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \doxylink{classngsai_1_1KmerData}{Kmer\+Data} class is a class allowing to model a kmer together with per sequence position IPD and PWD data. Each of the sequence position corresponds to the same data vector index. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classngsai_1_1KmerData_aff0b179b2502b555615215d3b0732543}\label{classngsai_1_1KmerData_aff0b179b2502b555615215d3b0732543} 
+\index{ngsai::KmerData@{ngsai::KmerData}!KmerData@{KmerData}}
+\index{KmerData@{KmerData}!ngsai::KmerData@{ngsai::KmerData}}
+\doxysubsubsection{\texorpdfstring{KmerData()}{KmerData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily ngsai\+::\+Kmer\+Data\+::\+Kmer\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructs an empty object. 
+
+\Hypertarget{classngsai_1_1KmerData_a6f8d5f1e88e5acc5ef8c94578635db97}\label{classngsai_1_1KmerData_a6f8d5f1e88e5acc5ef8c94578635db97} 
+\index{ngsai::KmerData@{ngsai::KmerData}!KmerData@{KmerData}}
+\index{KmerData@{KmerData}!ngsai::KmerData@{ngsai::KmerData}}
+\doxysubsubsection{\texorpdfstring{KmerData()}{KmerData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily ngsai\+::\+Kmer\+Data\+::\+Kmer\+Data (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classngsai_1_1KmerData}{Kmer\+Data}} \&}]{other }\end{DoxyParamCaption})}
+
+
+
+Copy constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & the instance to copy from. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & if the lengths of the sequence and the IPD/\+PWD of the given instance to copy from don\textquotesingle{}t match. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classngsai_1_1KmerData_a54ec96d7417c1ffb51f42ff7fb296fa3}\label{classngsai_1_1KmerData_a54ec96d7417c1ffb51f42ff7fb296fa3} 
+\index{ngsai::KmerData@{ngsai::KmerData}!KmerData@{KmerData}}
+\index{KmerData@{KmerData}!ngsai::KmerData@{ngsai::KmerData}}
+\doxysubsubsection{\texorpdfstring{KmerData()}{KmerData()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily ngsai\+::\+Kmer\+Data\+::\+Kmer\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classngsai_1_1KmerData}{Kmer\+Data}} \&\&}]{other }\end{DoxyParamCaption})}
+
+
+
+Move constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & the instance to copy from. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & if the lengths of the sequence and the IPD/\+PWD of the given instance don\textquotesingle{}t match. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classngsai_1_1KmerData_abf157d1c74f034ab58d4e4146cb32a0b}\label{classngsai_1_1KmerData_abf157d1c74f034ab58d4e4146cb32a0b} 
+\index{ngsai::KmerData@{ngsai::KmerData}!KmerData@{KmerData}}
+\index{KmerData@{KmerData}!ngsai::KmerData@{ngsai::KmerData}}
+\doxysubsubsection{\texorpdfstring{KmerData()}{KmerData()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily ngsai\+::\+Kmer\+Data\+::\+Kmer\+Data (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{seq }\end{DoxyParamCaption})}
+
+
+
+Constructs an object with the given sequence but 0 value IPD and PWD data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em seq} & the sequence. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classngsai_1_1KmerData_a2e8c3cf68a45e29ab183073057344bb5}\label{classngsai_1_1KmerData_a2e8c3cf68a45e29ab183073057344bb5} 
+\index{ngsai::KmerData@{ngsai::KmerData}!KmerData@{KmerData}}
+\index{KmerData@{KmerData}!ngsai::KmerData@{ngsai::KmerData}}
+\doxysubsubsection{\texorpdfstring{KmerData()}{KmerData()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily ngsai\+::\+Kmer\+Data\+::\+Kmer\+Data (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{seq,  }\item[{const std\+::vector$<$ uint32\+\_\+t $>$ \&}]{ipd,  }\item[{const std\+::vector$<$ uint32\+\_\+t $>$ \&}]{pwd }\end{DoxyParamCaption})}
+
+
+
+Constructs an object with the given sequence, IPDs, ~\newline
+ PWDs and number of occurences. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em seq} & the sequence. \\
+\hline
+{\em ipd} & a vector of per position IPDs. \\
+\hline
+{\em ipd} & a vector of per position PWDs. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & if the lengths of the sequence and the IPD/\+PWD of the given instance to copy from don\textquotesingle{}t match. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classngsai_1_1KmerData_aa73d847d626875e99a9c1a592e950352}\label{classngsai_1_1KmerData_aa73d847d626875e99a9c1a592e950352} 
+\index{ngsai::KmerData@{ngsai::KmerData}!````~KmerData@{$\sim$KmerData}}
+\index{````~KmerData@{$\sim$KmerData}!ngsai::KmerData@{ngsai::KmerData}}
+\doxysubsubsection{\texorpdfstring{$\sim$KmerData()}{~KmerData()}}
+{\footnotesize\ttfamily ngsai\+::\+Kmer\+Data\+::$\sim$\+Kmer\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classngsai_1_1KmerData_a4f9455486d7bafd5fcc156c4f861e7c1}\label{classngsai_1_1KmerData_a4f9455486d7bafd5fcc156c4f861e7c1} 
+\index{ngsai::KmerData@{ngsai::KmerData}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!ngsai::KmerData@{ngsai::KmerData}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool ngsai\+::\+Kmer\+Data\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classngsai_1_1KmerData}{ngsai\+::\+Kmer\+Data}} \&}]{other }\end{DoxyParamCaption}) const}
+
+
+
+Unequality operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The object to compare the current instance with. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if at least one field has a different value among both instances. 
+\end{DoxyReturn}
+\Hypertarget{classngsai_1_1KmerData_afc38d7c295756407d475d64cf01b4166}\label{classngsai_1_1KmerData_afc38d7c295756407d475d64cf01b4166} 
+\index{ngsai::KmerData@{ngsai::KmerData}!operator=@{operator=}}
+\index{operator=@{operator=}!ngsai::KmerData@{ngsai::KmerData}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classngsai_1_1KmerData}{ngsai\+::\+Kmer\+Data}} \& ngsai\+::\+Kmer\+Data\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classngsai_1_1KmerData}{ngsai\+::\+Kmer\+Data}} \&\&}]{other }\end{DoxyParamCaption})}
+
+
+
+Assignment move operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & A reference to the object to assign the value from. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & if the lengths of the sequence and the IPD/\+PWD of the given instance to copy from don\textquotesingle{}t match. \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+A reference to the current object. 
+\end{DoxyReturn}
+\Hypertarget{classngsai_1_1KmerData_ab61007fffd392ea0b48ee715991abc16}\label{classngsai_1_1KmerData_ab61007fffd392ea0b48ee715991abc16} 
+\index{ngsai::KmerData@{ngsai::KmerData}!operator=@{operator=}}
+\index{operator=@{operator=}!ngsai::KmerData@{ngsai::KmerData}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classngsai_1_1KmerData}{ngsai\+::\+Kmer\+Data}} \& ngsai\+::\+Kmer\+Data\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classngsai_1_1KmerData}{ngsai\+::\+Kmer\+Data}} \&}]{other }\end{DoxyParamCaption})}
+
+
+
+Assignment operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & A reference to the object to assign the value from. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & if the lengths of the sequence and the IPD/\+PWD of the given instance to copy from don\textquotesingle{}t match. \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+A reference to the current object. 
+\end{DoxyReturn}
+\Hypertarget{classngsai_1_1KmerData_a3f87669b3dacd5f923dc70d240ae9837}\label{classngsai_1_1KmerData_a3f87669b3dacd5f923dc70d240ae9837} 
+\index{ngsai::KmerData@{ngsai::KmerData}!operator==@{operator==}}
+\index{operator==@{operator==}!ngsai::KmerData@{ngsai::KmerData}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool ngsai\+::\+Kmer\+Data\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classngsai_1_1KmerData}{ngsai\+::\+Kmer\+Data}} \&}]{other }\end{DoxyParamCaption}) const}
+
+
+
+Equality operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The object to compare the current instance with. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if both instance fields have the same values. 
+\end{DoxyReturn}
+\Hypertarget{classngsai_1_1KmerData_a72674c7d5649705f1abb5431d5be39c6}\label{classngsai_1_1KmerData_a72674c7d5649705f1abb5431d5be39c6} 
+\index{ngsai::KmerData@{ngsai::KmerData}!size@{size}}
+\index{size@{size}!ngsai::KmerData@{ngsai::KmerData}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily size\+\_\+t ngsai\+::\+Kmer\+Data\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the size of the kmer sequence. 
+
+\begin{DoxyReturn}{Returns}
+the size of the kmer sequence. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{classngsai_1_1KmerData_ac98d07dd8f7b70e16ccb9a01abf56b9c}\label{classngsai_1_1KmerData_ac98d07dd8f7b70e16ccb9a01abf56b9c} 
+\index{ngsai::KmerData@{ngsai::KmerData}!boost::serialization::access@{boost::serialization::access}}
+\index{boost::serialization::access@{boost::serialization::access}!ngsai::KmerData@{ngsai::KmerData}}
+\doxysubsubsection{\texorpdfstring{boost::serialization::access}{boost::serialization::access}}
+{\footnotesize\ttfamily friend class boost\+::serialization\+::access\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classngsai_1_1KmerData_a8c44d8261bf17a5482159fbfec6ffbca}\label{classngsai_1_1KmerData_a8c44d8261bf17a5482159fbfec6ffbca} 
+\index{ngsai::KmerData@{ngsai::KmerData}!ipd@{ipd}}
+\index{ipd@{ipd}!ngsai::KmerData@{ngsai::KmerData}}
+\doxysubsubsection{\texorpdfstring{ipd}{ipd}}
+{\footnotesize\ttfamily std\+::vector$<$uint32\+\_\+t$>$ ngsai\+::\+Kmer\+Data\+::ipd}
+
+
+
+the vector of IPD values 
+
+\Hypertarget{classngsai_1_1KmerData_a6731eb5976b7c30e1a1b25c85281ffc9}\label{classngsai_1_1KmerData_a6731eb5976b7c30e1a1b25c85281ffc9} 
+\index{ngsai::KmerData@{ngsai::KmerData}!pwd@{pwd}}
+\index{pwd@{pwd}!ngsai::KmerData@{ngsai::KmerData}}
+\doxysubsubsection{\texorpdfstring{pwd}{pwd}}
+{\footnotesize\ttfamily std\+::vector$<$uint32\+\_\+t$>$ ngsai\+::\+Kmer\+Data\+::pwd}
+
+
+
+the vector of PWD values 
+
+\Hypertarget{classngsai_1_1KmerData_af19f72ecdcb5f5f02a152996c5d18203}\label{classngsai_1_1KmerData_af19f72ecdcb5f5f02a152996c5d18203} 
+\index{ngsai::KmerData@{ngsai::KmerData}!sequence@{sequence}}
+\index{sequence@{sequence}!ngsai::KmerData@{ngsai::KmerData}}
+\doxysubsubsection{\texorpdfstring{sequence}{sequence}}
+{\footnotesize\ttfamily std\+::string ngsai\+::\+Kmer\+Data\+::sequence}
+
+
+
+the sequence. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/ngsaipp/epigenetics/\mbox{\hyperlink{KmerData_8hpp}{Kmer\+Data.\+hpp}}\end{DoxyCompactItemize}

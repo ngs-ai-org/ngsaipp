@@ -1,0 +1,557 @@
+\hypertarget{classngsai_1_1KmerMap}{}\doxysection{ngsai\+::Kmer\+Map Class Reference}
+\label{classngsai_1_1KmerMap}\index{ngsai::KmerMap@{ngsai::KmerMap}}
+
+
+The \doxylink{classngsai_1_1KmerMap}{Kmer\+Map} is a template class allowing to create a map storing per kmer kinetic information. It is designed to allow O(k) insertion and O(1) query operations using a Rabin-\/\+Karp hashing approach. Each kmer is kinetic information is stored in a pair, together with the number of insertions in the map made for the corresponding kmer. The memory footprint of the map is N$\ast$$\ast$k where N is the number of character in the alphabet -\/ the alphabet is defined in ngsai\+::base\+\_\+code in \doxylink{dna__utility_8hpp}{dna/dna\+\_\+utility.\+hpp}) -\/ and k is the kmer size.  
+
+
+
+
+{\ttfamily \#include $<$Kmer\+Map.\+hpp$>$}
+
+
+
+Collaboration diagram for ngsai\+::Kmer\+Map\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=175pt]{classngsai_1_1KmerMap__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classngsai_1_1KmerMap_a176fb74c5eeb9cbfaeabbc55131c6217}{insert\+\_\+mode}} \{ \mbox{\hyperlink{classngsai_1_1KmerMap_a176fb74c5eeb9cbfaeabbc55131c6217a361b812f6e6c4c441cb5dc11af33e5ff}{REPLACE}} =0
+, \mbox{\hyperlink{classngsai_1_1KmerMap_a176fb74c5eeb9cbfaeabbc55131c6217a97cd8ccf6b24d9525d0f50bdf62ca345}{SUM}}
+, \mbox{\hyperlink{classngsai_1_1KmerMap_a176fb74c5eeb9cbfaeabbc55131c6217a818b511bfe0964fc66cdd280186572c2}{N\+\_\+\+MODES}}
+ \}
+\begin{DoxyCompactList}\small\item\em The map insertion stategies. REPLACE \+: the kmer data already in the map are replaced with the inserted data. The number of times this kmer has been inserted is reset to 1. SUM \+: the kmer data already in the map are summed with the inserted data. The number of times this kmer has been inserted is increased by 1. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classngsai_1_1KmerMap_a08a307aad4d59b56acf5ada2315b4e53}{Kmer\+Map}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. Creates an empty map. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classngsai_1_1KmerMap_a19fd7f042f2da14915283f94be47a0c7}{Kmer\+Map}} (size\+\_\+t kmer\+\_\+size)
+\begin{DoxyCompactList}\small\item\em Construcs an empty map designed to contain N$\ast$$\ast$kmer\+\_\+size different kmers where N is the alphabet size. The Map memory allocation is performed here. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classngsai_1_1KmerMap_a5876364a5858e5f67f09db2fb664d87f}{Kmer\+Map}} (const \mbox{\hyperlink{classngsai_1_1KmerMap}{Kmer\+Map}} \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classngsai_1_1KmerMap_a5fb7649e44821286b78c5920763a3f2a}{Kmer\+Map}} (\mbox{\hyperlink{classngsai_1_1KmerMap}{Kmer\+Map}} \&\&other)
+\begin{DoxyCompactList}\small\item\em Move constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classngsai_1_1KmerMap_a1d4bc440e89058c4e77d5b08557abc71}{$\sim$\+Kmer\+Map}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classngsai_1_1KmerMap}{ngsai\+::\+Kmer\+Map}} \& \mbox{\hyperlink{classngsai_1_1KmerMap_a091e484930f149f5e703d9186d26169e}{operator=}} (const \mbox{\hyperlink{classngsai_1_1KmerMap}{ngsai\+::\+Kmer\+Map}} \&other)
+\begin{DoxyCompactList}\small\item\em Assignment operator. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classngsai_1_1KmerMap_af9a11f7c2d82ff76b0e3c7582759c62c}{operator==}} (const \mbox{\hyperlink{classngsai_1_1KmerMap}{ngsai\+::\+Kmer\+Map}} \&other) const
+\begin{DoxyCompactList}\small\item\em Compares the content of the instances. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classngsai_1_1KmerMap_ad8ae462ab9ff8a954bce4bb4b57d380c}{operator!=}} (const \mbox{\hyperlink{classngsai_1_1KmerMap}{ngsai\+::\+Kmer\+Map}} \&other) const
+\begin{DoxyCompactList}\small\item\em Compares the content of the instances. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{namespacengsai_ab667af3aa89fb3a9acdbda7a75805a2b}{ngsai\+::kmer\+Bucket}} $>$\+::iterator \mbox{\hyperlink{classngsai_1_1KmerMap_ae267a4bca70a24f86707e1932638e13a}{begin}} ()
+\begin{DoxyCompactList}\small\item\em Returns an iterator pointing to the first element of the map. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{namespacengsai_ab667af3aa89fb3a9acdbda7a75805a2b}{ngsai\+::kmer\+Bucket}} $>$\+::const\+\_\+iterator \mbox{\hyperlink{classngsai_1_1KmerMap_ad75a8b0d512b4bc882d956fd7fff1a4c}{begin}} () const
+\begin{DoxyCompactList}\small\item\em Returns an iterator pointing to the first element of the map. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{namespacengsai_ab667af3aa89fb3a9acdbda7a75805a2b}{ngsai\+::kmer\+Bucket}} $>$\+::iterator \mbox{\hyperlink{classngsai_1_1KmerMap_aa1527e48613c5ea54bcea3118d8bccca}{end}} ()
+\begin{DoxyCompactList}\small\item\em Returns an iterator pointing to past-\/the-\/last element of the map. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{namespacengsai_ab667af3aa89fb3a9acdbda7a75805a2b}{ngsai\+::kmer\+Bucket}} $>$\+::const\+\_\+iterator \mbox{\hyperlink{classngsai_1_1KmerMap_acc34126d1ae38390d3cba4939dfad743}{end}} () const
+\begin{DoxyCompactList}\small\item\em Returns an iterator pointing to past-\/the-\/last element of the map. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classngsai_1_1KmerMap_af72a385fec3a25760fe4f9f61b652779}{size}} () const
+\begin{DoxyCompactList}\small\item\em Returns the number of kmers in the map. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classngsai_1_1KmerMap_abd0399d2bab282952ce4e568cc34d996}{capacity}} () const
+\begin{DoxyCompactList}\small\item\em Returns the total number of kmers that can be stored by the map. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classngsai_1_1KmerMap_a28d8165d978bc11e9c61f9a3711eb2f7}{resize}} (size\+\_\+t kmer\+\_\+size)
+\begin{DoxyCompactList}\small\item\em Resizes the map in order to store kmer of the given size. All previous data are lost. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{namespacengsai_ab667af3aa89fb3a9acdbda7a75805a2b}{ngsai\+::kmer\+Bucket}} $>$\+::iterator \mbox{\hyperlink{classngsai_1_1KmerMap_a9557c4e5d22fbd0205a289aaad8c6667}{find}} (const \mbox{\hyperlink{classngsai_1_1KmerData}{Kmer\+Data}} \&kmer)
+\begin{DoxyCompactList}\small\item\em Searches the map for the kmer with the same sequence and returns an iterator pointing to it if such a kmer exists, otherwise returns an iterator pointing to the \doxylink{classngsai_1_1KmerMap_aa1527e48613c5ea54bcea3118d8bccca}{Kmer\+Map\+::end}. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{namespacengsai_ab667af3aa89fb3a9acdbda7a75805a2b}{ngsai\+::kmer\+Bucket}} $>$\+::const\+\_\+iterator \mbox{\hyperlink{classngsai_1_1KmerMap_a469474008e371c10495a75f8182ba663}{find}} (const \mbox{\hyperlink{classngsai_1_1KmerData}{Kmer\+Data}} \&kmer) const
+\begin{DoxyCompactList}\small\item\em Searches the map for the kmer with the same sequence and returns an iterator pointing to it if such a kmer exists, otherwise returns an iterator pointing to the \doxylink{classngsai_1_1KmerMap_aa1527e48613c5ea54bcea3118d8bccca}{Kmer\+Map\+::end}. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{namespacengsai_ab667af3aa89fb3a9acdbda7a75805a2b}{ngsai\+::kmer\+Bucket}} $>$\+::iterator $>$ \mbox{\hyperlink{classngsai_1_1KmerMap_af5baa35a66989f08fcabc25d9d9763d7}{find}} (const std\+::string \&sequence)
+\begin{DoxyCompactList}\small\item\em Searches the map for each kmer in the sequence and returns a vector of iterator to the corresponding kmers in the map. If a kmer is not present in the map, the corresponding iterator points to \doxylink{classngsai_1_1KmerMap_aa1527e48613c5ea54bcea3118d8bccca}{Kmer\+Map\+::end}. The order of the iterators in the vector is the same as the order of the kmer occurence in the sequence. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{namespacengsai_ab667af3aa89fb3a9acdbda7a75805a2b}{ngsai\+::kmer\+Bucket}} $>$\+::const\+\_\+iterator $>$ \mbox{\hyperlink{classngsai_1_1KmerMap_a61c9c82061a13e067c740e4c38fcb09e}{find}} (const std\+::string \&sequence) const
+\begin{DoxyCompactList}\small\item\em Searches the map for each kmer in the sequence and returns a vector of iterator to the corresponding kmers in the map. If a kmer is not present in the map, the corresponding iterator points to \doxylink{classngsai_1_1KmerMap_aa1527e48613c5ea54bcea3118d8bccca}{Kmer\+Map\+::end}. The order of the iterators in the vector is the same as the order of the kmer occurence in the sequence. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classngsai_1_1KmerMap_a55be9274af3615a41f177a6bfa2aa765}{insert}} (const \mbox{\hyperlink{classngsai_1_1KmerData}{ngsai\+::\+Kmer\+Data}} \&kmer, \mbox{\hyperlink{classngsai_1_1KmerMap_a176fb74c5eeb9cbfaeabbc55131c6217}{insert\+\_\+mode}} mode=\mbox{\hyperlink{classngsai_1_1KmerMap_a176fb74c5eeb9cbfaeabbc55131c6217a361b812f6e6c4c441cb5dc11af33e5ff}{insert\+\_\+mode\+::\+REPLACE}})
+\begin{DoxyCompactList}\small\item\em Inserts the given element in the map. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classngsai_1_1KmerMap_a323a8ef81d3ac3b7a9da3225829fad05}{insert}} (const \mbox{\hyperlink{classngsai_1_1KmerData}{ngsai\+::\+Kmer\+Data}} \&\&kmer, \mbox{\hyperlink{classngsai_1_1KmerMap_a176fb74c5eeb9cbfaeabbc55131c6217}{insert\+\_\+mode}} mode=\mbox{\hyperlink{classngsai_1_1KmerMap_a176fb74c5eeb9cbfaeabbc55131c6217a361b812f6e6c4c441cb5dc11af33e5ff}{insert\+\_\+mode\+::\+REPLACE}})
+\begin{DoxyCompactList}\small\item\em Inserts the given element in the map. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classngsai_1_1KmerMap_ad4046d31c90214cce9d34ce63c85c862}{insert}} (const std\+::string \&sequence, const std\+::vector$<$ uint32\+\_\+t $>$ \&ipd, const std\+::vector$<$ uint32\+\_\+t $>$ \&pwd, \mbox{\hyperlink{classngsai_1_1KmerMap_a176fb74c5eeb9cbfaeabbc55131c6217}{insert\+\_\+mode}} mode=\mbox{\hyperlink{classngsai_1_1KmerMap_a176fb74c5eeb9cbfaeabbc55131c6217a361b812f6e6c4c441cb5dc11af33e5ff}{insert\+\_\+mode\+::\+REPLACE}})
+\begin{DoxyCompactList}\small\item\em Scans the sequence for kmers and insert each kmer inside the map. This is using Rabin-\/\+Karp\textquotesingle{}s rolling hash for more efficient performances. The corresponding kmer IPDs/\+PDWs are extracted from the given IPDs/\+PWDs. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacengsai_ab667af3aa89fb3a9acdbda7a75805a2b}{ngsai\+::kmer\+Bucket}} \& \mbox{\hyperlink{classngsai_1_1KmerMap_ae3f741f696940dd6221bac5e860af021}{at}} (const \mbox{\hyperlink{classngsai_1_1KmerData}{ngsai\+::\+Kmer\+Data}} \&kmer)
+\begin{DoxyCompactList}\small\item\em Returns a reference to the \doxylink{classngsai_1_1KmerData}{Kmer\+Data} object with the with the same sequence inside the map. If not such kmer exists in the map, this function throws an out\+\_\+of\+\_\+range exception. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{namespacengsai_ab667af3aa89fb3a9acdbda7a75805a2b}{ngsai\+::kmer\+Bucket}} \& \mbox{\hyperlink{classngsai_1_1KmerMap_ae6bf404a895355787e6964b6db0e8ecd}{at}} (const \mbox{\hyperlink{classngsai_1_1KmerData}{ngsai\+::\+Kmer\+Data}} \&kmer) const
+\begin{DoxyCompactList}\small\item\em Returns a reference to the \doxylink{classngsai_1_1KmerData}{Kmer\+Data} object with the with the same sequence inside the map. If not such kmer exists in the map, this function throws an out\+\_\+of\+\_\+range exception. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classngsai_1_1KmerMap_af50e8d5f4e2a2646c42d861f4c72763b}{get\+Kmer\+Size}} () const
+\begin{DoxyCompactList}\small\item\em Returns the size of the kmers stored by this map. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+size\+\_\+t \mbox{\hyperlink{classngsai_1_1KmerMap_ad2e69e1a3d7ef9b5f89e61256830271e}{m\+\_\+kmer\+\_\+n}}
+\begin{DoxyCompactList}\small\item\em The number of kmer actually in the map. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classngsai_1_1KmerMap_a72d2061d8bb2eaa21c473bb50f5c9839}{m\+\_\+kmer\+\_\+size}}
+\begin{DoxyCompactList}\small\item\em The size of the kmer stored in the map. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{namespacengsai_ab667af3aa89fb3a9acdbda7a75805a2b}{ngsai\+::kmer\+Bucket}} $>$ \mbox{\hyperlink{classngsai_1_1KmerMap_a95cde2078ce56ea5c3a358d8e955b4f1}{m\+\_\+map}}
+\begin{DoxyCompactList}\small\item\em The vector containing the \doxylink{classngsai_1_1KmerData}{Kmer\+Data} objects and the number insertions performed for this kmer. The vector has a length corresponding exactly to the number of possible kmer. Each object is inserted at the index given by a hash function working on the sequence. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classngsai_1_1KmerMap_ac98d07dd8f7b70e16ccb9a01abf56b9c}{boost\+::serialization\+::access}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \doxylink{classngsai_1_1KmerMap}{Kmer\+Map} is a template class allowing to create a map storing per kmer kinetic information. It is designed to allow O(k) insertion and O(1) query operations using a Rabin-\/\+Karp hashing approach. Each kmer is kinetic information is stored in a pair, together with the number of insertions in the map made for the corresponding kmer. The memory footprint of the map is N$\ast$$\ast$k where N is the number of character in the alphabet -\/ the alphabet is defined in ngsai\+::base\+\_\+code in \doxylink{dna__utility_8hpp}{dna/dna\+\_\+utility.\+hpp}) -\/ and k is the kmer size. 
+
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{classngsai_1_1KmerMap_a176fb74c5eeb9cbfaeabbc55131c6217}\label{classngsai_1_1KmerMap_a176fb74c5eeb9cbfaeabbc55131c6217} 
+\index{ngsai::KmerMap@{ngsai::KmerMap}!insert\_mode@{insert\_mode}}
+\index{insert\_mode@{insert\_mode}!ngsai::KmerMap@{ngsai::KmerMap}}
+\doxysubsubsection{\texorpdfstring{insert\_mode}{insert\_mode}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classngsai_1_1KmerMap_a176fb74c5eeb9cbfaeabbc55131c6217}{ngsai\+::\+Kmer\+Map\+::insert\+\_\+mode}}}
+
+
+
+The map insertion stategies. REPLACE \+: the kmer data already in the map are replaced with the inserted data. The number of times this kmer has been inserted is reset to 1. SUM \+: the kmer data already in the map are summed with the inserted data. The number of times this kmer has been inserted is increased by 1. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{REPLACE@{REPLACE}!ngsai::KmerMap@{ngsai::KmerMap}}\index{ngsai::KmerMap@{ngsai::KmerMap}!REPLACE@{REPLACE}}}\Hypertarget{classngsai_1_1KmerMap_a176fb74c5eeb9cbfaeabbc55131c6217a361b812f6e6c4c441cb5dc11af33e5ff}\label{classngsai_1_1KmerMap_a176fb74c5eeb9cbfaeabbc55131c6217a361b812f6e6c4c441cb5dc11af33e5ff} 
+REPLACE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SUM@{SUM}!ngsai::KmerMap@{ngsai::KmerMap}}\index{ngsai::KmerMap@{ngsai::KmerMap}!SUM@{SUM}}}\Hypertarget{classngsai_1_1KmerMap_a176fb74c5eeb9cbfaeabbc55131c6217a97cd8ccf6b24d9525d0f50bdf62ca345}\label{classngsai_1_1KmerMap_a176fb74c5eeb9cbfaeabbc55131c6217a97cd8ccf6b24d9525d0f50bdf62ca345} 
+SUM&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{N\_MODES@{N\_MODES}!ngsai::KmerMap@{ngsai::KmerMap}}\index{ngsai::KmerMap@{ngsai::KmerMap}!N\_MODES@{N\_MODES}}}\Hypertarget{classngsai_1_1KmerMap_a176fb74c5eeb9cbfaeabbc55131c6217a818b511bfe0964fc66cdd280186572c2}\label{classngsai_1_1KmerMap_a176fb74c5eeb9cbfaeabbc55131c6217a818b511bfe0964fc66cdd280186572c2} 
+N\+\_\+\+MODES&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classngsai_1_1KmerMap_a08a307aad4d59b56acf5ada2315b4e53}\label{classngsai_1_1KmerMap_a08a307aad4d59b56acf5ada2315b4e53} 
+\index{ngsai::KmerMap@{ngsai::KmerMap}!KmerMap@{KmerMap}}
+\index{KmerMap@{KmerMap}!ngsai::KmerMap@{ngsai::KmerMap}}
+\doxysubsubsection{\texorpdfstring{KmerMap()}{KmerMap()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily ngsai\+::\+Kmer\+Map\+::\+Kmer\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor. Creates an empty map. 
+
+\Hypertarget{classngsai_1_1KmerMap_a19fd7f042f2da14915283f94be47a0c7}\label{classngsai_1_1KmerMap_a19fd7f042f2da14915283f94be47a0c7} 
+\index{ngsai::KmerMap@{ngsai::KmerMap}!KmerMap@{KmerMap}}
+\index{KmerMap@{KmerMap}!ngsai::KmerMap@{ngsai::KmerMap}}
+\doxysubsubsection{\texorpdfstring{KmerMap()}{KmerMap()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily ngsai\+::\+Kmer\+Map\+::\+Kmer\+Map (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{kmer\+\_\+size }\end{DoxyParamCaption})}
+
+
+
+Construcs an empty map designed to contain N$\ast$$\ast$kmer\+\_\+size different kmers where N is the alphabet size. The Map memory allocation is performed here. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em kmer\+\_\+size} & the size of the kmers that will be stored. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classngsai_1_1KmerMap_a5876364a5858e5f67f09db2fb664d87f}\label{classngsai_1_1KmerMap_a5876364a5858e5f67f09db2fb664d87f} 
+\index{ngsai::KmerMap@{ngsai::KmerMap}!KmerMap@{KmerMap}}
+\index{KmerMap@{KmerMap}!ngsai::KmerMap@{ngsai::KmerMap}}
+\doxysubsubsection{\texorpdfstring{KmerMap()}{KmerMap()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily ngsai\+::\+Kmer\+Map\+::\+Kmer\+Map (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classngsai_1_1KmerMap}{Kmer\+Map}} \&}]{other }\end{DoxyParamCaption})}
+
+
+
+Copy constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & the instance to copy from. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classngsai_1_1KmerMap_a5fb7649e44821286b78c5920763a3f2a}\label{classngsai_1_1KmerMap_a5fb7649e44821286b78c5920763a3f2a} 
+\index{ngsai::KmerMap@{ngsai::KmerMap}!KmerMap@{KmerMap}}
+\index{KmerMap@{KmerMap}!ngsai::KmerMap@{ngsai::KmerMap}}
+\doxysubsubsection{\texorpdfstring{KmerMap()}{KmerMap()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily ngsai\+::\+Kmer\+Map\+::\+Kmer\+Map (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classngsai_1_1KmerMap}{Kmer\+Map}} \&\&}]{other }\end{DoxyParamCaption})}
+
+
+
+Move constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & the instance to move from. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classngsai_1_1KmerMap_a1d4bc440e89058c4e77d5b08557abc71}\label{classngsai_1_1KmerMap_a1d4bc440e89058c4e77d5b08557abc71} 
+\index{ngsai::KmerMap@{ngsai::KmerMap}!````~KmerMap@{$\sim$KmerMap}}
+\index{````~KmerMap@{$\sim$KmerMap}!ngsai::KmerMap@{ngsai::KmerMap}}
+\doxysubsubsection{\texorpdfstring{$\sim$KmerMap()}{~KmerMap()}}
+{\footnotesize\ttfamily ngsai\+::\+Kmer\+Map\+::$\sim$\+Kmer\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classngsai_1_1KmerMap_ae3f741f696940dd6221bac5e860af021}\label{classngsai_1_1KmerMap_ae3f741f696940dd6221bac5e860af021} 
+\index{ngsai::KmerMap@{ngsai::KmerMap}!at@{at}}
+\index{at@{at}!ngsai::KmerMap@{ngsai::KmerMap}}
+\doxysubsubsection{\texorpdfstring{at()}{at()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacengsai_ab667af3aa89fb3a9acdbda7a75805a2b}{ngsai\+::kmer\+Bucket}} \& ngsai\+::\+Kmer\+Map\+::at (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classngsai_1_1KmerData}{ngsai\+::\+Kmer\+Data}} \&}]{kmer }\end{DoxyParamCaption})}
+
+
+
+Returns a reference to the \doxylink{classngsai_1_1KmerData}{Kmer\+Data} object with the with the same sequence inside the map. If not such kmer exists in the map, this function throws an out\+\_\+of\+\_\+range exception. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & kmer with the sequence of interest. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a reference to the \doxylink{classngsai_1_1KmerData}{Kmer\+Data} object mapped with this sequence. 
+\end{DoxyReturn}
+\Hypertarget{classngsai_1_1KmerMap_ae6bf404a895355787e6964b6db0e8ecd}\label{classngsai_1_1KmerMap_ae6bf404a895355787e6964b6db0e8ecd} 
+\index{ngsai::KmerMap@{ngsai::KmerMap}!at@{at}}
+\index{at@{at}!ngsai::KmerMap@{ngsai::KmerMap}}
+\doxysubsubsection{\texorpdfstring{at()}{at()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{namespacengsai_ab667af3aa89fb3a9acdbda7a75805a2b}{ngsai\+::kmer\+Bucket}} \& ngsai\+::\+Kmer\+Map\+::at (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classngsai_1_1KmerData}{ngsai\+::\+Kmer\+Data}} \&}]{kmer }\end{DoxyParamCaption}) const}
+
+
+
+Returns a reference to the \doxylink{classngsai_1_1KmerData}{Kmer\+Data} object with the with the same sequence inside the map. If not such kmer exists in the map, this function throws an out\+\_\+of\+\_\+range exception. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & kmer with the sequence of interest. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a reference to the \doxylink{classngsai_1_1KmerData}{Kmer\+Data} object mapped with this sequence. 
+\end{DoxyReturn}
+\Hypertarget{classngsai_1_1KmerMap_ae267a4bca70a24f86707e1932638e13a}\label{classngsai_1_1KmerMap_ae267a4bca70a24f86707e1932638e13a} 
+\index{ngsai::KmerMap@{ngsai::KmerMap}!begin@{begin}}
+\index{begin@{begin}!ngsai::KmerMap@{ngsai::KmerMap}}
+\doxysubsubsection{\texorpdfstring{begin()}{begin()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{namespacengsai_ab667af3aa89fb3a9acdbda7a75805a2b}{ngsai\+::kmer\+Bucket}} $>$\+::iterator ngsai\+::\+Kmer\+Map\+::begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns an iterator pointing to the first element of the map. 
+
+\begin{DoxyReturn}{Returns}
+An iterator to the first of the map. 
+\end{DoxyReturn}
+\Hypertarget{classngsai_1_1KmerMap_ad75a8b0d512b4bc882d956fd7fff1a4c}\label{classngsai_1_1KmerMap_ad75a8b0d512b4bc882d956fd7fff1a4c} 
+\index{ngsai::KmerMap@{ngsai::KmerMap}!begin@{begin}}
+\index{begin@{begin}!ngsai::KmerMap@{ngsai::KmerMap}}
+\doxysubsubsection{\texorpdfstring{begin()}{begin()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{namespacengsai_ab667af3aa89fb3a9acdbda7a75805a2b}{ngsai\+::kmer\+Bucket}} $>$\+::const\+\_\+iterator ngsai\+::\+Kmer\+Map\+::begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns an iterator pointing to the first element of the map. 
+
+\begin{DoxyReturn}{Returns}
+An iterator to the first of the map. 
+\end{DoxyReturn}
+\Hypertarget{classngsai_1_1KmerMap_abd0399d2bab282952ce4e568cc34d996}\label{classngsai_1_1KmerMap_abd0399d2bab282952ce4e568cc34d996} 
+\index{ngsai::KmerMap@{ngsai::KmerMap}!capacity@{capacity}}
+\index{capacity@{capacity}!ngsai::KmerMap@{ngsai::KmerMap}}
+\doxysubsubsection{\texorpdfstring{capacity()}{capacity()}}
+{\footnotesize\ttfamily size\+\_\+t ngsai\+::\+Kmer\+Map\+::capacity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the total number of kmers that can be stored by the map. 
+
+\begin{DoxyReturn}{Returns}
+the total number of kmer that can be stored in the map. 
+\end{DoxyReturn}
+\Hypertarget{classngsai_1_1KmerMap_aa1527e48613c5ea54bcea3118d8bccca}\label{classngsai_1_1KmerMap_aa1527e48613c5ea54bcea3118d8bccca} 
+\index{ngsai::KmerMap@{ngsai::KmerMap}!end@{end}}
+\index{end@{end}!ngsai::KmerMap@{ngsai::KmerMap}}
+\doxysubsubsection{\texorpdfstring{end()}{end()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{namespacengsai_ab667af3aa89fb3a9acdbda7a75805a2b}{ngsai\+::kmer\+Bucket}} $>$\+::iterator ngsai\+::\+Kmer\+Map\+::end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns an iterator pointing to past-\/the-\/last element of the map. 
+
+\begin{DoxyReturn}{Returns}
+An iterator to the end of the map. 
+\end{DoxyReturn}
+\Hypertarget{classngsai_1_1KmerMap_acc34126d1ae38390d3cba4939dfad743}\label{classngsai_1_1KmerMap_acc34126d1ae38390d3cba4939dfad743} 
+\index{ngsai::KmerMap@{ngsai::KmerMap}!end@{end}}
+\index{end@{end}!ngsai::KmerMap@{ngsai::KmerMap}}
+\doxysubsubsection{\texorpdfstring{end()}{end()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{namespacengsai_ab667af3aa89fb3a9acdbda7a75805a2b}{ngsai\+::kmer\+Bucket}} $>$\+::const\+\_\+iterator ngsai\+::\+Kmer\+Map\+::end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns an iterator pointing to past-\/the-\/last element of the map. 
+
+\begin{DoxyReturn}{Returns}
+An iterator to the end of the map. 
+\end{DoxyReturn}
+\Hypertarget{classngsai_1_1KmerMap_a9557c4e5d22fbd0205a289aaad8c6667}\label{classngsai_1_1KmerMap_a9557c4e5d22fbd0205a289aaad8c6667} 
+\index{ngsai::KmerMap@{ngsai::KmerMap}!find@{find}}
+\index{find@{find}!ngsai::KmerMap@{ngsai::KmerMap}}
+\doxysubsubsection{\texorpdfstring{find()}{find()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{namespacengsai_ab667af3aa89fb3a9acdbda7a75805a2b}{ngsai\+::kmer\+Bucket}} $>$\+::iterator ngsai\+::\+Kmer\+Map\+::find (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classngsai_1_1KmerData}{Kmer\+Data}} \&}]{kmer }\end{DoxyParamCaption})}
+
+
+
+Searches the map for the kmer with the same sequence and returns an iterator pointing to it if such a kmer exists, otherwise returns an iterator pointing to the \doxylink{classngsai_1_1KmerMap_aa1527e48613c5ea54bcea3118d8bccca}{Kmer\+Map\+::end}. 
+
+\begin{DoxyReturn}{Returns}
+An iterator to the element if it could be found, to \doxylink{classngsai_1_1KmerMap_aa1527e48613c5ea54bcea3118d8bccca}{Kmer\+Map\+::end} otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classngsai_1_1KmerMap_a469474008e371c10495a75f8182ba663}\label{classngsai_1_1KmerMap_a469474008e371c10495a75f8182ba663} 
+\index{ngsai::KmerMap@{ngsai::KmerMap}!find@{find}}
+\index{find@{find}!ngsai::KmerMap@{ngsai::KmerMap}}
+\doxysubsubsection{\texorpdfstring{find()}{find()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{namespacengsai_ab667af3aa89fb3a9acdbda7a75805a2b}{ngsai\+::kmer\+Bucket}} $>$\+::const\+\_\+iterator ngsai\+::\+Kmer\+Map\+::find (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classngsai_1_1KmerData}{Kmer\+Data}} \&}]{kmer }\end{DoxyParamCaption}) const}
+
+
+
+Searches the map for the kmer with the same sequence and returns an iterator pointing to it if such a kmer exists, otherwise returns an iterator pointing to the \doxylink{classngsai_1_1KmerMap_aa1527e48613c5ea54bcea3118d8bccca}{Kmer\+Map\+::end}. 
+
+\begin{DoxyReturn}{Returns}
+An iterator to the element if it could be found, to \doxylink{classngsai_1_1KmerMap_aa1527e48613c5ea54bcea3118d8bccca}{Kmer\+Map\+::end} otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classngsai_1_1KmerMap_af5baa35a66989f08fcabc25d9d9763d7}\label{classngsai_1_1KmerMap_af5baa35a66989f08fcabc25d9d9763d7} 
+\index{ngsai::KmerMap@{ngsai::KmerMap}!find@{find}}
+\index{find@{find}!ngsai::KmerMap@{ngsai::KmerMap}}
+\doxysubsubsection{\texorpdfstring{find()}{find()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{namespacengsai_ab667af3aa89fb3a9acdbda7a75805a2b}{ngsai\+::kmer\+Bucket}} $>$\+::iterator $>$ ngsai\+::\+Kmer\+Map\+::find (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{sequence }\end{DoxyParamCaption})}
+
+
+
+Searches the map for each kmer in the sequence and returns a vector of iterator to the corresponding kmers in the map. If a kmer is not present in the map, the corresponding iterator points to \doxylink{classngsai_1_1KmerMap_aa1527e48613c5ea54bcea3118d8bccca}{Kmer\+Map\+::end}. The order of the iterators in the vector is the same as the order of the kmer occurence in the sequence. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sequence} & the sequence to search the kmers from. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of iterators pointing to the kmers in the map or to \doxylink{classngsai_1_1KmerMap_aa1527e48613c5ea54bcea3118d8bccca}{Kmer\+Map\+::end} for kmer not listed in the map. 
+\end{DoxyReturn}
+\Hypertarget{classngsai_1_1KmerMap_a61c9c82061a13e067c740e4c38fcb09e}\label{classngsai_1_1KmerMap_a61c9c82061a13e067c740e4c38fcb09e} 
+\index{ngsai::KmerMap@{ngsai::KmerMap}!find@{find}}
+\index{find@{find}!ngsai::KmerMap@{ngsai::KmerMap}}
+\doxysubsubsection{\texorpdfstring{find()}{find()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{namespacengsai_ab667af3aa89fb3a9acdbda7a75805a2b}{ngsai\+::kmer\+Bucket}} $>$\+::const\+\_\+iterator $>$ ngsai\+::\+Kmer\+Map\+::find (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{sequence }\end{DoxyParamCaption}) const}
+
+
+
+Searches the map for each kmer in the sequence and returns a vector of iterator to the corresponding kmers in the map. If a kmer is not present in the map, the corresponding iterator points to \doxylink{classngsai_1_1KmerMap_aa1527e48613c5ea54bcea3118d8bccca}{Kmer\+Map\+::end}. The order of the iterators in the vector is the same as the order of the kmer occurence in the sequence. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sequence} & the sequence to search the kmers from. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of iterators pointing to the kmers in the map or to \doxylink{classngsai_1_1KmerMap_aa1527e48613c5ea54bcea3118d8bccca}{Kmer\+Map\+::end} for kmer not listed in the map. 
+\end{DoxyReturn}
+\Hypertarget{classngsai_1_1KmerMap_af50e8d5f4e2a2646c42d861f4c72763b}\label{classngsai_1_1KmerMap_af50e8d5f4e2a2646c42d861f4c72763b} 
+\index{ngsai::KmerMap@{ngsai::KmerMap}!getKmerSize@{getKmerSize}}
+\index{getKmerSize@{getKmerSize}!ngsai::KmerMap@{ngsai::KmerMap}}
+\doxysubsubsection{\texorpdfstring{getKmerSize()}{getKmerSize()}}
+{\footnotesize\ttfamily size\+\_\+t ngsai\+::\+Kmer\+Map\+::get\+Kmer\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the size of the kmers stored by this map. 
+
+\begin{DoxyReturn}{Returns}
+the size of the kmers in this map. 
+\end{DoxyReturn}
+\Hypertarget{classngsai_1_1KmerMap_a323a8ef81d3ac3b7a9da3225829fad05}\label{classngsai_1_1KmerMap_a323a8ef81d3ac3b7a9da3225829fad05} 
+\index{ngsai::KmerMap@{ngsai::KmerMap}!insert@{insert}}
+\index{insert@{insert}!ngsai::KmerMap@{ngsai::KmerMap}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void ngsai\+::\+Kmer\+Map\+::insert (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classngsai_1_1KmerData}{ngsai\+::\+Kmer\+Data}} \&\&}]{kmer,  }\item[{\mbox{\hyperlink{classngsai_1_1KmerMap_a176fb74c5eeb9cbfaeabbc55131c6217}{insert\+\_\+mode}}}]{mode = {\ttfamily \mbox{\hyperlink{classngsai_1_1KmerMap_a176fb74c5eeb9cbfaeabbc55131c6217a361b812f6e6c4c441cb5dc11af33e5ff}{insert\+\_\+mode\+::\+REPLACE}}} }\end{DoxyParamCaption})}
+
+
+
+Inserts the given element in the map. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em kmer} & a reference to the object to insert in the map. \\
+\hline
+{\em mode} & the strategy to update the IPD/\+PWD if this kmer already exists in the map. If SUM is used, the kmer occurence counter is updated by 1. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classngsai_1_1KmerMap_a55be9274af3615a41f177a6bfa2aa765}\label{classngsai_1_1KmerMap_a55be9274af3615a41f177a6bfa2aa765} 
+\index{ngsai::KmerMap@{ngsai::KmerMap}!insert@{insert}}
+\index{insert@{insert}!ngsai::KmerMap@{ngsai::KmerMap}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void ngsai\+::\+Kmer\+Map\+::insert (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classngsai_1_1KmerData}{ngsai\+::\+Kmer\+Data}} \&}]{kmer,  }\item[{\mbox{\hyperlink{classngsai_1_1KmerMap_a176fb74c5eeb9cbfaeabbc55131c6217}{insert\+\_\+mode}}}]{mode = {\ttfamily \mbox{\hyperlink{classngsai_1_1KmerMap_a176fb74c5eeb9cbfaeabbc55131c6217a361b812f6e6c4c441cb5dc11af33e5ff}{insert\+\_\+mode\+::\+REPLACE}}} }\end{DoxyParamCaption})}
+
+
+
+Inserts the given element in the map. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em kmer} & a reference to the object to insert in the map. \\
+\hline
+{\em mode} & the strategy to update the IPD/\+PWD if this kmer already exists in the map. If SUM is used, the kmer occurence counter is updated by 1. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classngsai_1_1KmerMap_ad4046d31c90214cce9d34ce63c85c862}\label{classngsai_1_1KmerMap_ad4046d31c90214cce9d34ce63c85c862} 
+\index{ngsai::KmerMap@{ngsai::KmerMap}!insert@{insert}}
+\index{insert@{insert}!ngsai::KmerMap@{ngsai::KmerMap}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void ngsai\+::\+Kmer\+Map\+::insert (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{sequence,  }\item[{const std\+::vector$<$ uint32\+\_\+t $>$ \&}]{ipd,  }\item[{const std\+::vector$<$ uint32\+\_\+t $>$ \&}]{pwd,  }\item[{\mbox{\hyperlink{classngsai_1_1KmerMap_a176fb74c5eeb9cbfaeabbc55131c6217}{insert\+\_\+mode}}}]{mode = {\ttfamily \mbox{\hyperlink{classngsai_1_1KmerMap_a176fb74c5eeb9cbfaeabbc55131c6217a361b812f6e6c4c441cb5dc11af33e5ff}{insert\+\_\+mode\+::\+REPLACE}}} }\end{DoxyParamCaption})}
+
+
+
+Scans the sequence for kmers and insert each kmer inside the map. This is using Rabin-\/\+Karp\textquotesingle{}s rolling hash for more efficient performances. The corresponding kmer IPDs/\+PDWs are extracted from the given IPDs/\+PWDs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sequence} & the DNA sequence to get the kmers from. \\
+\hline
+{\em ipd} & a vector of IPDs corresponding to each sequence position. \\
+\hline
+{\em pwd} & a vector of PWDs corresponding to each sequence position. \\
+\hline
+{\em mode} & the strategy to update the IPD/\+PWD if this kmer already exists in the map. If SUM is used, the kmer occurence counter is updated by 1. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classngsai_1_1KmerMap_ad8ae462ab9ff8a954bce4bb4b57d380c}\label{classngsai_1_1KmerMap_ad8ae462ab9ff8a954bce4bb4b57d380c} 
+\index{ngsai::KmerMap@{ngsai::KmerMap}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!ngsai::KmerMap@{ngsai::KmerMap}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool ngsai\+::\+Kmer\+Map\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classngsai_1_1KmerMap}{ngsai\+::\+Kmer\+Map}} \&}]{other }\end{DoxyParamCaption}) const}
+
+
+
+Compares the content of the instances. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & an other instance to compare the current one with. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+whether both instances are different. 
+\end{DoxyReturn}
+\Hypertarget{classngsai_1_1KmerMap_a091e484930f149f5e703d9186d26169e}\label{classngsai_1_1KmerMap_a091e484930f149f5e703d9186d26169e} 
+\index{ngsai::KmerMap@{ngsai::KmerMap}!operator=@{operator=}}
+\index{operator=@{operator=}!ngsai::KmerMap@{ngsai::KmerMap}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classngsai_1_1KmerMap}{ngsai\+::\+Kmer\+Map}} \& ngsai\+::\+Kmer\+Map\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classngsai_1_1KmerMap}{ngsai\+::\+Kmer\+Map}} \&}]{other }\end{DoxyParamCaption})}
+
+
+
+Assignment operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & A reference to the object to assign the value from. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the current object. 
+\end{DoxyReturn}
+\Hypertarget{classngsai_1_1KmerMap_af9a11f7c2d82ff76b0e3c7582759c62c}\label{classngsai_1_1KmerMap_af9a11f7c2d82ff76b0e3c7582759c62c} 
+\index{ngsai::KmerMap@{ngsai::KmerMap}!operator==@{operator==}}
+\index{operator==@{operator==}!ngsai::KmerMap@{ngsai::KmerMap}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool ngsai\+::\+Kmer\+Map\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classngsai_1_1KmerMap}{ngsai\+::\+Kmer\+Map}} \&}]{other }\end{DoxyParamCaption}) const}
+
+
+
+Compares the content of the instances. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & an other instance to compare the current one with. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+whether both instances are equal. 
+\end{DoxyReturn}
+\Hypertarget{classngsai_1_1KmerMap_a28d8165d978bc11e9c61f9a3711eb2f7}\label{classngsai_1_1KmerMap_a28d8165d978bc11e9c61f9a3711eb2f7} 
+\index{ngsai::KmerMap@{ngsai::KmerMap}!resize@{resize}}
+\index{resize@{resize}!ngsai::KmerMap@{ngsai::KmerMap}}
+\doxysubsubsection{\texorpdfstring{resize()}{resize()}}
+{\footnotesize\ttfamily void ngsai\+::\+Kmer\+Map\+::resize (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{kmer\+\_\+size }\end{DoxyParamCaption})}
+
+
+
+Resizes the map in order to store kmer of the given size. All previous data are lost. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em kmer\+\_\+size} & the new kmer size. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classngsai_1_1KmerMap_af72a385fec3a25760fe4f9f61b652779}\label{classngsai_1_1KmerMap_af72a385fec3a25760fe4f9f61b652779} 
+\index{ngsai::KmerMap@{ngsai::KmerMap}!size@{size}}
+\index{size@{size}!ngsai::KmerMap@{ngsai::KmerMap}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily size\+\_\+t ngsai\+::\+Kmer\+Map\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the number of kmers in the map. 
+
+\begin{DoxyReturn}{Returns}
+the number of kmers actually in the map. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{classngsai_1_1KmerMap_ac98d07dd8f7b70e16ccb9a01abf56b9c}\label{classngsai_1_1KmerMap_ac98d07dd8f7b70e16ccb9a01abf56b9c} 
+\index{ngsai::KmerMap@{ngsai::KmerMap}!boost::serialization::access@{boost::serialization::access}}
+\index{boost::serialization::access@{boost::serialization::access}!ngsai::KmerMap@{ngsai::KmerMap}}
+\doxysubsubsection{\texorpdfstring{boost::serialization::access}{boost::serialization::access}}
+{\footnotesize\ttfamily friend class boost\+::serialization\+::access\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classngsai_1_1KmerMap_ad2e69e1a3d7ef9b5f89e61256830271e}\label{classngsai_1_1KmerMap_ad2e69e1a3d7ef9b5f89e61256830271e} 
+\index{ngsai::KmerMap@{ngsai::KmerMap}!m\_kmer\_n@{m\_kmer\_n}}
+\index{m\_kmer\_n@{m\_kmer\_n}!ngsai::KmerMap@{ngsai::KmerMap}}
+\doxysubsubsection{\texorpdfstring{m\_kmer\_n}{m\_kmer\_n}}
+{\footnotesize\ttfamily size\+\_\+t ngsai\+::\+Kmer\+Map\+::m\+\_\+kmer\+\_\+n\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The number of kmer actually in the map. 
+
+\Hypertarget{classngsai_1_1KmerMap_a72d2061d8bb2eaa21c473bb50f5c9839}\label{classngsai_1_1KmerMap_a72d2061d8bb2eaa21c473bb50f5c9839} 
+\index{ngsai::KmerMap@{ngsai::KmerMap}!m\_kmer\_size@{m\_kmer\_size}}
+\index{m\_kmer\_size@{m\_kmer\_size}!ngsai::KmerMap@{ngsai::KmerMap}}
+\doxysubsubsection{\texorpdfstring{m\_kmer\_size}{m\_kmer\_size}}
+{\footnotesize\ttfamily size\+\_\+t ngsai\+::\+Kmer\+Map\+::m\+\_\+kmer\+\_\+size\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The size of the kmer stored in the map. 
+
+\Hypertarget{classngsai_1_1KmerMap_a95cde2078ce56ea5c3a358d8e955b4f1}\label{classngsai_1_1KmerMap_a95cde2078ce56ea5c3a358d8e955b4f1} 
+\index{ngsai::KmerMap@{ngsai::KmerMap}!m\_map@{m\_map}}
+\index{m\_map@{m\_map}!ngsai::KmerMap@{ngsai::KmerMap}}
+\doxysubsubsection{\texorpdfstring{m\_map}{m\_map}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{namespacengsai_ab667af3aa89fb3a9acdbda7a75805a2b}{ngsai\+::kmer\+Bucket}}$>$ ngsai\+::\+Kmer\+Map\+::m\+\_\+map\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The vector containing the \doxylink{classngsai_1_1KmerData}{Kmer\+Data} objects and the number insertions performed for this kmer. The vector has a length corresponding exactly to the number of possible kmer. Each object is inserted at the index given by a hash function working on the sequence. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/ngsaipp/epigenetics/\mbox{\hyperlink{KmerMap_8hpp}{Kmer\+Map.\+hpp}}\end{DoxyCompactItemize}

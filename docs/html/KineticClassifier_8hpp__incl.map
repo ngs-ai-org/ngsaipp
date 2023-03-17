@@ -1,0 +1,16 @@
+<map id="include/ngsaipp/epigenetics/KineticClassifier.hpp" name="include/ngsaipp/epigenetics/KineticClassifier.hpp">
+<area shape="rect" id="node1" title=" " alt="" coords="323,5,505,45"/>
+<area shape="rect" id="node2" title=" " alt="" coords="632,269,687,295"/>
+<area shape="rect" id="node3" title=" " alt="" coords="21,269,79,295"/>
+<area shape="rect" id="node4" title=" " alt="" coords="199,101,237,126"/>
+<area shape="rect" id="node5" title=" " alt="" coords="261,101,401,126"/>
+<area shape="rect" id="node6" title=" " alt="" coords="425,101,571,126"/>
+<area shape="rect" id="node7" href="$KineticModel_8hpp.html" title=" " alt="" coords="37,93,175,133"/>
+<area shape="rect" id="node10" href="$KineticSignal_8hpp.html" title=" " alt="" coords="453,181,591,221"/>
+<area shape="rect" id="node11" href="$CpGRegion_8hpp.html" title=" " alt="" coords="703,101,917,126"/>
+<area shape="rect" id="node8" title=" " alt="" coords="87,189,159,214"/>
+<area shape="rect" id="node9" title=" " alt="" coords="183,189,397,214"/>
+<area shape="rect" id="node12" href="$GenomeRegion_8hpp.html" title=" " alt="" coords="696,189,932,214"/>
+<area shape="rect" id="node13" href="$genome_2constants_8hpp.html" title=" " alt="" coords="711,269,914,295"/>
+<area shape="rect" id="node14" href="$utility_2constants_8hpp.html" title=" " alt="" coords="939,269,1127,295"/>
+</map>

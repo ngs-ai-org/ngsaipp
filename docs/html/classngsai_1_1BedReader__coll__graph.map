@@ -1,0 +1,10 @@
+<map id="ngsai::BedReader" name="ngsai::BedReader">
+<area shape="rect" id="node1" title="A class to perform sequencial reading from a BED file using the getNext() method. Currently BED 6 for..." alt="" coords="81,421,208,447"/>
+<area shape="rect" id="node2" title=" " alt="" coords="50,333,130,359"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,244,132,284"/>
+<area shape="rect" id="node4" title=" " alt="" coords="165,333,260,359"/>
+<area shape="rect" id="node5" title=" " alt="" coords="157,244,290,284"/>
+<area shape="rect" id="node6" title=" " alt="" coords="159,155,288,195"/>
+<area shape="rect" id="node7" title=" " alt="" coords="146,80,301,105"/>
+<area shape="rect" id="node8" title=" " alt="" coords="173,5,273,31"/>
+</map>

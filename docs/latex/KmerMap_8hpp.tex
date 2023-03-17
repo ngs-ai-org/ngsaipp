@@ -1,0 +1,68 @@
+\hypertarget{KmerMap_8hpp}{}\doxysection{include/ngsaipp/epigenetics/\+Kmer\+Map.hpp File Reference}
+\label{KmerMap_8hpp}\index{include/ngsaipp/epigenetics/KmerMap.hpp@{include/ngsaipp/epigenetics/KmerMap.hpp}}
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+{\ttfamily \#include $<$boost/serialization/access.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/serialization/vector.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/serialization/string.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/serialization/utility.\+hpp$>$}\newline
+{\ttfamily \#include $<$ngsaipp/epigenetics/\+Kmer\+Data.\+hpp$>$}\newline
+Include dependency graph for Kmer\+Map.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{KmerMap_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{KmerMap_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classngsai_1_1KmerMap}{ngsai\+::\+Kmer\+Map}}
+\begin{DoxyCompactList}\small\item\em The \doxylink{classngsai_1_1KmerMap}{Kmer\+Map} is a template class allowing to create a map storing per kmer kinetic information. It is designed to allow O(k) insertion and O(1) query operations using a Rabin-\/\+Karp hashing approach. Each kmer is kinetic information is stored in a pair, together with the number of insertions in the map made for the corresponding kmer. The memory footprint of the map is N$\ast$$\ast$k where N is the number of character in the alphabet -\/ the alphabet is defined in ngsai\+::base\+\_\+code in \doxylink{dna__utility_8hpp}{dna/dna\+\_\+utility.\+hpp}) -\/ and k is the kmer size. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacengsai}{ngsai}}
+\begin{DoxyCompactList}\small\item\em This file contains values that are useful for formatting terminal output. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::pair$<$ uint32\+\_\+t, \mbox{\hyperlink{classngsai_1_1KmerData}{ngsai\+::\+Kmer\+Data}} $>$ \mbox{\hyperlink{namespacengsai_ab667af3aa89fb3a9acdbda7a75805a2b}{ngsai\+::kmer\+Bucket}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \mbox{\hyperlink{KmerMap_8hpp_a393edf29129947140568687699f4005f}{operator$<$$<$}} (std\+::ostream \&stream, const \mbox{\hyperlink{classngsai_1_1KmerMap}{ngsai\+::\+Kmer\+Map}} \&m)
+\begin{DoxyCompactList}\small\item\em Writes the given Kmer\+Map to the given stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{KmerMap_8hpp_a393edf29129947140568687699f4005f}\label{KmerMap_8hpp_a393edf29129947140568687699f4005f} 
+\index{KmerMap.hpp@{KmerMap.hpp}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!KmerMap.hpp@{KmerMap.hpp}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
+{\footnotesize\ttfamily std\+::ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{stream,  }\item[{const \mbox{\hyperlink{classngsai_1_1KmerMap}{ngsai\+::\+Kmer\+Map}} \&}]{m }\end{DoxyParamCaption})}
+
+
+
+Writes the given Kmer\+Map to the given stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em stream} & a reference to the stream of interest. \\
+\hline
+{\em m} & a Kmer\+Map of interest. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a reference to the stream after the writing. 
+\end{DoxyReturn}
