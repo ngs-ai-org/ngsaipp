@@ -31,7 +31,7 @@ ngsaipp relies on the following third party libraries:
 
 - pthread, normally a system library on linux system.
 - [boost](https://www.boost.org/) v1.78 or higher
-- [pbcopper](https://github.com/PacificBiosciences/pbcopper) v2.1.0 or higher
+- [pbcopper](https://github.com/PacificBiosciences/pbcopper) v2.0.0 or higher
 - [pbbam](https://github.com/PacificBiosciences/pbbam) v2.0.0 (pbbam relies on pbcopper)
 - [gtest](https://github.com/google/googletest) v1.11.0 or higher
 
